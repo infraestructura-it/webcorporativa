@@ -1,0 +1,54 @@
+{
+  "last_build": "2026-03-21T17:54:05.302Z",
+  "total_days": 1,
+  "total_articles": 5,
+  "days": [
+    {
+      "date": "2026-03-21",
+      "generated_at": "2026-03-21T11:00:00.000Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-03-21-news",
+          "category_id": "news",
+          "title": "Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%",
+          "summary": "El nuevo 9PX Ultra reduce pérdidas de conversión a solo 3% y predice fallos de batería con 72 horas de anticipación.",
+          "tag": "Eaton UPS",
+          "read_time": 3
+        },
+        {
+          "id": "2026-03-21-solar_news",
+          "category_id": "solar_news",
+          "title": "LONGi alcanza 24.8% de eficiencia en panel residencial de producción masiva",
+          "summary": "El Hi-MO X10 con tecnología HPBC 2.0 genera hasta 640W por panel, reduciendo el área de instalación un 22%.",
+          "tag": "LONGi Panel Solar",
+          "read_time": 3
+        },
+        {
+          "id": "2026-03-21-technical",
+          "category_id": "technical",
+          "title": "Modbus TCP con Fronius Symo: leer generación solar desde Node.js",
+          "summary": "Registros SunSpec exactos del Fronius Symo para monitoreo en tiempo real desde cualquier plataforma.",
+          "tag": "Modbus TCP SunSpec",
+          "read_time": 4
+        },
+        {
+          "id": "2026-03-21-tips",
+          "category_id": "tips",
+          "title": "Conecta tu Victron MultiPlus II a Home Assistant en 10 minutos",
+          "summary": "VenusOS + MQTT integra todos los datos del inversor/cargador Victron directamente en tu dashboard HA.",
+          "tag": "Victron + Home Assistant",
+          "read_time": 3
+        },
+        {
+          "id": "2026-03-21-usecase",
+          "category_id": "usecase",
+          "title": "AgroLogística Palmira: IA predice cortes de red y activa UPS antes del fallo",
+          "summary": "Sistema de IA reduce interrupciones no planificadas en 91% y ahorra $240M COP anuales en Palmira, Valle.",
+          "tag": "UPS Predictivo Valle",
+          "read_time": 4
+        }
+      ]
+    }
+  ]
+}

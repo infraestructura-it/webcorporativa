@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="InfraestructuraIT — Avances diarios en Inteligencia Artificial, IoT e infraestructura tecnológica. Contenido generado con IA, actualizado cada día.">
+<meta property="og:title" content="InfraestructuraIT — IA & Avances Diarios">
+<meta property="og:description" content="Noticias, artículos técnicos, tips IoT y casos de uso de IA en Data Centers. Actualizado automáticamente cada día.">
+<title>IA & Avances — InfraestructuraIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ai-blog.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    <svg width="32" height="32" viewBox="0 0 60 60" fill="none">
+      <rect x="14" y="14" width="32" height="32" rx="4" stroke="#00d4ff" stroke-width="2" fill="none"/>
+      <circle cx="30" cy="30" r="7" fill="#00d4ff" opacity="0.9"/>
+      <circle cx="30" cy="30" r="3" fill="#7c3aed"/>
+      <line x1="24" y1="14" x2="24" y2="6" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="30" y1="14" x2="30" y2="6" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="36" y1="14" x2="36" y2="6" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="24" y1="46" x2="24" y2="54" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="30" y1="46" x2="30" y2="54" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="36" y1="46" x2="36" y2="54" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="14" y1="24" x2="6" y2="24" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="14" y1="30" x2="6" y2="30" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="14" y1="36" x2="6" y2="36" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="46" y1="24" x2="54" y2="24" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="46" y1="30" x2="54" y2="30" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="46" y1="36" x2="54" y2="36" stroke="#00d4ff" stroke-width="2"/>
+    </svg>
+    <span>INFRAESTRUCTURA <strong>IT</strong></span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">← Web principal</a>
+    <a href="index.html" class="active">IA & Avances</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="blog-hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Actualizado automáticamente · Generado con Claude AI</div>
+    <h1 class="hero-title">IA & <span class="accent">Avances</span></h1>
+    <p class="hero-desc">Noticias, artículos técnicos, tips y casos de uso en Inteligencia Artificial, IoT e infraestructura — publicados cada día de forma automática.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Artículos</span></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label">Días</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Categorías</span></div>
+      <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Ciclo</span></div>
+    </div>
+    <div class="last-update">Última actualización: <span>21/3/2026, 6:00:00 a. m.</span></div>
+  </div>
+  <!-- animated grid bg -->
+  <div class="hero-grid" aria-hidden="true"></div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filterBar">
+  <div class="filter-inner">
+    
+    <button class="filter-btn active"
+      onclick="filterBy('all', this)"
+      style="--fc: #00d4ff">
+      <span>◎</span>
+      <span>Todos</span>
+      
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('news', this)"
+      style="--fc: #00d4ff">
+      <span>📡</span>
+      <span>Noticias & Marcas</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('solar_news', this)"
+      style="--fc: #f59e0b">
+      <span>☀️</span>
+      <span>Solar & Almacenamiento</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('technical', this)"
+      style="--fc: #7c3aed">
+      <span>⚙️</span>
+      <span>Técnicos</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('tips', this)"
+      style="--fc: #00ffcc">
+      <span>💡</span>
+      <span>Tips IoT & Infra</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('usecase', this)"
+      style="--fc: #f97316">
+      <span>🧠</span>
+      <span>Casos de Uso IA</span>
+      <span class="filter-count">1</span>
+    </button>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <input type="search" id="searchInput" placeholder="Buscar artículos..." oninput="searchArticles(this.value)" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<main class="blog-main" id="blogMain">
+  <div class="content-wrap">
+    
+<section class="day-section today" id="day-2026-03-21">
+  <div class="day-header">
+    <div class="day-label">
+      <span class="today-badge">● HOY</span>
+      <span class="day-date">Hoy — sábado, 21 de marzo de 2026</span>
+    </div>
+    <span class="day-count">5 artículos</span>
+  </div>
+  <div class="articles-grid">
+    
+  <article class="article-card featured" data-category="news" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #00d4ff">
+      <div class="card-meta">
+        <span class="card-icon">📡</span>
+        <span class="card-category" style="color: #00d4ff">Noticias & Marcas</span>
+        <span class="card-brand" style="border-color:#00d4ff50;color:#00d4ff">
+         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
+         Eaton
+       </span>
+        <span class="card-tag" style="border-color: #00d4ff40; color: #00d4ff">Eaton UPS</span>
+      </div>
+      <span class="card-read">3 min lectura</span>
+    </div>
+    <h3 class="card-title">Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%</h3>
+    <p class="card-summary">El nuevo 9PX Ultra reduce pérdidas de conversión a solo 3% y predice fallos de batería con 72 horas de anticipación.</p>
+    <div class="card-body" >
+      <p>Eaton ha presentado la nueva generación del <strong>9PX Ultra</strong>, su UPS trifásico de alta eficiencia para Data Centers, con una notable mejora en eficiencia energética que llega al <strong>97% en modo ECO+</strong> y al 95% en doble conversión estándar.</p><p>La novedad más destacada es el módulo de <strong>IA integrado para gestión de carga</strong>: el sistema analiza los patrones de consumo históricos durante 30 días y ajusta automáticamente la distribución de carga entre fases, reduciendo el desequilibrio de corriente hasta un 15% en instalaciones con cargas heterogéneas como las típicas en Data Centers colombianos.</p><p>Para el mantenimiento predictivo, el 9PX Ultra incorpora sensores electroquímicos en las celdas de batería que, junto con el algoritmo de IA, predicen el fin de vida útil de la batería con <strong>72 horas de anticipación</strong>, eliminando las interrupciones no planificadas.</p><p>En términos prácticos para el mercado colombiano: un Data Center de 50 kW que reemplace UPS de generación anterior puede esperar un ahorro de <strong>aproximadamente $18 millones COP anuales</strong> solo por la mejora de eficiencia, recuperando la inversión en menos de 3 años.</p><p>El 9PX Ultra estará disponible en Colombia a través de distribuidores autorizados Eaton en configuraciones de 10, 20 y 40 kVA, con soporte local garantizado.</p>
+      <p class="card-source">📰 Fuente: <em>Eaton Launches Next-Gen 9PX UPS with AI-Driven Load Management</em></p>
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="solar_news" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #f59e0b">
+      <div class="card-meta">
+        <span class="card-icon">☀️</span>
+        <span class="card-category" style="color: #f59e0b">Solar & Almacenamiento</span>
+        <span class="card-brand" style="border-color:#f59e0b50;color:#f59e0b">
+         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
+         LONGi Solar
+       </span>
+        <span class="card-tag" style="border-color: #f59e0b40; color: #f59e0b">LONGi Panel Solar</span>
+      </div>
+      <span class="card-read">3 min lectura</span>
+    </div>
+    <h3 class="card-title">LONGi alcanza 24.8% de eficiencia en panel residencial de producción masiva</h3>
+    <p class="card-summary">El Hi-MO X10 con tecnología HPBC 2.0 genera hasta 640W por panel, reduciendo el área de instalación un 22%.</p>
+    <div class="card-body" style="display:none">
+      <p><strong>LONGi Solar</strong> anunció la producción masiva de su panel <strong>Hi-MO X10</strong> con tecnología HPBC 2.0 (Hybrid Passivated Back Contact), logrando una eficiencia certificada de <strong>24.8%</strong> en condiciones estándar, la más alta en producción en serie para el segmento residencial y comercial.</p><p>Con una potencia pico de <strong>640W por panel</strong> en formato 182mm (M10), una instalación residencial de 12 paneles en Colombia genera aproximadamente <strong>7.68 kWp</strong>, suficiente para un hogar con consumo de 600-800 kWh/mes dependiendo de la zona. En ciudades como Cali o Barranquilla, con irradiación superior a 5.0 kWh/m²/día, el sistema produciría cerca de <strong>38 kWh diarios</strong> en días claros.</p><p>La eficiencia mejorada también impacta el costo por watio instalado: con menos módulos para la misma capacidad, los costos de estructura, cableado e instalación se reducen entre un <strong>18-22%</strong> respecto a paneles de 20% de eficiencia.</p><p>Para sistemas con almacenamiento (como los que usamos con inversores Victron o Fronius + baterías BYD), la mayor generación en horas pico mejora el ciclo de carga de las baterías, extendiendo su vida útil al reducir la profundidad de descarga nocturna.</p><p>El Hi-MO X10 ya está disponible en distribuidores de Colombia con garantía de rendimiento de 30 años.</p>
+      <p class="card-source">📰 Fuente: <em>LONGi achieves 24.8% efficiency in mass-produced HPBC 2.0 residential panels</em></p>
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="technical" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #7c3aed">
+      <div class="card-meta">
+        <span class="card-icon">⚙️</span>
+        <span class="card-category" style="color: #7c3aed">Artículos Técnicos</span>
+        
+        <span class="card-tag" style="border-color: #7c3aed40; color: #7c3aed">Modbus TCP SunSpec</span>
+      </div>
+      <span class="card-read">4 min lectura</span>
+    </div>
+    <h3 class="card-title">Modbus TCP con Fronius Symo: leer generación solar desde Node.js</h3>
+    <p class="card-summary">Registros SunSpec exactos del Fronius Symo para monitoreo en tiempo real desde cualquier plataforma.</p>
+    <div class="card-body" style="display:none">
+      <p>El inversor <strong>Fronius Symo</strong> implementa el protocolo <strong>SunSpec Modbus TCP</strong> en el puerto 502, compatible con cualquier cliente Modbus. El mapa de registros sigue el estándar SunSpec Alliance, con el bloque de identificación en la dirección <code>40001</code>.</p><p>Registros clave para monitoreo solar (dirección base <code>40070</code> en Fronius Symo):</p><ul><li><code>40083</code> — Potencia CA total (int16, W) — generación instantánea</li><li><code>40085</code> — Frecuencia CA (uint16, 0.01 Hz)</li><li><code>40094</code> — Energía total producida (uint32, Wh acumulado)</li><li><code>40107</code> — Temperatura del inversor (int16, 0.1 °C)</li><li><code>40101</code> — Estado operativo (uint16): 4=MPPT activo, 5=regulando</li></ul><p>Ejemplo con Node.js usando la librería <code>modbus-serial</code>:</p><p><code>const ModbusRTU = require('modbus-serial');<br>const client = new ModbusRTU();<br>await client.connectTCP('192.168.1.100', { port: 502 });<br>client.setID(1);<br>const data = await client.readHoldingRegisters(40083, 2);<br>const watts = data.data[0]; // potencia actual en W<br>console.log('Generación:', watts, 'W');</code></p><p>El factor de escala para potencia está en el registro <code>40084</code> (SF, int16). El valor real es <code>registro × 10^SF</code>. En la mayoría de instalaciones Fronius el SF es -1, por lo que el valor raw 1500 = 150.0 W.</p><p>Esta misma estructura funciona para <strong>SMA Sunny Boy</strong> y <strong>GoodWe</strong> con ajuste de dirección base según su manual SunSpec.</p>
+      
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="tips" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #00ffcc">
+      <div class="card-meta">
+        <span class="card-icon">💡</span>
+        <span class="card-category" style="color: #00ffcc">Tips IoT & Infra</span>
+        
+        <span class="card-tag" style="border-color: #00ffcc40; color: #00ffcc">Victron + Home Assistant</span>
+      </div>
+      <span class="card-read">3 min lectura</span>
+    </div>
+    <h3 class="card-title">Conecta tu Victron MultiPlus II a Home Assistant en 10 minutos</h3>
+    <p class="card-summary">VenusOS + MQTT integra todos los datos del inversor/cargador Victron directamente en tu dashboard HA.</p>
+    <div class="card-body" style="display:none">
+      <p>Si tienes un <strong>Victron MultiPlus II</strong> con <strong>Venus OS</strong> (Cerbo GX, Raspberry Pi con Venus, o similar), la integración con Home Assistant es directa vía MQTT — sin drivers adicionales.</p><ol><li><strong>Activa MQTT en VenusOS:</strong><br>VRM Portal → Settings → Services → MQTT → Enable on LAN → Save</li><li><strong>Apunta Home Assistant al broker:</strong><br>En <code>configuration.yaml</code>:<br><code>mqtt:<br>  broker: 192.168.1.X  # IP de tu Venus OS<br>  port: 1883<br>  username: &quot;&quot;<br>  password: &quot;&quot;</code></li><li><strong>Suscríbete a los topics clave:</strong><br><code>N/&lt;VRM_ID&gt;/system/0/Dc/Battery/Soc</code> — SOC batería (%)<br><code>N/&lt;VRM_ID&gt;/system/0/Ac/ActiveIn/L1/P</code> — Potencia AC entrada (W)<br><code>N/&lt;VRM_ID&gt;/system/0/Dc/Pv/Power</code> — Generación solar (W)<br><code>N/&lt;VRM_ID&gt;/vebus/276/Ac/Out/L1/P</code> — Carga del inversor (W)</li><li><strong>Crea sensor en HA:</strong><br><code>sensor:<br>  - platform: mqtt<br>    name: &quot;Victron SOC&quot;<br>    state_topic: &quot;N/XXXXXX/system/0/Dc/Battery/Soc&quot;<br>    value_template: &quot;{{ value_json.value }}&quot;<br>    unit_of_measurement: &quot;%&quot;</code></li></ol><p>El <strong>VRM_ID</strong> lo encuentras en VenusOS → Settings → VRM Online Portal. En menos de 5 minutos tendrás SOC, potencia solar y carga en tiempo real en tu dashboard.</p>
+      
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="usecase" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #f97316">
+      <div class="card-meta">
+        <span class="card-icon">🧠</span>
+        <span class="card-category" style="color: #f97316">Casos de Uso IA</span>
+        
+        <span class="card-tag" style="border-color: #f9731640; color: #f97316">UPS Predictivo Valle</span>
+      </div>
+      <span class="card-read">4 min lectura</span>
+    </div>
+    <h3 class="card-title">AgroLogística Palmira: IA predice cortes de red y activa UPS antes del fallo</h3>
+    <p class="card-summary">Sistema de IA reduce interrupciones no planificadas en 91% y ahorra $240M COP anuales en Palmira, Valle.</p>
+    <div class="card-body" style="display:none">
+      <p><strong>AgroLogística del Valle S.A.S.</strong>, empresa de procesamiento de frutas en Palmira con consumo eléctrico crítico de 180 kW, enfrentaba un promedio de <strong>3 cortes de energía mensuales</strong> no planificados que interrumpían líneas de refrigeración, generando pérdidas de hasta $8M COP por evento.</p><p>La solución implementada integró un <strong>UPS Eaton 9PX 40kVA trifásico</strong> con monitoreo SNMP, sensores de calidad eléctrica en el medidor CREG, y un modelo de ML liviano corriendo en un <strong>ESP32-S3</strong> con TensorFlow Lite.</p><p>El modelo analiza 12 variables en tiempo real: tensión por fase, THD de corriente, frecuencia, temperatura ambiente, y el historial de los últimos 90 días de la subestación local. Cuando la probabilidad de corte supera el 78%, el sistema:</p><ul><li>Transfiere carga crítica al UPS de forma preventiva (antes del corte)</li><li>Activa el generador diésel de respaldo con 45 segundos de margen</li><li>Envía alerta a operadores vía Telegram con tiempo estimado de duración</li></ul><p>Resultados a 8 meses de operación:</p><p><strong>Interrupciones no planificadas:</strong> de 36/año a 3/año (−91%)<br><strong>Pérdidas por producto dañado:</strong> de $96M COP/año a $8M COP/año<br><strong>Consumo UPS en standby:</strong> reducido 18% con gestión adaptativa de carga<br><strong>ROI del sistema completo:</strong> 5.2 meses</p><p>El costo total de implementación fue de <strong>$124M COP</strong>, con ahorro neto anual de <strong>$240M COP</strong>.</p>
+      
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+  </div>
+</section>
+
+    
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="blog-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Categorías</div>
+      
+      <div class="sidebar-cat" onclick="filterBy('news')" style="--fc: #00d4ff">
+        <span>📡</span>
+        <span>Noticias & Marcas</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('solar_news')" style="--fc: #f59e0b">
+        <span>☀️</span>
+        <span>Solar & Almacenamiento</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('technical')" style="--fc: #7c3aed">
+        <span>⚙️</span>
+        <span>Técnicos</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('tips')" style="--fc: #00ffcc">
+        <span>💡</span>
+        <span>Tips IoT & Infra</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('usecase')" style="--fc: #f97316">
+        <span>🧠</span>
+        <span>Casos de Uso IA</span>
+        <span class="sidebar-count">1</span>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Sobre este feed</div>
+      <p class="sidebar-desc">
+        Contenido generado automáticamente por <strong>Claude AI</strong> cada día a las 6am hora Colombia.<br><br>
+        Temas: IA en infraestructura, IoT, Data Centers, energía solar y redes descentralizadas.
+      </p>
+    </div>
+
+    <div class="sidebar-card cta-card">
+      <div class="sidebar-title">¿Implementamos IA en tu empresa?</div>
+      <p class="sidebar-desc">Llevamos estas tecnologías a tu infraestructura real.</p>
+      <a href="../index.html#contacto" class="cta-btn">Solicitar propuesta →</a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Artículos recientes</div>
+      
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">📡</span>
+        <span class="recent-title">Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">☀️</span>
+        <span class="recent-title">LONGi alcanza 24.8% de eficiencia en panel residencial de producción masiva</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">⚙️</span>
+        <span class="recent-title">Modbus TCP con Fronius Symo: leer generación solar desde Node.js</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">💡</span>
+        <span class="recent-title">Conecta tu Victron MultiPlus II a Home Assistant en 10 minutos</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">🧠</span>
+        <span class="recent-title">AgroLogística Palmira: IA predice cortes de red y activa UPS antes del fallo</span>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- FOOTER -->
+<footer class="blog-footer">
+  <div class="footer-inner">
+    <span>© 2026 InfraestructuraIT · Colombia</span>
+    <span class="footer-powered">Contenido generado con <strong>Claude AI</strong> · Actualización diaria automática</span>
+    <a href="../index.html">← Volver al sitio principal</a>
+  </div>
+</footer>
+
+<script src="js/ai-blog.js"></script>
+</body>
+</html>
