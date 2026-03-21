@@ -1,0 +1,58 @@
+name: Daily AI Content Generation
+
+on:
+  schedule:
+    # Runs every day at 6:00 AM Colombia time (UTC-5 = 11:00 UTC)
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+    # Allow manual trigger from GitHub UI
+    inputs:
+      force_regenerate:
+        description: 'Force regenerate all content'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: scripts/package.json
+
+      - name: Install dependencies
+        run: |
+          cd scripts
+          npm install
+
+      - name: Generate daily content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FORCE_REGENERATE: ${{ github.event.inputs.force_regenerate }}
+        run: |
+          cd scripts
+          node generate-content.js
+
+      - name: Build site
+        run: |
+          cd scripts
+          node build-site.js
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "InfraestructuraIT Bot"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: daily content update $(date +'%Y-%m-%d')"
+          git push

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="InfraestructuraIT — Avances diarios en Inteligencia Artificial, IoT e infraestructura tecnológica. Contenido generado con IA, actualizado cada día.">
+<meta property="og:title" content="InfraestructuraIT — IA & Avances Diarios">
+<meta property="og:description" content="Noticias, artículos técnicos, tips IoT y casos de uso de IA en Data Centers. Actualizado automáticamente cada día.">
+<title>IA & Avances — InfraestructuraIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>/* ── AI Blog Styles — InfraestructuraIT ───────────────────────────────────── */
+
+:root {
+  --bg:       #050c14;
+  --surface:  #0a1628;
+  --surface2: #0f1f38;
+  --cyan:     #00d4ff;
+  --purple:   #7c3aed;
+  --accent:   #00ffcc;
+  --orange:   #f97316;
+  --text:     #e8f4f8;
+  --muted:    #6b8fa8;
+  --border:   rgba(0,212,255,0.12);
+  --radius:   6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+.site-nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .85rem 3rem;
+  background: rgba(5,12,20,.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+  display: flex; align-items: center; gap: .75rem;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: .85rem; color: var(--text); letter-spacing: .08em;
+}
+.nav-brand strong { color: var(--cyan); }
+
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-size: .75rem; font-family: 'Space Mono', monospace;
+  letter-spacing: .1em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+
+/* ── HERO ── */
+.blog-hero {
+  position: relative;
+  padding: 5rem 3rem 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.hero-grid::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(124,58,237,.08) 0%, transparent 70%);
+}
+
+.hero-inner { position: relative; z-index: 1; max-width: 860px; }
+
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem; letter-spacing: .3em;
+  color: var(--cyan); text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: .75rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 28px; height: 1px; background: var(--cyan);
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: .95; letter-spacing: -.02em;
+  margin-bottom: 1.25rem;
+}
+.hero-title .accent {
+  color: var(--cyan);
+  -webkit-text-stroke: 0;
+}
+
+.hero-desc {
+  font-size: 1.05rem; color: var(--muted);
+  max-width: 580px; line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.hero-stats {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.stat { display: flex; flex-direction: column; gap: .2rem; }
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--cyan); line-height: 1;
+}
+.stat-label {
+  font-size: .65rem; letter-spacing: .2em;
+  color: var(--muted); text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+}
+
+.last-update {
+  font-size: .72rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+}
+.last-update span { color: var(--text); }
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  position: sticky; top: 57px; z-index: 90;
+  background: rgba(5,12,20,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: .85rem 3rem;
+}
+
+.filter-inner {
+  display: flex; align-items: center;
+  gap: .6rem; flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex; align-items: center; gap: .4rem;
+  padding: .45rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .72rem; font-family: 'Space Mono', monospace;
+  letter-spacing: .08em; text-transform: uppercase;
+  cursor: pointer; transition: all .2s;
+  border-radius: var(--radius);
+}
+.filter-btn:hover { border-color: var(--fc, var(--cyan)); color: var(--fc, var(--cyan)); }
+.filter-btn.active {
+  background: color-mix(in srgb, var(--fc, var(--cyan)) 15%, transparent);
+  border-color: var(--fc, var(--cyan));
+  color: var(--fc, var(--cyan));
+}
+.filter-count {
+  background: var(--surface2);
+  padding: .1rem .4rem;
+  border-radius: 10px;
+  font-size: .6rem;
+  color: var(--muted);
+}
+
+.search-wrap {
+  position: relative; margin-left: auto;
+}
+.search-wrap input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: .45rem 2.5rem .45rem .9rem;
+  font-size: .8rem; font-family: 'Inter', sans-serif;
+  border-radius: var(--radius);
+  outline: none; width: 220px;
+  transition: border-color .2s;
+}
+.search-wrap input:focus { border-color: var(--cyan); }
+.search-wrap input::placeholder { color: var(--muted); }
+.search-wrap svg {
+  position: absolute; right: .75rem; top: 50%;
+  transform: translateY(-50%);
+  width: 14px; height: 14px; color: var(--muted);
+  pointer-events: none;
+}
+
+/* ── MAIN LAYOUT ── */
+.blog-main {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+}
+
+.content-wrap { min-width: 0; }
+
+/* ── DAY SECTION ── */
+.day-section { margin-bottom: 3.5rem; }
+
+.day-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.day-label {
+  display: flex; align-items: center; gap: .75rem;
+  font-family: 'Space Mono', monospace;
+}
+.today-badge {
+  font-size: .65rem; font-weight: 700;
+  color: var(--cyan); letter-spacing: .2em;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+@keyframes pulse-badge {
+  0%,100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+.day-date {
+  font-size: .8rem; color: var(--text);
+  text-transform: capitalize;
+}
+.day-count {
+  font-size: .65rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: .1em;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── ARTICLE CARD ── */
+.article-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.article-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent, var(--cyan)), transparent);
+  opacity: 0; transition: opacity .2s;
+}
+.article-card:hover { border-color: rgba(0,212,255,.3); transform: translateY(-2px); }
+.article-card:hover::before { opacity: 1; }
+
+.article-card.featured {
+  grid-column: 1 / -1;
+  border-color: rgba(0,212,255,.25);
+}
+.article-card.featured::before { opacity: 1; }
+
+.card-header {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap; gap: .5rem;
+}
+.card-meta { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.card-icon { font-size: 1rem; }
+.card-category {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.card-tag {
+  font-size: .6rem; padding: .15rem .6rem;
+  border: 1px solid; border-radius: 20px;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: .08em;
+}
+.card-read {
+  font-size: .65rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+}
+
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 1.05rem;
+  line-height: 1.3; margin-bottom: .6rem;
+  color: var(--text);
+}
+.article-card.featured .card-title { font-size: 1.3rem; }
+
+.card-summary {
+  font-size: .85rem; color: var(--muted);
+  line-height: 1.65; margin-bottom: 1rem;
+}
+
+.card-body {
+  font-size: .88rem; line-height: 1.75;
+  color: #bdd4e4; margin-bottom: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+.card-body p { margin-bottom: .85rem; }
+.card-body p:last-child { margin-bottom: 0; }
+.card-body strong { color: var(--text); font-weight: 600; }
+.card-body code {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: .15rem .4rem;
+  border-radius: 3px;
+  font-family: 'Space Mono', monospace;
+  font-size: .8em;
+  color: var(--cyan);
+}
+.card-body ul, .card-body ol {
+  padding-left: 1.4rem;
+  margin: .6rem 0;
+}
+.card-body li { margin-bottom: .35rem; }
+
+.card-toggle {
+  display: flex; align-items: center; gap: .4rem;
+  background: transparent; border: 1px solid var(--border);
+  color: var(--muted); cursor: pointer;
+  font-size: .72rem; font-family: 'Space Mono', monospace;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .45rem 1rem; border-radius: var(--radius);
+  transition: all .2s;
+}
+.card-toggle:hover { border-color: var(--cyan); color: var(--cyan); }
+.card-toggle.open { color: var(--cyan); border-color: var(--cyan); }
+.toggle-icon {
+  width: 14px; height: 14px;
+  transition: transform .25s;
+}
+.card-toggle.open .toggle-icon { transform: rotate(180deg); }
+
+/* ── EMPTY STATE ── */
+.empty-state {
+  text-align: center; padding: 5rem 2rem;
+  color: var(--muted);
+}
+.empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: .5rem; color: var(--text); }
+
+/* ── SIDEBAR ── */
+.blog-sidebar {
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+
+.sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.sidebar-title {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem; letter-spacing: .2em;
+  color: var(--cyan); text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.sidebar-cat {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .6rem .75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .15s;
+  border-left: 2px solid transparent;
+}
+.sidebar-cat:hover {
+  background: var(--surface2);
+  border-left-color: var(--fc, var(--cyan));
+}
+.sidebar-count {
+  margin-left: auto;
+  font-size: .7rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+}
+
+.sidebar-desc {
+  font-size: .82rem; color: var(--muted);
+  line-height: 1.7;
+}
+.sidebar-desc strong { color: var(--text); }
+
+.cta-card { border-color: rgba(0,212,255,.25); }
+.cta-btn {
+  display: inline-block; margin-top: 1rem;
+  background: var(--cyan); color: var(--bg);
+  padding: .6rem 1.25rem;
+  font-family: 'Space Mono', monospace;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; transition: opacity .2s;
+  border-radius: var(--radius);
+}
+.cta-btn:hover { opacity: .85; }
+
+.recent-item {
+  display: flex; align-items: flex-start; gap: .6rem;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer; transition: color .15s;
+}
+.recent-item:last-child { border-bottom: none; }
+.recent-item:hover .recent-title { color: var(--cyan); }
+.recent-icon { flex-shrink: 0; font-size: .9rem; margin-top: .1rem; }
+.recent-title { font-size: .8rem; line-height: 1.4; color: var(--muted); }
+
+/* ── FOOTER ── */
+.blog-footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 3rem;
+}
+.footer-inner {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; gap: .75rem;
+  font-size: .72rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+}
+.footer-powered strong { color: var(--cyan); }
+.footer-inner a { color: var(--muted); text-decoration: none; }
+.footer-inner a:hover { color: var(--cyan); }
+
+/* ── HIDDEN / FILTERED ── */
+.article-card.hidden { display: none; }
+.day-section.hidden { display: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .blog-main { grid-template-columns: 1fr; }
+  .blog-sidebar { display: grid; grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .site-nav { padding: .75rem 1.25rem; }
+  .blog-hero { padding: 3.5rem 1.25rem 2.5rem; }
+  .filter-bar { padding: .75rem 1.25rem; }
+  .blog-main { padding: 1.5rem 1.25rem; }
+  .articles-grid { grid-template-columns: 1fr; }
+  .blog-sidebar { grid-template-columns: 1fr; }
+  .blog-footer { padding: 1.25rem; }
+  .search-wrap input { width: 100%; }
+  .filter-inner { gap: .4rem; }
+}
+
+/* ── Brand badge ── */
+.card-brand {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: .6rem; padding: .15rem .55rem;
+  border: 1px solid; border-radius: 20px;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: .06em; font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ── Source note ── */
+.card-source {
+  font-size: .75rem !important;
+  color: var(--muted) !important;
+  border-top: 1px solid var(--border);
+  padding-top: .6rem !important;
+  margin-top: .6rem !important;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="#" class="nav-brand">
+    <svg width="32" height="32" viewBox="0 0 60 60" fill="none">
+      <rect x="14" y="14" width="32" height="32" rx="4" stroke="#00d4ff" stroke-width="2" fill="none"/>
+      <circle cx="30" cy="30" r="7" fill="#00d4ff" opacity="0.9"/>
+      <circle cx="30" cy="30" r="3" fill="#7c3aed"/>
+      <line x1="24" y1="14" x2="24" y2="6" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="30" y1="14" x2="30" y2="6" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="36" y1="14" x2="36" y2="6" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="24" y1="46" x2="24" y2="54" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="30" y1="46" x2="30" y2="54" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="36" y1="46" x2="36" y2="54" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="14" y1="24" x2="6" y2="24" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="14" y1="30" x2="6" y2="30" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="14" y1="36" x2="6" y2="36" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="46" y1="24" x2="54" y2="24" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="46" y1="30" x2="54" y2="30" stroke="#00d4ff" stroke-width="2"/>
+      <line x1="46" y1="36" x2="54" y2="36" stroke="#00d4ff" stroke-width="2"/>
+    </svg>
+    <span>INFRAESTRUCTURA <strong>IT</strong></span>
+  </a>
+  <div class="nav-links">
+    <a href="#">← Web principal</a>
+    <a href="#" class="active">IA & Avances</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="blog-hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Actualizado automáticamente · Generado con Claude AI</div>
+    <h1 class="hero-title">IA & <span class="accent">Avances</span></h1>
+    <p class="hero-desc">Noticias, artículos técnicos, tips y casos de uso en Inteligencia Artificial, IoT e infraestructura — publicados cada día de forma automática.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Artículos</span></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label">Días</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Categorías</span></div>
+      <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Ciclo</span></div>
+    </div>
+    <div class="last-update">Última actualización: <span>21/3/2026, 6:00:00 a. m.</span></div>
+  </div>
+  <!-- animated grid bg -->
+  <div class="hero-grid" aria-hidden="true"></div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filterBar">
+  <div class="filter-inner">
+    
+    <button class="filter-btn active"
+      onclick="filterBy('all', this)"
+      style="--fc: #00d4ff">
+      <span>◎</span>
+      <span>Todos</span>
+      
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('news', this)"
+      style="--fc: #00d4ff">
+      <span>📡</span>
+      <span>Noticias & Marcas</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('solar_news', this)"
+      style="--fc: #f59e0b">
+      <span>☀️</span>
+      <span>Solar & Almacenamiento</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('technical', this)"
+      style="--fc: #7c3aed">
+      <span>⚙️</span>
+      <span>Técnicos</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('tips', this)"
+      style="--fc: #00ffcc">
+      <span>💡</span>
+      <span>Tips IoT & Infra</span>
+      <span class="filter-count">1</span>
+    </button>
+    <button class="filter-btn "
+      onclick="filterBy('usecase', this)"
+      style="--fc: #f97316">
+      <span>🧠</span>
+      <span>Casos de Uso IA</span>
+      <span class="filter-count">1</span>
+    </button>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <input type="search" id="searchInput" placeholder="Buscar artículos..." oninput="searchArticles(this.value)" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<main class="blog-main" id="blogMain">
+  <div class="content-wrap">
+    
+<section class="day-section today" id="day-2026-03-21">
+  <div class="day-header">
+    <div class="day-label">
+      <span class="today-badge">● HOY</span>
+      <span class="day-date">Hoy — sábado, 21 de marzo de 2026</span>
+    </div>
+    <span class="day-count">5 artículos</span>
+  </div>
+  <div class="articles-grid">
+    
+  <article class="article-card featured" data-category="news" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #00d4ff">
+      <div class="card-meta">
+        <span class="card-icon">📡</span>
+        <span class="card-category" style="color: #00d4ff">Noticias & Marcas</span>
+        <span class="card-brand" style="border-color:#00d4ff50;color:#00d4ff">
+         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
+         Eaton
+       </span>
+        <span class="card-tag" style="border-color: #00d4ff40; color: #00d4ff">Eaton UPS</span>
+      </div>
+      <span class="card-read">3 min lectura</span>
+    </div>
+    <h3 class="card-title">Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%</h3>
+    <p class="card-summary">El nuevo 9PX Ultra reduce pérdidas de conversión a solo 3% y predice fallos de batería con 72 horas de anticipación.</p>
+    <div class="card-body" >
+      <p>Eaton ha presentado la nueva generación del <strong>9PX Ultra</strong>, su UPS trifásico de alta eficiencia para Data Centers, con una notable mejora en eficiencia energética que llega al <strong>97% en modo ECO+</strong> y al 95% en doble conversión estándar.</p><p>La novedad más destacada es el módulo de <strong>IA integrado para gestión de carga</strong>: el sistema analiza los patrones de consumo históricos durante 30 días y ajusta automáticamente la distribución de carga entre fases, reduciendo el desequilibrio de corriente hasta un 15% en instalaciones con cargas heterogéneas como las típicas en Data Centers colombianos.</p><p>Para el mantenimiento predictivo, el 9PX Ultra incorpora sensores electroquímicos en las celdas de batería que, junto con el algoritmo de IA, predicen el fin de vida útil de la batería con <strong>72 horas de anticipación</strong>, eliminando las interrupciones no planificadas.</p><p>En términos prácticos para el mercado colombiano: un Data Center de 50 kW que reemplace UPS de generación anterior puede esperar un ahorro de <strong>aproximadamente $18 millones COP anuales</strong> solo por la mejora de eficiencia, recuperando la inversión en menos de 3 años.</p><p>El 9PX Ultra estará disponible en Colombia a través de distribuidores autorizados Eaton en configuraciones de 10, 20 y 40 kVA, con soporte local garantizado.</p>
+      <p class="card-source">📰 Fuente: <em>Eaton Launches Next-Gen 9PX UPS with AI-Driven Load Management</em></p>
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="solar_news" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #f59e0b">
+      <div class="card-meta">
+        <span class="card-icon">☀️</span>
+        <span class="card-category" style="color: #f59e0b">Solar & Almacenamiento</span>
+        <span class="card-brand" style="border-color:#f59e0b50;color:#f59e0b">
+         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
+         LONGi Solar
+       </span>
+        <span class="card-tag" style="border-color: #f59e0b40; color: #f59e0b">LONGi Panel Solar</span>
+      </div>
+      <span class="card-read">3 min lectura</span>
+    </div>
+    <h3 class="card-title">LONGi alcanza 24.8% de eficiencia en panel residencial de producción masiva</h3>
+    <p class="card-summary">El Hi-MO X10 con tecnología HPBC 2.0 genera hasta 640W por panel, reduciendo el área de instalación un 22%.</p>
+    <div class="card-body" style="display:none">
+      <p><strong>LONGi Solar</strong> anunció la producción masiva de su panel <strong>Hi-MO X10</strong> con tecnología HPBC 2.0 (Hybrid Passivated Back Contact), logrando una eficiencia certificada de <strong>24.8%</strong> en condiciones estándar, la más alta en producción en serie para el segmento residencial y comercial.</p><p>Con una potencia pico de <strong>640W por panel</strong> en formato 182mm (M10), una instalación residencial de 12 paneles en Colombia genera aproximadamente <strong>7.68 kWp</strong>, suficiente para un hogar con consumo de 600-800 kWh/mes dependiendo de la zona. En ciudades como Cali o Barranquilla, con irradiación superior a 5.0 kWh/m²/día, el sistema produciría cerca de <strong>38 kWh diarios</strong> en días claros.</p><p>La eficiencia mejorada también impacta el costo por watio instalado: con menos módulos para la misma capacidad, los costos de estructura, cableado e instalación se reducen entre un <strong>18-22%</strong> respecto a paneles de 20% de eficiencia.</p><p>Para sistemas con almacenamiento (como los que usamos con inversores Victron o Fronius + baterías BYD), la mayor generación en horas pico mejora el ciclo de carga de las baterías, extendiendo su vida útil al reducir la profundidad de descarga nocturna.</p><p>El Hi-MO X10 ya está disponible en distribuidores de Colombia con garantía de rendimiento de 30 años.</p>
+      <p class="card-source">📰 Fuente: <em>LONGi achieves 24.8% efficiency in mass-produced HPBC 2.0 residential panels</em></p>
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="technical" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #7c3aed">
+      <div class="card-meta">
+        <span class="card-icon">⚙️</span>
+        <span class="card-category" style="color: #7c3aed">Artículos Técnicos</span>
+        
+        <span class="card-tag" style="border-color: #7c3aed40; color: #7c3aed">Modbus TCP SunSpec</span>
+      </div>
+      <span class="card-read">4 min lectura</span>
+    </div>
+    <h3 class="card-title">Modbus TCP con Fronius Symo: leer generación solar desde Node.js</h3>
+    <p class="card-summary">Registros SunSpec exactos del Fronius Symo para monitoreo en tiempo real desde cualquier plataforma.</p>
+    <div class="card-body" style="display:none">
+      <p>El inversor <strong>Fronius Symo</strong> implementa el protocolo <strong>SunSpec Modbus TCP</strong> en el puerto 502, compatible con cualquier cliente Modbus. El mapa de registros sigue el estándar SunSpec Alliance, con el bloque de identificación en la dirección <code>40001</code>.</p><p>Registros clave para monitoreo solar (dirección base <code>40070</code> en Fronius Symo):</p><ul><li><code>40083</code> — Potencia CA total (int16, W) — generación instantánea</li><li><code>40085</code> — Frecuencia CA (uint16, 0.01 Hz)</li><li><code>40094</code> — Energía total producida (uint32, Wh acumulado)</li><li><code>40107</code> — Temperatura del inversor (int16, 0.1 °C)</li><li><code>40101</code> — Estado operativo (uint16): 4=MPPT activo, 5=regulando</li></ul><p>Ejemplo con Node.js usando la librería <code>modbus-serial</code>:</p><p><code>const ModbusRTU = require('modbus-serial');<br>const client = new ModbusRTU();<br>await client.connectTCP('192.168.1.100', { port: 502 });<br>client.setID(1);<br>const data = await client.readHoldingRegisters(40083, 2);<br>const watts = data.data[0]; // potencia actual en W<br>console.log('Generación:', watts, 'W');</code></p><p>El factor de escala para potencia está en el registro <code>40084</code> (SF, int16). El valor real es <code>registro × 10^SF</code>. En la mayoría de instalaciones Fronius el SF es -1, por lo que el valor raw 1500 = 150.0 W.</p><p>Esta misma estructura funciona para <strong>SMA Sunny Boy</strong> y <strong>GoodWe</strong> con ajuste de dirección base según su manual SunSpec.</p>
+      
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="tips" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #00ffcc">
+      <div class="card-meta">
+        <span class="card-icon">💡</span>
+        <span class="card-category" style="color: #00ffcc">Tips IoT & Infra</span>
+        
+        <span class="card-tag" style="border-color: #00ffcc40; color: #00ffcc">Victron + Home Assistant</span>
+      </div>
+      <span class="card-read">3 min lectura</span>
+    </div>
+    <h3 class="card-title">Conecta tu Victron MultiPlus II a Home Assistant en 10 minutos</h3>
+    <p class="card-summary">VenusOS + MQTT integra todos los datos del inversor/cargador Victron directamente en tu dashboard HA.</p>
+    <div class="card-body" style="display:none">
+      <p>Si tienes un <strong>Victron MultiPlus II</strong> con <strong>Venus OS</strong> (Cerbo GX, Raspberry Pi con Venus, o similar), la integración con Home Assistant es directa vía MQTT — sin drivers adicionales.</p><ol><li><strong>Activa MQTT en VenusOS:</strong><br>VRM Portal → Settings → Services → MQTT → Enable on LAN → Save</li><li><strong>Apunta Home Assistant al broker:</strong><br>En <code>configuration.yaml</code>:<br><code>mqtt:<br>  broker: 192.168.1.X  # IP de tu Venus OS<br>  port: 1883<br>  username: &quot;&quot;<br>  password: &quot;&quot;</code></li><li><strong>Suscríbete a los topics clave:</strong><br><code>N/&lt;VRM_ID&gt;/system/0/Dc/Battery/Soc</code> — SOC batería (%)<br><code>N/&lt;VRM_ID&gt;/system/0/Ac/ActiveIn/L1/P</code> — Potencia AC entrada (W)<br><code>N/&lt;VRM_ID&gt;/system/0/Dc/Pv/Power</code> — Generación solar (W)<br><code>N/&lt;VRM_ID&gt;/vebus/276/Ac/Out/L1/P</code> — Carga del inversor (W)</li><li><strong>Crea sensor en HA:</strong><br><code>sensor:<br>  - platform: mqtt<br>    name: &quot;Victron SOC&quot;<br>    state_topic: &quot;N/XXXXXX/system/0/Dc/Battery/Soc&quot;<br>    value_template: &quot;{{ value_json.value }}&quot;<br>    unit_of_measurement: &quot;%&quot;</code></li></ol><p>El <strong>VRM_ID</strong> lo encuentras en VenusOS → Settings → VRM Online Portal. En menos de 5 minutos tendrás SOC, potencia solar y carga en tiempo real en tu dashboard.</p>
+      
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+
+  <article class="article-card " data-category="usecase" data-date="2026-03-21">
+    <div class="card-header" style="--accent: #f97316">
+      <div class="card-meta">
+        <span class="card-icon">🧠</span>
+        <span class="card-category" style="color: #f97316">Casos de Uso IA</span>
+        
+        <span class="card-tag" style="border-color: #f9731640; color: #f97316">UPS Predictivo Valle</span>
+      </div>
+      <span class="card-read">4 min lectura</span>
+    </div>
+    <h3 class="card-title">AgroLogística Palmira: IA predice cortes de red y activa UPS antes del fallo</h3>
+    <p class="card-summary">Sistema de IA reduce interrupciones no planificadas en 91% y ahorra $240M COP anuales en Palmira, Valle.</p>
+    <div class="card-body" style="display:none">
+      <p><strong>AgroLogística del Valle S.A.S.</strong>, empresa de procesamiento de frutas en Palmira con consumo eléctrico crítico de 180 kW, enfrentaba un promedio de <strong>3 cortes de energía mensuales</strong> no planificados que interrumpían líneas de refrigeración, generando pérdidas de hasta $8M COP por evento.</p><p>La solución implementada integró un <strong>UPS Eaton 9PX 40kVA trifásico</strong> con monitoreo SNMP, sensores de calidad eléctrica en el medidor CREG, y un modelo de ML liviano corriendo en un <strong>ESP32-S3</strong> con TensorFlow Lite.</p><p>El modelo analiza 12 variables en tiempo real: tensión por fase, THD de corriente, frecuencia, temperatura ambiente, y el historial de los últimos 90 días de la subestación local. Cuando la probabilidad de corte supera el 78%, el sistema:</p><ul><li>Transfiere carga crítica al UPS de forma preventiva (antes del corte)</li><li>Activa el generador diésel de respaldo con 45 segundos de margen</li><li>Envía alerta a operadores vía Telegram con tiempo estimado de duración</li></ul><p>Resultados a 8 meses de operación:</p><p><strong>Interrupciones no planificadas:</strong> de 36/año a 3/año (−91%)<br><strong>Pérdidas por producto dañado:</strong> de $96M COP/año a $8M COP/año<br><strong>Consumo UPS en standby:</strong> reducido 18% con gestión adaptativa de carga<br><strong>ROI del sistema completo:</strong> 5.2 meses</p><p>El costo total de implementación fue de <strong>$124M COP</strong>, con ahorro neto anual de <strong>$240M COP</strong>.</p>
+      
+    </div>
+    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
+      <span class="toggle-text">Leer artículo</span>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </article>
+  </div>
+</section>
+
+    
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="blog-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Categorías</div>
+      
+      <div class="sidebar-cat" onclick="filterBy('news')" style="--fc: #00d4ff">
+        <span>📡</span>
+        <span>Noticias & Marcas</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('solar_news')" style="--fc: #f59e0b">
+        <span>☀️</span>
+        <span>Solar & Almacenamiento</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('technical')" style="--fc: #7c3aed">
+        <span>⚙️</span>
+        <span>Técnicos</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('tips')" style="--fc: #00ffcc">
+        <span>💡</span>
+        <span>Tips IoT & Infra</span>
+        <span class="sidebar-count">1</span>
+      </div>
+      <div class="sidebar-cat" onclick="filterBy('usecase')" style="--fc: #f97316">
+        <span>🧠</span>
+        <span>Casos de Uso IA</span>
+        <span class="sidebar-count">1</span>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Sobre este feed</div>
+      <p class="sidebar-desc">
+        Contenido generado automáticamente por <strong>Claude AI</strong> cada día a las 6am hora Colombia.<br><br>
+        Temas: IA en infraestructura, IoT, Data Centers, energía solar y redes descentralizadas.
+      </p>
+    </div>
+
+    <div class="sidebar-card cta-card">
+      <div class="sidebar-title">¿Implementamos IA en tu empresa?</div>
+      <p class="sidebar-desc">Llevamos estas tecnologías a tu infraestructura real.</p>
+      <a href="../index.html#contacto" class="cta-btn">Solicitar propuesta →</a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Artículos recientes</div>
+      
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">📡</span>
+        <span class="recent-title">Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">☀️</span>
+        <span class="recent-title">LONGi alcanza 24.8% de eficiencia en panel residencial de producción masiva</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">⚙️</span>
+        <span class="recent-title">Modbus TCP con Fronius Symo: leer generación solar desde Node.js</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">💡</span>
+        <span class="recent-title">Conecta tu Victron MultiPlus II a Home Assistant en 10 minutos</span>
+      </div>
+      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
+        <span class="recent-icon">🧠</span>
+        <span class="recent-title">AgroLogística Palmira: IA predice cortes de red y activa UPS antes del fallo</span>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- FOOTER -->
+<footer class="blog-footer">
+  <div class="footer-inner">
+    <span>© 2026 InfraestructuraIT · Colombia</span>
+    <span class="footer-powered">Contenido generado con <strong>Claude AI</strong> · Actualización diaria automática</span>
+    <a href="#">← Volver al sitio principal</a>
+  </div>
+</footer>
+
+<script>/* ai-blog.js — InfraestructuraIT AI Section */
+
+// ── Article toggle ────────────────────────────────────────────────────────────
+function toggleArticle(btn) {
+  const card  = btn.closest('.article-card');
+  const body  = card.querySelector('.card-body');
+  const label = btn.querySelector('.toggle-text');
+  const isOpen = btn.dataset.open === 'true';
+
+  if (isOpen) {
+    body.style.display = 'none';
+    label.textContent  = 'Leer artículo';
+    btn.dataset.open   = 'false';
+    btn.classList.remove('open');
+  } else {
+    body.style.display = 'block';
+    label.textContent  = 'Cerrar';
+    btn.dataset.open   = 'true';
+    btn.classList.add('open');
+    // Smooth scroll to card if below viewport
+    const rect = card.getBoundingClientRect();
+    if (rect.top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// ── Filter by category ────────────────────────────────────────────────────────
+let activeFilter = 'all';
+let activeSearch = '';
+
+function filterBy(categoryId, btnEl) {
+  activeFilter = categoryId;
+
+  // Update button states
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.sidebar-cat').forEach(b => b.classList.remove('active'));
+
+  if (btnEl) btnEl.classList.add('active');
+
+  applyFilters();
+}
+
+function searchArticles(query) {
+  activeSearch = query.toLowerCase().trim();
+  applyFilters();
+}
+
+function applyFilters() {
+  const cards = document.querySelectorAll('.article-card');
+
+  cards.forEach(card => {
+    const matchCat  = activeFilter === 'all' || card.dataset.category === activeFilter;
+    const titleText = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+    const summText  = card.querySelector('.card-summary')?.textContent.toLowerCase() || '';
+    const bodyText  = card.querySelector('.card-body')?.textContent.toLowerCase() || '';
+    const matchSearch = !activeSearch ||
+      titleText.includes(activeSearch) ||
+      summText.includes(activeSearch)  ||
+      bodyText.includes(activeSearch);
+
+    card.classList.toggle('hidden', !(matchCat && matchSearch));
+  });
+
+  // Hide empty day sections
+  document.querySelectorAll('.day-section').forEach(section => {
+    const visibleCards = section.querySelectorAll('.article-card:not(.hidden)');
+    section.classList.toggle('hidden', visibleCards.length === 0);
+  });
+
+  // Show no-results message
+  const main   = document.getElementById('blogMain');
+  let noResult = document.getElementById('noResults');
+  const anyVisible = document.querySelectorAll('.article-card:not(.hidden)').length > 0;
+
+  if (!anyVisible) {
+    if (!noResult) {
+      noResult = document.createElement('div');
+      noResult.id = 'noResults';
+      noResult.className = 'empty-state';
+      noResult.innerHTML = `
+        <div class="empty-icon">🔍</div>
+        <h3>Sin resultados</h3>
+        <p>No se encontraron artículos para esta búsqueda o categoría.</p>
+        <button onclick="resetFilters()" style="margin-top:1rem;padding:.5rem 1.25rem;background:transparent;border:1px solid #00d4ff40;color:#00d4ff;cursor:pointer;font-family:monospace;font-size:.75rem;letter-spacing:.1em;border-radius:4px;">Limpiar filtros</button>
+      `;
+      document.querySelector('.content-wrap').appendChild(noResult);
+    }
+    noResult.style.display = 'block';
+  } else {
+    if (noResult) noResult.style.display = 'none';
+  }
+}
+
+function resetFilters() {
+  activeFilter = 'all';
+  activeSearch = '';
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.filter-btn').forEach((b, i) => {
+    b.classList.toggle('active', i === 0);
+  });
+  applyFilters();
+}
+
+// ── Jump to day section ───────────────────────────────────────────────────────
+function jumpTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── Sticky filter bar shadow on scroll ───────────────────────────────────────
+const filterBar = document.getElementById('filterBar');
+window.addEventListener('scroll', () => {
+  if (filterBar) {
+    filterBar.style.boxShadow = window.scrollY > 120
+      ? '0 4px 24px rgba(0,0,0,.4)'
+      : 'none';
+  }
+}, { passive: true });
+
+// ── Auto-open first featured article on today's section ──────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const featured = document.querySelector('.day-section.today .article-card.featured .card-toggle');
+  if (featured) {
+    const body  = featured.closest('.article-card').querySelector('.card-body');
+    const label = featured.querySelector('.toggle-text');
+    if (body && body.style.display !== 'block') {
+      body.style.display  = 'block';
+      label.textContent   = 'Cerrar';
+      featured.dataset.open = 'true';
+      featured.classList.add('open');
+    }
+  }
+});
+
+// ── Keyboard shortcut: / = focus search ──────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+    e.preventDefault();
+    document.getElementById('searchInput')?.focus();
+  }
+  if (e.key === 'Escape') {
+    document.getElementById('searchInput')?.blur();
+    resetFilters();
+  }
+});
+</script>
+</body>
+</html>

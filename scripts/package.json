@@ -1,0 +1,16 @@
+{
+  "name": "infraestructura-it-content-scripts",
+  "version": "1.0.0",
+  "description": "Daily AI content generation for InfraestructuraIT website",
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-content.js",
+    "build": "node build-site.js",
+    "dev": "node generate-content.js && node build-site.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.36.0",
+    "rss-parser": "^3.13.0",
+    "node-fetch": "^3.3.2"
+  }
+}
