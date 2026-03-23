@@ -16,7 +16,7 @@ permissions:
 jobs:
   generate-content:
     runs-on: ubuntu-latest
-    timeout-minutes: 15        # ← FIX 1: evita que se cuelgue 6 horas
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -28,8 +28,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          # ← FIX 2: eliminado el cache npm (causaba el fallo de 14s)
-          #   si quieres cache, primero haz "npm install" y commitea el package-lock.json
 
       - name: Install dependencies
         run: |
@@ -39,13 +37,13 @@ jobs:
       - name: Generate daily content
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          FORCE_REGENERATE: ${{ github.event.inputs.force_regenerate }}
+          FORCE_REGENERATE: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.force_regenerate }}
         run: |
-          set -e                          # ← FIX 3: aborta si cualquier comando falla
+          set -e
           cd scripts
           echo "→ Iniciando generate-content.js"
           node generate-content.js
-          echo "→ generate-content.js completado"
+          echo "→ Completado"
 
       - name: Build site
         run: |
@@ -53,7 +51,7 @@ jobs:
           cd scripts
           echo "→ Iniciando build-site.js"
           node build-site.js
-          echo "→ build-site.js completado"
+          echo "→ Completado"
 
       - name: Commit and push changes
         run: |
