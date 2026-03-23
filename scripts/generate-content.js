@@ -1,19 +1,5 @@
 /**
  * generate-content.js
- *
- * Flujo:
- *  1. Fetch RSS feeds de 17 marcas (Eaton, SMA, Fronius, Victron, Huawei Solar,
- *     GoodWe, Growatt, LONGi, JA Solar, Canadian Solar, ABB, Schneider,
- *     Vertiv, Felicity Solar, BYD, CATL, APC)
- *  2. Pasa el contexto de noticias reales a Claude API
- *  3. Claude genera 5 artículos diarios en español:
- *     - news        → noticia de marca (UPS / infra eléctrica)
- *     - solar_news  → noticia solar / baterías
- *     - technical   → artículo técnico profundo
- *     - tips        → mini-tutorial IoT / infra
- *     - usecase     → caso de uso IA + energía
- *
- * Salida: content/YYYY-MM-DD.json
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -33,7 +19,8 @@ const rssParser = new Parser({
   customFields: { item: ['description', 'content:encoded', 'summary', 'media:description'] }
 });
 
-const today      = new Date().toISOString().split('T')[0];
+// ← ÚNICO CAMBIO: fecha en zona horaria Colombia, no UTC
+const today      = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Bogota' });
 const outputFile = path.join(CONTENT_DIR, `${today}.json`);
 
 if (fs.existsSync(outputFile) && process.env.FORCE_REGENERATE !== 'true') {
@@ -41,34 +28,27 @@ if (fs.existsSync(outputFile) && process.env.FORCE_REGENERATE !== 'true') {
   process.exit(0);
 }
 
-// ── Fuentes RSS por marca ─────────────────────────────────────────────────────
 const BRAND_SOURCES = [
-  // UPS & Power
-  { brand: 'Eaton',            rss: 'https://www.eaton.com/us/en-us/company/news-insights/news-releases.rss.xml' },
+  { brand: 'Eaton',             rss: 'https://www.eaton.com/us/en-us/company/news-insights/news-releases.rss.xml' },
   { brand: 'Schneider Electric',rss: 'https://www.se.com/ww/en/about-us/newsroom/news/rss/index.xml' },
-  { brand: 'Vertiv',           rss: 'https://www.vertiv.com/en-us/about/newsroom/news-releases/rss/' },
-  { brand: 'ABB',              rss: 'https://new.abb.com/news/rss' },
-  // Solar Inverters
-  { brand: 'SMA Solar',        rss: 'https://www.sma.de/en/newsroom/press-releases.html?type=100&rss=1' },
-  { brand: 'Fronius',          rss: 'https://www.fronius.com/en/photovoltaics/newsroom/press-releases?format=rss' },
-  { brand: 'GoodWe',           rss: 'https://www.goodwe.com/news/rss' },
-  { brand: 'Growatt',          rss: 'https://www.ginverter.com/news/rss' },
+  { brand: 'Vertiv',            rss: 'https://www.vertiv.com/en-us/about/newsroom/news-releases/rss/' },
+  { brand: 'ABB',               rss: 'https://new.abb.com/news/rss' },
+  { brand: 'SMA Solar',         rss: 'https://www.sma.de/en/newsroom/press-releases.html?type=100&rss=1' },
+  { brand: 'Fronius',           rss: 'https://www.fronius.com/en/photovoltaics/newsroom/press-releases?format=rss' },
+  { brand: 'GoodWe',            rss: 'https://www.goodwe.com/news/rss' },
+  { brand: 'Growatt',           rss: 'https://www.ginverter.com/news/rss' },
   { brand: 'Huawei FusionSolar',rss: 'https://solar.huawei.com/en/news-events/news/rss' },
-  // Solar Panels
-  { brand: 'LONGi Solar',      rss: 'https://longi.com/en/news/rss/' },
-  { brand: 'JA Solar',         rss: 'https://www.jasolar.com/html/en/service/news/rss.xml' },
-  { brand: 'Canadian Solar',   rss: 'https://www.canadiansolar.com/news/rss.xml' },
-  { brand: 'Trina Solar',      rss: 'https://www.trinasolar.com/en-glb/resources/news/rss' },
-  // Batteries
-  { brand: 'Victron Energy',   rss: 'https://www.victronenergy.com/blog/feed/' },
-  { brand: 'BYD Energy',       rss: 'https://www.bydenergy.com/news/rss' },
-  // Industry news (broader solar/storage)
-  { brand: 'PV Magazine',      rss: 'https://www.pv-magazine.com/feed/' },
-  { brand: 'Energy Storage News', rss: 'https://www.energy-storage.news/feed/' },
+  { brand: 'LONGi Solar',       rss: 'https://longi.com/en/news/rss/' },
+  { brand: 'JA Solar',          rss: 'https://www.jasolar.com/html/en/service/news/rss.xml' },
+  { brand: 'Canadian Solar',    rss: 'https://www.canadiansolar.com/news/rss.xml' },
+  { brand: 'Trina Solar',       rss: 'https://www.trinasolar.com/en-glb/resources/news/rss' },
+  { brand: 'Victron Energy',    rss: 'https://www.victronenergy.com/blog/feed/' },
+  { brand: 'BYD Energy',        rss: 'https://www.bydenergy.com/news/rss' },
+  { brand: 'PV Magazine',       rss: 'https://www.pv-magazine.com/feed/' },
+  { brand: 'Energy Storage News',rss: 'https://www.energy-storage.news/feed/' },
   { brand: 'Solar Power World', rss: 'https://www.solarpowerworldonline.com/feed/' },
 ];
 
-// ── Fetch one RSS feed ────────────────────────────────────────────────────────
 async function fetchFeed(source) {
   if (!source.rss) return null;
   try {
@@ -86,11 +66,10 @@ async function fetchFeed(source) {
     if (!items.length) return null;
     return { brand: source.brand, items };
   } catch {
-    return null;  // silently skip failed feeds
+    return null;
   }
 }
 
-// ── Fetch all feeds in parallel ───────────────────────────────────────────────
 async function fetchAllBrandNews() {
   console.log(`  → Consultando ${BRAND_SOURCES.length} fuentes RSS...`);
   const settled = await Promise.allSettled(BRAND_SOURCES.map(s => fetchFeed(s)));
@@ -101,12 +80,10 @@ async function fetchAllBrandNews() {
   return feeds;
 }
 
-// ── Format news context for Claude prompt ─────────────────────────────────────
 function buildNewsContext(feeds) {
   if (!feeds.length) {
     return 'No se pudieron obtener noticias RSS hoy. Usa tu conocimiento actualizado sobre estas marcas.';
   }
-
   return feeds.slice(0, 14).map(feed => {
     const items = feed.items.slice(0, 2).map(item => {
       const dateStr = item.date
@@ -118,13 +95,10 @@ function buildNewsContext(feeds) {
   }).join('\n\n');
 }
 
-// ── Category definitions ──────────────────────────────────────────────────────
 function buildCategories(newsContext) {
-  const ctx = newsContext;   // alias for readability inside template literals
+  const ctx = newsContext;
 
   return [
-
-    // 1 ── NOTICIAS MARCAS (UPS, infra eléctrica) ────────────────────────────
     {
       id: 'news', label: 'Noticias & Marcas', icon: '📡', color: '#00d4ff',
       prompt: `Eres el editor de InfraestructuraIT, empresa colombiana de infraestructura TI y energía.
@@ -143,8 +117,6 @@ TAREA:
 Responde SOLO JSON sin markdown:
 {"title":"máx 85 chars","summary":"dato más impactante, máx 130 chars","body":"HTML con <p> y <strong>","tag":"Marca Categoría","brand":"nombre exacto fabricante","source_title":"título original o null","read_time":número}`
     },
-
-    // 2 ── NOTICIAS SOLAR / BATERÍAS ──────────────────────────────────────────
     {
       id: 'solar_news', label: 'Solar & Almacenamiento', icon: '☀️', color: '#f59e0b',
       prompt: `Eres especialista en energía solar de InfraestructuraIT Colombia.
@@ -163,8 +135,6 @@ TAREA:
 Responde SOLO JSON sin markdown:
 {"title":"máx 85 chars","summary":"beneficio clave, máx 130 chars","body":"HTML con <p> y <strong>","tag":"Marca Tipo (ej: LONGi Panel, Fronius Inverter)","brand":"nombre exacto fabricante","source_title":"título original o null","read_time":número}`
     },
-
-    // 3 ── ARTÍCULO TÉCNICO ───────────────────────────────────────────────────
     {
       id: 'technical', label: 'Artículos Técnicos', icon: '⚙️', color: '#7c3aed',
       prompt: `Eres ingeniero senior de InfraestructuraIT Colombia.
@@ -186,8 +156,6 @@ Requisitos:
 Responde SOLO JSON sin markdown:
 {"title":"máx 85 chars","summary":"qué aprenderá el lector, máx 130 chars","body":"HTML: <p> <strong> <code> <ul><li> <ol><li>","tag":"tecnología exacta","brand":null,"source_title":null,"read_time":número}`
     },
-
-    // 4 ── TIP IoT ────────────────────────────────────────────────────────────
     {
       id: 'tips', label: 'Tips IoT & Infra', icon: '💡', color: '#00ffcc',
       prompt: `Eres consultor IoT de InfraestructuraIT Colombia.
@@ -209,8 +177,6 @@ Requisitos:
 Responde SOLO JSON sin markdown:
 {"title":"verbo + acción concreta, máx 85 chars","summary":"problema que resuelve, máx 130 chars","body":"HTML: <p> <code> <ol><li>","tag":"tecnología (ej: Victron+HA, Pylontech CAN, Fronius API)","brand":null,"source_title":null,"read_time":número}`
     },
-
-    // 5 ── CASO DE USO ────────────────────────────────────────────────────────
     {
       id: 'usecase', label: 'Casos de Uso IA', icon: '🧠', color: '#f97316',
       prompt: `Eres arquitecto de soluciones de InfraestructuraIT Colombia.
@@ -231,13 +197,12 @@ Responde SOLO JSON sin markdown:
   ];
 }
 
-// ── Call Claude for one category ──────────────────────────────────────────────
 async function generateArticle(category) {
   console.log(`  → [${category.label}]...`);
   const message = await client.messages.create({
-    model:    'claude-sonnet-4-20250514',
+    model:      'claude-sonnet-4-20250514',
     max_tokens: 1300,
-    messages: [{ role: 'user', content: category.prompt }]
+    messages:   [{ role: 'user', content: category.prompt }]
   });
 
   const raw   = message.content[0].text.trim();
@@ -267,15 +232,14 @@ async function generateArticle(category) {
       category_id: category.id, category_label: category.label,
       category_icon: category.icon, category_color: category.color,
       date: today, brand: null, source_title: null,
-      title:    `[${category.label}] — ${today}`,
-      summary:  'Artículo en proceso.',
-      body:     '<p>Contenido siendo procesado. Vuelve en unos minutos.</p>',
-      tag:      category.id, read_time: 2
+      title:   `[${category.label}] — ${today}`,
+      summary: 'Artículo en proceso.',
+      body:    '<p>Contenido siendo procesado. Vuelve en unos minutos.</p>',
+      tag:     category.id, read_time: 2
     };
   }
 }
 
-// ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   console.log(`\n🤖 InfraestructuraIT — Daily Content Generator`);
   console.log(`📅 Fecha: ${today}\n`);
@@ -285,14 +249,12 @@ async function main() {
   }
   if (!fs.existsSync(CONTENT_DIR)) fs.mkdirSync(CONTENT_DIR, { recursive: true });
 
-  // PASO 1 — Fetch RSS
   console.log('📡 Paso 1: Feeds RSS de fabricantes...');
   const feeds      = await fetchAllBrandNews();
   const newsCtx    = buildNewsContext(feeds);
   const brandNames = feeds.map(f => f.brand);
   if (brandNames.length) console.log(`  Marcas: ${brandNames.slice(0, 8).join(', ')}${brandNames.length > 8 ? '...' : ''}`);
 
-  // PASO 2 — Generate with Claude
   console.log('\n🧠 Paso 2: Generando artículos con Claude AI...');
   const categories = buildCategories(newsCtx);
   const articles   = [];
@@ -309,7 +271,6 @@ async function main() {
     }
   }
 
-  // PASO 3 — Save
   const output = {
     generated_at:   new Date().toISOString(),
     date:           today,
@@ -325,3 +286,5 @@ async function main() {
 }
 
 main().catch(err => { console.error('Error fatal:', err); process.exit(1); });
+    
+ 
