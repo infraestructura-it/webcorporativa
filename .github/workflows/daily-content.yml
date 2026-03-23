@@ -2,10 +2,8 @@ name: Daily AI Content Generation
 
 on:
   schedule:
-    # Runs every day at 6:00 AM Colombia time (UTC-5 = 11:00 UTC)
     - cron: '0 11 * * *'
   workflow_dispatch:
-    # Allow manual trigger from GitHub UI
     inputs:
       force_regenerate:
         description: 'Force regenerate all content'
@@ -18,6 +16,8 @@ permissions:
 jobs:
   generate-content:
     runs-on: ubuntu-latest
+    timeout-minutes: 15        # ← FIX 1: evita que se cuelgue 6 horas
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,8 +28,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: scripts/package.json
+          # ← FIX 2: eliminado el cache npm (causaba el fallo de 14s)
+          #   si quieres cache, primero haz "npm install" y commitea el package-lock.json
 
       - name: Install dependencies
         run: |
@@ -41,13 +41,19 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FORCE_REGENERATE: ${{ github.event.inputs.force_regenerate }}
         run: |
+          set -e                          # ← FIX 3: aborta si cualquier comando falla
           cd scripts
+          echo "→ Iniciando generate-content.js"
           node generate-content.js
+          echo "→ generate-content.js completado"
 
       - name: Build site
         run: |
+          set -e
           cd scripts
+          echo "→ Iniciando build-site.js"
           node build-site.js
+          echo "→ build-site.js completado"
 
       - name: Commit and push changes
         run: |
