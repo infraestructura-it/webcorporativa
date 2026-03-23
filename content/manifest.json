@@ -1,8 +1,14 @@
 {
-  "last_build": "2026-03-21T17:54:05.302Z",
-  "total_days": 1,
+  "last_build": "2026-03-23T03:15:45.791Z",
+  "total_days": 2,
   "total_articles": 5,
   "days": [
+    {
+      "date": "2026-03-23",
+      "generated_at": "2026-03-23T03:11:35.982Z",
+      "article_count": 0,
+      "articles": []
+    },
     {
       "date": "2026-03-21",
       "generated_at": "2026-03-21T11:00:00.000Z",
