@@ -1,8 +1,8 @@
 /**
- * generate-content.js — migrado a Google Gemini API
+ * generate-content.js
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import Anthropic from '@anthropic-ai/sdk';
 import Parser    from 'rss-parser';
 import fs        from 'fs';
 import path      from 'path';
@@ -12,16 +12,7 @@ const __dirname   = path.dirname(fileURLToPath(import.meta.url));
 const ROOT        = path.resolve(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'content');
 
-// ── Cliente Gemini ────────────────────────────────────────────────────────────
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({
-  model: 'gemini-2.5-pro-exp-03-25',
-  generationConfig: {
-    temperature:     0.7,
-    maxOutputTokens: 1300,
-  }
-});
-
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const rssParser = new Parser({
   timeout: 12000,
   headers: { 'User-Agent': 'InfraestructuraIT-NewsBot/1.0 (+https://infraestructura-it.com)' },
@@ -195,7 +186,7 @@ Escribe un caso de uso realista de IA aplicada a energía solar o infraestructur
 Escenario: empresa colombiana o latinoamericana (ficticia pero verosímil, con ciudad, sector, tamaño).
 Equipos involucrados: deben ser marcas y modelos reales (Eaton 9PX, Fronius Symo 15kW, LONGi Hi-MO 6, BYD Battery-Box 10kWh, Victron MPPT, etc.)
 Problema: algo concreto (costos energéticos, fallas inesperadas, baja eficiencia solar)
-Solución IA: cómo se implementó, qué tecnología (TensorFlow Lite, Gemini API, Node-RED ML, anomaly detection)
+Solución IA: cómo se implementó, qué tecnología (TensorFlow Lite, Claude API, Node-RED ML, anomaly detection)
 Resultados: cifras en COP, kWh ahorrados, % mejora, tiempo de ROI
 
 Requisitos: 240-310 palabras, estilo narrativo técnico-comercial
@@ -206,19 +197,16 @@ Responde SOLO JSON sin markdown:
   ];
 }
 
-// ── Llamada a Gemini (reemplaza client.messages.create de Claude) ─────────────
 async function generateArticle(category) {
   console.log(`  → [${category.label}]...`);
+  const message = await client.messages.create({
+    model:      'claude-sonnet-4-20250514',
+    max_tokens: 1300,
+    messages:   [{ role: 'user', content: category.prompt }]
+  });
 
-  const result = await model.generateContent(category.prompt);
-  const raw    = result.response.text().trim();
-
-  // Limpiar posibles bloques markdown que Gemini a veces incluye
-  const clean = raw
-    .replace(/^```json\s*/i, '')
-    .replace(/^```\s*/i, '')
-    .replace(/\s*```$/i, '')
-    .trim();
+  const raw   = message.content[0].text.trim();
+  const clean = raw.replace(/^```json\s*/i, '').replace(/\s*```$/i, '').trim();
 
   try {
     const art = JSON.parse(clean);
@@ -239,7 +227,6 @@ async function generateArticle(category) {
     };
   } catch (e) {
     console.error(`  ✗ JSON parse error [${category.label}]:`, e.message);
-    console.error(`  Raw response: ${raw.substring(0, 200)}`);
     return {
       id: `${today}-${category.id}`,
       category_id: category.id, category_label: category.label,
@@ -254,11 +241,11 @@ async function generateArticle(category) {
 }
 
 async function main() {
-  console.log(`\n🤖 InfraestructuraIT — Daily Content Generator (Gemini)`);
+  console.log(`\n🤖 InfraestructuraIT — Daily Content Generator`);
   console.log(`📅 Fecha: ${today}\n`);
 
-  if (!process.env.GEMINI_API_KEY) {
-    console.error('✗ GEMINI_API_KEY no configurada'); process.exit(1);
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error('✗ ANTHROPIC_API_KEY no configurada'); process.exit(1);
   }
   if (!fs.existsSync(CONTENT_DIR)) fs.mkdirSync(CONTENT_DIR, { recursive: true });
 
@@ -268,7 +255,7 @@ async function main() {
   const brandNames = feeds.map(f => f.brand);
   if (brandNames.length) console.log(`  Marcas: ${brandNames.slice(0, 8).join(', ')}${brandNames.length > 8 ? '...' : ''}`);
 
-  console.log('\n🧠 Paso 2: Generando artículos con Gemini AI...');
+  console.log('\n🧠 Paso 2: Generando artículos con Claude AI...');
   const categories = buildCategories(newsCtx);
   const articles   = [];
 
