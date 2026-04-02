@@ -272,10 +272,19 @@ function main() {
   const allDays = loadAllContent();
   console.log(`  ✓ Cargados ${allDays.length} días con contenido`);
 
+  // Construir HTML
   const html = buildHTML(allDays);
+
+  // Escribir ia/index.html
   fs.writeFileSync(path.join(PUBLIC_DIR, 'index.html'), html, 'utf8');
   console.log(`  ✓ Construido ia/index.html`);
 
+  // Copiar también a la raíz del sitio (webcorporativa/index.html)
+  const rootIndexPath = path.join(ROOT, 'index.html');
+  fs.copyFileSync(path.join(PUBLIC_DIR, 'index.html'), rootIndexPath);
+  console.log(`  ✓ Copiado a index.html raíz`);
+
+  // Construir manifest
   const manifest = {
     last_build: new Date().toISOString(),
     total_days: allDays.length,
