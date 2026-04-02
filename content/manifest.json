@@ -1,25 +1,54 @@
 {
-  "last_build": "2026-04-01T23:22:41.935Z",
-  "total_days": 4,
-  "total_articles": 5,
+  "last_build": "2026-04-02T02:32:23.519Z",
+  "total_days": 2,
+  "total_articles": 10,
   "days": [
     {
       "date": "2026-04-01",
-      "generated_at": "2026-04-01T21:14:43.421Z",
-      "article_count": 0,
-      "articles": []
-    },
-    {
-      "date": "2026-03-30",
-      "generated_at": "2026-03-30T12:00:47.811Z",
-      "article_count": 0,
-      "articles": []
-    },
-    {
-      "date": "2026-03-23",
-      "generated_at": "2026-03-23T14:49:46.473Z",
-      "article_count": 0,
-      "articles": []
+      "generated_at": "2026-04-02T02:28:06.023Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-01-news",
+          "category_id": "news",
+          "title": "Vertiv invierte $50 millones en manufactura para centros de datos IA",
+          "summary": "La inversión en Ohio expandirá la producción de tecnologías de enfriamiento críticas para data centers de inteligencia artificial",
+          "tag": "Vertiv Infraestructura",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-01-solar_news",
+          "category_id": "solar_news",
+          "title": "US Modules inicia producción de paneles solares en Texas con capacidad 400 MW",
+          "summary": "Nueva planta de ensamblaje en Texas produce paneles para proyectos propios, fortaleciendo manufactura solar estadounidense",
+          "tag": "US Modules Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-01-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Implementación",
+          "summary": "Aprenderás registros Modbus reales, códigos de función y implementación Python para monitoreo de inversores Fronius Symo",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-01-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron en Home Assistant para monitorear potencia, SOC de batería y estado del sistema en tiempo real",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-01-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce Costos Energéticos 32% en Planta Flores del Magdalena",
+          "summary": "Sistema híbrido solar con IA predictiva ahorra $184M anuales y evita 87% de fallas críticas en UPS Eaton",
+          "tag": "Solar+IA Facatativá",
+          "read_time": 2
+        }
+      ]
     },
     {
       "date": "2026-03-21",
