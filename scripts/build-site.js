@@ -272,17 +272,19 @@ function main() {
   const allDays = loadAllContent();
   console.log(`  ✓ Cargados ${allDays.length} días con contenido`);
 
-  // Construir HTML
+  // Construir HTML base (rutas relativas para ia/)
   const html = buildHTML(allDays);
 
   // Escribir ia/index.html
   fs.writeFileSync(path.join(PUBLIC_DIR, 'index.html'), html, 'utf8');
   console.log(`  ✓ Construido ia/index.html`);
 
-  // Copiar también a la raíz del sitio (webcorporativa/index.html)
-  const rootIndexPath = path.join(ROOT, 'index.html');
-  fs.copyFileSync(path.join(PUBLIC_DIR, 'index.html'), rootIndexPath);
-  console.log(`  ✓ Copiado a index.html raíz`);
+  // Copiar a raíz con rutas CSS/JS corregidas a ia/
+  const rootHTML = html
+    .replace('href="css/ai-blog.css"', 'href="ia/css/ai-blog.css"')
+    .replace('src="js/ai-blog.js"',   'src="ia/js/ai-blog.js"');
+  fs.writeFileSync(path.join(ROOT, 'index.html'), rootHTML, 'utf8');
+  console.log(`  ✓ Copiado a index.html raíz (rutas corregidas)`);
 
   // Construir manifest
   const manifest = {
