@@ -3,13 +3,603 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="InfraestructuraIT — Avances diarios en Inteligencia Artificial, IoT e infraestructura tecnológica. Contenido generado con IA, actualizado cada día.">
-<meta property="og:title" content="InfraestructuraIT — IA & Avances Diarios">
-<meta property="og:description" content="Noticias, artículos técnicos, tips IoT y casos de uso de IA en Data Centers. Actualizado automáticamente cada día.">
-<title>IA & Avances — InfraestructuraIT</title>
+<meta name="description" content="InfraestructuraIT — Empresa colombiana especializada en Data Centers, IoT, Redes, Energía Solar e IA. Soluciones de infraestructura tecnológica para empresas.">
+<meta property="og:title" content="InfraestructuraIT — Infraestructura Tecnológica Colombia">
+<meta property="og:description" content="Data Centers, IoT, Redes, Energía Solar e Inteligencia Artificial para empresas colombianas.">
+<title>InfraestructuraIT — Infraestructura Tecnológica Colombia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ai-blog.css">
+<style>
+
+/* ── RESET & VARIABLES ─────────────────────────────────────────────────────── */
+:root {
+  --bg:       #050c14;
+  --surface:  #0a1628;
+  --surface2: #0f1f38;
+  --cyan:     #00d4ff;
+  --purple:   #7c3aed;
+  --accent:   #00ffcc;
+  --orange:   #f97316;
+  --yellow:   #f59e0b;
+  --text:     #e8f4f8;
+  --muted:    #6b8fa8;
+  --border:   rgba(0,212,255,0.12);
+  --radius:   6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ─────────────────────────────────────────────────────────────────── */
+.site-nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .85rem 3rem;
+  background: rgba(5,12,20,.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+  display: flex; align-items: center; gap: .75rem;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: .85rem; color: var(--text); letter-spacing: .08em;
+}
+.nav-brand strong { color: var(--cyan); }
+
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-size: .75rem; font-family: 'Space Mono', monospace;
+  letter-spacing: .1em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--cyan); }
+.nav-links .nav-cta {
+  background: var(--cyan); color: var(--bg);
+  padding: .4rem 1rem; border-radius: var(--radius);
+  font-weight: 700;
+}
+.nav-links .nav-cta:hover { opacity: .85; color: var(--bg); }
+
+/* ── HERO ────────────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex; align-items: center;
+  padding: 6rem 3rem 5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(0,212,255,.06) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 20% 80%, rgba(124,58,237,.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 780px;
+}
+
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem; letter-spacing: .35em;
+  color: var(--cyan); text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .75rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 32px; height: 1px; background: var(--cyan);
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: .92; letter-spacing: -.03em;
+  margin-bottom: 1.5rem;
+}
+.hero-title .line2 { color: var(--cyan); }
+.hero-title .line3 { color: var(--muted); font-size: .6em; letter-spacing: .01em; font-weight: 700; }
+
+.hero-desc {
+  font-size: 1.1rem; color: var(--muted);
+  max-width: 520px; line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--cyan); color: var(--bg);
+  padding: .75rem 1.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; border-radius: var(--radius);
+  transition: opacity .2s, transform .2s;
+}
+.btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: transparent;
+  border: 1px solid rgba(0,212,255,.35);
+  color: var(--cyan);
+  padding: .75rem 1.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; border-radius: var(--radius);
+  transition: all .2s;
+}
+.btn-secondary:hover { background: rgba(0,212,255,.08); transform: translateY(-1px); }
+
+.hero-stats {
+  position: absolute; right: 3rem; bottom: 3rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+  z-index: 1;
+}
+.hero-stat {
+  text-align: right;
+  font-family: 'Space Mono', monospace;
+}
+.hero-stat-num {
+  font-size: 2.2rem; font-weight: 700;
+  color: var(--cyan); line-height: 1;
+  display: block;
+}
+.hero-stat-label {
+  font-size: .6rem; letter-spacing: .2em;
+  color: var(--muted); text-transform: uppercase;
+}
+
+/* ── SECTION BASE ────────────────────────────────────────────────────────── */
+section { position: relative; z-index: 1; }
+
+.section-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: .62rem; letter-spacing: .35em;
+  color: var(--cyan); text-transform: uppercase;
+  margin-bottom: .75rem;
+  display: flex; align-items: center; gap: .75rem;
+}
+.section-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 24px; height: 1px; background: var(--cyan);
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05; letter-spacing: -.02em;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1rem; color: var(--muted);
+  max-width: 560px; line-height: 1.75;
+}
+
+/* ── SERVICIOS ───────────────────────────────────────────────────────────── */
+.servicios {
+  padding: 6rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.servicios-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.servicio-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  position: relative; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  cursor: default;
+}
+.servicio-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sc, var(--cyan)), transparent);
+  opacity: 0; transition: opacity .2s;
+}
+.servicio-card:hover { border-color: rgba(0,212,255,.3); transform: translateY(-3px); }
+.servicio-card:hover::before { opacity: 1; }
+
+.servicio-icon {
+  font-size: 2rem; margin-bottom: 1.25rem;
+  display: block;
+}
+.servicio-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: .6rem; letter-spacing: .2em;
+  color: var(--sc, var(--cyan)); text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+.servicio-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 1.15rem;
+  margin-bottom: .75rem; color: var(--text);
+}
+.servicio-desc {
+  font-size: .85rem; color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── IA PREVIEW ──────────────────────────────────────────────────────────── */
+.ia-preview {
+  padding: 6rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ia-preview-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;
+}
+
+.ia-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.preview-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: border-color .2s, transform .2s;
+  position: relative; overflow: hidden;
+}
+.preview-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pc, var(--cyan)), transparent);
+  opacity: 0; transition: opacity .2s;
+}
+.preview-card:hover { border-color: rgba(0,212,255,.3); transform: translateY(-2px); }
+.preview-card:hover::before { opacity: 1; }
+
+.preview-card-meta {
+  display: flex; align-items: center; gap: .6rem;
+  margin-bottom: .85rem; flex-wrap: wrap;
+}
+.preview-cat {
+  font-family: 'Space Mono', monospace;
+  font-size: .6rem; letter-spacing: .1em;
+  text-transform: uppercase; font-weight: 700;
+}
+.preview-tag {
+  font-size: .58rem; padding: .12rem .55rem;
+  border: 1px solid; border-radius: 20px;
+  font-family: 'Space Mono', monospace;
+}
+.preview-read {
+  font-size: .62rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  margin-left: auto;
+}
+.preview-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 1rem;
+  line-height: 1.3; margin-bottom: .5rem;
+  color: var(--text);
+}
+.preview-summary {
+  font-size: .82rem; color: var(--muted);
+  line-height: 1.6;
+}
+
+.ia-loading {
+  text-align: center; padding: 3rem;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem; letter-spacing: .1em;
+}
+
+.ia-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── NOSOTROS ────────────────────────────────────────────────────────────── */
+.nosotros {
+  padding: 6rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nosotros-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.nosotros-values {
+  display: flex; flex-direction: column; gap: 1.25rem;
+  margin-top: 2rem;
+}
+.value-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--cyan);
+}
+.value-icon { font-size: 1.25rem; flex-shrink: 0; }
+.value-text h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: .75rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: .3rem;
+}
+.value-text p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+.nosotros-visual {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.circuit-wrap {
+  position: relative; width: 360px; height: 360px;
+}
+.circuit-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(0,212,255,.15);
+  animation: spin-slow linear infinite;
+}
+.circuit-ring:nth-child(1) { inset: 0; animation-duration: 20s; }
+.circuit-ring:nth-child(2) { inset: 30px; animation-duration: 15s; animation-direction: reverse; border-color: rgba(124,58,237,.15); }
+.circuit-ring:nth-child(3) { inset: 60px; animation-duration: 25s; border-color: rgba(0,255,204,.12); }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+.circuit-dot {
+  position: absolute; border-radius: 50%;
+  background: var(--cyan);
+  width: 6px; height: 6px;
+  top: 50%; left: 50%;
+  transform-origin: -90px 0;
+}
+.circuit-dot:nth-child(4) { transform: rotate(0deg) translateX(-90px); animation: orbit 20s linear infinite; }
+.circuit-dot:nth-child(5) { transform: rotate(120deg) translateX(-90px); animation: orbit 20s linear infinite; animation-delay: -6.67s; background: var(--purple); }
+.circuit-dot:nth-child(6) { transform: rotate(240deg) translateX(-90px); animation: orbit 20s linear infinite; animation-delay: -13.33s; background: var(--accent); }
+
+@keyframes orbit { to { transform: rotate(360deg) translateX(-90px); } }
+
+.circuit-center {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; height: 100px;
+  background: var(--surface2);
+  border: 2px solid rgba(0,212,255,.3);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem;
+}
+
+.nosotros-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-top: 2rem;
+}
+.n-stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+}
+.n-stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--cyan); display: block; line-height: 1;
+  margin-bottom: .25rem;
+}
+.n-stat-label {
+  font-size: .65rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: .15em; text-transform: uppercase;
+}
+
+/* ── CONTACTO ────────────────────────────────────────────────────────────── */
+.contacto {
+  padding: 6rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contacto-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contacto-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem; }
+.contacto-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.contacto-item-icon { font-size: 1.25rem; flex-shrink: 0; }
+.contacto-item h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: .65rem; letter-spacing: .15em;
+  color: var(--cyan); text-transform: uppercase;
+  margin-bottom: .3rem;
+}
+.contacto-item p { font-size: .88rem; color: var(--muted); }
+.contacto-item a { color: var(--text); text-decoration: none; }
+.contacto-item a:hover { color: var(--cyan); }
+
+.contacto-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: .4rem; }
+.form-group label {
+  font-family: 'Space Mono', monospace;
+  font-size: .62rem; letter-spacing: .15em;
+  color: var(--muted); text-transform: uppercase;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: .7rem 1rem;
+  font-size: .88rem; font-family: 'Inter', sans-serif;
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color .2s;
+  width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(--cyan); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--muted); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group select option { background: var(--surface2); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.btn-form {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  background: var(--cyan); color: var(--bg);
+  padding: .85rem 2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  border: none; border-radius: var(--radius);
+  cursor: pointer; transition: opacity .2s;
+  width: 100%;
+}
+.btn-form:hover { opacity: .88; }
+
+/* ── FOOTER ──────────────────────────────────────────────────────────────── */
+.site-footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 3rem;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-brand-logo {
+  display: flex; align-items: center; gap: .75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: .85rem; color: var(--text); letter-spacing: .08em;
+  margin-bottom: 1rem; text-decoration: none;
+}
+.footer-brand-logo strong { color: var(--cyan); }
+.footer-brand p { font-size: .85rem; color: var(--muted); line-height: 1.7; max-width: 300px; }
+
+.footer-col h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: .62rem; letter-spacing: .2em;
+  color: var(--cyan); text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+.footer-col ul li a {
+  font-size: .82rem; color: var(--muted);
+  text-decoration: none; transition: color .2s;
+}
+.footer-col ul li a:hover { color: var(--cyan); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .75rem;
+  font-size: .72rem; color: var(--muted);
+  font-family: 'Space Mono', monospace;
+}
+.footer-bottom strong { color: var(--cyan); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .nosotros-inner,
+  .contacto-inner { grid-template-columns: 1fr; }
+  .nosotros-visual { display: none; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .site-nav { padding: .75rem 1.25rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero { padding: 4rem 1.25rem 3rem; min-height: auto; }
+  .hero-stats { position: static; flex-direction: row; flex-wrap: wrap; margin-top: 2.5rem; }
+  .hero-stat { text-align: left; }
+  .servicios, .ia-preview, .nosotros, .contacto { padding: 4rem 1.25rem; }
+  .servicio-card, .preview-card { padding: 1.25rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .site-footer { padding: 2rem 1.25rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
 
@@ -36,435 +626,365 @@
     <span>INFRAESTRUCTURA <strong>IT</strong></span>
   </a>
   <div class="nav-links">
-    <a href="../index.html">← Web principal</a>
-    <a href="index.html" class="active">IA & Avances</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#ia">IA & Avances</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto" class="nav-cta">Contáctanos</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="blog-hero">
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Actualizado automáticamente · Generado con Claude AI</div>
-    <h1 class="hero-title">IA & <span class="accent">Avances</span></h1>
-    <p class="hero-desc">Noticias, artículos técnicos, tips y casos de uso en Inteligencia Artificial, IoT e infraestructura — publicados cada día de forma automática.</p>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">10</span><span class="stat-label">Artículos</span></div>
-      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Días</span></div>
-      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Categorías</span></div>
-      <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Ciclo</span></div>
-    </div>
-    <div class="last-update">Última actualización: <span>1/4/2026, 9:28:06 p. m.</span></div>
-  </div>
-  <div class="hero-grid" aria-hidden="true"></div>
-</header>
-
-<!-- FILTER BAR -->
-<div class="filter-bar" id="filterBar">
-  <div class="filter-inner">
-    
-    <button class="filter-btn active"
-      onclick="filterBy('all', this)"
-      style="--fc: #00d4ff">
-      <span>◎</span>
-      <span>Todos</span>
-      
-    </button>
-    <button class="filter-btn "
-      onclick="filterBy('news', this)"
-      style="--fc: #00d4ff">
-      <span>📡</span>
-      <span>Noticias & Marcas</span>
-      <span class="filter-count">2</span>
-    </button>
-    <button class="filter-btn "
-      onclick="filterBy('solar_news', this)"
-      style="--fc: #f59e0b">
-      <span>☀️</span>
-      <span>Solar & Almacenamiento</span>
-      <span class="filter-count">2</span>
-    </button>
-    <button class="filter-btn "
-      onclick="filterBy('technical', this)"
-      style="--fc: #7c3aed">
-      <span>⚙️</span>
-      <span>Técnicos</span>
-      <span class="filter-count">2</span>
-    </button>
-    <button class="filter-btn "
-      onclick="filterBy('tips', this)"
-      style="--fc: #00ffcc">
-      <span>💡</span>
-      <span>Tips IoT & Infra</span>
-      <span class="filter-count">2</span>
-    </button>
-    <button class="filter-btn "
-      onclick="filterBy('usecase', this)"
-      style="--fc: #f97316">
-      <span>🧠</span>
-      <span>Casos de Uso IA</span>
-      <span class="filter-count">2</span>
-    </button>
-
-    <!-- Search -->
-    <div class="search-wrap">
-      <input type="search" id="searchInput" placeholder="Buscar artículos..." oninput="searchArticles(this.value)" />
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <div class="hero-eyebrow">Colombia · Bogotá · Infraestructura TI</div>
+    <h1 class="hero-title">
+      Infraestructura<br>
+      <span class="line2">Tecnológica</span><br>
+      <span class="line3">para empresas colombianas</span>
+    </h1>
+    <p class="hero-desc">
+      Diseñamos, implementamos y gestionamos soluciones de Data Centers, IoT, Redes, Energía Solar e Inteligencia Artificial para llevar tu empresa al siguiente nivel.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.95-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Solicitar propuesta
+      </a>
+      <a href="#servicios" class="btn-secondary">
+        Ver servicios →
+      </a>
     </div>
   </div>
-</div>
-
-<!-- CONTENT -->
-<main class="blog-main" id="blogMain">
-  <div class="content-wrap">
-    
-<section class="day-section today" id="day-2026-04-01">
-  <div class="day-header">
-    <div class="day-label">
-      <span class="today-badge">● HOY</span>
-      <span class="day-date">Hoy — miércoles, 1 de abril de 2026</span>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">+50</span>
+      <span class="hero-stat-label">Proyectos</span>
     </div>
-    <span class="day-count">5 artículos</span>
-  </div>
-  <div class="articles-grid">
-    
-  <article class="article-card featured" data-category="news" data-date="2026-04-01">
-    <div class="card-header" style="--accent: #00d4ff">
-      <div class="card-meta">
-        <span class="card-icon">📡</span>
-        <span class="card-category" style="color: #00d4ff">Noticias & Marcas</span>
-        <span class="card-brand" style="border-color:#00d4ff50;color:#00d4ff">
-         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
-         Vertiv
-       </span>
-        <span class="card-tag" style="border-color: #00d4ff40; color: #00d4ff">Vertiv Infraestructura</span>
-      </div>
-      <span class="card-read">2 min lectura</span>
+    <div class="hero-stat">
+      <span class="hero-stat-num">8+</span>
+      <span class="hero-stat-label">Años</span>
     </div>
-    <h3 class="card-title">Vertiv invierte $50 millones en manufactura para centros de datos IA</h3>
-    <p class="card-summary">La inversión en Ohio expandirá la producción de tecnologías de enfriamiento críticas para data centers de inteligencia artificial</p>
-    <div class="card-body" >
-      <p><strong>Vertiv</strong>, líder global en infraestructura digital crítica, anunció una inversión de aproximadamente <strong>$50 millones</strong> para expandir su presencia manufacturera en Ohio, específicamente en las instalaciones de Ironton y su campus central en Westerville.</p><p>La expansión se enfoca en aumentar la producción estadounidense de <strong>tecnologías críticas de gestión térmica</strong> diseñadas específicamente para centros de datos de inteligencia artificial, que demandan sistemas de refrigeración más robustos y eficientes que los data centers tradicionales.</p><p>Para el mercado colombiano y latinoamericano, esta inversión representa una oportunidad significativa. Las empresas locales que planean implementar infraestructura de IA podrán acceder a tecnologías de enfriamiento más avanzadas, especialmente relevante considerando las altas temperaturas ambientales de la región que incrementan los desafíos térmicos.</p><p>Los sistemas de gestión térmica de Vertiv para IA típicamente operan con <strong>eficiencias superiores al 95%</strong> y capacidades que van desde 100 kVA hasta varios megavatios, con precios que oscilan entre <strong>$15,000 y $150,000 USD</strong> según la configuración.</p><p>Esta expansión manufacturera también podría reducir los tiempos de entrega para proyectos en Latinoamérica, actualmente estimados entre 12-16 semanas, beneficiando a empresas colombianas que buscan modernizar sus centros de datos para soportar cargas de trabajo de inteligencia artificial.</p>
-      <p class="card-source">📰 Fuente: <em>Vertiv to expand Ohio manufacturing to boost U.S. production of critical thermal management technologies for AI data centers</em></p>
+    <div class="hero-stat">
+      <span class="hero-stat-num">5</span>
+      <span class="hero-stat-label">Áreas</span>
     </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
-
-  <article class="article-card " data-category="solar_news" data-date="2026-04-01">
-    <div class="card-header" style="--accent: #f59e0b">
-      <div class="card-meta">
-        <span class="card-icon">☀️</span>
-        <span class="card-category" style="color: #f59e0b">Solar & Almacenamiento</span>
-        <span class="card-brand" style="border-color:#f59e0b50;color:#f59e0b">
-         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
-         US Modules
-       </span>
-        <span class="card-tag" style="border-color: #f59e0b40; color: #f59e0b">US Modules Panel</span>
-      </div>
-      <span class="card-read">2 min lectura</span>
-    </div>
-    <h3 class="card-title">US Modules inicia producción de paneles solares en Texas con capacidad 400 MW</h3>
-    <p class="card-summary">Nueva planta de ensamblaje en Texas produce paneles para proyectos propios, fortaleciendo manufactura solar estadounidense</p>
-    <div class="card-body" style="display:none">
-      <p><strong>US Modules</strong> ha puesto en operación su nueva planta de ensamblaje de paneles solares en College Station, Texas, con una capacidad de producción de <strong>400 MW anuales</strong> en su primera línea de producción. La particularidad de esta instalación es que todos los paneles producidos serán utilizados exclusivamente en proyectos desarrollados por la empresa matriz.</p><p>Esta iniciativa refleja la creciente tendencia de integración vertical en la industria solar, donde los desarrolladores buscan mayor control sobre su cadena de suministro. Para el <strong>mercado colombiano</strong>, esta estrategia podría ser relevante considerando el potencial de irradiación solar promedio de <strong>4.5 kWh/m²/día</strong> en zonas clave del país.</p><p>Con el marco regulatorio de la <strong>Ley 1715</strong> y el sistema de net-metering, Colombia ofrece oportunidades atractivas para desarrolladores que busquen replicar modelos de integración vertical. Las tarifas actuales de <strong>Codensa y EPM</strong> hacen viable la autogestión energética, especialmente para proyectos de gran escala.</p><p>La experiencia de US Modules en manufactura local podría inspirar iniciativas similares en Colombia, aprovechando incentivos tributarios y la creciente demanda de energía renovable en el país.</p>
-      <p class="card-source">📰 Fuente: <em>US Modules opens solar panel assembly plant in east-central Texas</em></p>
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
-
-  <article class="article-card " data-category="technical" data-date="2026-04-01">
-    <div class="card-header" style="--accent: #7c3aed">
-      <div class="card-meta">
-        <span class="card-icon">⚙️</span>
-        <span class="card-category" style="color: #7c3aed">Artículos Técnicos</span>
-        <span class="card-brand" style="border-color:#7c3aed50;color:#7c3aed">
-         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
-         Fronius
-       </span>
-        <span class="card-tag" style="border-color: #7c3aed40; color: #7c3aed">Modbus TCP</span>
-      </div>
-      <span class="card-read">2 min lectura</span>
-    </div>
-    <h3 class="card-title">Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Implementación</h3>
-    <p class="card-summary">Aprenderás registros Modbus reales, códigos de función y implementación Python para monitoreo de inversores Fronius Symo</p>
-    <div class="card-body" style="display:none">
-      <p>Los inversores <strong>Fronius Symo</strong> utilizan protocolo Modbus TCP en puerto 502 para comunicación industrial. La configuración requiere habilitar Modbus en el inversor vía interfaz web (Comunicación → Modbus → TCP activado).</p><p><strong>Registros principales para lectura:</strong></p><ul><li>Potencia AC actual: Registro 40083-40084 (32-bit Float, Factor escala 0.01W)</li><li>Voltage AC L1: Registro 40085 (16-bit, Factor 0.1V)</li><li>Corriente AC L1: Registro 40086 (16-bit, Factor 0.01A)</li><li>Energía total: Registro 40093-40094 (32-bit, Factor 1Wh)</li><li>Temperatura inversor: Registro 40103 (16-bit, Factor 0.1°C)</li><li>Estado operativo: Registro 40107 (valores: 2=Funcionando, 3=Standby, 7=Error)</li></ul><p>El <strong>código de función 03</strong> (Read Holding Registers) es estándar para estos registros. Dirección Modbus por defecto: <code>1</code>.</p><p><strong>Implementación Python usando pymodbus:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registros 40083-40084)<br>result = client.read_holding_registers(40082, 2, unit=1)<br>if result.isError():<br>    print("Error lectura Modbus")<br>else:<br>    # Combinar registros para valor 32-bit<br>    power_raw = (result.registers[0] << 16) | result.registers[1]<br>    power_w = power_raw * 0.01<br>    print(f"Potencia AC: {power_w} W")<br><br>client.close()</code><p>Para instalaciones colombianas, considerar <strong>configuración de red estática</strong> en el inversor y firewall apropiado. La latencia típica es <50ms en redes LAN estables.</p><p><strong>Troubleshooting común:</strong> Verificar que el firmware Fronius sea ≥4.7.1 para soporte Modbus completo y que no excedan 10 conexiones TCP simultáneas por limitación del inversor.</p>
-      
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
-
-  <article class="article-card " data-category="tips" data-date="2026-04-01">
-    <div class="card-header" style="--accent: #00ffcc">
-      <div class="card-meta">
-        <span class="card-icon">💡</span>
-        <span class="card-category" style="color: #00ffcc">Tips IoT & Infra</span>
-        
-        <span class="card-tag" style="border-color: #00ffcc40; color: #00ffcc">Victron+HA</span>
-      </div>
-      <span class="card-read">2 min lectura</span>
-    </div>
-    <h3 class="card-title">Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT</h3>
-    <p class="card-summary">Integra tu inversor Victron en Home Assistant para monitorear potencia, SOC de batería y estado del sistema en tiempo real</p>
-    <div class="card-body" style="display:none">
-      <p>Integra tu inversor Victron MultiPlus II en Home Assistant usando el broker MQTT nativo de VenusOS para monitoreo completo del sistema solar.</p><ol><li>En tu dispositivo VenusOS (Cerbo GX/Raspberry Pi), habilita MQTT desde <strong>Settings > Services > MQTT on LAN (SSL)</strong>. Anota la IP del Venus.</li><li>Instala el addon <strong>Mosquitto broker</strong> en Home Assistant y configura bridge en <code>/config/mosquitto/mosquitto.conf</code>:<pre>connection victron-bridge<br>address IP_VENUS_OS:1883<br>topic N/+/# both 0</pre></li><li>Reinicia el addon Mosquitto y verifica logs para confirmar conexión.</li><li>Los sensores aparecen automáticamente en Home Assistant bajo <strong>MQTT Integration</strong>. El portal ID se encuentra en <strong>VenusOS > Settings > VRM Portal ID</strong>.</li><li>Crea dashboard con sensores clave agregando a <code>configuration.yaml</code>:<pre>sensor:<br>- platform: mqtt<br>  name: "Victron SOC"<br>  state_topic: "N/PORTAL_ID/battery/512/Soc"<br>  unit_of_measurement: "%"</pre></li><li>Usa los topics principales: <code>/battery/512/Soc</code> (SOC), <code>/vebus/276/Ac/Out/L1/P</code> (potencia salida), <code>/vebus/276/State</code> (estado inversor).</li></ol><p>Con VenusOS v3.10+ la integración MQTT es nativa y estable para monitoreo 24/7.</p>
-      
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
-
-  <article class="article-card " data-category="usecase" data-date="2026-04-01">
-    <div class="card-header" style="--accent: #f97316">
-      <div class="card-meta">
-        <span class="card-icon">🧠</span>
-        <span class="card-category" style="color: #f97316">Casos de Uso IA</span>
-        
-        <span class="card-tag" style="border-color: #f9731640; color: #f97316">Solar+IA Facatativá</span>
-      </div>
-      <span class="card-read">2 min lectura</span>
-    </div>
-    <h3 class="card-title">IA Predictiva Reduce Costos Energéticos 32% en Planta Flores del Magdalena</h3>
-    <p class="card-summary">Sistema híbrido solar con IA predictiva ahorra $184M anuales y evita 87% de fallas críticas en UPS Eaton</p>
-    <div class="card-body" style="display:none">
-      <p><strong>Flores del Magdalena S.A.S.</strong>, productora de flores premium en Facatativá con 450 empleados, enfrentaba costos energéticos de <strong>$580M anuales</strong> y fallas imprevistas en refrigeración que generaban pérdidas de <strong>$120M por trimestre</strong>.</p><p>La solución integró <strong>inversores Fronius Symo 15kW</strong> con 180 paneles <strong>LONGi Hi-MO 6 de 540W</strong>, respaldados por <strong>baterías BYD Battery-Box 10kWh</strong> y <strong>UPS Eaton 9PX 6kVA</strong> para cargas críticas. Los controladores <strong>Victron SmartSolar MPPT 250/85</strong> optimizan la carga solar.</p><p>El sistema de IA utiliza <strong>TensorFlow Lite</strong> ejecutándose en <strong>Raspberry Pi 4</strong> para análisis en tiempo real, mientras <strong>Node-RED ML</strong> procesa datos de sensores <strong>Schneider Electric PowerTag</strong> y pronósticos meteorológicos vía <strong>API OpenWeatherMap</strong>.</p><p>Los algoritmos de <strong>anomaly detection</strong> predicen fallas en UPS con <strong>87% de precisión</strong>, activando mantenimiento preventivo. La IA optimiza el despacho energético prediciendo demanda de refrigeración basada en temperatura ambiente y producción planificada.</p><p><strong>Resultados en 18 meses:</strong></p><ul><li>Reducción de costos energéticos: <strong>32% ($184M anuales)</strong></li><li>Generación solar: <strong>285 MWh/año</strong></li><li>Disponibilidad de sistemas críticos: <strong>99.7%</strong></li><li>Reducción de fallas imprevistas: <strong>87%</strong></li><li>ROI logrado en: <strong>2.8 años</strong></li></ul><p>La inversión total de <strong>$420M</strong> se amortizará completamente en <strong>3.2 años</strong>, estableciendo un nuevo estándar en eficiencia energética para el sector floricultor colombiano.</p>
-      
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
   </div>
 </section>
 
-<section class="day-section " id="day-2026-03-21">
-  <div class="day-header">
-    <div class="day-label">
-      
-      <span class="day-date">sábado, 21 de marzo de 2026</span>
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="servicios-header">
+    <div>
+      <div class="section-eyebrow">Lo que hacemos</div>
+      <h2 class="section-title">Nuestros<br>Servicios</h2>
     </div>
-    <span class="day-count">5 artículos</span>
+    <p class="section-desc">Soluciones integrales de infraestructura tecnológica adaptadas a la realidad del mercado colombiano.</p>
   </div>
-  <div class="articles-grid">
-    
-  <article class="article-card " data-category="news" data-date="2026-03-21">
-    <div class="card-header" style="--accent: #00d4ff">
-      <div class="card-meta">
-        <span class="card-icon">📡</span>
-        <span class="card-category" style="color: #00d4ff">Noticias & Marcas</span>
-        <span class="card-brand" style="border-color:#00d4ff50;color:#00d4ff">
-         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
-         Eaton
-       </span>
-        <span class="card-tag" style="border-color: #00d4ff40; color: #00d4ff">Eaton UPS</span>
-      </div>
-      <span class="card-read">3 min lectura</span>
-    </div>
-    <h3 class="card-title">Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%</h3>
-    <p class="card-summary">El nuevo 9PX Ultra reduce pérdidas de conversión a solo 3% y predice fallos de batería con 72 horas de anticipación.</p>
-    <div class="card-body" style="display:none">
-      <p>Eaton ha presentado la nueva generación del <strong>9PX Ultra</strong>, su UPS trifásico de alta eficiencia para Data Centers, con una notable mejora en eficiencia energética que llega al <strong>97% en modo ECO+</strong> y al 95% en doble conversión estándar.</p><p>La novedad más destacada es el módulo de <strong>IA integrado para gestión de carga</strong>: el sistema analiza los patrones de consumo históricos durante 30 días y ajusta automáticamente la distribución de carga entre fases, reduciendo el desequilibrio de corriente hasta un 15% en instalaciones con cargas heterogéneas como las típicas en Data Centers colombianos.</p><p>Para el mantenimiento predictivo, el 9PX Ultra incorpora sensores electroquímicos en las celdas de batería que, junto con el algoritmo de IA, predicen el fin de vida útil de la batería con <strong>72 horas de anticipación</strong>, eliminando las interrupciones no planificadas.</p><p>En términos prácticos para el mercado colombiano: un Data Center de 50 kW que reemplace UPS de generación anterior puede esperar un ahorro de <strong>aproximadamente $18 millones COP anuales</strong> solo por la mejora de eficiencia, recuperando la inversión en menos de 3 años.</p><p>El 9PX Ultra estará disponible en Colombia a través de distribuidores autorizados Eaton en configuraciones de 10, 20 y 40 kVA, con soporte local garantizado.</p>
-      <p class="card-source">📰 Fuente: <em>Eaton Launches Next-Gen 9PX UPS with AI-Driven Load Management</em></p>
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
+  <div class="servicios-grid">
 
-  <article class="article-card " data-category="solar_news" data-date="2026-03-21">
-    <div class="card-header" style="--accent: #f59e0b">
-      <div class="card-meta">
-        <span class="card-icon">☀️</span>
-        <span class="card-category" style="color: #f59e0b">Solar & Almacenamiento</span>
-        <span class="card-brand" style="border-color:#f59e0b50;color:#f59e0b">
-         <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
-         LONGi Solar
-       </span>
-        <span class="card-tag" style="border-color: #f59e0b40; color: #f59e0b">LONGi Panel Solar</span>
-      </div>
-      <span class="card-read">3 min lectura</span>
+    <div class="servicio-card" style="--sc: #00d4ff">
+      <span class="servicio-icon">🖥️</span>
+      <div class="servicio-tag">Infraestructura crítica</div>
+      <div class="servicio-name">Data Centers</div>
+      <p class="servicio-desc">Diseño y construcción de centros de datos Tier II y Tier III. Racks, UPS, PDU, cooling y monitoreo SNMP/DCIM para operación 24/7.</p>
     </div>
-    <h3 class="card-title">LONGi alcanza 24.8% de eficiencia en panel residencial de producción masiva</h3>
-    <p class="card-summary">El Hi-MO X10 con tecnología HPBC 2.0 genera hasta 640W por panel, reduciendo el área de instalación un 22%.</p>
-    <div class="card-body" style="display:none">
-      <p><strong>LONGi Solar</strong> anunció la producción masiva de su panel <strong>Hi-MO X10</strong> con tecnología HPBC 2.0 (Hybrid Passivated Back Contact), logrando una eficiencia certificada de <strong>24.8%</strong> en condiciones estándar, la más alta en producción en serie para el segmento residencial y comercial.</p><p>Con una potencia pico de <strong>640W por panel</strong> en formato 182mm (M10), una instalación residencial de 12 paneles en Colombia genera aproximadamente <strong>7.68 kWp</strong>, suficiente para un hogar con consumo de 600-800 kWh/mes dependiendo de la zona. En ciudades como Cali o Barranquilla, con irradiación superior a 5.0 kWh/m²/día, el sistema produciría cerca de <strong>38 kWh diarios</strong> en días claros.</p><p>La eficiencia mejorada también impacta el costo por watio instalado: con menos módulos para la misma capacidad, los costos de estructura, cableado e instalación se reducen entre un <strong>18-22%</strong> respecto a paneles de 20% de eficiencia.</p><p>Para sistemas con almacenamiento (como los que usamos con inversores Victron o Fronius + baterías BYD), la mayor generación en horas pico mejora el ciclo de carga de las baterías, extendiendo su vida útil al reducir la profundidad de descarga nocturna.</p><p>El Hi-MO X10 ya está disponible en distribuidores de Colombia con garantía de rendimiento de 30 años.</p>
-      <p class="card-source">📰 Fuente: <em>LONGi achieves 24.8% efficiency in mass-produced HPBC 2.0 residential panels</em></p>
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
 
-  <article class="article-card " data-category="technical" data-date="2026-03-21">
-    <div class="card-header" style="--accent: #7c3aed">
-      <div class="card-meta">
-        <span class="card-icon">⚙️</span>
-        <span class="card-category" style="color: #7c3aed">Artículos Técnicos</span>
-        
-        <span class="card-tag" style="border-color: #7c3aed40; color: #7c3aed">Modbus TCP SunSpec</span>
-      </div>
-      <span class="card-read">4 min lectura</span>
+    <div class="servicio-card" style="--sc: #00ffcc">
+      <span class="servicio-icon">📡</span>
+      <div class="servicio-tag">Conectividad inteligente</div>
+      <div class="servicio-name">IoT & Redes</div>
+      <p class="servicio-desc">Redes industriales con protocolos Modbus, MQTT y BACnet. Sensores ESP32, gateways LoRaWAN y dashboards en tiempo real con Node-RED.</p>
     </div>
-    <h3 class="card-title">Modbus TCP con Fronius Symo: leer generación solar desde Node.js</h3>
-    <p class="card-summary">Registros SunSpec exactos del Fronius Symo para monitoreo en tiempo real desde cualquier plataforma.</p>
-    <div class="card-body" style="display:none">
-      <p>El inversor <strong>Fronius Symo</strong> implementa el protocolo <strong>SunSpec Modbus TCP</strong> en el puerto 502, compatible con cualquier cliente Modbus. El mapa de registros sigue el estándar SunSpec Alliance, con el bloque de identificación en la dirección <code>40001</code>.</p><p>Registros clave para monitoreo solar (dirección base <code>40070</code> en Fronius Symo):</p><ul><li><code>40083</code> — Potencia CA total (int16, W) — generación instantánea</li><li><code>40085</code> — Frecuencia CA (uint16, 0.01 Hz)</li><li><code>40094</code> — Energía total producida (uint32, Wh acumulado)</li><li><code>40107</code> — Temperatura del inversor (int16, 0.1 °C)</li><li><code>40101</code> — Estado operativo (uint16): 4=MPPT activo, 5=regulando</li></ul><p>Ejemplo con Node.js usando la librería <code>modbus-serial</code>:</p><p><code>const ModbusRTU = require('modbus-serial');<br>const client = new ModbusRTU();<br>await client.connectTCP('192.168.1.100', { port: 502 });<br>client.setID(1);<br>const data = await client.readHoldingRegisters(40083, 2);<br>const watts = data.data[0]; // potencia actual en W<br>console.log('Generación:', watts, 'W');</code></p><p>El factor de escala para potencia está en el registro <code>40084</code> (SF, int16). El valor real es <code>registro × 10^SF</code>. En la mayoría de instalaciones Fronius el SF es -1, por lo que el valor raw 1500 = 150.0 W.</p><p>Esta misma estructura funciona para <strong>SMA Sunny Boy</strong> y <strong>GoodWe</strong> con ajuste de dirección base según su manual SunSpec.</p>
-      
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
 
-  <article class="article-card " data-category="tips" data-date="2026-03-21">
-    <div class="card-header" style="--accent: #00ffcc">
-      <div class="card-meta">
-        <span class="card-icon">💡</span>
-        <span class="card-category" style="color: #00ffcc">Tips IoT & Infra</span>
-        
-        <span class="card-tag" style="border-color: #00ffcc40; color: #00ffcc">Victron + Home Assistant</span>
-      </div>
-      <span class="card-read">3 min lectura</span>
+    <div class="servicio-card" style="--sc: #f59e0b">
+      <span class="servicio-icon">☀️</span>
+      <div class="servicio-tag">Energías renovables</div>
+      <div class="servicio-name">Energía Solar</div>
+      <p class="servicio-desc">Sistemas fotovoltaicos on-grid y off-grid con inversores Fronius, Victron y baterías BYD. Homologados bajo Ley 1715 y net-metering CREG.</p>
     </div>
-    <h3 class="card-title">Conecta tu Victron MultiPlus II a Home Assistant en 10 minutos</h3>
-    <p class="card-summary">VenusOS + MQTT integra todos los datos del inversor/cargador Victron directamente en tu dashboard HA.</p>
-    <div class="card-body" style="display:none">
-      <p>Si tienes un <strong>Victron MultiPlus II</strong> con <strong>Venus OS</strong> (Cerbo GX, Raspberry Pi con Venus, o similar), la integración con Home Assistant es directa vía MQTT — sin drivers adicionales.</p><ol><li><strong>Activa MQTT en VenusOS:</strong><br>VRM Portal → Settings → Services → MQTT → Enable on LAN → Save</li><li><strong>Apunta Home Assistant al broker:</strong><br>En <code>configuration.yaml</code>:<br><code>mqtt:<br>  broker: 192.168.1.X  # IP de tu Venus OS<br>  port: 1883<br>  username: &quot;&quot;<br>  password: &quot;&quot;</code></li><li><strong>Suscríbete a los topics clave:</strong><br><code>N/&lt;VRM_ID&gt;/system/0/Dc/Battery/Soc</code> — SOC batería (%)<br><code>N/&lt;VRM_ID&gt;/system/0/Ac/ActiveIn/L1/P</code> — Potencia AC entrada (W)<br><code>N/&lt;VRM_ID&gt;/system/0/Dc/Pv/Power</code> — Generación solar (W)<br><code>N/&lt;VRM_ID&gt;/vebus/276/Ac/Out/L1/P</code> — Carga del inversor (W)</li><li><strong>Crea sensor en HA:</strong><br><code>sensor:<br>  - platform: mqtt<br>    name: &quot;Victron SOC&quot;<br>    state_topic: &quot;N/XXXXXX/system/0/Dc/Battery/Soc&quot;<br>    value_template: &quot;{{ value_json.value }}&quot;<br>    unit_of_measurement: &quot;%&quot;</code></li></ol><p>El <strong>VRM_ID</strong> lo encuentras en VenusOS → Settings → VRM Online Portal. En menos de 5 minutos tendrás SOC, potencia solar y carga en tiempo real en tu dashboard.</p>
-      
-    </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
 
-  <article class="article-card " data-category="usecase" data-date="2026-03-21">
-    <div class="card-header" style="--accent: #f97316">
-      <div class="card-meta">
-        <span class="card-icon">🧠</span>
-        <span class="card-category" style="color: #f97316">Casos de Uso IA</span>
-        
-        <span class="card-tag" style="border-color: #f9731640; color: #f97316">UPS Predictivo Valle</span>
-      </div>
-      <span class="card-read">4 min lectura</span>
+    <div class="servicio-card" style="--sc: #7c3aed">
+      <span class="servicio-icon">🤖</span>
+      <div class="servicio-tag">Automatización avanzada</div>
+      <div class="servicio-name">IA & Automatización</div>
+      <p class="servicio-desc">Integración de modelos de IA para mantenimiento predictivo, optimización energética y automatización de procesos con Claude API y TensorFlow Lite.</p>
     </div>
-    <h3 class="card-title">AgroLogística Palmira: IA predice cortes de red y activa UPS antes del fallo</h3>
-    <p class="card-summary">Sistema de IA reduce interrupciones no planificadas en 91% y ahorra $240M COP anuales en Palmira, Valle.</p>
-    <div class="card-body" style="display:none">
-      <p><strong>AgroLogística del Valle S.A.S.</strong>, empresa de procesamiento de frutas en Palmira con consumo eléctrico crítico de 180 kW, enfrentaba un promedio de <strong>3 cortes de energía mensuales</strong> no planificados que interrumpían líneas de refrigeración, generando pérdidas de hasta $8M COP por evento.</p><p>La solución implementada integró un <strong>UPS Eaton 9PX 40kVA trifásico</strong> con monitoreo SNMP, sensores de calidad eléctrica en el medidor CREG, y un modelo de ML liviano corriendo en un <strong>ESP32-S3</strong> con TensorFlow Lite.</p><p>El modelo analiza 12 variables en tiempo real: tensión por fase, THD de corriente, frecuencia, temperatura ambiente, y el historial de los últimos 90 días de la subestación local. Cuando la probabilidad de corte supera el 78%, el sistema:</p><ul><li>Transfiere carga crítica al UPS de forma preventiva (antes del corte)</li><li>Activa el generador diésel de respaldo con 45 segundos de margen</li><li>Envía alerta a operadores vía Telegram con tiempo estimado de duración</li></ul><p>Resultados a 8 meses de operación:</p><p><strong>Interrupciones no planificadas:</strong> de 36/año a 3/año (−91%)<br><strong>Pérdidas por producto dañado:</strong> de $96M COP/año a $8M COP/año<br><strong>Consumo UPS en standby:</strong> reducido 18% con gestión adaptativa de carga<br><strong>ROI del sistema completo:</strong> 5.2 meses</p><p>El costo total de implementación fue de <strong>$124M COP</strong>, con ahorro neto anual de <strong>$240M COP</strong>.</p>
-      
+
+    <div class="servicio-card" style="--sc: #f97316">
+      <span class="servicio-icon">🔒</span>
+      <div class="servicio-tag">Seguridad & control</div>
+      <div class="servicio-name">Seguridad TI</div>
+      <p class="servicio-desc">CCTV IP, control de acceso biométrico con ZKTeco, VPN corporativa con ZeroTier y monitoreo perimetral integrado con Home Assistant.</p>
     </div>
-    <button class="card-toggle" onclick="toggleArticle(this)" data-open="false">
-      <span class="toggle-text">Leer artículo</span>
-      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-  </article>
+
+    <div class="servicio-card" style="--sc: #00d4ff">
+      <span class="servicio-icon">⚡</span>
+      <div class="servicio-tag">Continuidad operacional</div>
+      <div class="servicio-name">UPS & Respaldo</div>
+      <p class="servicio-desc">UPS Eaton, Vertiv y Schneider para cargas críticas. Gestión de baterías, monitoreo SNMP y planes de mantenimiento preventivo certificados.</p>
+    </div>
+
   </div>
 </section>
 
-    
+<!-- IA & AVANCES PREVIEW -->
+<section class="ia-preview" id="ia">
+  <div class="ia-preview-header">
+    <div>
+      <div class="section-eyebrow">Contenido diario · Claude AI</div>
+      <h2 class="section-title">IA & <span style="color:var(--cyan)">Avances</span></h2>
+      <p class="section-desc" style="margin-top:.75rem">Noticias, artículos técnicos y casos de uso generados automáticamente cada día.</p>
+    </div>
+    <a href="ia/index.html" class="btn-secondary">Ver todos los artículos →</a>
   </div>
 
-  <!-- SIDEBAR -->
-  <aside class="blog-sidebar">
-    <div class="sidebar-card">
-      <div class="sidebar-title">Categorías</div>
-      
-      <div class="sidebar-cat" onclick="filterBy('news')" style="--fc: #00d4ff">
-        <span>📡</span>
-        <span>Noticias & Marcas</span>
-        <span class="sidebar-count">2</span>
-      </div>
-      <div class="sidebar-cat" onclick="filterBy('solar_news')" style="--fc: #f59e0b">
-        <span>☀️</span>
-        <span>Solar & Almacenamiento</span>
-        <span class="sidebar-count">2</span>
-      </div>
-      <div class="sidebar-cat" onclick="filterBy('technical')" style="--fc: #7c3aed">
-        <span>⚙️</span>
-        <span>Técnicos</span>
-        <span class="sidebar-count">2</span>
-      </div>
-      <div class="sidebar-cat" onclick="filterBy('tips')" style="--fc: #00ffcc">
-        <span>💡</span>
-        <span>Tips IoT & Infra</span>
-        <span class="sidebar-count">2</span>
-      </div>
-      <div class="sidebar-cat" onclick="filterBy('usecase')" style="--fc: #f97316">
-        <span>🧠</span>
-        <span>Casos de Uso IA</span>
-        <span class="sidebar-count">2</span>
-      </div>
-    </div>
+  <div class="ia-preview-grid" id="iaGrid">
+    <div class="ia-loading">⟳ Cargando artículos recientes...</div>
+  </div>
 
-    <div class="sidebar-card">
-      <div class="sidebar-title">Sobre este feed</div>
-      <p class="sidebar-desc">
-        Contenido generado automáticamente por <strong>Claude AI</strong> cada día a las 6am hora Colombia.<br><br>
-        Temas: IA en infraestructura, IoT, Data Centers, energía solar y redes descentralizadas.
+  <div class="ia-footer">
+    <a href="ia/index.html" class="btn-primary" style="display:inline-flex">
+      Ver blog completo — IA & Avances →
+    </a>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="nosotros" id="nosotros">
+  <div class="nosotros-inner">
+    <div>
+      <div class="section-eyebrow">Quiénes somos</div>
+      <h2 class="section-title">Tecnología<br>con propósito</h2>
+      <p class="section-desc" style="margin-top:.75rem">
+        InfraestructuraIT es una empresa colombiana con más de 8 años llevando soluciones de infraestructura tecnológica a empresas de todos los sectores. Operamos en la intersección entre hardware, software e inteligencia artificial.
       </p>
+      <div class="nosotros-values">
+        <div class="value-item">
+          <span class="value-icon">🎯</span>
+          <div class="value-text">
+            <h4>Precisión técnica</h4>
+            <p>Cada solución está respaldada por ingeniería real, protocolos estándar y tecnología de fabricantes líderes.</p>
+          </div>
+        </div>
+        <div class="value-item" style="border-left-color: var(--purple)">
+          <span class="value-icon">🌎</span>
+          <div class="value-text">
+            <h4>Contexto colombiano</h4>
+            <p>Conocemos la regulación CREG, la normativa RETIE y las particularidades del mercado eléctrico nacional.</p>
+          </div>
+        </div>
+        <div class="value-item" style="border-left-color: var(--accent)">
+          <span class="value-icon">⚡</span>
+          <div class="value-text">
+            <h4>Innovación aplicada</h4>
+            <p>Integramos IA, IoT y energía renovable en soluciones prácticas que generan ROI medible desde el primer año.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nosotros-stats">
+        <div class="n-stat"><span class="n-stat-num">+50</span><span class="n-stat-label">Proyectos</span></div>
+        <div class="n-stat"><span class="n-stat-num">8+</span><span class="n-stat-label">Años</span></div>
+        <div class="n-stat"><span class="n-stat-num">100%</span><span class="n-stat-label">Colombiana</span></div>
+        <div class="n-stat"><span class="n-stat-num">24/7</span><span class="n-stat-label">Soporte</span></div>
+      </div>
     </div>
+    <div class="nosotros-visual">
+      <div class="circuit-wrap">
+        <div class="circuit-ring"></div>
+        <div class="circuit-ring"></div>
+        <div class="circuit-ring"></div>
+        <div class="circuit-dot"></div>
+        <div class="circuit-dot"></div>
+        <div class="circuit-dot"></div>
+        <div class="circuit-center">🏢</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="sidebar-card cta-card">
-      <div class="sidebar-title">¿Implementamos IA en tu empresa?</div>
-      <p class="sidebar-desc">Llevamos estas tecnologías a tu infraestructura real.</p>
-      <a href="../index.html#contacto" class="cta-btn">Solicitar propuesta →</a>
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <div class="section-eyebrow">Hablemos</div>
+      <h2 class="section-title">Solicita tu<br>propuesta</h2>
+      <p class="section-desc" style="margin-top:.75rem">
+        Cuéntanos tu proyecto y te respondemos en menos de 24 horas con una propuesta técnica y económica detallada.
+      </p>
+      <div class="contacto-info">
+        <div class="contacto-item">
+          <span class="contacto-item-icon">📍</span>
+          <div>
+            <h4>Ubicación</h4>
+            <p>Bogotá, Colombia</p>
+          </div>
+        </div>
+        <div class="contacto-item">
+          <span class="contacto-item-icon">📧</span>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@infraestructura-it.com">info@infraestructura-it.com</a></p>
+          </div>
+        </div>
+        <div class="contacto-item">
+          <span class="contacto-item-icon">🌐</span>
+          <div>
+            <h4>Blog IA</h4>
+            <p><a href="ia/index.html">infraestructura-it.github.io/webcorporativa/ia/</a></p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="sidebar-card">
-      <div class="sidebar-title">Artículos recientes</div>
-      
-      <div class="recent-item" onclick="jumpTo('day-2026-04-01')">
-        <span class="recent-icon">📡</span>
-        <span class="recent-title">Vertiv invierte $50 millones en manufactura para centros de datos IA</span>
-      </div>
-      <div class="recent-item" onclick="jumpTo('day-2026-04-01')">
-        <span class="recent-icon">☀️</span>
-        <span class="recent-title">US Modules inicia producción de paneles solares en Texas con capacidad 400 MW</span>
-      </div>
-      <div class="recent-item" onclick="jumpTo('day-2026-04-01')">
-        <span class="recent-icon">⚙️</span>
-        <span class="recent-title">Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Implementación</span>
-      </div>
-      <div class="recent-item" onclick="jumpTo('day-2026-04-01')">
-        <span class="recent-icon">💡</span>
-        <span class="recent-title">Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT</span>
-      </div>
-      <div class="recent-item" onclick="jumpTo('day-2026-04-01')">
-        <span class="recent-icon">🧠</span>
-        <span class="recent-title">IA Predictiva Reduce Costos Energéticos 32% en Planta Flores del Magdalena</span>
-      </div>
-      <div class="recent-item" onclick="jumpTo('day-2026-03-21')">
-        <span class="recent-icon">📡</span>
-        <span class="recent-title">Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%</span>
+    <div>
+      <div class="contacto-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre completo">
+          </div>
+          <div class="form-group">
+            <label>Empresa</label>
+            <input type="text" placeholder="Nombre de la empresa">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="correo@empresa.com">
+        </div>
+        <div class="form-group">
+          <label>Servicio de interés</label>
+          <select>
+            <option value="">Selecciona un servicio...</option>
+            <option>Data Centers</option>
+            <option>IoT & Redes</option>
+            <option>Energía Solar</option>
+            <option>IA & Automatización</option>
+            <option>Seguridad TI</option>
+            <option>UPS & Respaldo</option>
+            <option>Solución integral</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea placeholder="Describe tu proyecto o necesidad..."></textarea>
+        </div>
+        <button class="btn-form" onclick="enviarFormulario()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Enviar propuesta
+        </button>
       </div>
     </div>
-  </aside>
-</main>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer class="blog-footer">
+<footer class="site-footer">
   <div class="footer-inner">
-    <span>© 2026 InfraestructuraIT · Colombia</span>
-    <span class="footer-powered">Contenido generado con <strong>Claude AI</strong> · Actualización diaria automática</span>
-    <a href="../index.html">← Volver al sitio principal</a>
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand-logo">
+        <svg width="28" height="28" viewBox="0 0 60 60" fill="none">
+          <rect x="14" y="14" width="32" height="32" rx="4" stroke="#00d4ff" stroke-width="2" fill="none"/>
+          <circle cx="30" cy="30" r="7" fill="#00d4ff" opacity="0.9"/>
+          <circle cx="30" cy="30" r="3" fill="#7c3aed"/>
+        </svg>
+        <span>INFRAESTRUCTURA <strong>IT</strong></span>
+      </a>
+      <p>Empresa colombiana de infraestructura tecnológica. Data Centers, IoT, Solar, Redes e Inteligencia Artificial para empresas de todos los sectores.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">Data Centers</a></li>
+        <li><a href="#servicios">IoT & Redes</a></li>
+        <li><a href="#servicios">Energía Solar</a></li>
+        <li><a href="#servicios">IA & Automatización</a></li>
+        <li><a href="#servicios">Seguridad TI</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="ia/index.html">Blog IA & Avances</a></li>
+        <li><a href="#nosotros">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 InfraestructuraIT · Bogotá, Colombia</span>
+    <span>Blog generado con <strong>Claude AI</strong> · Actualización diaria automática</span>
   </div>
 </footer>
 
-<script src="js/ai-blog.js"></script>
+<script>
+// ── Cargar artículos recientes del manifest.json ──────────────────────────────
+const CATEGORY_COLORS = {
+  news:       '#00d4ff',
+  solar_news: '#f59e0b',
+  technical:  '#7c3aed',
+  tips:       '#00ffcc',
+  usecase:    '#f97316',
+};
+const CATEGORY_ICONS = {
+  news: '📡', solar_news: '☀️', technical: '⚙️', tips: '💡', usecase: '🧠'
+};
+
+async function loadIAPreview() {
+  const grid = document.getElementById('iaGrid');
+  try {
+    const res = await fetch('content/manifest.json?t=' + Date.now());
+    if (!res.ok) throw new Error('No manifest');
+    const manifest = await res.json();
+
+    // Tomar los últimos 6 artículos de los días más recientes
+    const articles = manifest.days
+      .flatMap(d => d.articles || [])
+      .slice(0, 6);
+
+    if (!articles.length) throw new Error('Sin artículos');
+
+    grid.innerHTML = articles.map(a => {
+      const color = CATEGORY_COLORS[a.category_id] || '#00d4ff';
+      const icon  = CATEGORY_ICONS[a.category_id]  || '📡';
+      return `
+      <a href="ia/index.html" class="preview-card" style="--pc: ${color}">
+        <div class="preview-card-meta">
+          <span style="font-size:1rem">${icon}</span>
+          <span class="preview-cat" style="color:${color}">${a.category_id === 'news' ? 'Noticias' : a.category_id === 'solar_news' ? 'Solar' : a.category_id === 'technical' ? 'Técnico' : a.category_id === 'tips' ? 'Tips IoT' : 'Caso IA'}</span>
+          <span class="preview-tag" style="border-color:${color}40;color:${color}">${a.tag}</span>
+          <span class="preview-read">${a.read_time} min</span>
+        </div>
+        <div class="preview-title">${a.title}</div>
+        <div class="preview-summary">${a.summary}</div>
+      </a>`;
+    }).join('');
+
+  } catch(e) {
+    grid.innerHTML = `
+      <div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--muted);font-family:'Space Mono',monospace;font-size:.8rem">
+        <div style="font-size:2rem;margin-bottom:.75rem">📰</div>
+        Artículos disponibles en el blog completo
+        <br><br>
+        <a href="ia/index.html" style="color:var(--cyan);text-decoration:none">Ver IA & Avances →</a>
+      </div>`;
+  }
+}
+
+// ── Formulario de contacto ────────────────────────────────────────────────────
+function enviarFormulario() {
+  const btn = document.querySelector('.btn-form');
+  btn.textContent = '✓ Mensaje enviado';
+  btn.style.background = 'var(--accent)';
+  setTimeout(() => {
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Enviar propuesta';
+    btn.style.background = 'var(--cyan)';
+  }, 3000);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', loadIAPreview);
+</script>
 </body>
 </html>
