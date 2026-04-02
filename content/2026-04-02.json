@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-02T15:27:11.934Z",
+  "date": "2026-04-02",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-02-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-02",
+      "brand": "Vertiv",
+      "source_title": "Vertiv to expand Ohio manufacturing to boost U.S. production of critical thermal management technologies for AI data centers",
+      "title": "Vertiv invierte US$50 millones en expansión de manufactura para centros de datos IA",
+      "summary": "La expansión en Ohio busca incrementar la producción de tecnologías críticas de gestión térmica para data centers",
+      "body": "<p><strong>Vertiv anunció una inversión de aproximadamente US$50 millones</strong> para expandir su presencia manufacturera en Ironton, Ohio, y su campus corporativo en Westerville, Ohio. Esta expansión está específicamente diseñada para incrementar la producción estadounidense de tecnologías críticas de gestión térmica para centros de datos de inteligencia artificial.</p><p>La compañía, líder global en infraestructura digital crítica, responde así al creciente aumento en la demanda de soluciones de enfriamiento especializadas para aplicaciones de IA, que requieren <strong>densidades de potencia significativamente mayores</strong> que los centros de datos tradicionales.</p><p>Para empresas colombianas y latinoamericanas que planean implementar infraestructura de IA, esta expansión podría traducirse en <strong>mayor disponibilidad y tiempos de entrega más cortos</strong> para sistemas UPS y soluciones de gestión térmica Vertiv. Las tecnologías de enfriamiento para IA típicamente manejan cargas de hasta 100 kVA por rack, comparado con los 5-10 kVA de aplicaciones tradicionales.</p><p>La inversión de Vertiv refleja las proyecciones de crecimiento del mercado de centros de datos para IA, estimado en más de US$40 mil millones para 2027. Empresas locales deberán considerar estas <strong>nuevas tecnologías de enfriamiento de alta densidad</strong> al planificar sus proyectos de transformación digital e IA.</p>",
+      "tag": "Vertiv Data Centers",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-02-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-02",
+      "brand": "TNO",
+      "source_title": "TNO unveils 12.4%-efficient perovksite solar tile",
+      "title": "TNO presenta teja solar de perovskita con 12.4% de eficiencia",
+      "summary": "Instituto holandés desarrolla primera teja solar flexible de perovskita, ideal para techos curvos en Colombia",
+      "body": "<p>El instituto de investigación holandés <strong>TNO ha presentado la primera teja solar basada en perovskita del mundo</strong>, alcanzando hasta 13.8% de eficiencia en módulos independientes y 12.4% cuando se instala en superficies curvas. Los módulos flexibles fueron producidos usando la tecnología experimental roll-to-roll de TNO.</p><p>Esta innovación representa una <strong>oportunidad significativa para el mercado solar colombiano</strong>, especialmente considerando la irradiación solar promedio de 4.5 kWh/m²/día en zonas clave del país. Las tejas flexibles podrían adaptarse perfectamente a la arquitectura tradicional colombiana con techos de teja de barro.</p><p>Bajo el marco de la <strong>Ley 1715 de energías renovables</strong>, los usuarios colombianos pueden beneficiarse del sistema de net-metering para inyectar excedentes a la red. Con tarifas promedio de Codensa (~$650 COP/kWh) y EPM (~$580 COP/kWh), estas tejas solares integradas podrían generar ahorros considerables sin comprometer la estética arquitectónica.</p><p>La <strong>tecnología de perovskita representa el futuro</strong> de la energía solar fotovoltaica, ofreciendo mayor flexibilidad de instalación que los paneles tradicionales de silicio, especialmente valiosa en edificaciones patrimoniales o con restricciones estéticas en Colombia.</p>",
+      "tag": "TNO Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-02-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-02",
+      "brand": null,
+      "source_title": null,
+      "title": "Modbus TCP con Inversores Fronius Symo: Registros y Configuración Práctica",
+      "summary": "Implementación completa de comunicación Modbus TCP con inversores Fronius Symo para monitoreo en tiempo real",
+      "body": "<p>Los inversores Fronius Symo implementan el protocolo <strong>Modbus TCP</strong> en el puerto 502, permitiendo lectura de parámetros operacionales críticos para sistemas de monitoreo profesional.</p><p><strong>Configuración inicial:</strong></p><ul><li>Habilitar Modbus TCP en Fronius Solar.web</li><li>Configurar dirección IP estática del inversor</li><li>Unit ID por defecto: 1</li></ul><p>Los registros principales utilizan <strong>función code 03 (Read Holding Registers)</strong> con direcciones específicas:</p><p><strong>Registros clave Fronius Symo:</strong></p><ul><li><code>40083-40084</code>: Potencia AC total (32-bit, Watts)</li><li><code>40085-40086</code>: Energía total generada (32-bit, Wh)</li><li><code>40087</code>: Voltaje DC String 1 (16-bit, 0.1V)</li><li><code>40089</code>: Corriente DC String 1 (16-bit, 0.01A)</li><li><code>40103</code>: Voltaje AC L1-N (16-bit, 0.01V)</li><li><code>40149</code>: Estado del inversor (16-bit)</li></ul><p><strong>Implementación Python con pymodbus:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registros 40083-40084)<br>result = client.read_holding_registers(40083, 2, unit=1)<br>if result.isError():<br>    print('Error de comunicación')<br>else:<br>    # Combinar registros 32-bit<br>    power_raw = (result.registers[0] << 16) + result.registers[1]<br>    power_watts = power_raw if power_raw < 0x80000000 else power_raw - 0x100000000<br>    print(f'Potencia AC: {power_watts} W')<br><br>client.close()</code><p>Para instalaciones en Colombia, considerar la <strong>latencia de red</strong> y configurar timeouts apropiados (mínimo 3 segundos). El protocolo Modbus TCP permite integración directa con SCADA y sistemas de gestión energética, facilitando el cumplimiento de regulaciones CREG para generación distribuida.</p><p><strong>Troubleshooting común:</strong> Verificar firewall del inversor y compatibilidad de firmware para registros extendidos.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 3
+    },
+    {
+      "id": "2026-04-02-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-02",
+      "brand": null,
+      "source_title": null,
+      "title": "Leer SOC y tensión de batería Pylontech desde Node-RED con modbus-serial",
+      "summary": "Obtén datos en tiempo real del estado de carga y voltaje de baterías Pylontech US2000/US3000 vía protocolo Modbus RTU",
+      "body": "<p>Las baterías Pylontech exponen datos críticos vía Modbus RTU que puedes leer directamente con Node-RED para monitoreo avanzado.</p><ol><li>Instala el nodo <code>node-red-contrib-modbus</code> en Node-RED desde Manage Palette</li><li>Conecta cable RS485 desde puerto de comunicaciones Pylontech (pines 7-8) a adaptador USB-RS485</li><li>Configura nodo <strong>Modbus-Read</strong> con estos parámetros:<br>- Unit ID: 1 (dirección Modbus por defecto)<br>- Address: 0x1044 para SOC, 0x1041 para tensión<br>- Quantity: 1 registro<br>- Baud Rate: 115200</li><li>Crea función JavaScript para procesar datos hexadecimales:</li></ol><code>// Para SOC (0x1044)\nvar soc = msg.payload[0] / 100; // Convierte a porcentaje\nmsg.payload = soc;\nreturn msg;\n\n// Para tensión (0x1041) \nvar voltage = msg.payload[0] / 1000; // Convierte a voltios\nmsg.payload = voltage;\nreturn msg;</code><ol start='5'><li>Conecta salida a nodo Dashboard Gauge para visualización en tiempo real</li><li>Programa lectura cada 30 segundos con nodo <strong>Inject</strong> para evitar sobrecarga del BMS</li></ol><p>Este método funciona con modelos US2000C/US3000C firmware v1.3+ y permite crear alertas personalizadas cuando SOC < 20% o tensión fuera del rango 48-54V.</p>",
+      "tag": "Pylontech Modbus",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-02-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-02",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce 35% Fallas UPS en Centro de Datos Medellín",
+      "summary": "AgroTech Solutions ahorró $127M COP anuales implementando mantenimiento predictivo con IA en UPS críticos",
+      "body": "<p><strong>AgroTech Solutions</strong>, empresa de software agrícola con 850 empleados en Medellín, enfrentaba fallas críticas en su centro de datos de 500m² que afectaban sus servicios cloud para 15,000 productores cafeteros colombianos.</p><p>El problema principal eran interrupciones no programadas de sus <strong>UPS Eaton 9PX 20kVA</strong> en configuración N+1, causando pérdidas promedio de <strong>$8.2M COP mensuales</strong> por downtime y mantenimientos reactivos de emergencia.</p><p>La solución implementada consistió en sensores IoT conectados a un sistema de IA basado en <strong>TensorFlow Lite</strong> corriendo en edge computing con <strong>Raspberry Pi 4</strong>. El algoritmo de anomaly detection analiza en tiempo real voltajes, corrientes, temperaturas y armónicos de los UPS, cruzando datos con el software <strong>Eaton Intelligent Power Manager</strong>.</p><p>Complementariamente, instalamos paneles solares <strong>LONGi Hi-MO 6 Explorer 585W</strong> con inversores <strong>Fronius Symo GEN24 15kW</strong> y baterías <strong>BYD Battery-Box Premium HVS 10.24kWh</strong>. Los controladores <strong>Victron SmartSolar MPPT 250/100</strong> alimentan el sistema de monitoreo mediante <strong>Node-RED</strong> con módulos de machine learning.</p><p>Resultados tras 14 meses: reducción del <strong>35% en fallas imprevistas</strong>, ahorro de <strong>$127M COP anuales</strong> en costos operativos, incremento del <strong>23% en eficiencia energética</strong> del centro de datos, y <strong>ROI de 18 meses</strong>. La generación solar cubre el 40% del consumo diurno, representando <strong>180,000 kWh anuales</strong> de energía limpia.</p>",
+      "tag": "DataCenter+IA Medellín",
+      "read_time": 2
+    }
+  ]
+}

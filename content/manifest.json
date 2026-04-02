@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-02T03:48:05.496Z",
-  "total_days": 2,
-  "total_articles": 10,
+  "last_build": "2026-04-02T15:30:20.132Z",
+  "total_days": 3,
+  "total_articles": 15,
   "days": [
+    {
+      "date": "2026-04-02",
+      "generated_at": "2026-04-02T15:27:11.934Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-02-news",
+          "category_id": "news",
+          "title": "Vertiv invierte US$50 millones en expansión de manufactura para centros de datos IA",
+          "summary": "La expansión en Ohio busca incrementar la producción de tecnologías críticas de gestión térmica para data centers",
+          "tag": "Vertiv Data Centers",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-02-solar_news",
+          "category_id": "solar_news",
+          "title": "TNO presenta teja solar de perovskita con 12.4% de eficiencia",
+          "summary": "Instituto holandés desarrolla primera teja solar flexible de perovskita, ideal para techos curvos en Colombia",
+          "tag": "TNO Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-02-technical",
+          "category_id": "technical",
+          "title": "Modbus TCP con Inversores Fronius Symo: Registros y Configuración Práctica",
+          "summary": "Implementación completa de comunicación Modbus TCP con inversores Fronius Symo para monitoreo en tiempo real",
+          "tag": "Modbus TCP",
+          "read_time": 3
+        },
+        {
+          "id": "2026-04-02-tips",
+          "category_id": "tips",
+          "title": "Leer SOC y tensión de batería Pylontech desde Node-RED con modbus-serial",
+          "summary": "Obtén datos en tiempo real del estado de carga y voltaje de baterías Pylontech US2000/US3000 vía protocolo Modbus RTU",
+          "tag": "Pylontech Modbus",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-02-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce 35% Fallas UPS en Centro de Datos Medellín",
+          "summary": "AgroTech Solutions ahorró $127M COP anuales implementando mantenimiento predictivo con IA en UPS críticos",
+          "tag": "DataCenter+IA Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-04-01",
       "generated_at": "2026-04-02T02:28:06.023Z",
