@@ -98,7 +98,7 @@ function daySection(day, isToday) {
 
 // ── Full HTML page ────────────────────────────────────────────────────────────
 function buildHTML(allDays) {
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Bogota' });
   const totalArticles = allDays.reduce((sum, d) => sum + (d.articles?.length || 0), 0);
   const lastUpdate = allDays[0]?.generated_at
     ? new Date(allDays[0].generated_at).toLocaleString('es-CO', { timeZone: 'America/Bogota' })
