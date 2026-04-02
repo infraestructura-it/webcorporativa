@@ -9,7 +9,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT       = path.resolve(__dirname, '..');
+const ROOT        = path.resolve(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'content');
 const PUBLIC_DIR  = path.join(ROOT, 'ia');
 
@@ -18,12 +18,13 @@ function loadAllContent() {
   const files = fs.readdirSync(CONTENT_DIR)
     .filter(f => f.match(/^\d{4}-\d{2}-\d{2}\.json$/))
     .sort()
-    .reverse(); // newest first
+    .reverse()
+    .slice(0, 10); // máximo 10 días para evitar timeout
 
   const days = files.map(f => {
     const raw = fs.readFileSync(path.join(CONTENT_DIR, f), 'utf8');
     return JSON.parse(raw);
-  });
+  }).filter(d => d.articles && d.articles.length > 0); // ignorar días sin artículos
 
   return days;
 }
@@ -39,7 +40,6 @@ function formatDateES(isoDate) {
 
 // ── Article card HTML ─────────────────────────────────────────────────────────
 function articleCard(article, featured = false) {
-  // Brand badge (shown when article came from a brand RSS)
   const brandBadge = article.brand
     ? `<span class="card-brand" style="border-color:${article.category_color}50;color:${article.category_color}">
          <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="currentColor" opacity=".4"/><circle cx="4" cy="4" r="1.5" fill="currentColor"/></svg>
@@ -47,7 +47,6 @@ function articleCard(article, featured = false) {
        </span>`
     : '';
 
-  // Source note at bottom of body
   const sourceNote = article.source_title
     ? `<p class="card-source">📰 Fuente: <em>${article.source_title}</em></p>`
     : '';
@@ -98,7 +97,9 @@ function daySection(day, isToday) {
 
 // ── Full HTML page ────────────────────────────────────────────────────────────
 function buildHTML(allDays) {
+  // Fecha en Colombia, igual que generate-content.js
   const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Bogota' });
+
   const totalArticles = allDays.reduce((sum, d) => sum + (d.articles?.length || 0), 0);
   const lastUpdate = allDays[0]?.generated_at
     ? new Date(allDays[0].generated_at).toLocaleString('es-CO', { timeZone: 'America/Bogota' })
@@ -110,12 +111,12 @@ function buildHTML(allDays) {
   }));
 
   const CATEGORIES = [
-      { id: 'all',        label: 'Todos',                icon: '◎',  color: '#00d4ff' },
-    { id: 'news',      label: 'Noticias & Marcas',      icon: '📡', color: '#00d4ff' },
-    { id: 'solar_news',label: 'Solar & Almacenamiento',  icon: '☀️', color: '#f59e0b' },
-    { id: 'technical', label: 'Técnicos',                icon: '⚙️', color: '#7c3aed' },
-    { id: 'tips',      label: 'Tips IoT & Infra',        icon: '💡', color: '#00ffcc' },
-    { id: 'usecase',   label: 'Casos de Uso IA',         icon: '🧠', color: '#f97316' },
+    { id: 'all',        label: 'Todos',                  icon: '◎',  color: '#00d4ff' },
+    { id: 'news',       label: 'Noticias & Marcas',       icon: '📡', color: '#00d4ff' },
+    { id: 'solar_news', label: 'Solar & Almacenamiento',  icon: '☀️', color: '#f59e0b' },
+    { id: 'technical',  label: 'Técnicos',                icon: '⚙️', color: '#7c3aed' },
+    { id: 'tips',       label: 'Tips IoT & Infra',        icon: '💡', color: '#00ffcc' },
+    { id: 'usecase',    label: 'Casos de Uso IA',         icon: '🧠', color: '#f97316' },
   ];
 
   return `<!DOCTYPE html>
@@ -170,12 +171,11 @@ function buildHTML(allDays) {
     <div class="hero-stats">
       <div class="stat"><span class="stat-num">${totalArticles}</span><span class="stat-label">Artículos</span></div>
       <div class="stat"><span class="stat-num">${allDays.length}</span><span class="stat-label">Días</span></div>
-      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Categorías</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Categorías</span></div>
       <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Ciclo</span></div>
     </div>
     <div class="last-update">Última actualización: <span>${lastUpdate}</span></div>
   </div>
-  <!-- animated grid bg -->
   <div class="hero-grid" aria-hidden="true"></div>
 </header>
 
@@ -202,7 +202,7 @@ function buildHTML(allDays) {
 <!-- CONTENT -->
 <main class="blog-main" id="blogMain">
   <div class="content-wrap">
-    ${allDays.map((day, i) => daySection(day, day.date === today)).join('\n')}
+    ${allDays.map((day) => daySection(day, day.date === today)).join('\n')}
 
     ${allDays.length === 0 ? `
     <div class="empty-state">
@@ -270,14 +270,12 @@ function main() {
   if (!fs.existsSync(PUBLIC_DIR)) fs.mkdirSync(PUBLIC_DIR, { recursive: true });
 
   const allDays = loadAllContent();
-  console.log(`  ✓ Loaded ${allDays.length} days of content`);
+  console.log(`  ✓ Cargados ${allDays.length} días con contenido`);
 
-  // Build main HTML
   const html = buildHTML(allDays);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'index.html'), html, 'utf8');
-  console.log(`  ✓ Built public/index.html`);
+  console.log(`  ✓ Construido ia/index.html`);
 
-  // Build content manifest (for future API usage)
   const manifest = {
     last_build: new Date().toISOString(),
     total_days: allDays.length,
@@ -297,9 +295,9 @@ function main() {
     }))
   };
   fs.writeFileSync(path.join(CONTENT_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2), 'utf8');
-  console.log(`  ✓ Built content/manifest.json`);
+  console.log(`  ✓ Construido content/manifest.json`);
 
-  console.log(`\n✅ Site built successfully\n`);
+  console.log(`\n✅ Sitio construido exitosamente\n`);
 }
 
 main();
