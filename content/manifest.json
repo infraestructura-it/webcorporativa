@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-02T15:30:20.132Z",
-  "total_days": 3,
-  "total_articles": 15,
+  "last_build": "2026-04-03T11:51:20.501Z",
+  "total_days": 4,
+  "total_articles": 20,
   "days": [
+    {
+      "date": "2026-04-03",
+      "generated_at": "2026-04-03T11:46:41.445Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-03-news",
+          "category_id": "news",
+          "title": "Vertiv invierte $50M en Ohio para tecnología térmica de centros de datos",
+          "summary": "Vertiv destinará $50 millones para expandir manufactura de sistemas de enfriamiento críticos para infraestructura de IA",
+          "tag": "Vertiv Infraestructura",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-03-solar_news",
+          "category_id": "solar_news",
+          "title": "Victron Energy impulsa estaciones antárticas con energía solar renovable",
+          "summary": "La tecnología de Victron Energy reduce dependencia de diésel en estaciones remotas, aplicable a proyectos off-grid en Colombia",
+          "tag": "Victron Energy Sistema",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-03-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
+          "summary": "Aprenderá registros Modbus específicos, códigos de función y configuración para monitoreo remoto de inversores solares",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-03-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu sistema solar Victron en Home Assistant para monitorear potencia, SOC batería y estado del inversor remotamente",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-03-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce 34% Fallas UPS en Cencosud Colombia",
+          "summary": "Algoritmo ML predice fallas en UPS Eaton 9PX, ahorrando $847M COP anuales en centro de datos Bogotá",
+          "tag": "UPS+Predictivo Bogotá",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-04-02",
       "generated_at": "2026-04-02T15:27:11.934Z",

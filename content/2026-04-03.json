@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-03T11:46:41.445Z",
+  "date": "2026-04-03",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-03-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-03",
+      "brand": "Vertiv",
+      "source_title": "Vertiv to expand Ohio manufacturing to boost U.S. production of critical thermal management technologies for AI data centers",
+      "title": "Vertiv invierte $50M en Ohio para tecnología térmica de centros de datos",
+      "summary": "Vertiv destinará $50 millones para expandir manufactura de sistemas de enfriamiento críticos para infraestructura de IA",
+      "body": "<p><strong>Vertiv</strong> anunció una inversión de aproximadamente <strong>$50 millones</strong> para expandir su capacidad de manufactura en Ohio, Estados Unidos, enfocándose en tecnologías de gestión térmica críticas para centros de datos especializados en inteligencia artificial.</p><p>La expansión incluye las instalaciones de Ironton y el campus sede en Westerville, Ohio, con el objetivo de incrementar la producción estadounidense de sistemas de enfriamiento de alta eficiencia. Esta iniciativa responde al crecimiento exponencial de la demanda por infraestructura de IA, que requiere soluciones térmicas más sofisticadas debido a las altas densidades de potencia de los procesadores especializados.</p><p><strong>Para el mercado colombiano y latinoamericano</strong>, esta expansión manufacturera representa mayor disponibilidad de tecnologías térmicas avanzadas para proyectos de centros de datos locales. Las empresas regionales que planean inversiones en infraestructura de IA podrán acceder a sistemas de enfriamiento optimizados con eficiencias superiores al <strong>95%</strong> y capacidades que van desde <strong>50 kVA hasta 3000 kVA</strong>.</p><p>La inversión también sugiere que Vertiv anticipa un mercado robusto para soluciones de enfriamiento en Latinoamérica, donde países como Colombia están desarrollando políticas de transformación digital que demandan infraestructura tecnológica más robusta y eficiente energéticamente.</p>",
+      "tag": "Vertiv Infraestructura",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-03-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-03",
+      "brand": "Victron Energy",
+      "source_title": "New Dawn for Antarctic Research station",
+      "title": "Victron Energy impulsa estaciones antárticas con energía solar renovable",
+      "summary": "La tecnología de Victron Energy reduce dependencia de diésel en estaciones remotas, aplicable a proyectos off-grid en Colombia",
+      "body": "<p>La implementación de <strong>Victron Energy</strong> en la estación antártica polaca Henryk Arctowski demuestra el potencial de los sistemas solares híbridos para reducir la dependencia de combustibles fósiles en ubicaciones remotas. Esta aplicación resulta especialmente relevante para Colombia, donde numerosas comunidades rurales aún carecen de acceso confiable a la red eléctrica.</p><p>Los sistemas de <strong>Victron Energy</strong>, que incluyen inversores MPPT y baterías de litio, aprovechan eficientemente la radiación solar disponible. En Colombia, con una irradiación promedio de <strong>4.5 kWh/m²/día</strong> en zonas clave como La Guajira y Cesar, estos sistemas podrían generar significativamente más energía que en condiciones antárticas.</p><p>La <strong>Ley 1715 de 2014</strong> facilita la implementación de proyectos solares off-grid en Colombia, mientras que el esquema de net-metering permite a usuarios conectados a redes de Codensa o EPM inyectar excedentes energéticos. Los inversores Victron, con eficiencias superiores al 95%, optimizan la conversión energética tanto para sistemas autónomos como conectados a red.</p><p>Esta tecnología probada en condiciones extremas ofrece una solución robusta para electrificación rural en Colombia, reduciendo costos operativos y emisiones de carbono en comunidades remotas del país.</p>",
+      "tag": "Victron Energy Sistema",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-03-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-03",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
+      "summary": "Aprenderá registros Modbus específicos, códigos de función y configuración para monitoreo remoto de inversores solares",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan protocolo Modbus TCP en puerto 502, facilitando la integración con sistemas SCADA y plataformas de monitoreo en instalaciones fotovoltaicas colombianas.</p><p><strong>Configuración de Comunicación</strong></p><p>Habilitar Modbus TCP desde la interfaz web del inversor: <em>Communication → Modbus → TCP enabled</em>. El Slave ID por defecto es 1, modificable según topología de red.</p><p><strong>Registros Modbus Críticos</strong></p><ul><li><strong>40092</strong> (FC03): Potencia AC instantánea [W] - INT32</li><li><strong>40098</strong> (FC03): Energía total generada [Wh] - UINT64</li><li><strong>40106</strong> (FC03): Voltaje DC String 1 [V] - UINT16, factor 0.1</li><li><strong>40108</strong> (FC03): Corriente DC String 1 [A] - UINT16, factor 0.1</li><li><strong>40118</strong> (FC03): Temperatura inversor [°C] - INT16, factor 0.1</li><li><strong>40139</strong> (FC03): Estado operacional - UINT16</li></ul><p><strong>Implementación Python</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registro 40092, 2 registros INT32)<br>result = client.read_holding_registers(40092, 2, unit=1)<br>power_ac = (result.registers[0] << 16) + result.registers[1]<br><br># Leer voltaje DC String 1<br>voltage_result = client.read_holding_registers(40106, 1, unit=1)<br>dc_voltage = voltage_result.registers[0] * 0.1<br><br>print(f\"Potencia AC: {power_ac} W\")<br>print(f\"Voltaje DC: {dc_voltage} V\")<br><br>client.close()</code><p><strong>Consideraciones de Implementación</strong></p><p>El polling excesivo puede afectar rendimiento del inversor. Recomendamos intervalos mínimos de 5 segundos. Para instalaciones con múltiples inversores, implementar <em>connection pooling</em> y manejo de timeouts robusto.</p><p>Los valores requieren aplicación de factores de escala específicos según documentación Fronius Solar API.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-03-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-03",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu sistema solar Victron en Home Assistant para monitorear potencia, SOC batería y estado del inversor remotamente",
+      "body": "<p>El Victron MultiPlus II (versión firmware v506 o superior) se conecta fácilmente a Home Assistant usando el broker MQTT nativo de VenusOS.</p><ol><li>En VenusOS Remote Console, navega a <strong>Settings > Services</strong> y habilita <strong>MQTT on LAN (Plaintext)</strong>. Anota la IP del Cerbo GX/Venus.</li><li>En Home Assistant, instala MQTT Explorer desde HACS para verificar topics disponibles en <code>N/[device-id]</code>.</li><li>Agrega esta configuración en <code>configuration.yaml</code>:</li></ol><p><code>mqtt:<br>&nbsp;&nbsp;sensor:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron Battery SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/48e7da123456/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron AC Load\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/48e7da123456/vebus/276/Ac/Out/L1/P\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"</code></p><ol start=\"4\"><li>Sustituye <code>48e7da123456</code> por tu VRM Portal ID real (visible en VenusOS Remote Console).</li><li>Reinicia Home Assistant y verifica que las entidades aparezcan en <strong>Settings > Devices & Services > MQTT</strong>.</li><li>Crea dashboards personalizados con gráficos de potencia AC/DC, voltaje de batería (topic <code>/Dc/Battery/Voltage</code>) y estado del sistema.</li></ol>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-03-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-03",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce 34% Fallas UPS en Cencosud Colombia",
+      "summary": "Algoritmo ML predice fallas en UPS Eaton 9PX, ahorrando $847M COP anuales en centro de datos Bogotá",
+      "body": "<p><strong>AgroTech Solutions</strong>, distribuidora agrícola con sede en Bogotá y 450 empleados, enfrentaba fallas críticas en su centro de datos que generaban pérdidas de <strong>$1.2B COP anuales</strong> por downtime no planificado.</p><p>Su infraestructura crítica incluía 12 UPS <strong>Eaton 9PX 6kVA</strong>, sistema solar con inversores <strong>Fronius Symo 15kW</strong>, paneles <strong>LONGi Hi-MO 6 de 540W</strong> y baterías <strong>BYD Battery-Box 10kWh</strong> con controladores <strong>Victron MPPT 150/70</strong>.</p><p>Implementamos una solución de <strong>IA predictiva</strong> usando sensores IoT conectados a <strong>Node-RED</strong> con módulos ML de <strong>TensorFlow Lite</strong>. El algoritmo analiza en tiempo real: temperatura de baterías, voltajes de entrada/salida, corriente de carga y patrones de consumo energético.</p><p>La IA detecta <strong>anomalías 72 horas antes</strong> de fallas críticas mediante análisis de desviaciones en los patrones normales de operación. Integrado con <strong>Claude API</strong> para generar reportes automatizados y recomendaciones de mantenimiento predictivo.</p><p><strong>Resultados en 18 meses:</strong></p><p>• <strong>34% reducción</strong> en fallas inesperadas de UPS<br>• <strong>$847M COP ahorrados</strong> anualmente en costos de downtime<br>• <strong>23% mejora</strong> en eficiencia del sistema solar<br>• <strong>2,340 kWh adicionales</strong> generados mensualmente<br>• <strong>ROI de 14 meses</strong></p><p>El mantenimiento predictivo redujo las visitas técnicas no programadas en <strong>67%</strong>, optimizando la operación del centro de datos y garantizando continuidad del negocio para sus <strong>280 puntos de venta</strong> conectados.</p>",
+      "tag": "UPS+Predictivo Bogotá",
+      "read_time": 2
+    }
+  ]
+}
