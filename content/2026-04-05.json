@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-05T11:39:20.236Z",
+  "date": "2026-04-05",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-05-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-05",
+      "brand": "Vertiv",
+      "source_title": "Vertiv to expand Ohio manufacturing to boost U.S. production of critical thermal management technologies for AI data centers",
+      "title": "Vertiv invierte $50 millones en manufactura de refrigeración para IA en Ohio",
+      "summary": "El fabricante de infraestructura crítica fortalecerá producción de tecnologías térmicas para data centers de IA",
+      "body": "<p><strong>Vertiv (NYSE: VRT)</strong> anunció una inversión de aproximadamente <strong>$50 millones</strong> para expandir su capacidad de manufactura en Ironton y Westerville, Ohio, enfocándose en tecnologías de gestión térmica críticas para data centers de inteligencia artificial.</p><p>La expansión responde al crecimiento exponencial de la demanda de infraestructura de refrigeración para aplicaciones de IA, que requieren <strong>densidades de potencia superiores a 40 kW por rack</strong>, comparado con los 5-10 kW tradicionales en data centers convencionales.</p><p>Para el mercado colombiano y latinoamericano, esta inversión representa mayor disponibilidad de <strong>sistemas de refrigeración líquida</strong> y unidades de aire acondicionado de precisión que las empresas locales necesitarán para sus proyectos de transformación digital y adopción de IA.</p><p>Los nuevos sistemas de Vertiv alcanzarán <strong>eficiencias superiores al 95%</strong> y capacidades desde 50 kVA hasta 3 MVA, cruciales para empresas colombianas que planean implementar centros de datos edge computing o expandir su infraestructura existente.</p><p>Esta inversión también garantizará menores tiempos de entrega para Latinoamérica, reduciendo la dependencia de importaciones asiáticas y mejorando el <strong>soporte técnico local</strong> para proyectos críticos de infraestructura TI.</p>",
+      "tag": "Vertiv Infraestructura",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-05-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-05",
+      "brand": "Sungrow",
+      "source_title": "Chinese PV Industry Brief: Sungrow storage overtakes inverters in 2025",
+      "title": "Sungrow consolida liderazgo con almacenamiento de energía como negocio principal",
+      "summary": "La empresa china reporta que sus sistemas BESS superaron a inversores fotovoltaicos en ingresos durante 2025",
+      "body": "<p><strong>Sungrow</strong>, uno de los principales fabricantes globales de equipos fotovoltaicos, anunció que sus sistemas de almacenamiento de energía (BESS) se convirtieron en su segmento de negocio más grande durante 2025, superando por primera vez a los inversores solares tradicionales.</p><p>La compañía reportó ingresos de <strong>89.184 millones de yuanes (USD 12.950 millones)</strong>, representando un crecimiento del 14.55% interanual, con ganancias netas que también mostraron incrementos de doble dígito.</p><p>Esta tendencia hacia el almacenamiento resulta especialmente relevante para el <strong>mercado solar colombiano</strong>, donde la irradiación promedio de 4.5 kWh/m²/día en zonas clave como La Guajira y Cesar ofrece condiciones ideales para proyectos híbridos solar-almacenamiento.</p><p>Con la <strong>Ley 1715 de 2014</strong> y el esquema de net-metering vigente, los sistemas BESS de Sungrow pueden maximizar el aprovechamiento de la energía solar en horarios de mayor tarifa eléctrica, especialmente beneficioso para usuarios de Codensa y EPM que enfrentan tarifas variables.</p><p>Los inversores híbridos de Sungrow, con eficiencias superiores al <strong>98.5%</strong>, permiten integrar almacenamiento desde 5 kWh hasta proyectos de escala MW, posicionándose como solución integral para el creciente mercado colombiano de energías renovables distribuidas.</p>",
+      "tag": "Sungrow BESS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-05-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-05",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores SMA Sunny Boy: Registros y Configuración",
+      "summary": "Configuración técnica de Modbus TCP para monitoreo de inversores SMA, registros reales y códigos de implementación",
+      "body": "<p>Los inversores <strong>SMA Sunny Boy</strong> soportan comunicación Modbus TCP en puerto 502, permitiendo monitoreo remoto y control de parámetros operacionales. La configuración requiere activar el protocolo en Sunny Portal o SMA Data Manager M.</p><p><strong>Configuración inicial:</strong></p><ul><li>Dirección IP estática del inversor</li><li>Puerto Modbus TCP: 502</li><li>Unit ID: 3 (por defecto)</li><li>Timeout: 10 segundos</li></ul><p>Los registros principales para monitoreo incluyen:</p><ul><li><code>30775-30776</code>: Potencia AC total (32-bit, W)</li><li><code>30783-30784</code>: Voltaje DC String 1 (32-bit, 0.01V)</li><li><code>30977-30978</code>: Corriente AC L1 (32-bit, mA)</li><li><code>30513</code>: Estado operacional (16-bit)</li><li><code>30201</code>: Temperatura interna (16-bit, 0.1°C)</li></ul><p><strong>Código Python para lectura:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100')<br>client.connect()<br><br># Leer potencia AC (registros 30775-30776)<br>result = client.read_holding_registers(30775, 2, unit=3)<br>if result.isError():<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Error en comunicación')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;power = (result.registers[0] << 16) + result.registers[1]<br>&nbsp;&nbsp;&nbsp;&nbsp;print(f'Potencia AC: {power} W')<br><br>client.close()</code><p>Para implementaciones en Colombia, considerar la configuración de red local y firewall corporativo. Los inversores SMA requieren <strong>función code 03</strong> para lectura de registros holding. La frecuencia de polling recomendada es 30-60 segundos para evitar sobrecarga del inversor.</p><p>Esta configuración permite integración con SCADA, Zabbix o sistemas de monitoreo personalizados para plantas solares comerciales.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-05-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-05",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu sistema solar Victron en Home Assistant para monitorear y controlar remotamente desde un dashboard único",
+      "body": "<p>Integrar tu inversor Victron MultiPlus II con Home Assistant te permite centralizar el monitoreo de tu sistema solar y crear automatizaciones inteligentes basadas en SOC, consumos y generación.</p><ol><li>En VenusOS v2.94+, activa MQTT en Settings → Services → MQTT on LAN. Usa broker interno puerto 1883 o configura broker externo (Mosquitto recomendado).</li><li>Instala la integración <code>Victron Energy</code> desde HACS en Home Assistant. Si no tienes HACS, añade manualmente el repositorio custom_components.</li><li>Configura la integración en Configuration → Integrations → Add → Victron Energy. Ingresa IP del Venus device y puerto MQTT (1883).</li><li>Verifica entidades disponibles: <code>sensor.multiplus_battery_voltage</code>, <code>sensor.multiplus_battery_soc</code>, <code>sensor.pv_charger_power</code>. Aparecen automáticamente tras el discovery.</li><li>Crea dashboard personalizado con tarjetas tipo gauge para SOC, gráficos históricos de generación solar y switches para controlar modos ESS (External System Stabilization).</li><li>Ejemplo automatización YAML para SMS cuando SOC < 20%:</li></ol><code>automation:<br>&nbsp;&nbsp;trigger:<br>&nbsp;&nbsp;&nbsp;&nbsp;platform: numeric_state<br>&nbsp;&nbsp;&nbsp;&nbsp;entity_id: sensor.multiplus_battery_soc<br>&nbsp;&nbsp;&nbsp;&nbsp;below: 20<br>&nbsp;&nbsp;action:<br>&nbsp;&nbsp;&nbsp;&nbsp;service: notify.sms<br>&nbsp;&nbsp;&nbsp;&nbsp;data:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message: 'Batería crítica: {{states.sensor.multiplus_battery_soc.state}}%'</code>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-05-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-05",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce Costos Energéticos 34% en Clínica Bogotana",
+      "summary": "Sistema híbrido solar-UPS con ML ahorra $127M COP anuales y previene 89% de fallas críticas en centro médico",
+      "body": "<p><strong>Clínica San Rafael</strong>, centro médico de 180 camas en Bogotá, enfrentaba costos energéticos de <strong>$380M COP anuales</strong> y fallas imprevistas en equipos críticos que comprometían procedimientos médicos.</p><p>La solución integró un <strong>sistema híbrido inteligente</strong> con 120 paneles LONGi Hi-MO 6 de 540W, inversores Fronius Symo 15kW, baterías BYD Battery-Box 10kWh y UPS Eaton 9PX de 6kVA respaldando áreas críticas. El cerebro del sistema: una plataforma de <strong>IA predictiva desarrollada con TensorFlow Lite</strong> ejecutándose en Raspberry Pi 4, conectada via Node-RED con sensores IoT.</p><p>El algoritmo de <strong>anomaly detection</strong> procesa en tiempo real: irradiación solar, temperatura de inversores, voltaje de baterías, carga de UPS y patrones de consumo. La IA predice fallas con <strong>96 horas de anticipación</strong> y optimiza automáticamente la distribución energética según demanda hospitalaria.</p><p><strong>Resultados tras 14 meses:</strong></p><p>• Reducción de costos energéticos: <strong>34% ($127M COP anuales)</strong></p><p>• Generación solar optimizada: <strong>340 MWh adicionales</strong></p><p>• Prevención de fallas críticas: <strong>89% efectividad</strong></p><p>• Tiempo de inactividad: reducido <strong>78%</strong></p><p>• ROI alcanzado en <strong>2.3 años</strong></p><p>La IA identificó patrones imperceptibles: correlaciones entre humedad ambiental y degradación de conexiones, prediciendo mantenimientos preventivos que evitaron <strong>17 fallas críticas</strong> potenciales en quirófanos y UCI.</p>",
+      "tag": "Salud+Solar+IA Bogotá",
+      "read_time": 2
+    }
+  ]
+}
