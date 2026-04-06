@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-06T11:55:35.578Z",
+  "date": "2026-04-06",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-06-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-06",
+      "brand": "Vertiv",
+      "source_title": "Vertiv announces expansion of manufacturing capacity spanning infrastructure solutions, power, and rack systems, to meet rising demand",
+      "title": "Vertiv expande capacidad de manufactura para infraestructura crítica en América",
+      "summary": "La expansión incluye sistemas UPS, racks y soluciones de energía para satisfacer la creciente demanda de IA y centros de datos",
+      "body": "<p><strong>Vertiv (NYSE: VRT) anunció la expansión de cuatro nuevas instalaciones de manufactura en América</strong>, incrementando significativamente su capacidad de producción para sistemas de infraestructura crítica, equipos de energía y sistemas de racks.</p><p>Esta expansión responde al <strong>crecimiento exponencial de la demanda</strong> impulsada por aplicaciones de inteligencia artificial y modernización de centros de datos. La compañía busca fortalecer su posición como proveedor líder de soluciones UPS de alta eficiencia, con equipos que alcanzan hasta <strong>97% de eficiencia energética</strong> en sus sistemas de última generación.</p><p><strong>Para el mercado colombiano y latinoamericano</strong>, esta expansión representa mayor disponibilidad de sistemas UPS modulares desde 10 kVA hasta 1.2 MVA, con precios estimados desde USD $15,000 para configuraciones básicas empresariales. Las empresas locales se beneficiarán de menores tiempos de entrega y mejor soporte técnico regional.</p><p>La inversión de Vertiv es especialmente relevante para sectores como <strong>banca, telecomunicaciones y manufactura</strong> en Colombia, donde la confiabilidad energética es crítica. Los nuevos sistemas incluyen tecnología de baterías de ion-litio y capacidades de monitoreo remoto, facilitando el mantenimiento predictivo para operadores locales.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-06-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-06",
+      "brand": "Victron Energy",
+      "source_title": "New Dawn for Antarctic Research station",
+      "title": "Victron Energy impulsa energía solar en investigación antártica y aplicaciones remotas",
+      "summary": "La tecnología solar de Victron Energy demuestra su capacidad en condiciones extremas, ideal para Colombia rural.",
+      "body": "<p>La estación de investigación antártica polaca <strong>Henryk Arctowski</strong> ha implementado exitosamente un sistema solar con tecnología <strong>Victron Energy</strong>, reduciendo significativamente su dependencia de generadores diesel y los altos costos logísticos de transporte de combustible a ubicaciones remotas.</p><p>Esta implementación demuestra la <strong>confiabilidad de los sistemas solares</strong> en condiciones extremas, tecnología que resulta especialmente relevante para Colombia, donde muchas zonas rurales enfrentan desafíos similares de acceso a combustibles y electricidad convencional.</p><p>En Colombia, con su <strong>irradiación solar promedio de 4.5 kWh/m²/día</strong>, los sistemas Victron Energy pueden generar hasta un 40% más energía que en latitudes extremas como la Antártida. Esto los convierte en una solución ideal para comunidades remotas en La Guajira, Chocó o el Amazonas.</p><p>Bajo el marco de la <strong>Ley 1715 de energías renovables</strong>, estos sistemas pueden beneficiarse de incentivos tributarios y net-metering con operadores como Codensa y EPM. Los controladores de carga MPPT de Victron Energy ofrecen <strong>eficiencias superiores al 98%</strong>, maximizando el aprovechamiento de la radiación solar colombiana.</p><p>Esta tecnología representa una oportunidad para llevar <strong>energía confiable y sostenible</strong> a zonas no interconectadas, contribuyendo al desarrollo rural y la descentralización energética del país.</p>",
+      "tag": "Victron Energy Sistema",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-06-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-06",
+      "brand": "Fronius",
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Códigos",
+      "summary": "Aprenderá registros Modbus reales, direcciones y códigos de función para monitorear inversores Fronius Symo en proyectos solares",
+      "body": "<p>La comunicación <strong>Modbus TCP</strong> con inversores <strong>Fronius Symo</strong> requiere configuración específica del protocolo SunSpec en puerto TCP 502. Los inversores utilizan Unit ID 1 por defecto y direcciones base iniciando en registro 40001.</p><p><strong>Registros clave para monitoreo:</strong></p><ul><li>Registro 40084: Potencia AC actual (W) - INT16</li><li>Registro 40092: Corriente AC L1 (A) - UINT16, factor escala 0.1</li><li>Registro 40096: Tensión AC L1-N (V) - UINT16, factor escala 0.1</li><li>Registro 40108: Frecuencia (Hz) - UINT16, factor escala 0.01</li><li>Registro 40118: Energía total generada (Wh) - UINT32</li><li>Registro 40107: Estado operativo - UINT16</li></ul><p>Para implementación en <strong>Python con pymodbus</strong>:</p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100')<br>result = client.read_holding_registers(40084, 1, unit=1)<br>potencia_ac = result.registers[0]<br>if potencia_ac > 32767:<br>&nbsp;&nbsp;&nbsp;&nbsp;potencia_ac = potencia_ac - 65536<br>print(f'Potencia AC: {potencia_ac} W')<br><br># Leer tensión con factor escala<br>tension_raw = client.read_holding_registers(40096, 1, unit=1)<br>tension_ac = tension_raw.registers[0] * 0.1<br>print(f'Tensión AC: {tension_ac} V')</code><p><strong>Consideraciones técnicas:</strong> Los registros INT16 negativos requieren conversión desde UINT16. Configurar timeout mínimo 3 segundos para comunicación estable. En instalaciones colombianas, verificar configuración de red y firewall del inversor mediante interfaz web Fronius Solar.web.</p><p>Esta implementación permite monitoreo en tiempo real para sistemas SCADA y plataformas IoT, esencial en proyectos de <strong>generación distribuida</strong> conforme a resolución CREG 030 de 2018.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-06-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-06",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron en Home Assistant para monitorear estado, potencia y batería desde un dashboard unificado",
+      "body": "<p>La integración del MultiPlus II con Home Assistant permite monitorear y controlar tu sistema solar desde una interfaz centralizada usando el protocolo MQTT nativo de VenusOS.</p><ol><li>En VenusOS (v2.94+), habilita MQTT en <strong>Settings → Services → MQTT</strong>. Anota la IP del Cerbo GX/Venus device</li><li>Instala Mosquitto broker en Home Assistant vía Add-on store o configura cliente MQTT externo</li><li>Agrega la configuración MQTT en <code>configuration.yaml</code>:<br><code>mqtt:<br>&nbsp;&nbsp;broker: 192.168.1.100<br>&nbsp;&nbsp;port: 1883<br>&nbsp;&nbsp;username: \"\"<br>&nbsp;&nbsp;password: \"\"</code></li><li>Crea sensores para métricas clave:<br><code>sensor:<br>&nbsp;&nbsp;- platform: mqtt<br>&nbsp;&nbsp;&nbsp;&nbsp;name: \"Victron Battery SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/your_vrm_id/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"</code></li><li>Encuentra tu VRM Portal ID en VenusOS → <strong>Settings → VRM online portal</strong></li><li>Reinicia Home Assistant y verifica conectividad en <strong>Developer Tools → States</strong></li><li>Agrega entidades al dashboard: potencia AC/DC, voltaje batería, estado del inversor</li></ol><p>Los topics MQTT siguen el formato <code>N/{vrm_id}/system/0/{parameter}</code>. Revisa la documentación Victron MQTT para topics específicos del MultiPlus II.</p>",
+      "tag": "Victron+HA",
+      "read_time": 3
+    },
+    {
+      "id": "2026-04-06-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-06",
+      "brand": null,
+      "source_title": null,
+      "title": "Industria Metalmecánica de Medellín Reduce 32% Costos con IA Solar Predictiva",
+      "summary": "Aceros del Valle implementó IA predictiva ahorrando $47M COP anuales optimizando planta solar de 300kW",
+      "body": "<p><strong>Aceros del Valle</strong>, empresa metalmecánica de Medellín con 280 empleados, enfrentaba costos energéticos de <strong>$180 millones COP anuales</strong> y baja eficiencia en su planta solar de 300kW instalada en 2022.</p><p>El sistema híbrido incluía <strong>20 inversores Fronius Symo 15.0-3-M</strong>, <strong>1,200 paneles LONGi Hi-MO 6 LR5-72HIH-500M</strong>, <strong>8 baterías BYD Battery-Box Premium HVS 10.24kWh</strong> y respaldo con <strong>UPS Eaton 9PX 6000i RT3U</strong>. Sin embargo, la producción solar promediaba solo <strong>68% de capacidad nominal</strong> debido a sombreado variable, mantenimiento reactivo y gestión manual de cargas.</p><p>La solución implementó <strong>IA predictiva con TensorFlow Lite</strong> corriendo en <strong>Raspberry Pi 4B industrial</strong>, integrando datos de controladores <strong>Victron SmartSolar MPPT 250/100</strong>, sensores meteorológicos y medidores <strong>Schneider Electric PowerLogic PM8000</strong> vía protocolo Modbus TCP.</p><p>El algoritmo de <strong>machine learning</strong> predice producción solar horaria con <strong>94% precisión</strong>, optimiza automáticamente el almacenamiento en baterías y gestiona cargas no críticas según tarifas horarias de EPM. La detección de anomalías previene fallas mediante mantenimiento predictivo.</p><p><strong>Resultados tras 8 meses:</strong></p><ul><li>Ahorro energético: <strong>$47.2 millones COP anuales</strong></li><li>Eficiencia solar: incremento del <strong>68% al 87%</strong></li><li>Reducción picos demanda: <strong>32%</strong></li><li>Disponibilidad sistema: <strong>99.4%</strong></li><li>ROI proyectado: <strong>14 meses</strong></li></ul><p>La inversión de <strong>$38 millones COP</strong> en IA e instrumentación se amortizará completamente en febrero 2025, consolidando a Aceros del Valle como referente en eficiencia energética industrial.</p>",
+      "tag": "Solar+IA Medellín",
+      "read_time": 2
+    }
+  ]
+}

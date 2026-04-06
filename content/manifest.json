@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-05T11:42:38.003Z",
-  "total_days": 5,
-  "total_articles": 25,
+  "last_build": "2026-04-06T12:03:05.948Z",
+  "total_days": 6,
+  "total_articles": 30,
   "days": [
+    {
+      "date": "2026-04-06",
+      "generated_at": "2026-04-06T11:55:35.578Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-06-news",
+          "category_id": "news",
+          "title": "Vertiv expande capacidad de manufactura para infraestructura crítica en América",
+          "summary": "La expansión incluye sistemas UPS, racks y soluciones de energía para satisfacer la creciente demanda de IA y centros de datos",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-06-solar_news",
+          "category_id": "solar_news",
+          "title": "Victron Energy impulsa energía solar en investigación antártica y aplicaciones remotas",
+          "summary": "La tecnología solar de Victron Energy demuestra su capacidad en condiciones extremas, ideal para Colombia rural.",
+          "tag": "Victron Energy Sistema",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-06-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Códigos",
+          "summary": "Aprenderá registros Modbus reales, direcciones y códigos de función para monitorear inversores Fronius Symo en proyectos solares",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-06-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron en Home Assistant para monitorear estado, potencia y batería desde un dashboard unificado",
+          "tag": "Victron+HA",
+          "read_time": 3
+        },
+        {
+          "id": "2026-04-06-usecase",
+          "category_id": "usecase",
+          "title": "Industria Metalmecánica de Medellín Reduce 32% Costos con IA Solar Predictiva",
+          "summary": "Aceros del Valle implementó IA predictiva ahorrando $47M COP anuales optimizando planta solar de 300kW",
+          "tag": "Solar+IA Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-04-05",
       "generated_at": "2026-04-05T11:39:20.236Z",
