@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-09T12:00:10.380Z",
+  "date": "2026-04-09",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-09-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-09",
+      "brand": "Vertiv",
+      "source_title": "Vertiv to acquire ThermoKey, expanding heat rejection portfolio for converged physical infrastructure",
+      "title": "Vertiv adquiere ThermoKey para potenciar infraestructura convergente en IA",
+      "summary": "La adquisición fortalece el portafolio de rechazo térmico de Vertiv para atender el creciente mercado de centros de datos de IA",
+      "body": "<p><strong>Vertiv anunció la adquisición de ThermoKey</strong>, fabricante líder en tecnologías de rechazo e intercambio térmico, en una estrategia para expandir su portafolio de infraestructura física convergente enfocada en aplicaciones de inteligencia artificial.</p><p>La operación fortalece las capacidades de Vertiv en sistemas de gestión térmica, fundamentales para los modernos centros de datos que albergan aplicaciones de IA con alta densidad de potencia. ThermoKey aporta relaciones establecidas con fabricantes de equipos originales (OEM) e integradores de sistemas a nivel global.</p><p><strong>Esta adquisición llega en momento clave para el mercado latinoamericano</strong>, donde empresas colombianas como ISA, EPM y Claro están invirtiendo significativamente en infraestructura de centros de datos para soportar servicios cloud e IA.</p><p>Paralelamente, Vertiv confirmó su participación en el diseño de referencia <strong>NVIDIA Vera Rubin DSX AI factory</strong>, proporcionando infraestructura física convergente que integra sistemas de potencia, térmica y monitoreo optimizados para cargas de trabajo de IA que pueden alcanzar densidades superiores a 100 kW por rack.</p><p>Para el mercado colombiano, estas soluciones representan una oportunidad de implementar infraestructura crítica de clase mundial, con sistemas UPS de hasta 6,000 kVA y eficiencias del 97%, posicionando al país como hub tecnológico regional en la era de la inteligencia artificial.</p>",
+      "tag": "Vertiv Infraestructura",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-09-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-09",
+      "brand": "PV Magazine",
+      "source_title": "Singapore installs 504 MW of solar in 2025",
+      "title": "Singapur alcanza récord instalando 504 MW solares y supera 2 GW acumulados",
+      "summary": "Singapur instaló 504 MW de energía solar en 2025, superando 2 GW acumulados y elevando su meta 2030 a 3 GW totales",
+      "body": "<p>Singapur estableció un nuevo récord al instalar <strong>504 MW de capacidad solar</strong> durante 2025, según datos de la Autoridad del Mercado Energético. Esta cifra representa el mayor despliegue anual del país, llevando su capacidad acumulada por encima de <strong>2 GW instalados</strong>.</p><p>El éxito singapurense motivó al gobierno a aumentar su objetivo solar para 2030 de 2 GW a <strong>3 GW de capacidad total</strong>, demostrando el potencial de la energía fotovoltaica incluso en territorios con limitaciones de espacio.</p><p>Para Colombia, este caso representa una valiosa referencia considerando nuestra <strong>irradiación solar promedio de 4.5 kWh/m²/día</strong> en zonas clave, superior a muchas regiones asiáticas. La <strong>Ley 1715 de integración de energías renovables</strong> y el sistema de net-metering ya establecen el marco regulatorio necesario.</p><p>Con tarifas residenciales de Codensa (~$600/kWh) y EPM (~$500/kWh), los proyectos solares en Colombia ofrecen retornos de inversión atractivos. La experiencia de Singapur demuestra que <strong>políticas consistentes y metas ambiciosas</strong> pueden acelerar significativamente la adopción solar, algo especialmente relevante para el mercado colombiano que busca diversificar su matriz energética y aprovechar su excepcional recurso solar.</p>",
+      "tag": "PV Magazine Solar",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-09-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-09",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+      "summary": "Configuración práctica de Modbus TCP en Fronius Symo con registros reales, códigos de función y Python para monitoreo",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan comunicación Modbus TCP estándar para monitoreo remoto, esencial en instalaciones solares comerciales en Colombia. La configuración requiere habilitar Modbus en el menú <code>Communication → Modbus</code> del inversor.</p><p><strong>Configuración de red:</strong></p><ul><li>Puerto TCP: 502 (estándar Modbus)</li><li>Unit ID: 1 (configurable)</li><li>IP estática recomendada para estabilidad</li></ul><p>Los registros principales utilizan <strong>Function Code 03</strong> (Read Holding Registers):</p><p><strong>Registros críticos Fronius Symo:</strong></p><ul><li>40084: Potencia AC actual (W, Int32)</li><li>40092: Energía total generada (Wh, UInt64)</li><li>40108: Voltaje DC String 1 (V, Int16, Factor 0.1)</li><li>40110: Corriente DC String 1 (A, Int16, Factor 0.1)</li><li>40118: Temperatura inversor (°C, Int16, Factor 0.1)</li><li>40151: Estado operacional (0=Arranque, 1=Funcionando, 2=Apagado)</li></ul><p><strong>Implementación Python:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100')<br>connection = client.connect()<br><br># Leer potencia AC actual (registro 40084)<br>result = client.read_holding_registers(84, 2, unit=1)<br>if not result.isError():<br>&nbsp;&nbsp;&nbsp;&nbsp;power = (result.registers[1] << 16) | result.registers[0]<br>&nbsp;&nbsp;&nbsp;&nbsp;print(f'Potencia actual: {power} W')<br><br>client.close()</code><p>Para instalaciones con múltiples inversores, configurar <strong>Unit IDs únicos</strong> (1-247) y polling secuencial. Considerar timeout de 5 segundos mínimo para redes WiFi inestables, común en zonas rurales colombianas.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-09-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-09",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant para monitorear estado de batería, consumo y producción solar",
+      "body": "<p>Conecta tu Victron MultiPlus II con Home Assistant usando el protocolo MQTT nativo de VenusOS para obtener datos en tiempo real del sistema.</p><ol><li>En el dispositivo VenusOS (Cerbo GX o Raspberry Pi con Venus), navega a <strong>Settings → Services</strong> y habilita <strong>MQTT on LAN (SSL)</strong>. Anota la IP del Venus y usa puerto 8883.</li><li>En Home Assistant, instala el add-on <strong>Mosquitto broker</strong> desde el Supervisor si no tienes broker MQTT.</li><li>Agrega esta configuración en <code>configuration.yaml</code> de Home Assistant:</li></ol><code>mqtt:<br>&nbsp;&nbsp;sensor:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron Battery SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/[DEVICE_ID]/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron AC Load\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/[DEVICE_ID]/system/0/Ac/ConsumptionOnOutput/L1/Power\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"</code><ol start=\"4\"><li>Reemplaza <code>[DEVICE_ID]</code> con el VRM Portal ID de tu instalación (visible en Remote Console → Settings → VRM online portal).</li><li>Configura el cliente MQTT en Home Assistant para conectar al Venus: <strong>Settings → Devices & Services → Add Integration → MQTT</strong>. Host: IP_del_Venus, Puerto: 8883.</li><li>Los sensores aparecerán automáticamente en <strong>Developer Tools → States</strong> con prefijo <code>sensor.victron_</code>.</li></ol>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-09-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-09",
+      "brand": null,
+      "source_title": null,
+      "title": "AgroTech Medellín reduce 67% fallas UPS con IA predictiva Eaton + Victron",
+      "summary": "Centro de datos agrícola evita $180M COP pérdidas anuales con monitoreo inteligente de UPS y energía solar",
+      "body": "<p><strong>AgroTech Solutions</strong>, empresa de tecnología agrícola con 450 empleados en Medellín, enfrentaba fallas críticas en su centro de datos que procesa información satelital para 2,800 fincas cafeteras. Las interrupciones no programadas de sus <strong>UPS Eaton 9PX 6kVA</strong> generaban pérdidas por <strong>$180 millones COP anuales</strong> en servicios interrumpidos.</p><p>La infraestructura incluía un sistema híbrido con <strong>paneles LONGi Hi-MO 6 de 540W</strong>, inversores <strong>Fronius Symo 15kW</strong>, controladores <strong>Victron SmartSolar MPPT 250/100</strong> y baterías <strong>BYD Battery-Box Premium HVS 10.2kWh</strong>. El problema: la gestión reactiva no anticipaba degradación de baterías ni optimizaba la carga solar.</p><p>Implementamos una solución de <strong>IA predictiva con TensorFlow Lite</strong> integrada via <strong>Node-RED ML</strong>, conectando los protocolos Modbus de equipos Eaton y Victron. El algoritmo de <strong>anomaly detection</strong> analiza 47 variables cada 30 segundos: voltaje, temperatura, corriente, eficiencia de paneles y estado de baterías.</p><p><strong>Resultados en 8 meses:</strong></p><p>• <strong>67% reducción</strong> de fallas críticas UPS<br>• <strong>$120 millones COP ahorrados</strong> en interrupciones evitadas<br>• <strong>23% aumento</strong> eficiencia sistema solar (de 82% a 95%)<br>• <strong>1,240 kWh adicionales</strong> generados mensualmente<br>• <strong>ROI de 14 meses</strong> sobre inversión de $85 millones COP</p><p>La plataforma ahora predice fallas con <strong>94% precisión</strong> hasta 72 horas antes, permitiendo mantenimiento preventivo programado y maximizando disponibilidad del 99.7% requerida para operaciones agrícolas críticas.</p>",
+      "tag": "DataCenter+IA Medellín",
+      "read_time": 2
+    }
+  ]
+}
