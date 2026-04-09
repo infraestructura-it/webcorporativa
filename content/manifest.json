@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-06T12:03:05.948Z",
-  "total_days": 6,
-  "total_articles": 30,
+  "last_build": "2026-04-09T00:52:12.029Z",
+  "total_days": 7,
+  "total_articles": 35,
   "days": [
+    {
+      "date": "2026-04-08",
+      "generated_at": "2026-04-09T00:49:11.155Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-08-news",
+          "category_id": "news",
+          "title": "Vertiv adquiere ThermoKey para expandir soluciones de refrigeración en AI",
+          "summary": "La compra fortalece el portafolio de infraestructura física convergente para centros de datos de IA de alta densidad",
+          "tag": "Vertiv Infraestructura",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-08-solar_news",
+          "category_id": "solar_news",
+          "title": "Victron Energy impulsa investigación antártica con energía solar renovable",
+          "summary": "Sistema solar de Victron reduce dependencia de diesel en estación polar, modelo aplicable a Colombia",
+          "tag": "Victron Energy Sistema",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-08-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+          "summary": "Aprenderá a implementar comunicación Modbus TCP con inversores Fronius Symo, incluyendo registros clave y código Python.",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-08-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron MultiPlus II en Home Assistant usando VenusOS y MQTT para monitoreo avanzado de energía",
+          "tag": "Victron+HA",
+          "read_time": 3
+        },
+        {
+          "id": "2026-04-08-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva reduce costos energéticos 30% en industria plásticos Medellín",
+          "summary": "Sistema híbrido solar-UPS con IA evita fallas críticas y ahorra $186 millones COP anuales en Polímeros Andinos SAS",
+          "tag": "Solar+IA Medellín",
+          "read_time": 3
+        }
+      ]
+    },
     {
       "date": "2026-04-06",
       "generated_at": "2026-04-06T11:55:35.578Z",
