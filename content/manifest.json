@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-09T12:03:22.749Z",
+  "last_build": "2026-04-15T12:06:30.715Z",
   "total_days": 8,
   "total_articles": 40,
   "days": [
+    {
+      "date": "2026-04-15",
+      "generated_at": "2026-04-15T12:02:21.934Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-15-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva línea UPS PowerUPS 200 para oficinas y hogares conectados",
+          "summary": "Los nuevos sistemas UPS compactos de Vertiv protegen dispositivos personales y aplicaciones empresariales con tecnología avanzada",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-15-solar_news",
+          "category_id": "solar_news",
+          "title": "Varta lanza sistema integrado de inversor y batería modular para residencias",
+          "summary": "Sistema escalable combina inversor, almacenamiento y gestión energética inteligente para instalaciones solares nuevas y existentes",
+          "tag": "Varta Batería",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-15-technical",
+          "category_id": "technical",
+          "title": "Implementación SNMP v3 para UPS Eaton 9PX con Zabbix 6.x en Colombia",
+          "summary": "Configuración completa de monitoreo SNMP v3 seguro para UPS Eaton 9PX usando Zabbix 6.x con OIDs específicos y plantillas",
+          "tag": "SNMP v3",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-15-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant usando VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant para monitorear potencia, estado de batería y cargas en tiempo real",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-15-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce 38% Costos Energéticos en Planta Cali con Solar+UPS",
+          "summary": "Farmacéutica Andina Labs ahorra $847M COP anuales optimizando sistema híbrido solar-UPS con algoritmos predictivos",
+          "tag": "Solar+IA Cali",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-04-09",
       "generated_at": "2026-04-09T12:00:10.380Z",
@@ -329,53 +376,6 @@
           "summary": "Sistema híbrido solar con IA predictiva ahorra $184M anuales y evita 87% de fallas críticas en UPS Eaton",
           "tag": "Solar+IA Facatativá",
           "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-03-21",
-      "generated_at": "2026-03-21T11:00:00.000Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-03-21-news",
-          "category_id": "news",
-          "title": "Eaton lanza UPS 9PX con gestión de carga por IA y eficiencia del 97%",
-          "summary": "El nuevo 9PX Ultra reduce pérdidas de conversión a solo 3% y predice fallos de batería con 72 horas de anticipación.",
-          "tag": "Eaton UPS",
-          "read_time": 3
-        },
-        {
-          "id": "2026-03-21-solar_news",
-          "category_id": "solar_news",
-          "title": "LONGi alcanza 24.8% de eficiencia en panel residencial de producción masiva",
-          "summary": "El Hi-MO X10 con tecnología HPBC 2.0 genera hasta 640W por panel, reduciendo el área de instalación un 22%.",
-          "tag": "LONGi Panel Solar",
-          "read_time": 3
-        },
-        {
-          "id": "2026-03-21-technical",
-          "category_id": "technical",
-          "title": "Modbus TCP con Fronius Symo: leer generación solar desde Node.js",
-          "summary": "Registros SunSpec exactos del Fronius Symo para monitoreo en tiempo real desde cualquier plataforma.",
-          "tag": "Modbus TCP SunSpec",
-          "read_time": 4
-        },
-        {
-          "id": "2026-03-21-tips",
-          "category_id": "tips",
-          "title": "Conecta tu Victron MultiPlus II a Home Assistant en 10 minutos",
-          "summary": "VenusOS + MQTT integra todos los datos del inversor/cargador Victron directamente en tu dashboard HA.",
-          "tag": "Victron + Home Assistant",
-          "read_time": 3
-        },
-        {
-          "id": "2026-03-21-usecase",
-          "category_id": "usecase",
-          "title": "AgroLogística Palmira: IA predice cortes de red y activa UPS antes del fallo",
-          "summary": "Sistema de IA reduce interrupciones no planificadas en 91% y ahorra $240M COP anuales en Palmira, Valle.",
-          "tag": "UPS Predictivo Valle",
-          "read_time": 4
         }
       ]
     }

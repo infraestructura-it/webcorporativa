@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-15T12:02:21.934Z",
+  "date": "2026-04-15",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-15-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-15",
+      "brand": "Vertiv",
+      "source_title": "Vertiv introduces backup power for personal devices and business applications",
+      "title": "Vertiv lanza nueva línea UPS PowerUPS 200 para oficinas y hogares conectados",
+      "summary": "Los nuevos sistemas UPS compactos de Vertiv protegen dispositivos personales y aplicaciones empresariales con tecnología avanzada",
+      "body": "<p><strong>Vertiv</strong> presentó su nueva generación de sistemas de alimentación ininterrumpida (UPS) compactos diseñados específicamente para hogares conectados y espacios de trabajo. La familia <strong>PowerUPS 200</strong> representa un avance significativo en protección eléctrica para dispositivos personales y aplicaciones empresariales menores.</p><p>Esta nueva línea de UPS compactos ofrece <strong>capacidades desde 600VA hasta 1500VA</strong>, con eficiencia energética superior al 95% y tecnología de baterías de litio que extiende la vida útil hasta 10 años. Los equipos incluyen puertos USB-C y conectividad inteligente para monitoreo remoto.</p><p>Para el mercado colombiano y latinoamericano, este lanzamiento es especialmente relevante considerando el crecimiento del teletrabajo y la necesidad de proteger equipos de cómputo contra fluctuaciones eléctricas. Las empresas locales podrán acceder a tecnología de protección eléctrica de nivel empresarial a <strong>precios estimados entre USD $150-400</strong>, democratizando el acceso a infraestructura crítica.</p><p>La disponibilidad en Colombia está programada para el segundo trimestre de 2026, posicionando a Vertiv como líder en soluciones de protección eléctrica para el segmento de pequeñas oficinas y oficinas en casa (SOHO).</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-15-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-15",
+      "brand": "Varta",
+      "source_title": "Varta launches all-in-one residential inverter and modular battery",
+      "title": "Varta lanza sistema integrado de inversor y batería modular para residencias",
+      "summary": "Sistema escalable combina inversor, almacenamiento y gestión energética inteligente para instalaciones solares nuevas y existentes",
+      "body": "<p><strong>Varta, fabricante alemán reconocido por sus soluciones de almacenamiento</strong>, ha presentado un sistema energético integrado que combina inversor, batería y gestión inteligente en una solución modular y escalable para instalaciones fotovoltaicas residenciales.</p><p>El sistema soporta acoplamiento AC/DC, respaldo energético y optimización inteligente, características ideales para el mercado colombiano donde la irradiación solar promedio de 4.5 kWh/m²/día permite maximizar la autogeneración residencial contemplada en la <strong>Ley 1715</strong>.</p><p>Esta tecnología modular resulta especialmente atractiva para usuarios de Codensa y EPM que buscan aprovechar el esquema de net-metering, permitiendo inyectar excedentes a la red durante las horas pico de generación solar y utilizarlos posteriormente.</p><p><strong>La capacidad de escalabilidad del sistema Varta</strong> se adapta perfectamente a las necesidades cambiantes de los hogares colombianos, permitiendo iniciar con una configuración básica y expandir la capacidad de almacenamiento según el crecimiento del consumo energético.</p><p>Para InfraestructuraIT Colombia, esta solución representa una oportunidad de ofrecer a nuestros clientes un sistema integral que simplifica la instalación y el mantenimiento, reduciendo costos operativos y mejorando la confiabilidad del suministro energético en zonas urbanas y rurales del país.</p>",
+      "tag": "Varta Batería",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-15-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-15",
+      "brand": null,
+      "source_title": null,
+      "title": "Implementación SNMP v3 para UPS Eaton 9PX con Zabbix 6.x en Colombia",
+      "summary": "Configuración completa de monitoreo SNMP v3 seguro para UPS Eaton 9PX usando Zabbix 6.x con OIDs específicos y plantillas",
+      "body": "<p>El monitoreo SNMP v3 de UPS <strong>Eaton 9PX</strong> en infraestructuras críticas requiere configuración precisa de autenticación y cifrado. Esta implementación utiliza Zabbix 6.x para supervisión en tiempo real.</p><p><strong>Configuración SNMP v3 en Eaton 9PX:</strong></p><ul><li>Usuario SNMPv3: <code>eaton_monitor</code></li><li>Autenticación: SHA-256</li><li>Privacidad: AES-128</li><li>Contexto: <code>\"\"</code> (vacío)</li></ul><p>Los OIDs críticos para monitoreo incluyen:</p><code>xupsInputVoltage: 1.3.6.1.4.1.534.1.3.1.0<br>xupsOutputVoltage: 1.3.6.1.4.1.534.1.4.1.0<br>xupsBatteryCapacity: 1.3.6.1.4.1.534.1.2.1.0<br>xupsOutputLoad: 1.3.6.1.4.1.534.1.4.3.0<br>xupsAlarms: 1.3.6.1.4.1.534.1.7.1.0</code><p><strong>Script Python para validación:</strong></p><code>from pysnmp.hlapi import *<br><br>def monitor_eaton_ups(target_ip):<br>&nbsp;&nbsp;&nbsp;&nbsp;for (errorIndication, errorStatus, errorIndex, varBinds) in nextCmd(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SnmpEngine(),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UsmUserData('eaton_monitor', 'auth_pass', 'priv_pass',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authProtocol=usmHMACSHAAuthProtocol,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;privProtocol=usmAesCfb128Protocol),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UdpTransportTarget((target_ip, 161)),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ContextData(),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ObjectType(ObjectIdentity('1.3.6.1.4.1.534.1.2.1.0')),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lexicographicMode=False):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'Batería: {varBinds[0][1]}%')</code><p>En <strong>Zabbix 6.x</strong>, configurar host con interfaz SNMP usando Security Level: <code>authPriv</code>, Context name vacío y timeout de 10 segundos para redes colombianas. Las plantillas Eaton oficiales requieren personalización para OIDs específicos del 9PX.</p><p>Esta configuración garantiza monitoreo seguro y confiable de infraestructura eléctrica crítica.</p>",
+      "tag": "SNMP v3",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-15-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-15",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant usando VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant para monitorear potencia, estado de batería y cargas en tiempo real",
+      "body": "<p>Este tutorial te permitirá monitorear tu sistema Victron desde Home Assistant usando el broker MQTT integrado en VenusOS.</p><ol><li><strong>Actualizar VenusOS:</strong> Asegúrate de tener VenusOS v2.90 o superior en tu Cerbo GX/Venus GX. Ve a Settings > Firmware y actualiza si es necesario.</li><li><strong>Habilitar MQTT:</strong> En VenusOS, navega a Settings > Services > MQTT on LAN (SSL) > Enable. Anota la IP del dispositivo Venus.</li><li><strong>Configurar Home Assistant:</strong> Edita configuration.yaml y agrega el broker MQTT:</li></ol><code>mqtt:<br>  broker: 192.168.1.100  # IP de tu Venus GX<br>  port: 1883<br>  username: \"\"<br>  password: \"\"<br>  discovery: true<br>  discovery_prefix: homeassistant</code><ol start=\"4\"><li><strong>Reiniciar HA:</strong> Reinicia Home Assistant desde Settings > System > Restart.</li><li><strong>Verificar integración:</strong> Ve a Settings > Devices & Services. Deberías ver automáticamente los sensores Victron como: battery SOC, AC loads, solar power, etc.</li><li><strong>Crear dashboard:</strong> Agrega las entidades victron.* a tu dashboard para visualizar datos en tiempo real.</li></ol><p>Los topics MQTT siguen el formato: N/{device-instance}/system/0/Ac/ActiveIn/L1/P para potencia AC, N/{device-instance}/system/0/Dc/Battery/Soc para SOC de batería.</p>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-15-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-15",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce 38% Costos Energéticos en Planta Cali con Solar+UPS",
+      "summary": "Farmacéutica Andina Labs ahorra $847M COP anuales optimizando sistema híbrido solar-UPS con algoritmos predictivos",
+      "body": "<p><strong>Farmacéutica Andina Labs</strong>, con sede en Cali y 280 empleados, enfrentaba costos energéticos de <strong>$2.3 billones COP anuales</strong> en su planta de producción 24/7. Los frecuentes cortes eléctricos generaban pérdidas por <strong>$156M COP mensuales</strong> en producto desperdiciado.</p><p>La empresa implementó un sistema híbrido inteligente: <strong>48 paneles LONGi Hi-MO 6 (540W)</strong>, inversores <strong>Fronius Symo 15kW</strong>, baterías <strong>BYD Battery-Box 10kWh</strong> y UPS <strong>Eaton 9PX 11kVA</strong> respaldando equipos críticos. El controlador <strong>Victron MPPT SmartSolar 250/100</strong> gestiona la carga optimizada.</p><p>La solución IA utiliza <strong>TensorFlow Lite</strong> ejecutándose en <strong>Raspberry Pi 4</strong> con <strong>Node-RED ML</strong> para procesar datos en tiempo real. Los algoritmos de <strong>anomaly detection</strong> analizan patrones de consumo, irradiación solar, temperatura y carga de baterías cada 30 segundos.</p><p>La IA predice demanda energética con <strong>94% precisión</strong>, optimiza automáticamente la conmutación entre red eléctrica, solar y baterías según tarifas horarias. Detecta anomalías 40 minutos antes de fallas potenciales en UPS.</p><p><strong>Resultados tras 8 meses:</strong></p><p>• Reducción <strong>38% costos energéticos</strong>: ahorro <strong>$847M COP anuales</strong><br>• Generación solar: <strong>187 MWh adicionales</strong> por optimización IA<br>• <strong>Zero downtime</strong> no programado vs. 23 horas anuales previas<br>• Eficiencia baterías mejoró <strong>28%</strong><br>• <strong>ROI: 14 meses</strong></p><p>La integración IA-infraestructura crítica posicionó a Andina Labs como referente en <strong>sostenibilidad farmacéutica colombiana</strong>.</p>",
+      "tag": "Solar+IA Cali",
+      "read_time": 2
+    }
+  ]
+}
