@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-16T12:08:41.533Z",
-  "total_days": 9,
-  "total_articles": 45,
+  "last_build": "2026-04-17T12:02:12.554Z",
+  "total_days": 10,
+  "total_articles": 50,
   "days": [
+    {
+      "date": "2026-04-17",
+      "generated_at": "2026-04-17T11:59:04.628Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-17-news",
+          "category_id": "news",
+          "title": "Vertiv lidera infraestructura IA en Latam con reconocimiento Frost & Sullivan",
+          "summary": "Frost & Sullivan reconoce a Vertiv como líder en infraestructura para IA y HPC en América Latina 2025",
+          "tag": "Vertiv Data Centers",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-17-solar_news",
+          "category_id": "solar_news",
+          "title": "Kiwa PVEL actualiza protocolos de pruebas ante fallas crecientes en paneles",
+          "summary": "El laboratorio refuerza estándares de calidad para abordar roturas espontáneas de vidrio y fallas estructurales",
+          "tag": "Kiwa PVEL Testing",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-17-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+          "summary": "Aprenderás configuración práctica de Modbus TCP con Fronius Symo, registros críticos y código Python para monitoreo",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-17-tips",
+          "category_id": "tips",
+          "title": "Leer SOC y tensión de batería Pylontech desde Node-RED vía Modbus RTU",
+          "summary": "Monitorea estado de carga y voltaje de baterías Pylontech US2000/US3000 en tiempo real usando protocolo Modbus RTU",
+          "tag": "Pylontech Modbus",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-17-usecase",
+          "category_id": "usecase",
+          "title": "Predictivo UPS con IA reduce paradas 87% en datacenter Medellín",
+          "summary": "TensorFlow detecta fallas UPS antes que ocurran, ahorrando $180M COP anuales en downtime crítico",
+          "tag": "UPS Predictivo Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-04-16",
       "generated_at": "2026-04-16T12:05:34.127Z",

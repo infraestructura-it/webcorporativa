@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-17T11:59:04.628Z",
+  "date": "2026-04-17",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-17-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-17",
+      "brand": "Vertiv",
+      "source_title": "Vertiv Receives Frost & Sullivans 2025 Latin American Data Center Infrastructure for AI and HPC Company of the Year Recognition for Excellence in Best Practices",
+      "title": "Vertiv lidera infraestructura IA en Latam con reconocimiento Frost & Sullivan",
+      "summary": "Frost & Sullivan reconoce a Vertiv como líder en infraestructura para IA y HPC en América Latina 2025",
+      "body": "<p><strong>Vertiv</strong> ha sido reconocida como la \"Empresa del Año 2025 en Infraestructura de Data Centers para IA y HPC en América Latina\" por Frost & Sullivan, consolidando su liderazgo en el mercado regional de infraestructura crítica.</p><p>El reconocimiento destaca las mejores prácticas de Vertiv en el desarrollo de soluciones para centros de datos que soportan <strong>inteligencia artificial y computación de alto rendimiento (HPC)</strong>, tecnologías que demandan infraestructuras más robustas y eficientes.</p><p>Para el mercado colombiano y latinoamericano, este galardón representa una oportunidad de acceso a tecnologías de vanguardia. Las empresas locales pueden beneficiarse de sistemas UPS de <strong>alta eficiencia (hasta 97%)</strong> y soluciones de refrigeración optimizadas para cargas de IA, que típicamente requieren densidades de potencia superiores a <strong>20 kVA por rack</strong>.</p><p>El crecimiento de la IA en sectores como banca, telecomunicaciones y gobierno en Colombia genera mayor demanda de infraestructura crítica confiable. Las soluciones Vertiv incluyen sistemas UPS modulares desde <strong>25 kVA hasta varios MW</strong>, con precios referenciales desde <strong>USD 15,000</strong> para configuraciones básicas empresariales.</p><p>Este reconocimiento refuerza la posición de Vertiv en un mercado latinoamericano que experimenta <strong>crecimiento del 12% anual</strong> en infraestructura de data centers, impulsado por la transformación digital y adopción de IA.</p>",
+      "tag": "Vertiv Data Centers",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-17-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-17",
+      "brand": "Kiwa PVEL",
+      "source_title": "Increased product failures leads Kiwa PVEL to update solar panel testing protocols",
+      "title": "Kiwa PVEL actualiza protocolos de pruebas ante fallas crecientes en paneles",
+      "summary": "El laboratorio refuerza estándares de calidad para abordar roturas espontáneas de vidrio y fallas estructurales",
+      "body": "<p>El laboratorio de pruebas <strong>Kiwa PVEL</strong> ha actualizado su Programa de Calificación de Productos (PQP) en respuesta al incremento de fallas de campo en paneles solares a nivel global, incluyendo roturas espontáneas de vidrio y fallas estructurales en marcos.</p><p>Esta actualización resulta especialmente relevante para el mercado solar colombiano, donde la alta irradiación promedio de <strong>4.5 kWh/m²/día</strong> en zonas clave como La Guajira y Cesar somete los paneles a condiciones térmicas exigentes que pueden acelerar estos tipos de fallas.</p><p>Los nuevos protocolos de Kiwa PVEL establecen <strong>estándares más rigurosos</strong> para garantizar la durabilidad de los paneles durante sus 25 años de vida útil garantizada. Esto es crucial para los proyectos bajo la <strong>Ley 1715</strong>, donde la confiabilidad a largo plazo impacta directamente la viabilidad económica de las inversiones solares.</p><p>Para usuarios residenciales y comerciales en Colombia que aprovechan el <strong>net-metering</strong> con tarifas de Codensa y EPM, contar with paneles certificados bajo estos nuevos estándares representa mayor seguridad en sus inversiones, especialmente considerando que las fallas prematuras pueden afectar significativamente el retorno de inversión esperado.</p><p>La actualización refuerza la importancia de seleccionar paneles con <strong>certificaciones internacionales robustas</strong> para el creciente mercado solar colombiano.</p>",
+      "tag": "Kiwa PVEL Testing",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-17-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-17",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+      "summary": "Aprenderás configuración práctica de Modbus TCP con Fronius Symo, registros críticos y código Python para monitoreo",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan protocolo <strong>Modbus TCP/IP</strong> en puerto 502, permitiendo monitoreo remoto completo de variables eléctricas y operacionales en instalaciones solares colombianas.</p><p>La configuración inicial requiere habilitar Modbus TCP desde el panel web del inversor en <code>Communication → Modbus → Enable Modbus TCP</code>. Los registros críticos para monitoreo incluyen:</p><ul><li><strong>40084:</strong> Potencia AC instantánea (W)</li><li><strong>40087:</strong> Voltaje AC L1-N (V)</li><li><strong>40089:</strong> Corriente AC L1 (A)</li><li><strong>40092:</strong> Frecuencia de red (Hz)</li><li><strong>40103:</strong> Energía total generada (Wh)</li><li><strong>40107:</strong> Voltaje DC String 1 (V)</li><li><strong>40109:</strong> Corriente DC String 1 (A)</li><li><strong>40251:</strong> Temperatura interna (°C)</li></ul><p>Para lecturas múltiples se utiliza <strong>función code 04</strong> (Read Input Registers). Implementación Python con <code>pymodbus</code>:</p><p><code>from pymodbus.client.sync import ModbusTcpClient<br>client = ModbusTcpClient('192.168.1.100')<br>if client.connect():<br>&nbsp;&nbsp;&nbsp;&nbsp;result = client.read_input_registers(40084, 4, unit=1)<br>&nbsp;&nbsp;&nbsp;&nbsp;potencia = result.registers[0]<br>&nbsp;&nbsp;&nbsp;&nbsp;voltaje = result.registers[3] / 100<br>&nbsp;&nbsp;&nbsp;&nbsp;print(f'Potencia: {potencia}W, Voltaje: {voltaje}V')<br>client.close()</code></p><p><strong>Consideraciones técnicas:</strong> Los valores requieren factores de escala específicos según registro. Voltajes AC dividen entre 100, temperaturas están en décimas de grado. El <strong>Unit ID</strong> por defecto es 1.</p><p>Esta implementación permite integración con <strong>SCADA</strong>, <strong>Zabbix</strong> o sistemas de monitoreo customizados, optimizando O&M de plantas fotovoltaicas en Colombia con polling intervals recomendados de 30-60 segundos para evitar saturación del inversor.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-17-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-17",
+      "brand": null,
+      "source_title": null,
+      "title": "Leer SOC y tensión de batería Pylontech desde Node-RED vía Modbus RTU",
+      "summary": "Monitorea estado de carga y voltaje de baterías Pylontech US2000/US3000 en tiempo real usando protocolo Modbus RTU",
+      "body": "<p>Las baterías Pylontech US2000/US3000 exponen datos críticos vía Modbus RTU. Aquí configuramos lectura desde Node-RED.</p><ol><li>Instala el nodo <code>node-red-contrib-modbus</code> desde la paleta de Node-RED</li><li>Conecta cable RS485 al puerto Console de Pylontech (pins 7-8) y configura conversor USB-RS485</li><li>Agrega nodo 'Modbus-Read' configurando: Host: puerto serie (/dev/ttyUSB0), Baudrate: 115200, Address: 1</li><li>Para SOC configura: Function Code: 4, Address: 0x1044 (4164), Quantity: 1</li><li>Para voltaje total: Address: 0x1041 (4161), Quantity: 1</li><li>Agrega función JavaScript para procesar datos:</li></ol><code>// SOC processing\nmsg.payload = msg.payload[0] / 10; // Divide por 10 para %\nreturn msg;\n\n// Voltage processing  \nmsg.payload = msg.payload[0] / 1000; // Divide por 1000 para V\nreturn msg;</code><p>Configura polling cada 30 segundos para evitar saturar el BMS. Los valores se actualizan automáticamente en el dashboard.</p><p><strong>Nota:</strong> Pylontech firmware v2.6+ requiere activar protocolo Modbus en configuración DIP switches del módulo master.</p>",
+      "tag": "Pylontech Modbus",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-17-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-17",
+      "brand": null,
+      "source_title": null,
+      "title": "Predictivo UPS con IA reduce paradas 87% en datacenter Medellín",
+      "summary": "TensorFlow detecta fallas UPS antes que ocurran, ahorrando $180M COP anuales en downtime crítico",
+      "body": "<p><strong>AgroTech Solutions</strong>, empresa de software agrícola en Medellín con 350 empleados, enfrentaba paradas críticas de su datacenter que costaban <strong>$25M COP por hora</strong> de downtime. Sus UPS Eaton 9PX 6kVA presentaban fallas inesperadas que comprometían 120 servidores críticos.</p><p>Implementamos un sistema de <strong>mantenimiento predictivo con TensorFlow Lite</strong> que monitorea en tiempo real voltajes, corrientes, temperaturas y patrones de carga de seis unidades Eaton 9PX conectadas via ModBus. El modelo de anomaly detection, entrenado con 18 meses de datos históricos, identifica desviaciones sutiles que preceden fallas por <strong>72 horas promedio</strong>.</p><p>La solución incluye sensores IoT adicionales en baterías, algoritmos de machine learning ejecutándose en edge computing Raspberry Pi 4, y dashboard en Node-RED con alertas automáticas al equipo de infraestructura. El sistema detecta degradación prematura de baterías, sobrecalentamientos incipientes y patrones anómalos de switching.</p><p><strong>Resultados en 14 meses:</strong></p><p>• Reducción <strong>87% en paradas no planificadas</strong> (de 15 a 2 eventos anuales)<br>• Ahorro <strong>$180M COP anuales</strong> en costos de downtime evitado<br>• Extensión <strong>35% vida útil baterías</strong> mediante reemplazo predictivo<br>• Reducción <strong>60% tiempo técnico</strong> en diagnósticos<br>• <strong>ROI 280%</strong> en primer año</p><p>La inversión total de <strong>$45M COP</strong> se recuperó en 4 meses, posicionando a AgroTech como referente en infraestructura IT predictiva para el sector tecnológico colombiano.</p>",
+      "tag": "UPS Predictivo Medellín",
+      "read_time": 2
+    }
+  ]
+}
