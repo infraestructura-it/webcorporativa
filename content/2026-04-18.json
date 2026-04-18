@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-18T11:42:45.333Z",
+  "date": "2026-04-18",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-18-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-18",
+      "brand": "Vertiv",
+      "source_title": "Vertiv acquires BMarko Structures to expand capacity for manufactured and converged infrastructure solutions",
+      "title": "Vertiv adquiere BMarko Structures para expandir su infraestructura convergente",
+      "summary": "La adquisición fortalece la capacidad de Vertiv para soluciones de infraestructura manufacturada y convergente en el mercado global",
+      "body": "<p><strong>Vertiv (NYSE: VRT)</strong>, líder mundial en infraestructura digital crítica, anunció la adquisición de <strong>BMarko Structures LLC</strong>, proveedor estadounidense especializado en fabricación estructural personalizada para aplicaciones de misión crítica.</p><p>Esta estratégica operación permite a Vertiv expandir significativamente su capacidad para desarrollar <strong>soluciones de infraestructura manufacturada y convergente</strong>, incluyendo sistemas UPS modulares y centros de datos prefabricados que pueden alcanzar capacidades de hasta <strong>2.5 MVA por módulo</strong> con eficiencias superiores al 96%.</p><p>Para el mercado colombiano y latinoamericano, esta adquisición representa una oportunidad de acceder a <strong>infraestructura crítica más rápida de implementar</strong>. Las empresas locales podrán beneficiarse de soluciones prefabricadas que reducen los tiempos de construcción de centros de datos de 18 meses a apenas 6-8 meses.</p><p>BMarko aporta expertise en <strong>estructuras modulares personalizadas</strong> que complementa perfectamente el portafolio de Vertiv en sistemas UPS, enfriamiento y monitoreo. Esta integración vertical permitirá ofrecer soluciones llave en mano con precios estimados desde <strong>USD $800,000 por MW</strong> instalado.</p><p>La consolidación fortalece la posición de Vertiv frente a competidores como Schneider Electric y Eaton en el creciente mercado de infraestructura digital crítica en América Latina.</p>",
+      "tag": "Vertiv Infraestructura",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-18-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-18",
+      "brand": "Victron Energy",
+      "source_title": "Introducing Victron Microgrid",
+      "title": "Victron Energy lanza Microgrid: simplifica sistemas off-grid de gran escala",
+      "summary": "Nueva tecnología permite construir sistemas off-grid complejos con la misma simplicidad de instalaciones pequeñas",
+      "body": "<p><strong>Victron Energy ha revolucionado el mercado de sistemas off-grid</strong> con el lanzamiento de Victron Microgrid, una solución que permite construir instalaciones de gran escala con la simplicidad de sistemas pequeños, agregando unidades independientes que aumentan la confiabilidad y capacidad según las necesidades de crecimiento.</p><p>Esta innovación resulta especialmente relevante para <strong>Colombia, donde la irradiación solar promedio de 4.5 kWh/m²/día</strong> en zonas clave ofrece excelentes condiciones para proyectos off-grid. La tecnología Victron Microgrid facilita la implementación de sistemas autónomos en zonas no interconectadas (ZNI), que representan aproximadamente el 3% del territorio nacional.</p><p><strong>La plataforma modular permite escalabilidad gradual</strong>, reduciendo inversiones iniciales y riesgos operativos. Cada unidad opera independientemente, garantizando continuidad del servicio incluso si una sección requiere mantenimiento. Esta característica es crucial para comunidades rurales colombianas que dependen completamente de la generación local.</p><p>Con la <strong>Ley 1715 promoviendo las energías renovables</strong> y los incentivos tributarios disponibles, Victron Microgrid se posiciona como una alternativa viable para proyectos comunitarios, industriales y comerciales en zonas aisladas, ofreciendo una solución técnicamente robusta y económicamente escalable para el desarrollo energético sostenible del país.</p>",
+      "tag": "Victron Energy Sistema",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-18-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-18",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+      "summary": "Aprenderá a implementar monitoreo remoto de inversores Fronius Symo usando Modbus TCP con registros reales y código Python",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan Modbus TCP en el puerto 502, permitiendo monitoreo centralizado de instalaciones fotovoltaicas. La configuración requiere habilitar el protocolo en el menú Communication → Modbus TCP del inversor.</p><p><strong>Registros Modbus críticos:</strong></p><ul><li>40084-40085: Potencia AC instantánea (UINT32, W)</li><li>40092-40093: Energía total generada (UINT32, Wh)</li><li>40100: Tensión DC String 1 (UINT16, V)</li><li>40102: Corriente DC String 1 (UINT16, A)</li><li>40118: Temperatura del inversor (UINT16, °C)</li><li>40139: Código de estado operacional (UINT16)</li></ul><p>Para implementaciones en Colombia, considere las fluctuaciones de red típicas. El siguiente código Python lee los parámetros principales:</p><p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100')<br>client.connect()<br><br># Leer potencia AC (registros 40084-40085)<br>result = client.read_holding_registers(40083, 2, unit=1)<br>power_ac = (result.registers[0] << 16) | result.registers[1]<br><br># Leer temperatura<br>temp_result = client.read_holding_registers(40117, 1, unit=1)<br>temperature = temp_result.registers[0] / 10<br><br>print(f'Potencia AC: {power_ac} W')<br>print(f'Temperatura: {temperature} °C')<br><br>client.close()</code></p><p><strong>Consideraciones técnicas:</strong> Los registros Fronius usan direccionamiento base 1, pero las librerías Modbus típicamente usan base 0. El Unit ID predeterminado es 1. Para instalaciones con múltiples inversores, configure diferentes IPs o use Modbus RTU con direcciones únicas.</p><p>La integración con sistemas SCADA como Wonderware o FactoryTalk requiere mapeo correcto de los tipos de datos UINT32 en registros consecutivos.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-18-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-18",
+      "brand": null,
+      "source_title": null,
+      "title": "Monitorear temperatura del datacenter con DS18B20 + ESP32 + InfluxDB",
+      "summary": "Implementar monitoreo de temperatura del cuarto de equipos con alertas automáticas y dashboard histórico",
+      "body": "<p>Implementa un sistema de monitoreo térmico profesional para tu datacenter con componentes económicos y confiables.</p><ol><li>Conecta el sensor DS18B20 al ESP32: VCC a 3.3V, GND a GND, DATA a GPIO4 con resistencia pull-up de 4.7kΩ</li><li>Instala las librerías <code>OneWire</code> y <code>DallasTemperature</code> en Arduino IDE</li><li>Programa el ESP32 con este código para enviar datos a InfluxDB:<pre><code>#include &lt;WiFi.h&gt;\n#include &lt;HTTPClient.h&gt;\n#include &lt;OneWire.h&gt;\n#include &lt;DallasTemperature.h&gt;\n\n#define ONE_WIRE_BUS 4\nOneWire oneWire(ONE_WIRE_BUS);\nDallasTemperature sensors(&amp;oneWire);\n\nvoid setup() {\n  sensors.begin();\n  WiFi.begin(\"tu_wifi\", \"password\");\n}\n\nvoid loop() {\n  sensors.requestTemperatures();\n  float temp = sensors.getTempCByIndex(0);\n  \n  HTTPClient http;\n  http.begin(\"http://influxdb:8086/write?db=datacenter\");\n  String data = \"temperatura,location=rack1 value=\" + String(temp);\n  http.POST(data);\n  delay(60000);\n}</code></pre></li><li>Configura InfluxDB 1.8 creando la base de datos: <code>CREATE DATABASE datacenter</code></li><li>En Grafana, añade InfluxDB como datasource y crea un panel con query: <code>SELECT mean(\"value\") FROM \"temperatura\" WHERE $timeFilter GROUP BY time($__interval)</code></li><li>Configura alertas en Grafana para temperaturas >25°C enviando notificaciones a Telegram o email</li></ol>",
+      "tag": "ESP32+InfluxDB",
+      "read_time": 3
+    },
+    {
+      "id": "2026-04-18-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-18",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva para Sistema Solar Híbrido - Laboratorio de Salud Bogotá",
+      "summary": "Reducción 34% costos energéticos ($47M COP/año) con mantenimiento predictivo en sistema solar 150kW",
+      "body": "<p><strong>Laboratorio MedPlus SA</strong>, con sede en Bogotá y 280 empleados, enfrentaba altos costos energéticos ($142M COP/año) y fallas imprevistas en su sistema solar híbrido de 150kW que alimenta equipos críticos de diagnóstico médico.</p><p>La instalación incluía <strong>10 inversores Fronius Symo 15.0-3-M</strong>, <strong>480 paneles LONGi Hi-MO 6 LR5-72HIH-415M</strong>, <strong>8 baterías BYD Battery-Box Premium HVS 10.24kWh</strong> y respaldo con <strong>UPS Eaton 9PX 11kVA</strong>. Los técnicos detectaban degradación de paneles solo durante mantenimientos programados cada 6 meses.</p><p><strong>Solución implementada:</strong> Sistema de IA basado en <strong>TensorFlow Lite</strong> ejecutado en Raspberry Pi 4 con <strong>Node-RED</strong>, integrando sensores de irradiancia Hukseflux SR30 y analizadores de red Schneider PM8000. El algoritmo de <strong>anomaly detection</strong> procesa datos cada 5 minutos, correlacionando producción solar vs. condiciones ambientales.</p><p>La IA identifica automáticamente paneles con rendimiento <5% del esperado, predice fallas de inversor con 89% precisión y optimiza ciclos de carga/descarga de baterías según patrones de consumo históricos.</p><p><strong>Resultados en 18 meses:</strong><br>• Ahorro energético: <strong>2,847 kWh/mes adicionales</strong><br>• Reducción costos operativos: <strong>$47.3M COP/año (34%)</strong><br>• Disponibilidad del sistema: incremento del <strong>94% al 99.2%</strong><br>• Mantenimientos correctivos: reducción <strong>67%</strong><br>• <strong>ROI alcanzado en 22 meses</strong></p><p>El sistema ahora anticipa necesidades de mantenimiento con 3 semanas de antelación, optimizando la operación 24/7 del laboratorio.</p>",
+      "tag": "Solar+IA Bogotá",
+      "read_time": 2
+    }
+  ]
+}
