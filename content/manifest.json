@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-20T12:14:31.543Z",
+  "last_build": "2026-04-21T12:09:29.139Z",
   "total_days": 10,
   "total_articles": 50,
   "days": [
+    {
+      "date": "2026-04-21",
+      "generated_at": "2026-04-21T12:06:17.445Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-21-news",
+          "category_id": "news",
+          "title": "Vertiv adquiere BMarko Structures para expandir infraestructura de Data Centers",
+          "summary": "La adquisición fortalecerá las capacidades de Vertiv en soluciones manufacturadas para centros de datos en Latinoamérica",
+          "tag": "Vertiv Data Centers",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-21-solar_news",
+          "category_id": "solar_news",
+          "title": "Caelux inicia producción masiva de paneles perovskita-silicio en Estados Unidos",
+          "summary": "Nueva tecnología de paneles con perovskita promete mayor eficiencia para proyectos solares en Colombia",
+          "tag": "Caelux Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-21-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+          "summary": "Configuración técnica de Modbus TCP para monitoreo de inversores Fronius Symo con registros reales y código Python",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-21-tips",
+          "category_id": "tips",
+          "title": "Conectar Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron con Home Assistant para monitorear estado de carga, potencia y alertas desde un dashboard unificado",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-21-usecase",
+          "category_id": "usecase",
+          "title": "Minera del Cauca reduce fallas UPS críticas 73% con IA predictiva",
+          "summary": "Sistema de mantenimiento predictivo con TensorFlow Lite evitó $847M COP en pérdidas por cortes",
+          "tag": "Minería+UPS Predictivo Popayán",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-04-20",
       "generated_at": "2026-04-20T12:11:00.517Z",
@@ -422,53 +469,6 @@
           "title": "IA Predictiva Reduce Costos Energéticos 34% en Clínica Bogotana",
           "summary": "Sistema híbrido solar-UPS con ML ahorra $127M COP anuales y previene 89% de fallas críticas en centro médico",
           "tag": "Salud+Solar+IA Bogotá",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-03",
-      "generated_at": "2026-04-03T11:46:41.445Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-03-news",
-          "category_id": "news",
-          "title": "Vertiv invierte $50M en Ohio para tecnología térmica de centros de datos",
-          "summary": "Vertiv destinará $50 millones para expandir manufactura de sistemas de enfriamiento críticos para infraestructura de IA",
-          "tag": "Vertiv Infraestructura",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-03-solar_news",
-          "category_id": "solar_news",
-          "title": "Victron Energy impulsa estaciones antárticas con energía solar renovable",
-          "summary": "La tecnología de Victron Energy reduce dependencia de diésel en estaciones remotas, aplicable a proyectos off-grid en Colombia",
-          "tag": "Victron Energy Sistema",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-03-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
-          "summary": "Aprenderá registros Modbus específicos, códigos de función y configuración para monitoreo remoto de inversores solares",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-03-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra tu sistema solar Victron en Home Assistant para monitorear potencia, SOC batería y estado del inversor remotamente",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-03-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce 34% Fallas UPS en Cencosud Colombia",
-          "summary": "Algoritmo ML predice fallas en UPS Eaton 9PX, ahorrando $847M COP anuales en centro de datos Bogotá",
-          "tag": "UPS+Predictivo Bogotá",
           "read_time": 2
         }
       ]

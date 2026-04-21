@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-21T12:06:17.445Z",
+  "date": "2026-04-21",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-21-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-21",
+      "brand": "Vertiv",
+      "source_title": "Vertiv acquires BMarko Structures to expand capacity for manufactured and converged infrastructure solutions",
+      "title": "Vertiv adquiere BMarko Structures para expandir infraestructura de Data Centers",
+      "summary": "La adquisición fortalecerá las capacidades de Vertiv en soluciones manufacturadas para centros de datos en Latinoamérica",
+      "body": "<p><strong>Vertiv</strong> (NYSE: VRT), líder mundial en infraestructura digital crítica, anunció la adquisición de <strong>BMarko Structures LLC</strong>, proveedor estadounidense especializado en fabricación estructural personalizada para centros de datos.</p><p>Esta operación estratégica permitirá a Vertiv expandir significativamente su capacidad de manufactura para <strong>soluciones convergentes de infraestructura</strong>, incluyendo sistemas UPS modulares, unidades de enfriamiento y estructuras prefabricadas para data centers.</p><p>Para el mercado colombiano y latinoamericano, esta adquisición representa una oportunidad de acceder a <strong>soluciones más integradas y eficientes</strong>. Las empresas locales podrán beneficiarse de tiempos de implementación reducidos hasta en un 40% comparado con construcciones tradicionales.</p><p>BMarko aporta capacidades de fabricación de estructuras modulares con capacidades desde <strong>100 kVA hasta 2.5 MVA</strong>, ideales para proyectos de transformación digital en sectores como banca, telecomunicaciones y servicios cloud en la región.</p><p>La integración permitirá ofrecer <strong>eficiencias energéticas superiores al 96%</strong> en sistemas UPS modulares, con costos estimados desde USD $150,000 para configuraciones básicas empresariales, posicionando a Colombia como hub de distribución para Suramérica.</p>",
+      "tag": "Vertiv Data Centers",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-21-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-21",
+      "brand": "Caelux",
+      "source_title": "Caelux-Solx relationship starts mass-production of perovskite-silicon solar panels in US",
+      "title": "Caelux inicia producción masiva de paneles perovskita-silicio en Estados Unidos",
+      "summary": "Nueva tecnología de paneles con perovskita promete mayor eficiencia para proyectos solares en Colombia",
+      "body": "<p><strong>Caelux</strong> y Solx han iniciado la primera producción masiva de paneles solares de perovskita-silicio en Estados Unidos, marcando un hito tecnológico que podría revolucionar el mercado solar colombiano.</p><p>La alianza de cinco años contempla una capacidad de <strong>3 GW</strong>, combinando células de silicio tradicionales con recubrimiento de perovskita, tecnología que puede aumentar la eficiencia hasta un <strong>30% o más</strong> comparado con paneles convencionales del 22%.</p><p>Para Colombia, con irradiación solar promedio de <strong>4.5 kWh/m²/día</strong>, esta tecnología representa una oportunidad excepcional. Bajo la <strong>Ley 1715</strong>, los usuarios podrían maximizar beneficios del net-metering con menor área de instalación, especialmente relevante en zonas urbanas donde el espacio es limitado.</p><p>En Bogotá, con tarifas de <strong>Codensa cercanas a $600 COP/kWh</strong>, la mayor eficiencia de estos paneles aceleraría el retorno de inversión. Medellín, con EPM y excelente irradiación, también se beneficiaría significativamente.</p><p>Aunque inicialmente la producción se enfoca en Puerto Rico, la proximidad geográfica y los tratados comerciales podrían facilitar la llegada de esta tecnología avanzada al mercado colombiano, posicionando al país como líder regional en adopción de <strong>tecnología solar de última generación</strong>.</p>",
+      "tag": "Caelux Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-21-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-21",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+      "summary": "Configuración técnica de Modbus TCP para monitoreo de inversores Fronius Symo con registros reales y código Python",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan el protocolo Modbus TCP estándar para comunicación industrial, utilizando el puerto 502 por defecto. La configuración requiere habilitar Modbus TCP en la interfaz web del inversor (Setup → Communication → Modbus).</p><p><strong>Registros principales para monitoreo:</strong></p><ul><li>Potencia AC Instantánea: Registro 40092 (INT16, Factor: 1W)</li><li>Energía Total: Registro 40094-40095 (UINT32, Factor: 1Wh)</li><li>Tensión AC L1: Registro 40087 (UINT16, Factor: 0.01V)</li><li>Corriente AC L1: Registro 40088 (UINT16, Factor: 0.01A)</li><li>Frecuencia: Registro 40089 (UINT16, Factor: 0.01Hz)</li><li>Estado del Inversor: Registro 40108 (UINT16)</li></ul><p>La implementación en Python utiliza la librería <code>pymodbus</code> con función code <strong>03 (Read Holding Registers)</strong>:</p><p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia instantánea<br>result = client.read_holding_registers(40092, 1, unit=1)<br>power_ac = result.registers[0]<br><br># Leer energía total (32-bit)<br>result = client.read_holding_registers(40094, 2, unit=1)<br>energy_total = (result.registers[0] << 16) + result.registers[1]<br><br>client.close()</code></p><p>Para instalaciones colombianas, considerar la configuración de <strong>Unit ID</strong> (generalmente 1) y timeout de 3-5 segundos debido a latencias de red. El inversor soporta hasta 10 conexiones TCP concurrentes, ideal para sistemas SCADA distribuidos en plantas solares comerciales.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-21-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-21",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron con Home Assistant para monitorear estado de carga, potencia y alertas desde un dashboard unificado",
+      "body": "<p>Este tutorial te permite visualizar datos del MultiPlus II (versión firmware 506 o superior) directamente en Home Assistant usando el broker MQTT integrado de VenusOS.</p><ol><li>En VenusOS (v3.00+), navega a <strong>Settings → Services → MQTT on LAN (SSL)</strong> y actívalo. Anota la IP del Venus GX.</li><li>En Home Assistant, añade esta configuración al <code>configuration.yaml</code>:</li></ol><code>mqtt:<br>&nbsp;&nbsp;broker: 192.168.1.100  # IP del Venus GX<br>&nbsp;&nbsp;port: 8883<br>&nbsp;&nbsp;username: \"\"<br>&nbsp;&nbsp;password: \"\"<br>&nbsp;&nbsp;certificate: auto</code><ol start=\"3\"><li>Crea sensores MQTT para los datos principales:</li></ol><code>sensor:<br>&nbsp;&nbsp;- platform: mqtt<br>&nbsp;&nbsp;&nbsp;&nbsp;name: \"Victron SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/c0619ab123456/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"<br>&nbsp;&nbsp;- platform: mqtt<br>&nbsp;&nbsp;&nbsp;&nbsp;name: \"Victron AC Load\"<br>&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/c0619ab123456/vebus/276/Ac/Out/L1/P\"<br>&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"</code><ol start=\"4\"><li>Sustituye <code>c0619ab123456</code> por tu VRM Portal ID (visible en VenusOS → Settings → VRM Online Portal).</li><li>Reinicia Home Assistant. Los sensores aparecerán en <strong>Developer Tools → States</strong> con prefijo <code>sensor.victron_</code>.</li></ol><p>Ahora puedes crear tarjetas de dashboard para visualizar SOC, potencia AC/DC y estado del inversor en tiempo real.</p>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-21-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-21",
+      "brand": null,
+      "source_title": null,
+      "title": "Minera del Cauca reduce fallas UPS críticas 73% con IA predictiva",
+      "summary": "Sistema de mantenimiento predictivo con TensorFlow Lite evitó $847M COP en pérdidas por cortes",
+      "body": "<p><strong>Minera Aurífera del Cauca S.A.S.</strong>, empresa de 450 empleados en Popayán, enfrentaba costos críticos por fallas inesperadas en su infraestructura UPS que protege sistemas de extracción 24/7.</p><p>Su data center con <strong>6 unidades Eaton 9PX 8kVA</strong> experimentaba 12 fallas mensuales promedio, generando paradas de producción por <strong>$1.2 billones COP anuales</strong> en pérdidas operativas.</p><p>Implementamos una solución de <strong>mantenimiento predictivo con TensorFlow Lite</strong> integrada a los sistemas Eaton Intelligent Power Manager. El algoritmo de anomaly detection analiza en tiempo real:</p><p>• Voltajes de entrada/salida<br>• Temperaturas internas<br>• Corrientes de carga<br>• Estado de baterías</p><p>La IA procesa <strong>2,400 puntos de datos por minuto</strong> usando Node-RED ML, enviando alertas predictivas 72 horas antes de fallas potenciales via API REST a WhatsApp Business.</p><p><strong>Resultados tras 8 meses:</strong></p><p>• <strong>73% reducción</strong> en fallas críticas (de 12 a 3.2 mensuales)<br>• <strong>$847 millones COP evitados</strong> en pérdidas por paradas<br>• <strong>41% menos mantenimientos correctivos</strong><br>• <strong>ROI de 340%</strong> en primer año<br>• Disponibilidad mejoró del 94.2% al <strong>99.1%</strong></p><p>El sistema detectó exitosamente 23 fallas potenciales, permitiendo mantenimiento programado y evitando paradas de producción. La inversión inicial de <strong>$127 millones COP</strong> se recuperó en 4.2 meses.</p>",
+      "tag": "Minería+UPS Predictivo Popayán",
+      "read_time": 2
+    }
+  ]
+}
