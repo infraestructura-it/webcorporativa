@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-22T12:05:07.925Z",
+  "date": "2026-04-22",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-22-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-22",
+      "brand": "Vertiv",
+      "source_title": "Vertiv Reports Strong First Quarter with Diluted EPS Growth of 136% (Adjusted Diluted EPS Growth of +83%); Raises Full-Year Guidance",
+      "title": "Vertiv impulsa crecimiento del 30% con foco en infraestructura para IA",
+      "summary": "El fabricante de UPS reporta ventas de US$2.650M en Q1 2026, impulsado por la demanda de centros de datos para IA",
+      "body": "<p><strong>Vertiv Holdings</strong> reportó resultados financieros sobresalientes para el primer trimestre de 2026, con ventas netas de <strong>US$2.650 millones</strong>, representando un crecimiento del 30% comparado con el mismo período de 2025. El incremento de US$614 millones refleja la creciente demanda global de infraestructura crítica para centros de datos.</p><p>La compañía, líder en soluciones de UPS y sistemas de potencia crítica, registró un crecimiento del <strong>136% en ganancias por acción</strong>, impulsado principalmente por proyectos de inteligencia artificial que requieren infraestructura robusta y confiable.</p><p>Para el mercado colombiano y latinoamericano, este crecimiento señala oportunidades significativas en el sector de centros de datos. Las empresas locales que planean implementar soluciones de IA o expandir su infraestructura IT pueden beneficiarse de la experiencia de Vertiv en <strong>sistemas UPS de alta capacidad</strong> y soluciones de enfriamiento eficientes.</p><p>Los sistemas Vertiv típicamente ofrecen <strong>eficiencias superiores al 96%</strong> en sus UPS modulares, con capacidades que van desde 25 kVA hasta varios megavatios. La compañía ha elevado su proyección anual, lo que indica confianza en la demanda sostenida de infraestructura crítica en América Latina, donde el mercado de centros de datos está experimentando un crecimiento acelerado.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-22-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-22",
+      "brand": "Victron Energy",
+      "source_title": "Introducing Victron Microgrid",
+      "title": "Victron Energy presenta Victron Microgrid para sistemas off-grid escalables",
+      "summary": "Nueva solución simplifica construcción de sistemas aislados de gran escala con alta confiabilidad para el mercado colombiano",
+      "body": "<p><strong>Victron Energy</strong> ha lanzado su innovador sistema Victron Microgrid, una solución que permite construir sistemas fotovoltaicos aislados de gran escala con la misma simplicidad de los sistemas pequeños, agregando unidades independientes que aumentan la confiabilidad y capacidad total.</p><p>Esta tecnología resulta especialmente relevante para Colombia, donde la irradiación solar promedio de <strong>4.5 kWh/m²/día</strong> en zonas clave como La Guajira y Cesar ofrece condiciones ideales para proyectos off-grid. Los sistemas tradicionales de gran escala han sido complejos de construir y difíciles de gestionar, limitando su adopción.</p><p><strong>Victron Microgrid</strong> aborda estas limitaciones mediante arquitectura modular que facilita el escalamiento progresivo. Para el mercado colombiano, esto significa oportunidades en zonas no interconectadas (ZNI) donde vive el 3% de la población sin acceso confiable a la red eléctrica.</p><p>Bajo el marco de la <strong>Ley 1715</strong>, estos sistemas pueden complementar iniciativas de autogeneración y contribuir al objetivo nacional de 1,500 MW de capacidad renovable para 2030. La tecnología de Victron, reconocida por su robustez en condiciones adversas, podría competir con soluciones tradicionales considerando que sistemas battery-based alcanzan eficiencias del 95%.</p><p>Esta innovación posiciona a Victron como alternativa sólida para proyectos de electrificación rural y industrial en Colombia.</p>",
+      "tag": "Victron Energy Sistema",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-22-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-22",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+      "summary": "Configuración técnica de Modbus TCP para monitoreo de inversores Fronius Symo con registros reales y códigos de función",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan comunicación Modbus TCP en puerto 502, permitiendo monitoreo avanzado de parámetros fotovoltaicos. La configuración requiere habilitar Modbus TCP en el menú Setup → Communication → Modbus TCP del inversor.</p><p><strong>Registros principales para monitoreo:</strong></p><ul><li>Registro 40083-40084: Potencia AC actual (IEEE 754 float, 32-bit)</li><li>Registro 40092-40093: Energía total generada (IEEE 754 float, Wh)</li><li>Registro 40097: Voltaje DC String 1 (uint16, factor escala 0.1V)</li><li>Registro 40099: Corriente DC String 1 (uint16, factor escala 0.1A)</li><li>Registro 40107: Voltaje AC L1-N (uint16, factor escala 0.1V)</li><li>Registro 40135: Estado operacional (uint16)</li></ul><p>Los <strong>Fronius Symo</strong> utilizan function code 03 (Read Holding Registers) con Slave ID típico 1. La implementación requiere manejo de registros IEEE 754 float de 32-bit en formato big-endian.</p><p><strong>Código Python para lectura de datos:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br>import struct<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>result = client.read_holding_registers(40083, 2, unit=1)<br>raw_power = struct.pack('>HH', result.registers[0], result.registers[1])<br>ac_power = struct.unpack('>f', raw_power)[0]<br>print(f'Potencia AC: {ac_power} W')</code><p>Para implementaciones en Colombia, considerar latencia de red y configurar timeouts de 5-10 segundos. Los inversores Fronius requieren polling interval mínimo de 1 segundo para evitar sobrecarga del procesador interno.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-22-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-22",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant para monitoreo en tiempo real vía MQTT y VenusOS",
+      "body": "<p>Integrar tu inversor Victron MultiPlus II con Home Assistant permite monitorear estado de batería, consumos y producción solar desde un dashboard centralizado.</p><ol><li>Configura MQTT en VenusOS: Accede a Remote Console → Settings → Services → MQTT on LAN (SSL). Habilita 'MQTT on LAN' y anota la dirección IP del dispositivo Venus GX/Cerbo GX.</li><li>Instala MQTT broker en Home Assistant: Ve a Settings → Add-ons → Add-on Store, busca 'Mosquitto broker' e instala la versión 6.2.1 o superior.</li><li>Configura integración MQTT en Home Assistant agregando en configuration.yaml:</li></ol><code>mqtt:<br>  broker: IP_DEL_VENUS_GX<br>  port: 1883<br>  discovery: true<br>  discovery_prefix: homeassistant</code><ol start='4'><li>Crea sensores automáticos agregando en configuration.yaml:</li></ol><code>sensor:<br>  - platform: mqtt<br>    name: \"Victron Battery SOC\"<br>    state_topic: \"N/PORTAL_ID/system/0/Dc/Battery/Soc\"<br>    unit_of_measurement: \"%\"<br>  - platform: mqtt<br>    name: \"Victron AC Load\"<br>    state_topic: \"N/PORTAL_ID/system/0/Ac/Consumption/L1/Power\"<br>    unit_of_measurement: \"W\"</code><ol start='5'><li>Reinicia Home Assistant y verifica que los sensores aparezcan en Developer Tools → States. Los datos se actualizarán cada 30 segundos automáticamente.</li></ol>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-22-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-22",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce 28% Costos Energéticos en Clínica Bogotá",
+      "summary": "Hospital Regional de Cundinamarca ahorra $84M anuales con sistema solar inteligente y mantenimiento predictivo de UPS",
+      "body": "<p>El <strong>Hospital Regional de Cundinamarca</strong> en Bogotá, con 180 camas y infraestructura IT crítica 24/7, enfrentaba costos energéticos de <strong>$300 millones COP anuales</strong> y fallas imprevistas en sus UPS que comprometían equipos médicos vitales.</p><p>Implementamos un ecosistema solar híbrido con <strong>200 paneles LONGi Hi-MO 6 Explorer de 540W</strong>, inversores <strong>Fronius Symo GEN24 15kW</strong> con capacidades de respaldo, baterías <strong>BYD Battery-Box Premium HVS 20kWh</strong> y UPS <strong>Eaton 9PX 6kVA</strong> para salas críticas. Los controladores <strong>Victron SmartSolar MPPT 150/60</strong> optimizan la carga.</p><p>La solución IA utiliza <strong>TensorFlow Lite embebido</strong> en gateway industrial, procesando datos de 47 sensores en tiempo real. El sistema analiza patrones de consumo, predicción meteorológica y estado de baterías mediante <strong>algoritmos LSTM para anomaly detection</strong>. <strong>Node-RED con módulos ML</strong> orquesta la automatización y alertas predictivas.</p><p>Resultados tras 14 meses: <strong>reducción del 28% en costos energéticos</strong> (ahorro de $84M COP anuales), <strong>incremento del 23% en eficiencia solar</strong> mediante optimización automática de ángulos y limpieza predictiva. El mantenimiento predictivo de UPS redujo fallas no programadas en <strong>89%</strong>, evitando pérdidas por $45M COP en equipos médicos.</p><p>La inversión de <strong>$420M COP se recuperará en 32 meses</strong>, generando ahorros proyectados de $150M COP anuales desde el tercer año. El hospital logró <strong>99.7% de disponibilidad energética</strong> y certificación hospitalaria verde nivel oro.</p>",
+      "tag": "Solar+IA Bogotá",
+      "read_time": 2
+    }
+  ]
+}
