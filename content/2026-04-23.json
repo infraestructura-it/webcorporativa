@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-23T12:05:27.372Z",
+  "date": "2026-04-23",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-23-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-23",
+      "brand": "Vertiv",
+      "source_title": "Vertiv Reports Strong First Quarter with Diluted EPS Growth of 136% (Adjusted Diluted EPS Growth of +83%); Raises Full-Year Guidance",
+      "title": "Vertiv reporta crecimiento del 136% en ganancias y alza proyecciones 2026",
+      "summary": "Fabricante de infraestructura crítica registra ventas de US$2.650 millones en Q1 2026, impulsado por demanda de IA",
+      "body": "<p><strong>Vertiv Holdings Co</strong> reportó resultados financiales excepcionales para el primer trimestre de 2026, con ventas netas de <strong>US$2.650 millones</strong>, representando un crecimiento del 30% comparado con el mismo período de 2025. El crecimiento de las ganancias por acción diluidas alcanzó el <strong>136%</strong>, llevando a la compañía a elevar sus proyecciones para el año completo.</p><p>Este desempeño refleja la creciente demanda de infraestructura crítica para centros de datos, especialmente impulsada por el auge de la inteligencia artificial. Los sistemas UPS de Vertiv, que incluyen unidades desde <strong>10 kVA hasta 6 MW</strong> con eficiencias superiores al <strong>96%</strong>, han experimentado una demanda sin precedentes en mercados globales.</p><p>Para el mercado colombiano y latinoamericano, este crecimiento señala la expansión de soluciones de infraestructura crítica más accesibles. Las empresas locales podrán beneficiarse de tecnologías avanzadas de enfriamiento y UPS que anteriormente solo estaban disponibles para grandes corporaciones.</p><p><strong>La inversión en centros de datos en Colombia</strong> se proyecta crecerá 25% en 2026, según analistas locales. Los sistemas Vertiv, con precios desde <strong>US$15.000 para unidades de 100 kVA</strong>, ofrecen opciones competitivas para empresas medianas que buscan modernizar su infraestructura tecnológica.</p>",
+      "tag": "Vertiv Infraestructura",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-23-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-23",
+      "brand": "Trina Solar",
+      "source_title": "Trina Solar, JA Solar, JinkoSolar launch China's first PV patent pool for TOPCon technologies",
+      "title": "Trina Solar lidera pool de patentes TOPCon en China para tecnología avanzada",
+      "summary": "El primer pool de patentes TOPCon de China busca acelerar la adopción de paneles de alta eficiencia globalmente",
+      "body": "<p><strong>Trina Solar, JA Solar y JinkoSolar</strong> han lanzado el primer pool de patentes de China enfocado en tecnología TOPCon, marcando un hito en la industria fotovoltaica global. Esta iniciativa busca simplificar el licenciamiento, reducir disputas legales y fortalecer la coordinación de propiedad intelectual tanto local como internacionalmente.</p><p>La tecnología <strong>TOPCon (Tunnel Oxide Passivated Contact)</strong> representa la nueva generación de paneles solares con eficiencias superiores al 22%, significativamente mayor a los paneles convencionales. Para Colombia, con su irradiación solar promedio de 4.5 kWh/m²/día en zonas clave, esta tecnología podría maximizar la generación en proyectos residenciales y comerciales.</p><p><strong>Esta colaboración facilitará el acceso a tecnología avanzada</strong> para instaladores colombianos, especialmente considerando los beneficios de la Ley 1715 y el sistema de net-metering. Con tarifas de Codensa alrededor de $500 COP/kWh y EPM cerca de $600 COP/kWh, los paneles TOPCon de mayor eficiencia pueden reducir significativamente el tiempo de retorno de inversión.</p><p>El pool de patentes eliminará barreras tecnológicas y podría acelerar la llegada de paneles TOPCon más económicos al mercado colombiano, fortaleciendo la transición energética nacional y mejorando la competitividad de la energía solar frente a fuentes convencionales.</p>",
+      "tag": "Trina Solar Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-23-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-23",
+      "brand": null,
+      "source_title": null,
+      "title": "Implementación SNMP v3 para Monitoreo UPS Eaton 9PX en Zabbix 6.x",
+      "summary": "Configuración técnica completa de monitoreo remoto seguro de UPS Eaton 9PX usando SNMP v3 y Zabbix 6.x en Colombia",
+      "body": "<p>El monitoreo remoto de UPS críticos en infraestructuras colombianas requiere protocolos seguros como <strong>SNMP v3</strong> para evitar interceptación de credenciales. Los UPS Eaton 9PX integran Network Management Cards (NMC) que soportan autenticación y encriptación robusta.</p><p><strong>Configuración SNMP v3 en Eaton 9PX:</strong></p><ul><li>Usuario SNMPv3: <code>eaton_admin</code></li><li>Protocolo de autenticación: SHA-256</li><li>Protocolo de privacidad: AES-256</li><li>Context Name: <code>eaton_context</code></li></ul><p>Los <strong>OIDs críticos</strong> para monitoreo incluyen:</p><ul><li><code>1.3.6.1.4.1.534.1.3.4.1.2.1</code> - Voltaje de entrada (V)</li><li><code>1.3.6.1.4.1.534.1.4.4.1.2.1</code> - Voltaje de salida (V)</li><li><code>1.3.6.1.4.1.534.1.2.1.0</code> - Estado de batería</li><li><code>1.3.6.1.4.1.534.1.2.4.0</code> - Tiempo de autonomía restante</li></ul><p><strong>Configuración en Zabbix 6.x:</strong></p><code>zabbix_get -s 192.168.1.100 -p 161 -k 'snmp.get[1.3.6.1.4.1.534.1.3.4.1.2.1,{$SNMP_COMMUNITY},{HOST.CONN},3,eaton_admin,SHA,password123,AES,privkey456]'</code><p>Para automatizar el descubrimiento de múltiples UPS en redes corporativas colombianas, se recomienda configurar <strong>Network Discovery Rules</strong> con rangos IP específicos y validación de OID <code>1.3.6.1.4.1.534</code> (Eaton Enterprise Number).</p><p>Las alertas críticas deben configurarse para:</p><ol><li>Cambio a modo batería (&lt;5 segundos)</li><li>Temperatura excesiva (&gt;40°C considerando clima tropical)</li><li>Autonomía crítica (&lt;10 minutos)</li></ol><p>Esta implementación garantiza monitoreo 24/7 con seguridad empresarial para infraestructuras críticas en Colombia.</p>",
+      "tag": "SNMP v3",
+      "read_time": 3
+    },
+    {
+      "id": "2026-04-23-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-23",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron en Home Assistant para monitorear potencia, estado de batería y controlar cargas remotamente",
+      "body": "<p>Este tutorial te permite monitorear y controlar tu inversor Victron MultiPlus II desde Home Assistant usando el broker MQTT nativo de VenusOS.</p><ol><li>En VenusOS (v3.00+), ve a <strong>Settings > Services</strong> y habilita <strong>MQTT on LAN (Insecure)</strong>. Anota la IP del Venus device.</li><li>En Home Assistant, instala el addon <strong>Mosquitto broker</strong> si no tienes uno externo.</li><li>Agrega esta configuración MQTT en tu <code>configuration.yaml</code>:</li></ol><code>mqtt:<br>&nbsp;&nbsp;sensor:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron AC Load\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/[SERIAL]/system/0/Ac/Consumption/L1/Power\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron Battery SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/[SERIAL]/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron Grid Power\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/[SERIAL]/vebus/276/Ac/ActiveIn/L1/P\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"</code><ol start=\"4\"><li>Reemplaza <code>[SERIAL]</code> con el número de serie de tu Venus device (visible en VRM portal o Remote Console).</li><li>Reinicia Home Assistant. Los sensores aparecerán en <strong>Developer Tools > States</strong>.</li><li>Crea tarjetas en Lovelace Dashboard para visualizar consumos, SOC de batería y flujo de potencia en tiempo real.</li></ol>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-23-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-23",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Reduce 32% Costos Energéticos en Clínica Bogotá con Sistema Solar Híbrido",
+      "summary": "Sistema IA con TensorFlow optimiza paneles LONGi e inversores Fronius, ahorrando $18.6M COP anuales en Clínica Restrepo",
+      "body": "<p><strong>Clínica Restrepo</strong>, centro médico de 45 camas en Bogotá, enfrentaba costos energéticos de <strong>$58 millones COP anuales</strong> y frecuentes interrupciones que comprometían equipos críticos como quirófanos y UCI.</p><p>La solución implementada integró <strong>84 paneles LONGi Hi-MO 6 Explorer de 540W</strong> con tres <strong>inversores Fronius Symo 15kW</strong> y respaldo de <strong>ocho baterías BYD Battery-Box HVS 10.2kWh</strong>. El sistema UPS crítico utiliza dos <strong>Eaton 9PX 30kVA</strong> en configuración redundante.</p><p>El componente diferencial es un sistema IA basado en <strong>TensorFlow Lite Edge</strong> desplegado en <strong>Raspberry Pi 4 industriales</strong> con <strong>Node-RED ML</strong>. Los algoritmos procesan datos de <strong>controladores Victron SmartSolar MPPT 150/70</strong> y sensores meteorológicos <strong>Davis Vantage Pro2</strong>, prediciendo producción solar y demanda energética con precisión del <strong>94.3%</strong>.</p><p>La IA implementa <strong>anomaly detection</strong> que anticipa fallas en inversores hasta <strong>72 horas</strong> antes del evento, reduciendo tiempo de inactividad del <strong>85%</strong>. El sistema optimiza automáticamente la carga de baterías según patrones de consumo hospitalario y pronósticos climáticos.</p><p><strong>Resultados cuantificados:</strong> reducción del <strong>32% en costos energéticos</strong> (ahorro de <strong>$18.6 millones COP anuales</strong>), aumento del <strong>28% en eficiencia fotovoltaica</strong> y <strong>99.8% de disponibilidad</strong> en equipos críticos. El <strong>ROI se logró en 2.1 años</strong>, con generación promedio de <strong>1,847 kWh/día</strong>.</p>",
+      "tag": "Salud+IA Bogotá",
+      "read_time": 2
+    }
+  ]
+}
