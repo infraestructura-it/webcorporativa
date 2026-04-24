@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-24T12:03:08.452Z",
+  "date": "2026-04-24",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-04-24-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-04-24",
+      "brand": "Vertiv",
+      "source_title": "Vertiv Reports Strong First Quarter with Diluted EPS Growth of 136% (Adjusted Diluted EPS Growth of +83%); Raises Full-Year Guidance",
+      "title": "Vertiv dispara resultados 136% impulsado por demanda de infraestructura AI",
+      "summary": "El fabricante de UPS reportó ventas de US$2,650 millones en Q1 2026, crecimiento de 30% por expansión de centros de datos",
+      "body": "<p><strong>Vertiv Holdings</strong> reportó un crecimiento extraordinario del 136% en utilidades por acción durante el primer trimestre de 2026, alcanzando ventas netas de <strong>US$2,650 millones</strong>, un incremento de US$614 millones respecto al año anterior.</p><p>El fabricante de sistemas UPS y soluciones de infraestructura crítica atribuye estos resultados al boom de la inteligencia artificial y la expansión acelerada de centros de datos a nivel global. La compañía elevó sus proyecciones anuales tras superar ampliamente las expectativas del mercado.</p><p>Para el mercado colombiano y latinoamericano, este crecimiento de Vertiv señala una oportunidad significativa en el sector de <strong>infraestructura eléctrica crítica</strong>. Las empresas locales que planean modernizar sus centros de datos o implementar soluciones de respaldo energético pueden beneficiarse de la innovación acelerada en sistemas UPS de alta eficiencia.</p><p>Los productos Vertiv, como sus sistemas UPS de <strong>500-3000 kVA con eficiencia del 96%</strong>, son especialmente relevantes para industrias como banca, telecomunicaciones y manufactura en Colombia, donde la continuidad operacional es crítica.</p><p>Este desempeño refuerza la tendencia hacia soluciones de mayor capacidad y eficiencia energética, preparando el terreno para que las empresas latinoamericanas adopten infraestructuras más robustas y preparadas para cargas de trabajo de IA.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-24-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-04-24",
+      "brand": "PV Magazine",
+      "source_title": "UK solar generation hits record 15 GW as gas falls to historic low",
+      "title": "Reino Unido alcanza récord de 15 GW en generación solar fotovoltaica",
+      "summary": "La generación solar británica establece nuevo máximo histórico, demostrando el potencial de esta tecnología limpia",
+      "body": "<p>El Reino Unido estableció un nuevo <strong>récord histórico de generación solar</strong> al alcanzar 15 GW de potencia durante una semana que también vio el suministro de energía libre de carbono llegar a máximos históricos. Este hito demuestra el creciente papel de la energía fotovoltaica en las redes eléctricas modernas.</p><p>Para Colombia, este ejemplo británico es especialmente relevante considerando nuestra <strong>ventaja competitiva en irradiación solar</strong>, con un promedio de 4.5 kWh/m²/día en zonas clave, significativamente superior a los niveles del Reino Unido. Esto sugiere un potencial enorme para replicar y superar estos resultados en territorio nacional.</p><p>La <strong>Ley 1715 de 2014</strong> y el esquema de net-metering implementado por operadores como Codensa y EPM han creado las condiciones ideales para el desarrollo solar en Colombia. Con tarifas residenciales promedio entre $500-700 COP/kWh, los sistemas fotovoltaicos representan una oportunidad de ahorro significativa para usuarios finales.</p><p>El récord británico coincide con la expansión de mercados de flexibilidad en demanda, anticipando menor consumo estival impulsado por la fuerte generación solar. Esta tendencia refuerza la importancia de desarrollar <strong>infraestructura solar robusta</strong> y sistemas de almacenamiento para maximizar el aprovechamiento energético en Colombia.</p>",
+      "tag": "PV Magazine Generación",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-24-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-04-24",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+      "summary": "Implementación técnica de monitoreo Modbus TCP con inversores Fronius Symo incluyendo registros reales y código Python",
+      "body": "<p>Los inversores Fronius Symo soportan comunicación <strong>Modbus TCP</strong> nativa, facilitando la integración con sistemas SCADA y monitoreo remoto en instalaciones solares colombianas.</p><p><strong>Configuración del inversor:</strong></p><ul><li>Activar Modbus TCP en Solar.web → Configuración → Modbus</li><li>Puerto estándar: 502</li><li>Unit ID: 1 (configurable)</li></ul><p>Los registros principales del Symo utilizan <strong>función code 0x03</strong> (Read Holding Registers):</p><ul><li>40001-40002: Potencia AC total (32-bit, W)</li><li>40083-40084: Voltaje DC String 1 (32-bit, 0.1V)</li><li>40087-40088: Corriente DC String 1 (32-bit, 0.01A)</li><li>40091-40092: Energía total generada (32-bit, Wh)</li><li>40107: Temperatura del inversor (16-bit, °C)</li></ul><p><strong>Implementación en Python:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>connection = client.connect()<br><br># Leer potencia AC (registros 40001-40002)<br>result = client.read_holding_registers(40001, 2, unit=1)<br>if not result.isError():<br>&nbsp;&nbsp;&nbsp;&nbsp;power_raw = (result.registers[0] << 16) + result.registers[1]<br>&nbsp;&nbsp;&nbsp;&nbsp;power_ac = power_raw if power_raw < 0x80000000 else power_raw - 0x100000000<br>&nbsp;&nbsp;&nbsp;&nbsp;print(f'Potencia AC: {power_ac} W')<br><br># Leer temperatura<br>temp_result = client.read_holding_registers(40107, 1, unit=1)<br>temperature = temp_result.registers[0]<br>print(f'Temperatura: {temperature}°C')<br><br>client.close()</code><p><strong>Consideraciones técnicas:</strong> Los valores de 32 bits requieren conversión little-endian. Para instalaciones con múltiples inversores, asignar Unit IDs únicos (1-247) y implementar polling secuencial para evitar colisiones de comunicación.</p><p>Esta implementación permite monitoreo continuo de parámetros críticos, esencial para O&M de plantas solares comerciales en Colombia.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-24-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-04-24",
+      "brand": null,
+      "source_title": null,
+      "title": "Integrar Fronius Symo en dashboard Node-RED con API JSON nativa",
+      "summary": "Visualiza datos en tiempo real de tu inversor Fronius Symo conectado a red usando su API REST integrada",
+      "body": "<p>El inversor Fronius Symo expone datos de generación solar a través de su API JSON nativa, accesible desde cualquier navegador en la red local.</p><ol><li>Identifica la IP de tu Fronius Symo en el router (generalmente 192.168.1.x) y verifica acceso a <code>http://IP_FRONIUS/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData</code></li><li>En Node-RED, arrastra un nodo <strong>inject</strong> configurado cada 30 segundos y conéctalo a un nodo <strong>http request</strong></li><li>Configura el nodo http request: URL: <code>http://192.168.1.50/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData</code>, Method: GET</li><li>Agrega un nodo <strong>function</strong> con este código:<br><code>var data = msg.payload.Body.Data.PAC.Value;<br>msg.payload = {<br>  potencia_actual: data || 0,<br>  timestamp: new Date()<br>};<br>return msg;</code></li><li>Conecta a nodos <strong>gauge</strong> y <strong>chart</strong> del dashboard para visualizar potencia instantánea y histórico</li><li>Para datos adicionales como energía diaria, usa el endpoint: <code>/solar_api/v1/GetInverterRealtimeData.cgi?Scope=System&DataCollection=CommonInverterData</code></li></ol><p>El dashboard mostrará potencia en tiempo real y gráficos de producción solar del Symo.</p>",
+      "tag": "Fronius API",
+      "read_time": 2
+    },
+    {
+      "id": "2026-04-24-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-04-24",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce 40% Fallas UPS en DataCenter Bogotá",
+      "summary": "Hospital Santa María de Bogotá ahorra $280M COP anuales con sistema IA que predice fallas en UPS Eaton 9PX",
+      "body": "<p>El <strong>Hospital Santa María</strong> de Bogotá, con 450 camas y centro de datos crítico de 150kW, enfrentaba fallas inesperadas en sus sistemas UPS que generaban pérdidas de <strong>$450 millones COP anuales</strong> por interrupciones no programadas.</p><p>La solución implementada integra <strong>6 UPS Eaton 9PX 8kVA</strong> con sensores IoT conectados a una plataforma de IA basada en <strong>TensorFlow Lite</strong> y <strong>Node-RED ML</strong>. El sistema monitorea en tiempo real voltaje, corriente, temperatura de baterías APC Smart-UPS SRT y carga de trabajo, procesando más de <strong>2,400 puntos de datos por minuto</strong>.</p><p>La IA utiliza algoritmos de <strong>anomaly detection</strong> entrenados con 18 meses de datos históricos, identificando patrones que preceden fallas por degradación de baterías, sobrecalentamiento o fluctuaciones de red. Las alertas predictivas se envían vía <strong>Claude API</strong> integrada con el sistema de gestión hospitalario.</p><p>Resultados tras 8 meses: <strong>reducción del 40% en fallas no programadas</strong>, ahorro de <strong>$280 millones COP anuales</strong> en costos operativos y pérdidas evitadas. El tiempo promedio entre fallas aumentó de 45 a 78 días. La disponibilidad del datacenter mejoró del <strong>99.2% al 99.7%</strong>.</p><p>La inversión total de <strong>$85 millones COP</strong> en sensores, software y configuración alcanzó ROI en <strong>11 meses</strong>, con proyección de ahorro acumulado de <strong>$840 millones COP</strong> en tres años.</p>",
+      "tag": "Healthcare+UPS Predictivo Bogotá",
+      "read_time": 2
+    }
+  ]
+}

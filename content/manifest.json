@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-04-23T12:13:00.876Z",
+  "last_build": "2026-04-24T12:06:09.615Z",
   "total_days": 10,
   "total_articles": 50,
   "days": [
+    {
+      "date": "2026-04-24",
+      "generated_at": "2026-04-24T12:03:08.452Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-04-24-news",
+          "category_id": "news",
+          "title": "Vertiv dispara resultados 136% impulsado por demanda de infraestructura AI",
+          "summary": "El fabricante de UPS reportó ventas de US$2,650 millones en Q1 2026, crecimiento de 30% por expansión de centros de datos",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-24-solar_news",
+          "category_id": "solar_news",
+          "title": "Reino Unido alcanza récord de 15 GW en generación solar fotovoltaica",
+          "summary": "La generación solar británica establece nuevo máximo histórico, demostrando el potencial de esta tecnología limpia",
+          "tag": "PV Magazine Generación",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-24-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+          "summary": "Implementación técnica de monitoreo Modbus TCP con inversores Fronius Symo incluyendo registros reales y código Python",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-24-tips",
+          "category_id": "tips",
+          "title": "Integrar Fronius Symo en dashboard Node-RED con API JSON nativa",
+          "summary": "Visualiza datos en tiempo real de tu inversor Fronius Symo conectado a red usando su API REST integrada",
+          "tag": "Fronius API",
+          "read_time": 2
+        },
+        {
+          "id": "2026-04-24-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce 40% Fallas UPS en DataCenter Bogotá",
+          "summary": "Hospital Santa María de Bogotá ahorra $280M COP anuales con sistema IA que predice fallas en UPS Eaton 9PX",
+          "tag": "Healthcare+UPS Predictivo Bogotá",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-04-23",
       "generated_at": "2026-04-23T12:05:27.372Z",
@@ -423,53 +470,6 @@
           "summary": "Centro de datos agrícola evita $180M COP pérdidas anuales con monitoreo inteligente de UPS y energía solar",
           "tag": "DataCenter+IA Medellín",
           "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-08",
-      "generated_at": "2026-04-09T00:49:11.155Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-08-news",
-          "category_id": "news",
-          "title": "Vertiv adquiere ThermoKey para expandir soluciones de refrigeración en AI",
-          "summary": "La compra fortalece el portafolio de infraestructura física convergente para centros de datos de IA de alta densidad",
-          "tag": "Vertiv Infraestructura",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-08-solar_news",
-          "category_id": "solar_news",
-          "title": "Victron Energy impulsa investigación antártica con energía solar renovable",
-          "summary": "Sistema solar de Victron reduce dependencia de diesel en estación polar, modelo aplicable a Colombia",
-          "tag": "Victron Energy Sistema",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-08-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
-          "summary": "Aprenderá a implementar comunicación Modbus TCP con inversores Fronius Symo, incluyendo registros clave y código Python.",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-08-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra tu inversor Victron MultiPlus II en Home Assistant usando VenusOS y MQTT para monitoreo avanzado de energía",
-          "tag": "Victron+HA",
-          "read_time": 3
-        },
-        {
-          "id": "2026-04-08-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva reduce costos energéticos 30% en industria plásticos Medellín",
-          "summary": "Sistema híbrido solar-UPS con IA evita fallas críticas y ahorra $186 millones COP anuales en Polímeros Andinos SAS",
-          "tag": "Solar+IA Medellín",
-          "read_time": 3
         }
       ]
     }
