@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-04-24T12:06:09.615Z",
-  "total_days": 10,
-  "total_articles": 50,
+  "last_build": "2026-04-25T11:50:09.504Z",
+  "total_days": 9,
+  "total_articles": 45,
   "days": [
     {
       "date": "2026-04-24",
@@ -422,53 +422,6 @@
           "title": "IA Predictiva Reduce 38% Costos Energéticos en Planta Cali con Solar+UPS",
           "summary": "Farmacéutica Andina Labs ahorra $847M COP anuales optimizando sistema híbrido solar-UPS con algoritmos predictivos",
           "tag": "Solar+IA Cali",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-09",
-      "generated_at": "2026-04-09T12:00:10.380Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-09-news",
-          "category_id": "news",
-          "title": "Vertiv adquiere ThermoKey para potenciar infraestructura convergente en IA",
-          "summary": "La adquisición fortalece el portafolio de rechazo térmico de Vertiv para atender el creciente mercado de centros de datos de IA",
-          "tag": "Vertiv Infraestructura",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-09-solar_news",
-          "category_id": "solar_news",
-          "title": "Singapur alcanza récord instalando 504 MW solares y supera 2 GW acumulados",
-          "summary": "Singapur instaló 504 MW de energía solar en 2025, superando 2 GW acumulados y elevando su meta 2030 a 3 GW totales",
-          "tag": "PV Magazine Solar",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-09-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
-          "summary": "Configuración práctica de Modbus TCP en Fronius Symo con registros reales, códigos de función y Python para monitoreo",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-09-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant para monitorear estado de batería, consumo y producción solar",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-09-usecase",
-          "category_id": "usecase",
-          "title": "AgroTech Medellín reduce 67% fallas UPS con IA predictiva Eaton + Victron",
-          "summary": "Centro de datos agrícola evita $180M COP pérdidas anuales con monitoreo inteligente de UPS y energía solar",
-          "tag": "DataCenter+IA Medellín",
           "read_time": 2
         }
       ]
