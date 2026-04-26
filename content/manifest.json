@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-04-25T11:50:09.504Z",
-  "total_days": 9,
-  "total_articles": 45,
+  "last_build": "2026-04-26T11:51:50.256Z",
+  "total_days": 8,
+  "total_articles": 40,
   "days": [
     {
       "date": "2026-04-24",
@@ -375,53 +375,6 @@
           "title": "IA Predictiva en Granja Solar reduce costos operativos 31% - AgroEnergía Cauca",
           "summary": "Sistema de ML detecta fallas en inversores Fronius y optimiza paneles LONGi, ahorrando $140M COP anuales",
           "tag": "Solar+IA Popayán",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-15",
-      "generated_at": "2026-04-15T12:02:21.934Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-15-news",
-          "category_id": "news",
-          "title": "Vertiv lanza nueva línea UPS PowerUPS 200 para oficinas y hogares conectados",
-          "summary": "Los nuevos sistemas UPS compactos de Vertiv protegen dispositivos personales y aplicaciones empresariales con tecnología avanzada",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-15-solar_news",
-          "category_id": "solar_news",
-          "title": "Varta lanza sistema integrado de inversor y batería modular para residencias",
-          "summary": "Sistema escalable combina inversor, almacenamiento y gestión energética inteligente para instalaciones solares nuevas y existentes",
-          "tag": "Varta Batería",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-15-technical",
-          "category_id": "technical",
-          "title": "Implementación SNMP v3 para UPS Eaton 9PX con Zabbix 6.x en Colombia",
-          "summary": "Configuración completa de monitoreo SNMP v3 seguro para UPS Eaton 9PX usando Zabbix 6.x con OIDs específicos y plantillas",
-          "tag": "SNMP v3",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-15-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant usando VenusOS y MQTT",
-          "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant para monitorear potencia, estado de batería y cargas en tiempo real",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-15-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce 38% Costos Energéticos en Planta Cali con Solar+UPS",
-          "summary": "Farmacéutica Andina Labs ahorra $847M COP anuales optimizando sistema híbrido solar-UPS con algoritmos predictivos",
-          "tag": "Solar+IA Cali",
           "read_time": 2
         }
       ]
