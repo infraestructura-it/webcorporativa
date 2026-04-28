@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-04-26T11:51:50.256Z",
-  "total_days": 8,
-  "total_articles": 40,
+  "last_build": "2026-04-28T12:35:11.469Z",
+  "total_days": 7,
+  "total_articles": 35,
   "days": [
     {
       "date": "2026-04-24",
@@ -328,53 +328,6 @@
           "title": "Predictivo UPS con IA reduce paradas 87% en datacenter Medellín",
           "summary": "TensorFlow detecta fallas UPS antes que ocurran, ahorrando $180M COP anuales en downtime crítico",
           "tag": "UPS Predictivo Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-16",
-      "generated_at": "2026-04-16T12:05:34.127Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-16-news",
-          "category_id": "news",
-          "title": "Vertiv lanza nueva generación de UPS compactos para hogares y oficinas",
-          "summary": "Los nuevos PowerUPS 200 ofrecen protección eléctrica para dispositivos personales y aplicaciones empresariales compactas",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-16-solar_news",
-          "category_id": "solar_news",
-          "title": "Victron Energy lanza sistema Microgrid para instalaciones solares de gran escala",
-          "summary": "Nueva solución de microrredes permite escalar sistemas fotovoltaicos off-grid con mayor confiabilidad y simplicidad",
-          "tag": "Victron Energy Microgrid",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-16-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Implementación",
-          "summary": "Guía práctica para implementar comunicación Modbus TCP con inversores Fronius Symo, incluyendo registros reales y código Python.",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-16-tips",
-          "category_id": "tips",
-          "title": "Integrar Fronius Symo en dashboard Node-RED con API JSON nativa",
-          "summary": "Monitorea en tiempo real la producción solar de tu inversor Fronius Symo desde Node-RED usando su API REST integrada",
-          "tag": "Fronius API",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-16-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva en Granja Solar reduce costos operativos 31% - AgroEnergía Cauca",
-          "summary": "Sistema de ML detecta fallas en inversores Fronius y optimiza paneles LONGi, ahorrando $140M COP anuales",
-          "tag": "Solar+IA Popayán",
           "read_time": 2
         }
       ]
