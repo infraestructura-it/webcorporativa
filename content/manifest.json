@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-04-29T12:25:55.903Z",
-  "total_days": 6,
-  "total_articles": 30,
+  "last_build": "2026-04-30T12:26:10.132Z",
+  "total_days": 5,
+  "total_articles": 25,
   "days": [
     {
       "date": "2026-04-24",
@@ -234,53 +234,6 @@
           "title": "IA Reduce 28% Costos Energéticos en Centro de Datos AgroTech Medellín",
           "summary": "Implementación predictiva ahorró $87M COP anuales optimizando UPS Eaton y paneles LONGi con algoritmos TensorFlow",
           "tag": "DataCenter+IA Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-18",
-      "generated_at": "2026-04-18T11:42:45.333Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-18-news",
-          "category_id": "news",
-          "title": "Vertiv adquiere BMarko Structures para expandir su infraestructura convergente",
-          "summary": "La adquisición fortalece la capacidad de Vertiv para soluciones de infraestructura manufacturada y convergente en el mercado global",
-          "tag": "Vertiv Infraestructura",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-18-solar_news",
-          "category_id": "solar_news",
-          "title": "Victron Energy lanza Microgrid: simplifica sistemas off-grid de gran escala",
-          "summary": "Nueva tecnología permite construir sistemas off-grid complejos con la misma simplicidad de instalaciones pequeñas",
-          "tag": "Victron Energy Sistema",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-18-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
-          "summary": "Aprenderá a implementar monitoreo remoto de inversores Fronius Symo usando Modbus TCP con registros reales y código Python",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-18-tips",
-          "category_id": "tips",
-          "title": "Monitorear temperatura del datacenter con DS18B20 + ESP32 + InfluxDB",
-          "summary": "Implementar monitoreo de temperatura del cuarto de equipos con alertas automáticas y dashboard histórico",
-          "tag": "ESP32+InfluxDB",
-          "read_time": 3
-        },
-        {
-          "id": "2026-04-18-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva para Sistema Solar Híbrido - Laboratorio de Salud Bogotá",
-          "summary": "Reducción 34% costos energéticos ($47M COP/año) con mantenimiento predictivo en sistema solar 150kW",
-          "tag": "Solar+IA Bogotá",
           "read_time": 2
         }
       ]
