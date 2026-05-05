@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-04-30T12:26:10.132Z",
-  "total_days": 5,
-  "total_articles": 25,
+  "last_build": "2026-05-05T12:13:04.138Z",
+  "total_days": 4,
+  "total_articles": 20,
   "days": [
     {
       "date": "2026-04-24",
@@ -187,53 +187,6 @@
           "title": "Minera del Cauca reduce fallas UPS críticas 73% con IA predictiva",
           "summary": "Sistema de mantenimiento predictivo con TensorFlow Lite evitó $847M COP en pérdidas por cortes",
           "tag": "Minería+UPS Predictivo Popayán",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-20",
-      "generated_at": "2026-04-20T12:11:00.517Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-20-news",
-          "category_id": "news",
-          "title": "Vertiv adquiere BMarko Structures para expandir infraestructura crítica",
-          "summary": "La adquisición fortalece capacidades de fabricación de soluciones convergentes para data centers",
-          "tag": "Vertiv Infraestructura",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-20-solar_news",
-          "category_id": "solar_news",
-          "title": "Victron Energy presenta Microgrid para sistemas off-grid escalables",
-          "summary": "Nueva solución simplifica construcción de microrredes grandes con alta confiabilidad y escalabilidad modular",
-          "tag": "Victron Energy Microgrid",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-20-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Códigos",
-          "summary": "Aprenderá registros Modbus reales, direcciones de memoria y códigos de función para monitorear inversores Fronius Symo",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-20-tips",
-          "category_id": "tips",
-          "title": "Monitorear temperatura del cuarto de equipos con sensor DS18B20 + ESP32",
-          "summary": "Elimina fallos por sobrecalentamiento monitoreando temperatura del datacenter con alertas automáticas en tiempo real",
-          "tag": "DS18B20+ESP32+InfluxDB",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-20-usecase",
-          "category_id": "usecase",
-          "title": "IA Reduce 28% Costos Energéticos en Centro de Datos AgroTech Medellín",
-          "summary": "Implementación predictiva ahorró $87M COP anuales optimizando UPS Eaton y paneles LONGi con algoritmos TensorFlow",
-          "tag": "DataCenter+IA Medellín",
           "read_time": 2
         }
       ]
