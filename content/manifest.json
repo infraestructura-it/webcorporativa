@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-05-05T12:13:04.138Z",
-  "total_days": 4,
-  "total_articles": 20,
+  "last_build": "2026-05-06T13:05:43.946Z",
+  "total_days": 3,
+  "total_articles": 15,
   "days": [
     {
       "date": "2026-04-24",
@@ -140,53 +140,6 @@
           "title": "IA Predictiva Reduce 28% Costos Energéticos en Clínica Bogotá",
           "summary": "Hospital Regional de Cundinamarca ahorra $84M anuales con sistema solar inteligente y mantenimiento predictivo de UPS",
           "tag": "Solar+IA Bogotá",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-21",
-      "generated_at": "2026-04-21T12:06:17.445Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-21-news",
-          "category_id": "news",
-          "title": "Vertiv adquiere BMarko Structures para expandir infraestructura de Data Centers",
-          "summary": "La adquisición fortalecerá las capacidades de Vertiv en soluciones manufacturadas para centros de datos en Latinoamérica",
-          "tag": "Vertiv Data Centers",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-21-solar_news",
-          "category_id": "solar_news",
-          "title": "Caelux inicia producción masiva de paneles perovskita-silicio en Estados Unidos",
-          "summary": "Nueva tecnología de paneles con perovskita promete mayor eficiencia para proyectos solares en Colombia",
-          "tag": "Caelux Panel",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-21-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
-          "summary": "Configuración técnica de Modbus TCP para monitoreo de inversores Fronius Symo con registros reales y código Python",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-21-tips",
-          "category_id": "tips",
-          "title": "Conectar Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra tu inversor Victron con Home Assistant para monitorear estado de carga, potencia y alertas desde un dashboard unificado",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-21-usecase",
-          "category_id": "usecase",
-          "title": "Minera del Cauca reduce fallas UPS críticas 73% con IA predictiva",
-          "summary": "Sistema de mantenimiento predictivo con TensorFlow Lite evitó $847M COP en pérdidas por cortes",
-          "tag": "Minería+UPS Predictivo Popayán",
           "read_time": 2
         }
       ]
