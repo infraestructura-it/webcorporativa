@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-05-06T13:05:43.946Z",
-  "total_days": 3,
-  "total_articles": 15,
+  "last_build": "2026-05-07T13:05:49.167Z",
+  "total_days": 2,
+  "total_articles": 10,
   "days": [
     {
       "date": "2026-04-24",
@@ -93,53 +93,6 @@
           "title": "IA Reduce 32% Costos Energéticos en Clínica Bogotá con Sistema Solar Híbrido",
           "summary": "Sistema IA con TensorFlow optimiza paneles LONGi e inversores Fronius, ahorrando $18.6M COP anuales en Clínica Restrepo",
           "tag": "Salud+IA Bogotá",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-22",
-      "generated_at": "2026-04-22T12:05:07.925Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-22-news",
-          "category_id": "news",
-          "title": "Vertiv impulsa crecimiento del 30% con foco en infraestructura para IA",
-          "summary": "El fabricante de UPS reporta ventas de US$2.650M en Q1 2026, impulsado por la demanda de centros de datos para IA",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-22-solar_news",
-          "category_id": "solar_news",
-          "title": "Victron Energy presenta Victron Microgrid para sistemas off-grid escalables",
-          "summary": "Nueva solución simplifica construcción de sistemas aislados de gran escala con alta confiabilidad para el mercado colombiano",
-          "tag": "Victron Energy Sistema",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-22-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
-          "summary": "Configuración técnica de Modbus TCP para monitoreo de inversores Fronius Symo con registros reales y códigos de función",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-22-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant para monitoreo en tiempo real vía MQTT y VenusOS",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-22-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce 28% Costos Energéticos en Clínica Bogotá",
-          "summary": "Hospital Regional de Cundinamarca ahorra $84M anuales con sistema solar inteligente y mantenimiento predictivo de UPS",
-          "tag": "Solar+IA Bogotá",
           "read_time": 2
         }
       ]
