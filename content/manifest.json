@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-05-07T13:05:49.167Z",
-  "total_days": 2,
-  "total_articles": 10,
+  "last_build": "2026-05-08T12:19:30.921Z",
+  "total_days": 1,
+  "total_articles": 5,
   "days": [
     {
       "date": "2026-04-24",
@@ -46,53 +46,6 @@
           "title": "IA Predictiva Reduce 40% Fallas UPS en DataCenter Bogotá",
           "summary": "Hospital Santa María de Bogotá ahorra $280M COP anuales con sistema IA que predice fallas en UPS Eaton 9PX",
           "tag": "Healthcare+UPS Predictivo Bogotá",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-04-23",
-      "generated_at": "2026-04-23T12:05:27.372Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-23-news",
-          "category_id": "news",
-          "title": "Vertiv reporta crecimiento del 136% en ganancias y alza proyecciones 2026",
-          "summary": "Fabricante de infraestructura crítica registra ventas de US$2.650 millones en Q1 2026, impulsado por demanda de IA",
-          "tag": "Vertiv Infraestructura",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-23-solar_news",
-          "category_id": "solar_news",
-          "title": "Trina Solar lidera pool de patentes TOPCon en China para tecnología avanzada",
-          "summary": "El primer pool de patentes TOPCon de China busca acelerar la adopción de paneles de alta eficiencia globalmente",
-          "tag": "Trina Solar Panel",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-23-technical",
-          "category_id": "technical",
-          "title": "Implementación SNMP v3 para Monitoreo UPS Eaton 9PX en Zabbix 6.x",
-          "summary": "Configuración técnica completa de monitoreo remoto seguro de UPS Eaton 9PX usando SNMP v3 y Zabbix 6.x en Colombia",
-          "tag": "SNMP v3",
-          "read_time": 3
-        },
-        {
-          "id": "2026-04-23-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra tu inversor Victron en Home Assistant para monitorear potencia, estado de batería y controlar cargas remotamente",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-23-usecase",
-          "category_id": "usecase",
-          "title": "IA Reduce 32% Costos Energéticos en Clínica Bogotá con Sistema Solar Híbrido",
-          "summary": "Sistema IA con TensorFlow optimiza paneles LONGi e inversores Fronius, ahorrando $18.6M COP anuales en Clínica Restrepo",
-          "tag": "Salud+IA Bogotá",
           "read_time": 2
         }
       ]
