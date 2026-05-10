@@ -1,54 +1,6 @@
 {
-  "last_build": "2026-05-08T12:19:30.921Z",
-  "total_days": 1,
-  "total_articles": 5,
-  "days": [
-    {
-      "date": "2026-04-24",
-      "generated_at": "2026-04-24T12:03:08.452Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-04-24-news",
-          "category_id": "news",
-          "title": "Vertiv dispara resultados 136% impulsado por demanda de infraestructura AI",
-          "summary": "El fabricante de UPS reportó ventas de US$2,650 millones en Q1 2026, crecimiento de 30% por expansión de centros de datos",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-24-solar_news",
-          "category_id": "solar_news",
-          "title": "Reino Unido alcanza récord de 15 GW en generación solar fotovoltaica",
-          "summary": "La generación solar británica establece nuevo máximo histórico, demostrando el potencial de esta tecnología limpia",
-          "tag": "PV Magazine Generación",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-24-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
-          "summary": "Implementación técnica de monitoreo Modbus TCP con inversores Fronius Symo incluyendo registros reales y código Python",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-24-tips",
-          "category_id": "tips",
-          "title": "Integrar Fronius Symo en dashboard Node-RED con API JSON nativa",
-          "summary": "Visualiza datos en tiempo real de tu inversor Fronius Symo conectado a red usando su API REST integrada",
-          "tag": "Fronius API",
-          "read_time": 2
-        },
-        {
-          "id": "2026-04-24-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce 40% Fallas UPS en DataCenter Bogotá",
-          "summary": "Hospital Santa María de Bogotá ahorra $280M COP anuales con sistema IA que predice fallas en UPS Eaton 9PX",
-          "tag": "Healthcare+UPS Predictivo Bogotá",
-          "read_time": 2
-        }
-      ]
-    }
-  ]
+  "last_build": "2026-05-10T12:02:23.462Z",
+  "total_days": 0,
+  "total_articles": 0,
+  "days": []
 }
