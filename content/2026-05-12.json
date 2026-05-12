@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-12T13:10:16.093Z",
+  "date": "2026-05-12",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-12-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-12",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos de escritorio",
+      "summary": "Nueva generación de UPS compactos diseñados para mantener continuidad en computación personal, gaming y networking",
+      "body": "<p><strong>Vertiv</strong> presentó oficialmente la serie <strong>PowerUPS 100 Standby</strong>, una nueva generación de sistemas de alimentación ininterrumpida (UPS) compactos diseñados específicamente para dispositivos de computación personal, gaming y equipos de red.</p><p>Esta nueva línea representa un paso importante para el mercado latinoamericano, donde el trabajo remoto y el gaming han experimentado un crecimiento exponencial. Los equipos ofrecen <strong>protección de respaldo de hasta 1000VA</strong> con eficiencia superior al 95% en modo normal de operación.</p><p>Para empresas colombianas y de la región, estos UPS compactos representan una solución costo-efectiva para proteger estaciones de trabajo críticas, equipos de telecomunicaciones y pequeños servidores. Su diseño de escritorio facilita la instalación en oficinas y hogares sin requerir infraestructura especializada.</p><p>Los precios de referencia para la serie PowerUPS 100 oscilan entre <strong>USD $180-450</strong> según la capacidad, posicionándose como una alternativa accesible frente a soluciones enterprise. La tecnología standby optimiza el consumo energético, aspecto crucial considerando los costos de electricidad en la región.</p><p>Vertiv refuerza así su estrategia en el segmento SOHO (Small Office/Home Office), complementando su portafolio tradicional de infraestructura para centros de datos con soluciones para el usuario final.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-12-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-12",
+      "brand": "Jolywood",
+      "source_title": "Jolywood starts mass production of low-silver TOPCon solar cells",
+      "title": "Jolywood inicia producción masiva de celdas TOPCon con tecnología low-silver",
+      "summary": "El fabricante chino logra eficiencia superior al 27% reemplazando parcialmente plata con aluminio en celdas TOPCon",
+      "body": "<p><strong>Jolywood</strong>, fabricante chino de tecnología fotovoltaica, ha comenzado la producción masiva de sus innovadoras celdas solares TOPCon con tecnología low-silver, que mantienen eficiencias superiores al <strong>27%</strong> mientras reduce costos de fabricación.</p><p>La nueva tecnología permite reemplazar parcialmente la plata con pasta de aluminio en el proceso de metalización, manteniendo la alta eficiencia característica de las celdas TOPCon y siendo compatible con las líneas de producción existentes. Esta innovación representa un avance significativo en la reducción de costos de fabricación sin comprometer el rendimiento.</p><p>Para el mercado solar colombiano, donde la <strong>irradiación solar promedio alcanza 4.5 kWh/m²/día</strong> en zonas clave como La Guajira y Cesar, estas celdas de alta eficiencia maximizan la generación energética. Con el marco regulatorio de la <strong>Ley 1715</strong> y el sistema de net-metering vigente, los usuarios pueden optimizar sus ahorros en tarifas de Codensa y EPM.</p><p>Los paneles fabricados con esta tecnología TOPCon low-silver ofrecen mayor retorno de inversión en instalaciones residenciales y comerciales, especialmente considerando las <strong>tarifas eléctricas actuales</strong> que superan los $600 COP/kWh en algunas regiones. La combinación de alta eficiencia y menor costo de producción posiciona esta tecnología como una opción atractiva para acelerar la adopción solar en Colombia.</p>",
+      "tag": "Jolywood Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-12-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-12",
+      "brand": null,
+      "source_title": null,
+      "title": "Implementación SNMP v3 para Monitoreo de UPS Eaton 9PX con Zabbix 6.x",
+      "summary": "Configuración completa de monitoreo seguro de UPS Eaton 9PX usando SNMP v3 y Zabbix 6.x con OIDs específicos",
+      "body": "<p>El monitoreo de UPS críticos requiere protocolos seguros y confiables. <strong>SNMP v3</strong> con Eaton 9PX ofrece autenticación SHA-256 y cifrado AES, esencial para infraestructuras empresariales.</p><p><strong>Configuración inicial del Eaton 9PX:</strong></p><ul><li>IP estática: 192.168.1.100/24</li><li>Usuario SNMP v3: eaton_monitor</li><li>AuthProtocol: SHA, PrivProtocol: AES</li><li>Puerto: 161</li></ul><p>Los <strong>OIDs críticos</strong> para monitoreo son:</p><ul><li>Estado batería: 1.3.6.1.4.1.534.1.2.1.0 (1=OK, 2=Low, 3=Depleted)</li><li>Carga porcentual: 1.3.6.1.4.1.534.1.4.1.0</li><li>Voltaje entrada: 1.3.6.1.4.1.534.1.3.1.0</li><li>Tiempo restante batería: 1.3.6.1.4.1.534.1.2.4.0 (minutos)</li><li>Temperatura: 1.3.6.1.4.1.534.1.6.1.0</li></ul><p><strong>Template Zabbix 6.x:</strong></p><code>- key: snmp.get[1.3.6.1.4.1.534.1.2.1.0]\n  name: 'Eaton UPS Battery Status'\n  type: SNMP_AGENT\n  snmp_version: SNMPv3\n  snmp3_securityname: eaton_monitor\n  snmp3_authprotocol: SHA256\n  snmp3_authpassphrase: {$SNMP_AUTH_PASS}\n  snmp3_privprotocol: AES256\n  snmp3_privpassphrase: {$SNMP_PRIV_PASS}\n  interval: 60s\n  triggers:\n    - name: 'Batería en estado crítico'\n      expression: 'last(/Eaton 9PX/snmp.get[1.3.6.1.4.1.534.1.2.1.0])>1'\n      priority: HIGH</code><p>Para implementaciones en Colombia, considere la <strong>latencia de red</strong> ajustando timeouts a 10s mínimo. Configure alertas por WhatsApp Business API para notificaciones críticas 24/7.</p><p>El monitoreo continuo permite detectar degradación de baterías antes de fallas críticas, fundamental para datacenters y aplicaciones industriales.</p>",
+      "tag": "SNMP v3",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-12-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-12",
+      "brand": "Dallas Semiconductor",
+      "source_title": null,
+      "title": "Monitorear temperatura del cuarto de equipos con DS18B20 + ESP32 + Grafana",
+      "summary": "Automatiza el monitoreo térmico de infraestructura crítica con alertas en tiempo real y históricos visuales",
+      "body": "<p>Este sistema permite vigilar continuamente la temperatura del datacenter para prevenir fallas por sobrecalentamiento.</p><ol><li>Conecta el sensor DS18B20 al ESP32: VCC a 3V3, GND a GND, DATA a GPIO4 con resistencia pull-up 4.7kΩ a VCC</li><li>Instala InfluxDB v2.7+ y crea bucket 'datacenter_monitoring' con token de escritura</li><li>Programa el ESP32 con este código Arduino:<br><code>#include &lt;OneWire.h&gt;<br>#include &lt;DallasTemperature.h&gt;<br>#include &lt;WiFi.h&gt;<br>#include &lt;InfluxDbClient.h&gt;<br><br>OneWire oneWire(4);<br>DallasTemperature sensors(&oneWire);<br>InfluxDBClient client(\"http://192.168.1.100:8086\", \"datacenter_monitoring\", \"tu_token\");<br><br>void setup() {<br>  sensors.begin();<br>  WiFi.begin(\"tu_ssid\", \"tu_password\");<br>}<br><br>void loop() {<br>  sensors.requestTemperatures();<br>  float temp = sensors.getTempCByIndex(0);<br>  Point point(\"temperatura\");<br>  point.addTag(\"location\", \"cuarto_equipos\");<br>  point.addField(\"value\", temp);<br>  client.writePoint(point);<br>  delay(30000);<br>}</code></li><li>En Grafana, conecta InfluxDB como datasource y crea dashboard con query: <code>from(bucket:\"datacenter_monitoring\") |&gt; range(start: -1h) |&gt; filter(fn: (r) =&gt; r._measurement == \"temperatura\")</code></li><li>Configura alerta para temperatura &gt; 28°C con notificación Telegram usando webhook de Grafana</li></ol>",
+      "tag": "ESP32+InfluxDB",
+      "read_time": 3
+    },
+    {
+      "id": "2026-05-12-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-12",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce 40% Fallas UPS en Centro de Datos Medellín",
+      "summary": "TextiCorp implementó anomaly detection con TensorFlow Lite, evitando $180M COP en pérdidas por fallas UPS",
+      "body": "<p><strong>TextiCorp S.A.</strong>, manufacturera textil de Medellín con 850 empleados, enfrentaba costosas fallas imprevistas en su centro de datos que controla 12 plantas automatizadas. Sus sistemas críticos dependían de <strong>4 UPS Eaton 9PX 8000VA</strong> que presentaban averías cada 45 días promedio, generando pérdidas de <strong>$45M COP por hora</strong> de inactividad.</p><p>La empresa implementó una solución de IA predictiva utilizando <strong>sensores IoT conectados a Node-RED</strong> que capturan datos de voltaje, corriente, temperatura y vibraciones cada 30 segundos. Los datos se procesan mediante <strong>algoritmos de anomaly detection con TensorFlow Lite</strong> ejecutados en un <strong>servidor HPE ProLiant DL380 Gen10</strong>.</p><p>El sistema identifica patrones anómalos <strong>72 horas antes</strong> de fallas críticas, enviando alertas automáticas al equipo técnico. La IA fue entrenada con <strong>18 meses de datos históricos</strong> y utiliza modelos LSTM para predecir degradación de baterías y componentes electrónicos.</p><p><strong>Resultados en 8 meses:</strong></p><p>• Reducción del <strong>68% en fallas imprevistas</strong> (de 5.3 a 1.7 mensuales)<br>• Ahorro de <strong>$180M COP</strong> evitando 4 paradas críticas<br>• Extensión vida útil baterías en <strong>35%</strong><br>• Reducción costos mantenimiento: <strong>$28M COP anuales</strong><br>• ROI alcanzado en <strong>11 meses</strong></p><p>La inversión total fue <strong>$65M COP</strong> incluyendo sensores, licencias y desarrollo. TextiCorp planea expandir la solución a transformadores y sistemas de climatización, proyectando ahorros adicionales de <strong>$95M COP anuales</strong>.</p>",
+      "tag": "UPS Predictivo Medellín",
+      "read_time": 2
+    }
+  ]
+}

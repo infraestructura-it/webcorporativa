@@ -1,6 +1,54 @@
 {
-  "last_build": "2026-05-10T12:02:23.462Z",
-  "total_days": 0,
-  "total_articles": 0,
-  "days": []
+  "last_build": "2026-05-12T13:13:44.881Z",
+  "total_days": 1,
+  "total_articles": 5,
+  "days": [
+    {
+      "date": "2026-05-12",
+      "generated_at": "2026-05-12T13:10:16.093Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-12-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos de escritorio",
+          "summary": "Nueva generación de UPS compactos diseñados para mantener continuidad en computación personal, gaming y networking",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-12-solar_news",
+          "category_id": "solar_news",
+          "title": "Jolywood inicia producción masiva de celdas TOPCon con tecnología low-silver",
+          "summary": "El fabricante chino logra eficiencia superior al 27% reemplazando parcialmente plata con aluminio en celdas TOPCon",
+          "tag": "Jolywood Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-12-technical",
+          "category_id": "technical",
+          "title": "Implementación SNMP v3 para Monitoreo de UPS Eaton 9PX con Zabbix 6.x",
+          "summary": "Configuración completa de monitoreo seguro de UPS Eaton 9PX usando SNMP v3 y Zabbix 6.x con OIDs específicos",
+          "tag": "SNMP v3",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-12-tips",
+          "category_id": "tips",
+          "title": "Monitorear temperatura del cuarto de equipos con DS18B20 + ESP32 + Grafana",
+          "summary": "Automatiza el monitoreo térmico de infraestructura crítica con alertas en tiempo real y históricos visuales",
+          "tag": "ESP32+InfluxDB",
+          "read_time": 3
+        },
+        {
+          "id": "2026-05-12-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce 40% Fallas UPS en Centro de Datos Medellín",
+          "summary": "TextiCorp implementó anomaly detection con TensorFlow Lite, evitando $180M COP en pérdidas por fallas UPS",
+          "tag": "UPS Predictivo Medellín",
+          "read_time": 2
+        }
+      ]
+    }
+  ]
 }
