@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-12T13:13:44.881Z",
-  "total_days": 1,
-  "total_articles": 5,
+  "last_build": "2026-05-14T13:05:30.203Z",
+  "total_days": 2,
+  "total_articles": 10,
   "days": [
+    {
+      "date": "2026-05-14",
+      "generated_at": "2026-05-14T12:59:48.036Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-14-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva serie UPS PowerUPS 100 para equipos personales y gaming",
+          "summary": "La nueva serie de UPS compactos de Vertiv está diseñada para mantener la continuidad en dispositivos de cómputo personal y redes.",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-14-solar_news",
+          "category_id": "solar_news",
+          "title": "Almacenamiento alemán crece tras caída 2024, oportunidad para Colombia",
+          "summary": "La industria alemana de almacenamiento energético vuelve a crecer significativamente tras declive 2024, modelo para Colombia.",
+          "tag": "BVES Almacenamiento",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-14-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+          "summary": "Configuración completa de comunicación Modbus TCP con inversores Fronius Symo, incluyendo registros críticos y código Python",
+          "tag": "Modbus TCP",
+          "read_time": 3
+        },
+        {
+          "id": "2026-05-14-tips",
+          "category_id": "tips",
+          "title": "Conectar Fronius Symo a Node-RED usando su API nativa /solar_api/v1/",
+          "summary": "Integra datos en tiempo real de tu inversor Fronius Symo (potencia, energía, tensiones) en dashboard Node-RED personalizado",
+          "tag": "Fronius API",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-14-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce Fallas de UPS en 89% en Centro Médico de Medellín",
+          "summary": "Hospital Antioquia implementó anomaly detection con UPS Eaton 9PX, evitando $2.4B COP en pérdidas y reduciendo fallas en 89%",
+          "tag": "UPS Predictivo Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-12",
       "generated_at": "2026-05-12T13:10:16.093Z",

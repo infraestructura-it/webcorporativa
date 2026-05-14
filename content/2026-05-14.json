@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-14T12:59:48.036Z",
+  "date": "2026-05-14",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-14-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-14",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza nueva serie UPS PowerUPS 100 para equipos personales y gaming",
+      "summary": "La nueva serie de UPS compactos de Vertiv está diseñada para mantener la continuidad en dispositivos de cómputo personal y redes.",
+      "body": "<p><strong>Vertiv</strong> ha presentado su nueva <strong>PowerUPS 100 Standby Series</strong>, una generación de sistemas de alimentación ininterrumpida (UPS) compactos diseñados específicamente para dispositivos de cómputo personal, gaming y equipos de red.</p><p>Esta nueva serie representa una expansión estratégica del portafolio de la compañía hacia el segmento de equipos de escritorio, tradicionalmente dominado por soluciones básicas que no ofrecen la confiabilidad requerida por usuarios profesionales.</p><p>Para el mercado colombiano y latinoamericano, este lanzamiento es especialmente relevante considerando el crecimiento del <strong>trabajo remoto y gaming</strong> en la región. Las empresas locales de TI podrán ofrecer soluciones de respaldo energético más sofisticadas para usuarios finales que requieren protección contra cortes eléctricos frecuentes.</p><p>Aunque Vertiv no ha revelado las especificaciones técnicas completas, se espera que la serie ofrezca capacidades desde <strong>600VA hasta 1500VA</strong>, con eficiencia superior al 95% y precios estimados entre <strong>USD 80 y USD 250</strong> según la capacidad.</p><p>La disponibilidad en Colombia se espera para el segundo semestre de 2026, posicionando a Vertiv para competir directamente con fabricantes como APC y CyberPower en el segmento de UPS para usuarios finales y pequeñas oficinas.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-14-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-14",
+      "brand": "BVES",
+      "source_title": "German storage industry back on growth path, says BVES",
+      "title": "Almacenamiento alemán crece tras caída 2024, oportunidad para Colombia",
+      "summary": "La industria alemana de almacenamiento energético vuelve a crecer significativamente tras declive 2024, modelo para Colombia.",
+      "body": "<p>Según el análisis de <strong>BVES (Asociación Alemana de Almacenamiento Energético)</strong>, las empresas alemanas del sector experimentaron un crecimiento sustancial en ingresos tras la significativa caída de 2024, con expectativas de mayor expansión este año.</p><p>Esta recuperación alemana ofrece lecciones valiosas para Colombia, donde el almacenamiento en baterías se posiciona como complemento estratégico a nuestra alta irradiación solar promedio de <strong>4.5 kWh/m²/día</strong>. La <strong>Ley 1715 de 2014</strong> facilita la integración de sistemas de almacenamiento en proyectos de autogeneración.</p><p>Para el mercado colombiano, sistemas de almacenamiento con eficiencias del 85-95% permiten optimizar la energía solar durante horas pico de irradiación, especialmente beneficioso con las tarifas diferenciadas de <strong>Codensa y EPM</strong>. El net-metering nacional favorece la inversión en estos sistemas.</p><p>Los costos de baterías han descendido globalmente, haciendo viable la implementación en sectores residencial, comercial e industrial colombiano. La experiencia alemana demuestra que tras períodos de ajuste, el mercado de almacenamiento energético presenta perspectivas sólidas de crecimiento, especialmente cuando se combina con energía solar fotovoltaica.</p>",
+      "tag": "BVES Almacenamiento",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-14-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-14",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+      "summary": "Configuración completa de comunicación Modbus TCP con inversores Fronius Symo, incluyendo registros críticos y código Python",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> integran comunicación Modbus TCP nativa, facilitando la integración con sistemas SCADA en instalaciones solares comerciales colombianas. La configuración requiere habilitación del protocolo en Fronius Solar.web y configuración de red adecuada.</p><p><strong>Configuración de Red:</strong></p><ul><li>Puerto TCP: 502 (estándar Modbus)</li><li>Unit ID: 1 (configurable vía interfaz web)</li><li>Timeout: 5000ms recomendado</li><li>IP estática obligatoria para monitoreo confiable</li></ul><p><strong>Registros Modbus Críticos:</strong></p><ul><li>40084-40085: Potencia AC Total (32-bit, Factor: 1W)</li><li>40092-40093: Corriente AC Total (32-bit, Factor: 0.01A)</li><li>40098-40099: Tensión AC L1-N (32-bit, Factor: 0.01V)</li><li>40106-40107: Frecuencia AC (32-bit, Factor: 0.01Hz)</li><li>40284-40285: Energía Total DC (32-bit, Factor: 1Wh)</li><li>40320: Estado del Inversor (16-bit)</li></ul><p><strong>Implementación Python:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC total (registros 40084-40085)<br>result = client.read_holding_registers(40084, 2, unit=1)<br>if result.isError():<br>    print('Error de comunicación')<br>else:<br>    power_raw = (result.registers[0] << 16) + result.registers[1]<br>    power_w = power_raw if power_raw < 2147483648 else power_raw - 4294967296<br>    print(f'Potencia AC: {power_w}W')<br><br>client.close()</code><p>La implementación debe considerar valores con signo de 32 bits y manejo de errores de red. Para instalaciones críticas, implementar reconexión automática y logging de fallos de comunicación.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 3
+    },
+    {
+      "id": "2026-05-14-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-14",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar Fronius Symo a Node-RED usando su API nativa /solar_api/v1/",
+      "summary": "Integra datos en tiempo real de tu inversor Fronius Symo (potencia, energía, tensiones) en dashboard Node-RED personalizado",
+      "body": "<p>El Fronius Symo expone una API REST nativa que permite obtener datos del inversor sin configuraciones complejas. Este tutorial funciona con modelos Symo 3.7-3 hasta Symo 24.0-3.</p><ol><li>Instala el nodo <code>node-red-node-http-request</code> desde la paleta de Node-RED</li><li>Crea un nodo <strong>inject</strong> configurado para ejecutar cada 30 segundos</li><li>Añade un nodo <strong>http request</strong> con URL: <code>http://[IP_FRONIUS]/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData</code></li><li>Agrega un nodo <strong>json</strong> para parsear la respuesta</li><li>Inserta un nodo <strong>function</strong> con este código:<br><code>msg.payload = {<br>&nbsp;&nbsp;potencia: msg.payload.Body.Data.PAC.Value,<br>&nbsp;&nbsp;energia_dia: msg.payload.Body.Data.DAY_ENERGY.Value,<br>&nbsp;&nbsp;voltaje_dc: msg.payload.Body.Data.UDC.Value,<br>&nbsp;&nbsp;temperatura: msg.payload.Body.Data.TEMP_POWERSTAGE.Value<br>};<br>return msg;</code></li><li>Conecta nodos <strong>gauge</strong> y <strong>chart</strong> del dashboard para visualizar los datos</li><li>Configura un nodo <strong>debug</strong> para verificar que los datos lleguen correctamente</li></ol><p>La API responde en formato JSON con códigos de estado. Valor 0 indica datos válidos. Para múltiples inversores, cambia DeviceId=1 por el ID correspondiente.</p>",
+      "tag": "Fronius API",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-14-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-14",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce Fallas de UPS en 89% en Centro Médico de Medellín",
+      "summary": "Hospital Antioquia implementó anomaly detection con UPS Eaton 9PX, evitando $2.4B COP en pérdidas y reduciendo fallas en 89%",
+      "body": "<p>El <strong>Centro Médico Antioquia</strong> de Medellín, con 450 camas y equipos críticos valorados en $15.000 millones COP, enfrentaba fallas inesperadas en sus sistemas UPS que generaban pérdidas de <strong>$400 millones COP anuales</strong> por interrupciones quirúrgicas y daños en equipos.</p><p>La solución involucró <strong>12 UPS Eaton 9PX de 6kVA</strong> con tarjetas de monitoreo conectadas a una plataforma IoT desarrollada con <strong>TensorFlow Lite</strong> y algoritmos de anomaly detection. El sistema analiza 847 parámetros cada segundo: voltaje, corriente, temperatura, armónicos y vibraciones de baterías <strong>APC RBC143</strong>.</p><p>La IA identifica patrones anómalos hasta <strong>72 horas antes</strong> de fallas críticas, enviando alertas clasificadas por severidad vía API REST. El modelo fue entrenado con 18 meses de datos históricos de fallas reales del hospital.</p><p>Implementado en 6 meses con inversión de <strong>$890 millones COP</strong>, los resultados incluyen: <strong>89% reducción en fallas inesperadas</strong>, ahorro de $2.400 millones COP en pérdidas evitadas, reducción del 67% en costos de mantenimiento correctivo y <strong>ROI de 14 meses</strong>.</p><p>El sistema predijo exitosamente 23 de 26 fallas potenciales en el primer año, permitiendo mantenimientos programados que evitaron interrupciones en 156 cirugías programadas. La disponibilidad de energía crítica aumentó del <strong>97.2% al 99.8%</strong>, superando estándares internacionales para hospitales de alta complejidad.</p>",
+      "tag": "UPS Predictivo Medellín",
+      "read_time": 2
+    }
+  ]
+}
