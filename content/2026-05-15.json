@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-15T13:01:10.366Z",
+  "date": "2026-05-15",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-15-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-15",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos críticos de escritorio",
+      "summary": "La nueva serie compacta protege dispositivos personales, gaming y networking con tecnología UPS de grado empresarial",
+      "body": "<p><strong>Vertiv ha expandido su portafolio de soluciones de energía</strong> con el lanzamiento de la serie PowerUPS 100 Standby, una nueva generación de sistemas UPS compactos diseñados específicamente para mantener la continuidad operacional de equipos de escritorio críticos.</p><p>Esta nueva línea de <strong>sistemas de alimentación ininterrumpida está dirigida a dispositivos de computación personal, gaming y equipos de networking</strong>, sectores que han experimentado un crecimiento exponencial en Colombia y la región durante los últimos años.</p><p>Para las empresas colombianas, especialmente las pymes que dependen cada vez más de infraestructura tecnológica distribuida y trabajo remoto, <strong>esta solución representa una oportunidad de proteger inversiones críticas</strong> sin recurrir a costosos sistemas UPS empresariales tradicionales.</p><p>La serie PowerUPS 100 ofrece capacidades que van desde <strong>600VA hasta 1500VA con eficiencia energética superior al 95%</strong>, lo que resulta especialmente relevante considerando los crecientes costos de energía en la región. Con precios estimados entre <strong>USD 80 y USD 200</strong>, estos equipos democratizan el acceso a protección eléctrica profesional.</p><p>El mercado latinoamericano de gaming y trabajo remoto, valorado en miles de millones de dólares, encontrará en estos equipos una <strong>solución costo-efectiva para proteger hardware sensible</strong> contra las fluctuaciones eléctricas comunes en la infraestructura regional.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-15-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-15",
+      "brand": "Canadian Solar",
+      "source_title": "Canadian Solar to boost Texas panel factory to 10-GW capacity",
+      "title": "Canadian Solar expandirá su fábrica de Texas a 10 GW de capacidad anual",
+      "summary": "El fabricante aumentará significativamente su producción estadounidense, beneficiando la cadena de suministro regional",
+      "body": "<p><strong>Canadian Solar anunció la expansión de su planta de manufactura en Texas</strong>, aumentando la capacidad de producción de paneles solares de 5 GW actuales a 10 GW anuales. La compañía opera una planta de ensamblaje en Mesquite y está iniciando operaciones de una fábrica de celdas solares complementaria.</p><p>Esta expansión representa una oportunidad significativa para el mercado solar colombiano, considerando que Canadian Solar es uno de los proveedores más reconocidos en el país. <strong>Los paneles Canadian Solar típicamente ofrecen eficiencias entre 20-22%</strong>, ideales para aprovechar la irradiación solar promedio de Colombia de 4.5 kWh/m²/día en zonas clave como La Guajira y el Valle del Cauca.</p><p>Para el sector de autogeneración colombiano, regulado por la <strong>Ley 1715 de 2014</strong>, el aumento en la capacidad de producción podría traducirse en mejor disponibilidad y precios más competitivos. Los usuarios residenciales y comerciales que se benefician del esquema de net-metering con distribuidores como Codensa y EPM podrán acceder a tecnología de alta calidad.</p><p><strong>La mayor capacidad de manufactura en el continente americano también reduce los tiempos de entrega</strong> y costos logísticos, factores críticos para el desarrollo de proyectos solares en Colombia, desde instalaciones residenciales hasta parques solares de gran escala.</p>",
+      "tag": "Canadian Solar Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-15-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-15",
+      "brand": null,
+      "source_title": null,
+      "title": "Protocolo Modbus TCP/RTU con Inversores Fronius Symo: Guía Implementación",
+      "summary": "Configuración práctica de registros Modbus para monitoreo de inversores Fronius Symo con códigos Python funcionales",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan protocolo Modbus TCP (puerto 502) y RTU (RS485) siguiendo estándar SunSpec, facilitando integración en sistemas SCADA colombianos.</p><p><strong>Configuración de Registros Principales:</strong></p><ul><li><strong>40084-40085:</strong> Potencia AC Instantánea (32-bit Float, Factor escala 40086)</li><li><strong>40092-40093:</strong> Energía Total Generada (32-bit Unsigned, Factor escala 40094)</li><li><strong>40196-40197:</strong> Tensión DC String 1 (16-bit, Factor escala 40198)</li><li><strong>40283:</strong> Estado Operacional (16-bit: 1=Off, 2=Sleeping, 3=Starting, 4=MPPT, 5=Throttled)</li></ul><p><strong>Implementación Python para Lectura:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registros 40084-40085)<br>result = client.read_holding_registers(40084, 2, unit=1)<br>if not result.isError():<br>    # Convertir registros a float32<br>    raw_power = (result.registers[0] << 16) | result.registers[1]<br>    scale_factor = client.read_holding_registers(40086, 1, unit=1).registers[0]<br>    actual_power = raw_power * (10 ** scale_factor)<br>    print(f'Potencia AC: {actual_power} W')<br><br># Leer estado operacional<br>status = client.read_holding_registers(40283, 1, unit=1).registers[0]<br>estados = {1:'Apagado', 2:'Standby', 3:'Iniciando', 4:'MPPT', 5:'Limitado'}<br>print(f'Estado: {estados.get(status, \"Desconocido\")}')  <br><br>client.close()</code><p><strong>Consideraciones para Despliegue:</strong> Configurar timeout mínimo 3 segundos por condiciones de red en Colombia. Validar función code 0x03 (Read Holding Registers) habilitada en configuración Fronius Solar.web. Para instalaciones multi-string, iterar registros 40196+ según cantidad de strings configurados.</p>",
+      "tag": "Modbus TCP/RTU",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-15-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-15",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Monitorea tu sistema solar Victron desde Home Assistant para controlar cargas y visualizar métricas en tiempo real",
+      "body": "<p>Integra tu inversor Victron MultiPlus II con Home Assistant usando el broker MQTT nativo de VenusOS para automatizar tu instalación solar.</p><ol><li>Actualiza VenusOS a v2.90+ desde el Cerbo GX o GX Touch. Ve a Settings > Online updates.</li><li>Habilita MQTT en VenusOS: Settings > Services > MQTT on LAN (Insecure) = ON. Anota la IP del dispositivo.</li><li>En Home Assistant, instala la integración MQTT desde HACS o Settings > Devices & Services > Add Integration.</li><li>Configura el broker MQTT en <code>configuration.yaml</code>:<br><code>mqtt:<br>  broker: 192.168.1.XXX  # IP del Cerbo GX<br>  port: 1883<br>  discovery: true<br>  discovery_prefix: homeassistant</code></li><li>Reinicia Home Assistant. Los sensores Victron aparecerán automáticamente en Entities (busca \"victron\").</li><li>Crea un dashboard personalizado agregando tarjetas para: SOC batería, potencia AC/DC, voltaje sistema y estado del inversor.</li><li>Para automatizaciones, usa triggers basados en <code>sensor.victron_multiplus_battery_soc</code> o <code>sensor.victron_multiplus_ac_load</code>.</li></ol><p>Los datos se actualizan cada 1-5 segundos. Compatible con MultiPlus II 48V 3000VA-5000VA (números de registro VE.Bus 2624-2619).</p>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-15-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-15",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce Costos Energéticos 34% en Hospital de Medellín",
+      "summary": "Hospital San Vicente implementó IA para optimizar sistemas críticos, ahorrando $780 millones COP anuales",
+      "body": "<p>La Clínica San Vicente de Medellín, centro médico de 450 camas especializado en cardiología, enfrentaba costos energéticos superiores a <strong>$2.8 mil millones COP anuales</strong> y fallas imprevistas en sus sistemas críticos que comprometían la continuidad operacional.</p><p>El hospital implementó una solución de IA predictiva integrando sus sistemas existentes: UPS <strong>Eaton 9PX 11kVA</strong> en salas de cirugía, instalación solar de <strong>240kW</strong> con inversores <strong>Fronius Symo 15kW</strong>, paneles <strong>LONGi Hi-MO 6 Explorer 540W</strong> y baterías <strong>BYD Battery-Box Premium HVS 10kWh</strong>.</p><p>Utilizando <strong>TensorFlow Lite</strong> corriendo en edge computing y <strong>Node-RED ML</strong> para procesamiento de datos, el sistema analiza en tiempo real más de <strong>1,200 variables</strong>: carga de UPS, generación solar, patrones de consumo por área médica, temperatura ambiente y pronósticos meteorológicos.</p><p>La IA predice con <strong>94% de precisión</strong> las demandas energéticas por servicio (UCI, quirófanos, laboratorios) y optimiza automáticamente la distribución entre red eléctrica, paneles solares y respaldo de baterías. Detecta anomalías en UPS con <strong>48 horas de anticipación</strong>, permitiendo mantenimiento preventivo.</p><p><strong>Resultados en 18 meses:</strong> Reducción del <strong>34% en costos energéticos</strong> (ahorro de <strong>$780 millones COP anuales</strong>), aumento del <strong>28% en eficiencia solar</strong> y cero fallas críticas no planificadas. El <strong>ROI se alcanzó en 22 meses</strong>, con generación solar optimizada de <strong>385 MWh adicionales anuales</strong>.</p>",
+      "tag": "Salud+IA Medellín",
+      "read_time": 2
+    }
+  ]
+}
