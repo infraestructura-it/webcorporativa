@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-15T13:08:44.003Z",
-  "total_days": 3,
-  "total_articles": 15,
+  "last_build": "2026-05-16T12:09:24.764Z",
+  "total_days": 4,
+  "total_articles": 20,
   "days": [
+    {
+      "date": "2026-05-16",
+      "generated_at": "2026-05-16T11:59:50.215Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-16-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos de red y gaming",
+          "summary": "El nuevo UPS de escritorio compacto de Vertiv apunta al segmento de computing personal y dispositivos de red críticos",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-16-solar_news",
+          "category_id": "solar_news",
+          "title": "Canadian Solar ampliará su fábrica de Texas a 10 GW de capacidad anual",
+          "summary": "La expansión duplicará la producción de paneles solares, beneficiando el mercado colombiano con tecnología avanzada.",
+          "tag": "Canadian Solar Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-16-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+          "summary": "Implementación práctica de Modbus TCP con inversores Fronius Symo: registros, códigos de función y script Python completo",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-16-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra datos en tiempo real de tu inversor Victron MultiPlus II con Home Assistant para monitoreo y control remoto",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-16-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce Fallas UPS en Centro de Datos Medellín 85% Menos Costos",
+          "summary": "DataTech Medellín implementó ML para predecir fallas en UPS Eaton 9PX, ahorrando $280M COP anuales y 95% menos downtime",
+          "tag": "UPS Predictivo Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-15",
       "generated_at": "2026-05-15T13:01:10.366Z",

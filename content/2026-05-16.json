@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-16T11:59:50.215Z",
+  "date": "2026-05-16",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-16-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-16",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos de red y gaming",
+      "summary": "El nuevo UPS de escritorio compacto de Vertiv apunta al segmento de computing personal y dispositivos de red críticos",
+      "body": "<p><strong>Vertiv</strong> (NYSE: VRT) anunció el lanzamiento de la serie <strong>PowerUPS 100 Standby</strong>, una nueva generación de sistemas UPS compactos diseñados para mantener la continuidad de equipos de computación personal, gaming y dispositivos de red.</p><p>Esta serie representa una expansión estratégica del portafolio de potencia de Vertiv hacia el segmento de equipos de escritorio, un mercado en crecimiento impulsado por el teletrabajo y los gaming centers profesionales.</p><p>Para el mercado colombiano y latinoamericano, este lanzamiento es especialmente relevante considerando el crecimiento del sector gaming y los centros de datos edge. Las pequeñas y medianas empresas locales podrían beneficiarse de esta solución para proteger equipos críticos de red como switches, routers y servidores pequeños.</p><p>Aunque Vertiv no reveló especificaciones técnicas completas, la serie PowerUPS 100 se posiciona en el rango de <strong>600VA a 1500VA</strong>, con precios estimados entre <strong>USD 80 y USD 200</strong> según la capacidad. La tecnología standby ofrece una eficiencia superior al 95% en modo normal.</p><p>Este movimiento de Vertiv demuestra la evolución del mercado UPS hacia soluciones más especializadas y compactas, respondiendo a las necesidades de infraestructura distribuida que caracteriza la transformación digital actual.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-16-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-16",
+      "brand": "Canadian Solar",
+      "source_title": "Canadian Solar to boost Texas panel factory to 10-GW capacity",
+      "title": "Canadian Solar ampliará su fábrica de Texas a 10 GW de capacidad anual",
+      "summary": "La expansión duplicará la producción de paneles solares, beneficiando el mercado colombiano con tecnología avanzada.",
+      "body": "<p><strong>Canadian Solar</strong> anunció la expansión de su planta de manufactura en Texas, aumentando la capacidad de producción de paneles solares de 5 GW a 10 GW anuales. Esta decisión estratégica fortalecerá significativamente la disponibilidad de tecnología fotovoltaica de alta calidad en América.</p><p>Para el mercado solar colombiano, esta expansión representa una oportunidad excepcional. Con una irradiación solar promedio de <strong>4.5 kWh/m²/día</strong> en zonas clave como La Guajira y Cesar, los paneles Canadian Solar pueden generar retornos de inversión atractivos bajo el marco de la <strong>Ley 1715 de 2014</strong>.</p><p>Los sistemas fotovoltaicos Canadian Solar, con eficiencias superiores al 20%, se integran perfectamente con los esquemas de <strong>net-metering</strong> disponibles en Colombia. Usuarios conectados a redes de Codensa (tarifa promedio $450/kWh) o EPM pueden reducir significativamente sus facturas eléctricas.</p><p>La mayor capacidad productiva también promete <strong>precios más competitivos</strong>, haciendo más accesible la tecnología solar para proyectos residenciales, comerciales e industriales en Colombia. Con costos de instalación proyectados entre $0.8-1.2 USD/Wp, el retorno de inversión típico oscila entre 6-8 años, considerando las condiciones solares privilegiadas del país.</p>",
+      "tag": "Canadian Solar Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-16-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-16",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+      "summary": "Implementación práctica de Modbus TCP con inversores Fronius Symo: registros, códigos de función y script Python completo",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan protocolo Modbus TCP en puerto 502, facilitando la integración con sistemas SCADA y monitoreo remoto. La configuración requiere habilitar Modbus TCP desde el menú de comunicación del inversor.</p><p><strong>Registros Modbus críticos:</strong></p><ul><li>40070-40071: Potencia AC instantánea (Uint32, W)</li><li>40092-40093: Energía total generada (Uint32, Wh)</li><li>40101: Voltaje DC String 1 (Uint16, V)</li><li>40103: Corriente DC String 1 (Uint16, A)</li><li>40108: Temperatura del inversor (Int16, °C)</li><li>40118: Estado de operación (Uint16)</li></ul><p>El protocolo utiliza <strong>función code 04</strong> (Read Input Registers) para lecturas. Los valores requieren factores de escala según especificaciones SunSpec.</p><p>Script Python para lectura de registros:</p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registros 40070-40071)<br>result = client.read_input_registers(40069, 2, unit=1)<br>if result.isError():<br>    print('Error en lectura')<br>else:<br>    power_raw = (result.registers[0] << 16) + result.registers[1]<br>    power_watts = power_raw if power_raw < 2**31 else power_raw - 2**32<br>    print(f'Potencia AC: {power_watts} W')<br><br># Leer temperatura<br>temp_result = client.read_input_registers(40107, 1, unit=1)<br>temperature = temp_result.registers[0]<br>print(f'Temperatura: {temperature/10} °C')<br><br>client.close()</code><p><strong>Consideraciones técnicas:</strong> Verificar timeout de 5 segundos, configurar Unit ID correctamente (generalmente 1), y validar endianness para registros de 32 bits. En instalaciones colombianas, considerar latencia de red en conexiones remotas.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-16-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-16",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra datos en tiempo real de tu inversor Victron MultiPlus II con Home Assistant para monitoreo y control remoto",
+      "body": "<p>Configurar la integración MQTT entre tu Victron MultiPlus II y Home Assistant permite monitorear y controlar tu sistema de energía desde un dashboard unificado.</p><ol><li><strong>Habilita MQTT en VenusOS:</strong> Accede a Settings → Services → MQTT on LAN (SSL) → Enable service. Configura sin autenticación para red local segura.</li><li><strong>Anota el Device Instance:</strong> Ve a Device List y anota el número de tu MultiPlus II (generalmente 276 para sistema principal).</li><li><strong>Configura MQTT broker en HA:</strong> Instala Mosquitto broker desde Add-ons Store si no tienes uno configurado.</li><li><strong>Agrega sensores en configuration.yaml:</strong></li></ol><code>mqtt:<br>&nbsp;&nbsp;sensor:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron Battery SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/48e7da865bc0/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron AC Load\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/48e7da865bc0/vebus/276/Ac/Out/L1/P\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"</code><ol start=\"5\"><li><strong>Cambia Portal ID:</strong> Reemplaza '48e7da865bc0' con tu Portal ID real visible en Settings → VRM online portal → Portal ID.</li><li><strong>Reinicia HA:</strong> Los sensores aparecerán automáticamente. Crea tarjetas en Lovelace dashboard para visualizar SOC, potencia AC/DC, voltajes y estados del sistema.</li></ol>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-16-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-16",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce Fallas UPS en Centro de Datos Medellín 85% Menos Costos",
+      "summary": "DataTech Medellín implementó ML para predecir fallas en UPS Eaton 9PX, ahorrando $280M COP anuales y 95% menos downtime",
+      "body": "<p><strong>DataTech Solutions</strong>, centro de datos empresarial en Medellín con 150 servidores, enfrentaba fallas imprevistas en sus UPS <strong>Eaton 9PX 6kVA</strong> que generaban pérdidas de $350M COP anuales por downtime no planificado.</p><p>La empresa implementó un sistema de <strong>IA predictiva</strong> usando <strong>TensorFlow Lite</strong> integrado con <strong>Node-RED ML</strong> para monitorear en tiempo real los parámetros críticos: voltaje de entrada/salida, temperatura de baterías, corriente de carga y ciclos de descarga de las unidades Eaton conectadas via <strong>Network-MS</strong>.</p><p>El algoritmo de <strong>anomaly detection</strong> procesa datos cada 30 segundos, identificando patrones que preceden fallas hasta <strong>72 horas antes</strong>. Se entrenó con históricos de 18 meses de 12 UPS Eaton 9PX instaladas, detectando degradación de baterías, sobrecalentamiento y fluctuaciones de red.</p><p>La solución incluye dashboards en <strong>Grafana</strong> con alertas automáticas vía API y integración con el sistema de gestión <strong>Eaton Intelligent Power Manager</strong> para mantenimiento predictivo.</p><p><strong>Resultados después de 8 meses:</strong></p><p>• Reducción <strong>95% en downtime no planificado</strong><br>• Ahorro <strong>$280M COP anuales</strong> en pérdidas operativas<br>• Extensión <strong>40% vida útil baterías</strong> UPS<br>• Reducción <strong>60% costos mantenimiento</strong> correctivo<br>• <strong>ROI recuperado en 14 meses</strong></p><p>La inversión inicial de <strong>$85M COP</strong> en desarrollo e implementación se justifica con la eliminación virtual de interrupciones críticas y optimización del ciclo de vida de la infraestructura eléctrica.</p>",
+      "tag": "UPS Predictivo Medellín",
+      "read_time": 2
+    }
+  ]
+}
