@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-16T12:09:24.764Z",
-  "total_days": 4,
-  "total_articles": 20,
+  "last_build": "2026-05-17T12:11:52.367Z",
+  "total_days": 5,
+  "total_articles": 25,
   "days": [
+    {
+      "date": "2026-05-17",
+      "generated_at": "2026-05-17T12:04:22.416Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-17-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva serie de UPS compactos PowerUPS 100 para gaming y redes",
+          "summary": "Nueva generación de sistemas UPS compactos diseñados específicamente para gaming, computación personal y dispositivos de red",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-17-solar_news",
+          "category_id": "solar_news",
+          "title": "Canadian Solar expandirá su planta de Texas a 10 GW de capacidad anual",
+          "summary": "El fabricante incrementará significativamente su producción manufacturera en Estados Unidos para atender la creciente demanda solar",
+          "tag": "Canadian Solar Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-17-technical",
+          "category_id": "technical",
+          "title": "Implementación práctica de Modbus RTU con inversores SMA Sunny Boy en Colombia",
+          "summary": "Configuración técnica detallada de comunicación Modbus RTU con registros reales y código Python para monitoreo",
+          "tag": "modbus",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-17-tips",
+          "category_id": "tips",
+          "title": "Leer SOC y tensión de batería Pylontech desde Node-RED con modbus-serial",
+          "summary": "Monitorea en tiempo real el estado de carga y voltaje de baterías Pylontech US3000C para sistemas solares híbridos",
+          "tag": "Pylontech Modbus",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-17-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce 35% Fallas UPS en Datacenter Bancario Bogotá",
+          "summary": "Banco Andino implementó ML para predecir fallas UPS, ahorrando $340 millones COP anuales en downtime evitado",
+          "tag": "UPS+Predictivo Bogotá",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-16",
       "generated_at": "2026-05-16T11:59:50.215Z",

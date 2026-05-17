@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-17T12:04:22.416Z",
+  "date": "2026-05-17",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-17-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-17",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza nueva serie de UPS compactos PowerUPS 100 para gaming y redes",
+      "summary": "Nueva generación de sistemas UPS compactos diseñados específicamente para gaming, computación personal y dispositivos de red",
+      "body": "<p><strong>Vertiv</strong> (NYSE: VRT) anunció el lanzamiento de la serie <strong>PowerUPS 100 Standby</strong>, una nueva generación de sistemas de alimentación ininterrumpida (UPS) compactos diseñados para mantener la continuidad operativa en equipos de computación personal, gaming y dispositivos de red.</p><p>Esta nueva línea representa una evolución significativa en el segmento de UPS de escritorio, ofreciendo <strong>protección eléctrica avanzada</strong> en un formato ultracompacto que se adapta perfectamente a las necesidades del mercado latinoamericano, donde los cortes de energía y fluctuaciones eléctricas son frecuentes.</p><p>Para el mercado colombiano, donde las <strong>interrupciones eléctricas</strong> afectan regularmente tanto a oficinas como hogares, esta solución representa una oportunidad importante para integradores y distribuidores locales. La serie PowerUPS 100 está especialmente diseñada para proteger equipos sensibles como consolas de gaming, routers, switches y estaciones de trabajo.</p><p>Los sistemas ofrecen <strong>capacidades desde 600VA hasta 1000VA</strong> con eficiencia superior al 95% en modo normal, incorporando tecnología de regulación automática de voltaje (AVR) y conectividad USB para monitoreo remoto.</p><p>Esta expansión del portafolio de Vertiv fortalece su presencia en el segmento prosumer, complementando su oferta tradicional para data centers y aplicaciones industriales en la región.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-17-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-17",
+      "brand": "Canadian Solar",
+      "source_title": "Canadian Solar to boost Texas panel factory to 10-GW capacity",
+      "title": "Canadian Solar expandirá su planta de Texas a 10 GW de capacidad anual",
+      "summary": "El fabricante incrementará significativamente su producción manufacturera en Estados Unidos para atender la creciente demanda solar",
+      "body": "<p><strong>Canadian Solar</strong> anunció en sus resultados financieros del Q1 2026 que ampliará sustancialmente su capacidad de manufactura en Estados Unidos, aumentando su planta de paneles solares en Mesquite, Texas de 5 GW a <strong>10 GW de capacidad anual</strong>.</p><p>La expansión incluye también una nueva fábrica de celdas solares en Jefferson, que complementará la producción de paneles existente. Esta decisión estratégica responde al crecimiento exponencial de la demanda solar en Norteamérica y fortalece la cadena de suministro regional.</p><p>Para el <strong>mercado solar colombiano</strong>, esta expansión representa mayor disponibilidad de paneles de alta calidad. Con la irradiación solar promedio de 4.5 kWh/m²/día en zonas clave del país, los paneles Canadian Solar optimizan la generación fotovoltaica bajo el marco de la <strong>Ley 1715</strong>.</p><p>Los usuarios residenciales y comerciales pueden aprovechar el sistema de <strong>net-metering</strong> para inyectar excedentes a la red de Codensa o EPM, reduciendo significativamente sus facturas eléctricas. La mayor capacidad productiva de Canadian Solar podría traducirse en mejores precios y disponibilidad para el mercado colombiano.</p><p>Esta expansión consolida la posición de Canadian Solar como líder global en manufactura fotovoltaica y beneficia directamente el desarrollo de energías renovables en Colombia.</p>",
+      "tag": "Canadian Solar Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-17-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-17",
+      "brand": null,
+      "source_title": null,
+      "title": "Implementación práctica de Modbus RTU con inversores SMA Sunny Boy en Colombia",
+      "summary": "Configuración técnica detallada de comunicación Modbus RTU con registros reales y código Python para monitoreo",
+      "body": "<p>Los inversores <strong>SMA Sunny Boy</strong> utilizan protocolo Modbus RTU para comunicación industrial, esencial en proyectos solares colombianos que requieren monitoreo centralizado.</p><p><strong>Configuración Hardware:</strong></p><ul><li>Baudrate: 9600 bps</li><li>Data bits: 8, Stop bits: 1, Paridad: None</li><li>Dirección esclavo por defecto: 3</li><li>Terminación 120Ω en extremos del bus RS485</li></ul><p><strong>Registros Modbus críticos:</strong></p><ul><li>30775-30776: Potencia AC instantánea (W) - 32-bit unsigned</li><li>30513-30514: Tensión DC entrada 1 (mV) - 32-bit unsigned</li><li>30517-30518: Corriente DC entrada 1 (mA) - 32-bit unsigned</li><li>30805-30806: Energía total generada (Wh) - 32-bit unsigned</li><li>30825: Temperatura del inversor (°C) - 16-bit signed</li><li>30201: Estado operacional - 16-bit unsigned</li></ul><p><strong>Implementación Python:</strong></p><code>from pymodbus.client.sync import ModbusSerialClient<br><br>client = ModbusSerialClient(method='rtu', port='/dev/ttyUSB0', <br>                           baudrate=9600, timeout=3)<br>client.connect()<br><br># Leer potencia AC (registros 30775-30776)<br>result = client.read_holding_registers(30775, 2, unit=3)<br>if not result.isError():<br>    power_ac = (result.registers[0] << 16) + result.registers[1]<br>    print(f\"Potencia AC: {power_ac} W\")<br><br># Leer temperatura<br>temp_result = client.read_holding_registers(30825, 1, unit=3)<br>temp_celsius = temp_result.registers[0] / 100<br>print(f\"Temperatura: {temp_celsius}°C\")<br><br>client.close()</code><p><strong>Consideraciones técnicas:</strong> Los registros 32-bit requieren lectura de dos registros consecutivos. El estado operacional (30201) indica: 35=MPP, 381=Apagado, 455=Advertencia. Para instalaciones en altitudes colombianas >2000m, monitorear temperatura constantemente.</p><p>Esta implementación permite integración con SCADA locales y cumple normativas CREG para reporte de generación distribuida.</p>",
+      "tag": "modbus",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-17-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-17",
+      "brand": null,
+      "source_title": null,
+      "title": "Leer SOC y tensión de batería Pylontech desde Node-RED con modbus-serial",
+      "summary": "Monitorea en tiempo real el estado de carga y voltaje de baterías Pylontech US3000C para sistemas solares híbridos",
+      "body": "<p>Las baterías Pylontech US3000C/US5000 exponen datos críticos vía Modbus RTU que puedes leer directamente desde Node-RED para monitoreo y automatización.</p><ol><li>Instala el nodo <code>node-red-contrib-modbus</code> en tu instancia Node-RED</li><li>Conecta cable RS485-USB al puerto Console de la batería Pylontech (pines 7-8, 115200 baud, ID Modbus: 1)</li><li>Arrastra nodo <strong>Modbus-Read</strong> al flow y configura:<br>• Server: <code>localhost</code> puerto <code>/dev/ttyUSB0</code><br>• Unit ID: <code>1</code><br>• Address: <code>0x1018</code> (SOC), <code>0x1014</code> (voltaje)<br>• Quantity: <code>1</code> registro cada uno</li><li>Añade nodo <strong>Function</strong> para procesar la respuesta:</li></ol><code>// Decodificar registros Pylontech<br>let soc = msg.payload[0]; // Registro 0x1018<br>let voltage = msg.payload[0] / 100; // Registro 0x1014 (mV a V)<br>msg.payload = {<br>&nbsp;&nbsp;soc: soc + '%',<br>&nbsp;&nbsp;voltage: voltage + 'V',<br>&nbsp;&nbsp;timestamp: new Date()<br>};<br>return msg;</code><ol start='5'><li>Programa lectura cada 30 segundos con nodo <strong>Inject</strong></li><li>Conecta salida a nodo <strong>Debug</strong> para verificar datos: <code>{\"soc\":\"85%\",\"voltage\":\"51.2V\"}</code></li></ol><p>Resultado: Dashboard en tiempo real del estado de tus baterías Pylontech para optimizar ciclos de carga.</p>",
+      "tag": "Pylontech Modbus",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-17-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-17",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce 35% Fallas UPS en Datacenter Bancario Bogotá",
+      "summary": "Banco Andino implementó ML para predecir fallas UPS, ahorrando $340 millones COP anuales en downtime evitado",
+      "body": "<p><strong>Banco Andino</strong>, entidad financiera con 180 sucursales en Colombia, enfrentaba costosas interrupciones en su datacenter principal de Bogotá. Sus UPS <strong>Eaton 9PX 6000VA</strong> y <strong>APC Smart-UPS RT 8000VA</strong> generaban fallas imprevistas, causando pérdidas de <strong>$580 millones COP anuales</strong> por downtime crítico.</p><p>Como arquitectos de InfraestructuraIT Colombia, implementamos una solución de <strong>IA predictiva</strong> integrando sensores IoT en 24 UPS existentes. El sistema captura 15 parámetros críticos: voltaje de entrada/salida, temperatura interna, carga de baterías, corriente de bypass y armónicos de red cada 30 segundos.</p><p>Desarrollamos un modelo de <strong>anomaly detection con TensorFlow Lite</strong> ejecutándose en edge computing <strong>Siemens SIMATIC IPC427E</strong>, complementado con <strong>Node-RED ML</strong> para procesamiento en tiempo real. La plataforma envía alertas predictivas 72 horas antes de fallas críticas, permitiendo mantenimiento preventivo programado.</p><p>El dashboard desarrollado con <strong>Grafana Enterprise</strong> integra datos históricos y predicciones ML, mientras <strong>Claude API</strong> genera reportes automatizados de recomendaciones de mantenimiento en lenguaje natural para técnicos.</p><p><strong>Resultados tras 8 meses:</strong></p><p>• Reducción <strong>35% en fallas imprevistas</strong> UPS<br>• Ahorro <strong>$340 millones COP anuales</strong> en downtime evitado<br>• Extensión <strong>18% vida útil</strong> baterías APC y Eaton<br>• <strong>ROI logrado en 14 meses</strong><br>• Disponibilidad datacenter aumentó de 99.2% a <strong>99.7%</strong></p><p>La inversión total de <strong>$95 millones COP</strong> se recuperó mediante reducción drástica de interrupciones no planificadas y optimización de inventario de repuestos críticos.</p>",
+      "tag": "UPS+Predictivo Bogotá",
+      "read_time": 2
+    }
+  ]
+}
