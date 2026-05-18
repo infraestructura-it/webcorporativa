@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-17T12:11:52.367Z",
-  "total_days": 5,
-  "total_articles": 25,
+  "last_build": "2026-05-18T14:44:35.349Z",
+  "total_days": 6,
+  "total_articles": 30,
   "days": [
+    {
+      "date": "2026-05-18",
+      "generated_at": "2026-05-18T14:37:32.590Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-18-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos de escritorio y gaming",
+          "summary": "La nueva serie de UPS compactos está diseñada para mantener continuidad en dispositivos personales y redes",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-18-solar_news",
+          "category_id": "solar_news",
+          "title": "Canadian Solar duplicará capacidad de fabricación de baterías BESS",
+          "summary": "La empresa planea expandir su producción de sistemas de almacenamiento, beneficiando proyectos solares comerciales en Colombia",
+          "tag": "Canadian Solar Batería",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-18-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
+          "summary": "Aprenderá registros Modbus reales, función codes y código Python para monitoreo de inversores Fronius Symo en plantas FV.",
+          "tag": "modbus-tcp",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-18-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron MultiPlus II en Home Assistant usando VenusOS y MQTT para monitoreo y control remoto",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-18-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Reduce 67% Fallas UPS en Datacenter Medellín",
+          "summary": "Implementación TensorFlow Lite en UPS Eaton 9PX reduce mantenimiento correctivo $89M COP anuales",
+          "tag": "UPS+Predictivo Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-17",
       "generated_at": "2026-05-17T12:04:22.416Z",
