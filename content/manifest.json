@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-18T14:44:35.349Z",
-  "total_days": 6,
-  "total_articles": 30,
+  "last_build": "2026-05-19T14:05:22.570Z",
+  "total_days": 7,
+  "total_articles": 35,
   "days": [
+    {
+      "date": "2026-05-19",
+      "generated_at": "2026-05-19T13:57:50.873Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-19-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos críticos de escritorio",
+          "summary": "Nueva generación de UPS compactos busca proteger equipos de cómputo personal, gaming y dispositivos de red",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-19-solar_news",
+          "category_id": "solar_news",
+          "title": "SMA inaugura nueva planta de estaciones de media tensión en Arkansas",
+          "summary": "El fabricante alemán amplía capacidad de producción local en Estados Unidos con soluciones MVPS para proyectos comerciales",
+          "tag": "SMA Inversor",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-19-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
+          "summary": "Configuración completa de registros Modbus TCP reales para monitoreo de inversores Fronius Symo en instalaciones solares",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-19-tips",
+          "category_id": "tips",
+          "title": "Configurar alarmas SMS/Telegram para UPS Eaton con SNMP trap y Node-RED",
+          "summary": "Automatiza notificaciones cuando el UPS pase a batería usando traps SNMP capturados por Node-RED para alertas críticas",
+          "tag": "Eaton SNMP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-19-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva reduce 40% costos operativos en datacenter financiero Medellín",
+          "summary": "Bancolombia Digital redujo $180M COP anuales con IA que optimiza UPS Eaton y solar Fronius",
+          "tag": "Datacenter+IA Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-18",
       "generated_at": "2026-05-18T14:37:32.590Z",
