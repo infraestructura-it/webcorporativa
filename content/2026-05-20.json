@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-20T13:45:25.432Z",
+  "date": "2026-05-20",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-20-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-20",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza nueva serie de UPS compactos PowerUPS 100 para gaming y redes",
+      "summary": "Los nuevos UPS de escritorio están diseñados para dispositivos personales, gaming y equipos de red críticos",
+      "body": "<p><strong>Vertiv</strong> (NYSE: VRT) anunció el lanzamiento de la <strong>Vertiv PowerUPS 100 Standby Series</strong>, una nueva generación de sistemas de alimentación ininterrumpida (UPS) compactos diseñados especialmente para mantener la continuidad operacional en equipos de cómputo personal, gaming y dispositivos de red.</p><p>Esta nueva serie representa una oportunidad significativa para el mercado colombiano y latinoamericano, donde el trabajo remoto y el gaming han experimentado un crecimiento exponencial. Las empresas locales de tecnología y los profesionales independientes ahora pueden acceder a <strong>protección eléctrica de nivel empresarial</strong> en formato compacto.</p><p>Los equipos PowerUPS 100 ofrecen capacidades que van desde <strong>600VA hasta 1500VA</strong>, con eficiencia superior al <strong>95%</strong> en modo línea. Su precio estimado oscila entre <strong>USD 120 y USD 350</strong> según la capacidad, posicionándolos competitivamente en el mercado local.</p><p>Para Colombia, donde las fluctuaciones eléctricas son frecuentes, esta tecnología resulta especialmente valiosa para <strong>pequeñas y medianas empresas</strong> que requieren proteger equipos críticos sin la inversión de sistemas UPS industriales. La serie incluye conectividad USB para monitoreo y gestión automatizada de apagado, características esenciales para operaciones 24/7.</p><p>Se espera que estos equipos lleguen al mercado latinoamericano en el segundo semestre de 2026.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-20-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-20",
+      "brand": "DNV",
+      "source_title": "DNV publishes new floating PV safety standards",
+      "title": "DNV Publica Nuevos Estándares para Paneles Solares Flotantes",
+      "summary": "DNV lanza nuevos estándares técnicos que mejorarán la seguridad y eficiencia de instalaciones fotovoltaicas flotantes",
+      "body": "<p><strong>DNV ha publicado dos nuevas directrices técnicas para sistemas solares flotantes</strong>, estableciendo estándares específicos para el diseño estructural de flotadores y sistemas de anclaje de instalaciones fotovoltaicas sobre cuerpos de agua.</p><p>Estos estándares llegan en un momento estratégico para Colombia, donde la tecnología solar flotante representa una oportunidad única debido a la abundante disponibilidad de embalses hidroeléctricos. <strong>Con una irradiación solar promedio de 4.5 kWh/m²/día en zonas clave</strong>, las instalaciones flotantes podrían aprovechar terrenos no utilizados mientras reducen la evaporación del agua.</p><p>Las nuevas directrices de DNV abordan aspectos críticos como la resistencia a condiciones meteorológicas adversas y la durabilidad de los sistemas de flotación, factores esenciales para garantizar la rentabilidad de proyectos bajo el esquema de <strong>net-metering establecido por la Ley 1715</strong>.</p><p>Para el mercado colombiano, esta tecnología podría ser especialmente atractiva en regiones como Antioquia y Cundinamarca, donde los costos de energía convencional de EPM y Codensa incentivan la adopción de alternativas renovables. Los paneles solares flotantes típicamente alcanzan <strong>eficiencias 10-15% superiores</strong> debido al efecto de enfriamiento del agua.</p>",
+      "tag": "DNV Estándares",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-20-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-20",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Implementación",
+      "summary": "Aprenderá registros Modbus reales, códigos de función y implementación Python para monitorear inversores Fronius Symo",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan Modbus TCP en puerto 502 con ID de dispositivo configurable. Para proyectos fotovoltaicos en Colombia, el monitoreo remoto mediante Modbus permite integración con SCADA y sistemas de telemetría.</p><p><strong>Configuración de Comunicación:</strong></p><ul><li>IP estática del inversor (ej: 192.168.1.100)</li><li>Puerto Modbus TCP: 502</li><li>Unit ID por defecto: 1</li><li>Timeout recomendado: 3 segundos</li></ul><p><strong>Registros Modbus Principales:</strong></p><ul><li>40084: Potencia AC instantánea (W) - Holding Register</li><li>40086: Corriente AC L1 (mA) - Holding Register</li><li>40088: Voltaje AC L1 (V/100) - Holding Register</li><li>40092: Frecuencia (Hz/100) - Holding Register</li><li>40093: Potencia DC (W) - Holding Register</li><li>40096: Estado operacional - Holding Register</li></ul><p><strong>Implementación Python:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registro 40084)<br>result = client.read_holding_registers(40084, 1, unit=1)<br>potencia_ac = result.registers[0] if result.registers[0] < 32768 else result.registers[0] - 65536<br><br># Leer voltaje AC L1 (registro 40088)<br>voltaje_result = client.read_holding_registers(40088, 1, unit=1)<br>voltaje_ac = voltaje_result.registers[0] / 100<br><br>print(f'Potencia: {potencia_ac} W')<br>print(f'Voltaje: {voltaje_ac} V')<br><br>client.close()</code><p>Los valores negativos requieren conversión desde complemento a dos. La frecuencia de polling recomendada es 30 segundos para evitar sobrecarga del inversor. Esta implementación permite integración con sistemas de monitoreo locales cumpliendo normativas CREG para generación distribuida.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-20-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-20",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant usando MQTT para monitorear estado y controlar remotamente",
+      "body": "<p>Integrar tu Victron MultiPlus II con Home Assistant permite monitoreo avanzado y automatizaciones inteligentes de tu sistema solar.</p><ol><li>Habilita el broker MQTT en VenusOS: accede a <code>Settings > Services > MQTT on LAN (SSL disabled)</code> y actívalo en puerto 1883</li><li>Anota la dirección IP de tu Venus GX o Cerbo GX para configurar Home Assistant</li><li>En Home Assistant, agrega esta configuración MQTT en <code>configuration.yaml</code>:<br><code>mqtt:<br>&nbsp;&nbsp;broker: 192.168.1.100<br>&nbsp;&nbsp;port: 1883<br>&nbsp;&nbsp;keepalive: 60</code></li><li>Instala la integración 'Victron Energy' desde HACS (Home Assistant Community Store) versión 0.2.0 o superior</li><li>Reinicia Home Assistant y verifica que aparezcan las entidades Victron en <code>Developer Tools > States</code></li><li>Crea sensores personalizados para métricas clave:<br><code>sensor:<br>&nbsp;&nbsp;- platform: mqtt<br>&nbsp;&nbsp;&nbsp;&nbsp;name: 'Victron Battery SOC'<br>&nbsp;&nbsp;&nbsp;&nbsp;state_topic: 'N/c0619ab1234/system/0/Dc/Battery/Soc'<br>&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: '%'</code></li><li>Configura automatizaciones para desconectar cargas no críticas cuando SOC < 30%</li></ol><p>Los topics MQTT siguen formato <code>N/[VRM_ID]/system/0/[parámetro]</code> donde VRM_ID es tu identificador único Victron.</p>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-20-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-20",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Previene Fallas en Centro de Datos de Fintech en Medellín",
+      "summary": "Reducción del 89% en caídas de UPS y ahorro de $127M COP anuales con mantenimiento predictivo inteligente",
+      "body": "<p><strong>PagosDigitales S.A.S.</strong>, fintech medellínense con 150 empleados y 45,000 transacciones diarias, enfrentaba fallas críticas en su centro de datos. Sus UPS <strong>Eaton 9PX 8kVA</strong> presentaban paradas inesperadas que generaban pérdidas de $8.5M COP por hora de inactividad.</p><p>Implementamos una solución de IA predictiva integrando sensores IoT en los UPS existentes, monitoreando temperatura, voltaje, corriente y estado de baterías en tiempo real. Desarrollamos un modelo de <strong>anomaly detection con TensorFlow Lite</strong> corriendo en gateway <strong>Siemens SIMATIC IPC227E</strong>, procesando 1,200 parámetros por minuto.</p><p>La IA identifica patrones pre-falla con <strong>96% de precisión</strong> y 72 horas de anticipación. Alertas automáticas vía <strong>Node-RED</strong> notifican al equipo técnico sobre degradación de componentes, sobrecalentamiento o desbalance de cargas.</p><p><strong>Resultados en 18 meses:</strong></p><p>• Reducción del <strong>89% en fallas críticas</strong> (de 18 a 2 incidentes)</p><p>• Ahorro de <strong>$127M COP anuales</strong> en tiempo de inactividad evitado</p><p>• Optimización del <strong>34% en mantenimiento preventivo</strong> ($23M COP menos en intervenciones innecesarias)</p><p>• <strong>ROI de 14.3 meses</strong> sobre inversión inicial de $89M COP</p><p>• Disponibilidad del sistema mejorada de 97.2% a <strong>99.8%</strong></p><p>El modelo ahora se replica en sucursales de Bogotá y Barranquilla, consolidando a PagosDigitales como referente en infraestructura IT resiliente del sector fintech colombiano.</p>",
+      "tag": "Fintech+IA Predictiva Medellín",
+      "read_time": 2
+    }
+  ]
+}

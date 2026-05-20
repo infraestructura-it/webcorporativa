@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-19T14:05:22.570Z",
-  "total_days": 7,
-  "total_articles": 35,
+  "last_build": "2026-05-20T13:53:01.598Z",
+  "total_days": 8,
+  "total_articles": 40,
   "days": [
+    {
+      "date": "2026-05-20",
+      "generated_at": "2026-05-20T13:45:25.432Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-20-news",
+          "category_id": "news",
+          "title": "Vertiv lanza nueva serie de UPS compactos PowerUPS 100 para gaming y redes",
+          "summary": "Los nuevos UPS de escritorio están diseñados para dispositivos personales, gaming y equipos de red críticos",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-20-solar_news",
+          "category_id": "solar_news",
+          "title": "DNV Publica Nuevos Estándares para Paneles Solares Flotantes",
+          "summary": "DNV lanza nuevos estándares técnicos que mejorarán la seguridad y eficiencia de instalaciones fotovoltaicas flotantes",
+          "tag": "DNV Estándares",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-20-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Implementación",
+          "summary": "Aprenderá registros Modbus reales, códigos de función y implementación Python para monitorear inversores Fronius Symo",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-20-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron MultiPlus II con Home Assistant usando MQTT para monitorear estado y controlar remotamente",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-20-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva Previene Fallas en Centro de Datos de Fintech en Medellín",
+          "summary": "Reducción del 89% en caídas de UPS y ahorro de $127M COP anuales con mantenimiento predictivo inteligente",
+          "tag": "Fintech+IA Predictiva Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-19",
       "generated_at": "2026-05-19T13:57:50.873Z",
