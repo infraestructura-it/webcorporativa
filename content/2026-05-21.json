@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-21T14:17:07.532Z",
+  "date": "2026-05-21",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-21-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-21",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza PowerUPS 100: nueva línea de UPS compactos para mercado masivo",
+      "summary": "Serie de UPS de escritorio diseñada para equipos de cómputo personal, gaming y dispositivos de red",
+      "body": "<p>Vertiv Corporation (NYSE: VRT) presentó oficialmente su nueva línea <strong>PowerUPS 100 Standby Series</strong>, una generación de sistemas UPS compactos diseñados específicamente para mantener la continuidad operacional en equipos de cómputo personal, gaming y dispositivos de networking.</p><p>Esta nueva serie representa una <strong>expansión estratégica del portafolio de Vertiv</strong> hacia el mercado masivo, tradicionalmente dominado por marcas como APC y Tripp Lite. Los equipos están diseñados con formato de escritorio y tecnología standby, optimizada para cargas menores a <strong>1.5 kVA</strong>.</p><p>Para el mercado colombiano y latinoamericano, este lanzamiento es significativo porque <strong>democratiza el acceso a protección eléctrica confiable</strong> para pequeñas empresas, oficinas remotas y usuarios finales. La serie PowerUPS 100 incluye modelos desde <strong>600VA hasta 1200VA</strong>, con precios estimados entre <strong>USD $80 y USD $220</strong>.</p><p>La llegada de Vertiv al segmento masivo intensifica la competencia en Colombia, donde las fluctuaciones eléctricas afectan significativamente la productividad empresarial. Los distribuidores locales esperan que esta serie capture una <strong>porción importante del mercado SOHO</strong> (Small Office, Home Office), especialmente considerando la reputación de Vertiv en infraestructura crítica para centros de datos.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-21-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-21",
+      "brand": "Sunzaun",
+      "source_title": "Sunzaun installs 1st vertical solar fence in US urban neighborhood",
+      "title": "Instalación de cerca solar vertical urbana marca tendencia en Estados Unidos",
+      "summary": "Sunzaun instala primera cerca solar vertical en barrio urbano estadounidense, optimizando espacios reducidos",
+      "body": "<p><strong>Sunzaun</strong> ha completado la instalación de la primera cerca solar vertical en un vecindario urbano de Estados Unidos, marcando un hito en la optimización de espacios para energía fotovoltaica. Esta innovadora solución permite generar electricidad en terrenos con limitaciones de espacio horizontal.</p><p>La tecnología de <strong>paneles solares verticales</strong> representa una oportunidad significativa para Colombia, especialmente en ciudades densas como Bogotá y Medellín. Con la irradiación solar promedio del país de 4.5 kWh/m²/día, estas instalaciones verticales pueden aprovechar eficientemente la luz solar durante diferentes horas del día.</p><p>Esta solución se alinea perfectamente con la <strong>Ley 1715 de integración de energías renovables</strong>, que permite a los usuarios conectarse al sistema de distribución mediante net-metering. Los propietarios urbanos podrían beneficiarse de las tarifas compensatorias con distribuidores como Codensa y EPM.</p><p>Las cercas solares verticales ofrecen ventajas adicionales como <strong>privacidad, seguridad perimetral y generación energética simultánea</strong>. Para el mercado colombiano, esta tecnología podría ser especialmente atractiva en zonas industriales y comerciales donde el espacio horizontal es limitado pero se requieren soluciones de cercado perimetral.</p><p>InfraestructuraIT Colombia considera que esta innovación abrirá nuevas oportunidades para la implementación de energía solar en entornos urbanos densificados.</p>",
+      "tag": "Sunzaun Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-21-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-21",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+      "summary": "Aprende a extraer datos reales de inversores Fronius Symo vía Modbus TCP, incluyendo registros específicos y código Python.",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan protocolo Modbus TCP en puerto 502, permitiendo monitoreo avanzado en instalaciones fotovoltaicas colombianas. La configuración requiere habilitación previa desde el display del inversor o Fronius Solar.web.</p><p><strong>Registros Modbus Críticos:</strong></p><ul><li><code>40084</code> - Potencia AC Total (W) - Uint32</li><li><code>40092</code> - Corriente AC L1 (mA) - Uint32</li><li><code>40098</code> - Voltaje AC L1 (V) - Uint32</li><li><code>40282</code> - Energía Total (Wh) - Uint64</li><li><code>40264</code> - Potencia DC String 1 (W) - Uint32</li></ul><p>Para aplicaciones críticas en Colombia, considerar latencia de red y timeouts por condiciones ambientales adversas. El inversor responde con función code <code>0x03</code> (Read Holding Registers).</p><p><strong>Implementación Python con pymodbus:</strong></p><pre><code>from pymodbus.client.sync import ModbusTcpClient\n\nclient = ModbusTcpClient('192.168.1.100', port=502)\nresult = client.read_holding_registers(40084, 2, unit=1)\n\nif result.isError():\n    print('Error Modbus')\nelse:\n    # Convertir uint32 big-endian\n    potencia_ac = (result.registers[0] << 16) + result.registers[1]\n    print(f'Potencia AC: {potencia_ac} W')\n\nclient.close()</code></pre><p>Los registros utilizan formato <strong>big-endian</strong>, crítico para interpretación correcta. Recomendado polling cada 5-10 segundos para evitar saturación del inversor. En instalaciones con múltiples Symo, usar Unit ID diferente para cada dispositivo en bus RS485/TCP gateway.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-21-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-21",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron con Home Assistant para monitorear estado de batería, consumo y producción solar en tiempo real",
+      "body": "<p>La integración MQTT permite visualizar datos críticos del MultiPlus II directamente en Home Assistant usando el protocolo nativo de VenusOS.</p><ol><li>Accede a VenusOS (GX device) vía interfaz web local. Ve a <strong>Settings → Services</strong> y habilita <code>MQTT on LAN (Plaintext)</code>. Anota la IP del dispositivo Venus.</li><li>En Home Assistant, instala el addon <strong>Mosquitto broker</strong> desde Supervisor → Add-on Store si no tienes broker MQTT.</li><li>Agrega la configuración MQTT en <code>configuration.yaml</code>:</li></ol><p><code>mqtt:<br>&nbsp;&nbsp;broker: IP_VENUS_GX<br>&nbsp;&nbsp;port: 1883<br>&nbsp;&nbsp;discovery: true<br>&nbsp;&nbsp;birth_message:<br>&nbsp;&nbsp;&nbsp;&nbsp;topic: 'homeassistant/status'<br>&nbsp;&nbsp;&nbsp;&nbsp;payload: 'online'</code></p><ol start='4'><li>Reinicia Home Assistant. Los sensores aparecerán automáticamente en <strong>Settings → Devices & Services → MQTT</strong> con prefijo <code>victron_</code>.</li><li>Crea dashboard con métricas clave: SOC batería (<code>sensor.victron_battery_soc</code>), potencia AC (<code>sensor.victron_system_ac_consumption_l1</code>) y estado del inversor (<code>sensor.victron_vebus_state</code>).</li></ol><p>Verificación: Los topics MQTT siguen formato <code>N/SERIAL/system/0/Ac/ActiveIn/L1/P</code>. Usa herramienta MQTT Explorer para debug si no aparecen entidades.</p>",
+      "tag": "Victron+HA",
+      "read_time": 3
+    },
+    {
+      "id": "2026-05-21-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-21",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva reduce 31% fallas UPS en centro de datos de Medellín",
+      "summary": "Telecom Sur implementó ML con UPS Eaton 9PX, ahorrando $180M COP/año en downtime evitado",
+      "body": "<p><strong>Telecom Sur</strong>, operador regional con 850 empleados en Medellín, enfrentaba fallas críticas en su centro de datos que causaban pérdidas de <strong>$45M COP por hora de downtime</strong>. Sus sistemas UPS <strong>Eaton 9PX 6kVA</strong> y <strong>9PX 8kVA</strong> experimentaban fallos inesperados que comprometían servicios de 120,000 usuarios corporativos.</p><p>Implementamos una solución de <strong>anomaly detection</strong> usando <strong>TensorFlow Lite</strong> integrado con <strong>Node-RED</strong> para monitorear en tiempo real voltaje, temperatura, corriente y estado de baterías. Los sensores <strong>Schneider Electric PowerTag</strong> alimentan datos cada 30 segundos a un modelo ML entrenado con patrones históricos de falla.</p><p>El sistema procesa localmente mediante <strong>Raspberry Pi 4</strong> con análisis predictivo que identifica anomalías <strong>72 horas antes</strong> del fallo crítico. Dashboard desarrollado en <strong>Grafana</strong> permite alertas automáticas vía <strong>WhatsApp Business API</strong> y correo.</p><p>Tras 8 meses de operación:</p><p>• <strong>Reducción 31% en fallas críticas</strong> (de 16 a 11 eventos anuales)<br>• <strong>Ahorro $180M COP/año</strong> por downtime evitado<br>• <strong>Extensión 23% vida útil baterías</strong> mediante mantenimiento predictivo<br>• <strong>ROI alcanzado en 14 meses</strong><br>• <strong>Disponibilidad mejoró de 99.7% a 99.92%</strong></p><p>La inversión inicial de <strong>$95M COP</strong> incluyó hardware, software, integración y capacitación. El modelo ML ahora predice con <strong>94% precisión</strong> eventos críticos, transformando mantenimiento reactivo en proactivo y posicionando a Telecom Sur como referente tecnológico regional.</p>",
+      "tag": "UPS Predictivo Medellín",
+      "read_time": 2
+    }
+  ]
+}

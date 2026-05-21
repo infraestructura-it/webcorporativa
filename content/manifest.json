@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-20T13:53:01.598Z",
-  "total_days": 8,
-  "total_articles": 40,
+  "last_build": "2026-05-21T14:26:43.307Z",
+  "total_days": 9,
+  "total_articles": 45,
   "days": [
+    {
+      "date": "2026-05-21",
+      "generated_at": "2026-05-21T14:17:07.532Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-21-news",
+          "category_id": "news",
+          "title": "Vertiv lanza PowerUPS 100: nueva línea de UPS compactos para mercado masivo",
+          "summary": "Serie de UPS de escritorio diseñada para equipos de cómputo personal, gaming y dispositivos de red",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-21-solar_news",
+          "category_id": "solar_news",
+          "title": "Instalación de cerca solar vertical urbana marca tendencia en Estados Unidos",
+          "summary": "Sunzaun instala primera cerca solar vertical en barrio urbano estadounidense, optimizando espacios reducidos",
+          "tag": "Sunzaun Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-21-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Guía de Implementación",
+          "summary": "Aprende a extraer datos reales de inversores Fronius Symo vía Modbus TCP, incluyendo registros específicos y código Python.",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-21-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron con Home Assistant para monitorear estado de batería, consumo y producción solar en tiempo real",
+          "tag": "Victron+HA",
+          "read_time": 3
+        },
+        {
+          "id": "2026-05-21-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva reduce 31% fallas UPS en centro de datos de Medellín",
+          "summary": "Telecom Sur implementó ML con UPS Eaton 9PX, ahorrando $180M COP/año en downtime evitado",
+          "tag": "UPS Predictivo Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-20",
       "generated_at": "2026-05-20T13:45:25.432Z",
