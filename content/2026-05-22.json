@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-22T13:35:44.694Z",
+  "date": "2026-05-22",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-22-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-22",
+      "brand": "Vertiv",
+      "source_title": "Vertiv expands power portfolio with new compact desktop UPS for personal computing, gaming and networking devices",
+      "title": "Vertiv lanza UPS compacto PowerUPS 100 para empresas y gaming",
+      "summary": "Nueva serie de UPS de escritorio garantiza continuidad para equipos de cómputo personal y dispositivos de red críticos",
+      "body": "<p><strong>Vertiv amplió su portafolio de soluciones de energía crítica</strong> con el lanzamiento de la serie PowerUPS 100 Standby, una nueva generación de sistemas UPS compactos diseñados específicamente para mantener la continuidad operativa en equipos de cómputo personal, gaming y dispositivos de red.</p><p>La nueva serie representa una <strong>oportunidad significativa para el mercado colombiano</strong>, donde las interrupciones de energía afectan frecuentemente la productividad empresarial y el entretenimiento digital. Según datos del sector, las micro y pequeñas empresas en Colombia pierden en promedio 8 horas mensuales por cortes eléctricos.</p><p><strong>Las unidades PowerUPS 100 ofrecen capacidades desde 600VA hasta 1500VA</strong>, con eficiencia superior al 95% en modo normal de operación. Los precios referenciales en el mercado internacional oscilan entre USD $80-250 dependiendo de la capacidad.</p><p>Para empresas locales, esta tecnología significa <strong>protección accesible para workstations críticas, servidores pequeños y equipos de telecomunicaciones</strong>. El formato compacto de escritorio facilita su implementación en oficinas con espacio limitado, común en el sector empresarial colombiano.</p><p>La expansión de Vertiv hacia segmentos más accesibles <strong>democratiza el acceso a protección eléctrica profesional</strong>, tradicionalmente limitada a grandes centros de datos, beneficiando especialmente a startups tecnológicas y profesionales independientes en toda Latinoamérica.</p>",
+      "tag": "Vertiv UPS",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-22-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-22",
+      "brand": "Victron Energy",
+      "source_title": "Energy security guarantees town's water supply",
+      "title": "Victron Energy impulsa infraestructura crítica con sistemas off-grid confiables",
+      "summary": "Instalación off-grid de Victron asegura suministro de agua para 35,000 personas, demostrando potencial en Colombia",
+      "body": "<p>Una instalación off-grid con tecnología <strong>Victron Energy</strong> garantiza el funcionamiento continuo de un reservorio remoto que suministra agua potable a más de 35,000 clientes. El sistema energiza los controles de monitoreo, opera la planta de tratamiento y acciona las válvulas de bombeo sin fallos.</p><p>Esta aplicación demuestra el <strong>potencial de los sistemas off-grid</strong> en Colombia, especialmente en zonas rurales con irradiación solar promedio de 4.5 kWh/m²/día. Los inversores y controladores de carga Victron ofrecen eficiencias superiores al 95% y capacidades modulares desde 250W hasta 15kW.</p><p>Bajo la <strong>Ley 1715 de integración de energías renovables</strong>, proyectos similares pueden beneficiarse de incentivos tributarios del 50% en inversión. En Colombia, donde las tarifas de Codensa alcanzan $650/kWh y EPM $580/kWh, estos sistemas off-grid representan una solución económica para infraestructura crítica.</p><p>Los sistemas Victron incluyen <strong>monitoreo remoto VRM</strong> y baterías de litio con vida útil de 6,000 ciclos. Para proyectos de infraestructura crítica en Colombia, la inversión inicial se recupera en 4-6 años, mientras se garantiza la continuidad operacional independiente de la red eléctrica convencional.</p>",
+      "tag": "Victron Energy Sistema",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-22-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-22",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+      "summary": "Configuración práctica de Modbus TCP en inversores Fronius Symo con registros reales, función codes y código Python",
+      "body": "<p>La integración de <strong>inversores Fronius Symo</strong> mediante Modbus TCP es esencial para sistemas de monitoreo solar en Colombia. Estos inversores implementan el protocolo en puerto <code>502</code> con Slave ID <code>1</code> por defecto.</p><p><strong>Configuración inicial:</strong> Activar Modbus TCP en el menú de comunicación del inversor, configurando la IP estática y habilitando el puerto 502. La velocidad de polling recomendada es máximo 1 segundo para evitar sobrecarga del sistema.</p><p><strong>Registros principales:</strong></p><ul><li>40092: Potencia AC total (W) - Holding Register</li><li>40093: Corriente AC L1 (0.01A) - Holding Register</li><li>40094: Tensión AC L1 (0.1V) - Holding Register</li><li>40096: Frecuencia (0.01Hz) - Holding Register</li><li>40100: Potencia DC1 (W) - Holding Register</li><li>40103: Tensión DC1 (0.1V) - Holding Register</li><li>40113: Energía total (Wh) - Holding Register</li></ul><p><strong>Implementación Python:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient\n\nclient = ModbusTcpClient('192.168.1.100', port=502)\nclient.connect()\n\n# Leer potencia AC\nresult = client.read_holding_registers(40092, 1, unit=1)\nif result.isError():\n    print(f\"Error: {result}\")\nelse:\n    potencia_ac = result.registers[0]\n    print(f\"Potencia AC: {potencia_ac} W\")\n\n# Leer energía total\nresult = client.read_holding_registers(40113, 2, unit=1)\nif not result.isError():\n    energia_wh = (result.registers[1] << 16) | result.registers[0]\n    print(f\"Energía total: {energia_wh} Wh\")\n\nclient.close()</code><p>Para instalaciones industriales, implementar timeout de 3 segundos y reconexión automática. Los valores se actualizan cada segundo, permitiendo monitoreo en tiempo real para optimización de la producción solar.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-22-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-22",
+      "brand": null,
+      "source_title": null,
+      "title": "Monitorear temperatura del cuarto de equipos con ESP32 y visualizar en Grafana",
+      "summary": "Implementa sensor DS18B20 con ESP32 para enviar temperatura a InfluxDB y crear dashboard en tiempo real",
+      "body": "<p>Protege tus equipos críticos monitoreando temperatura ambiente con alertas automáticas cuando supere umbrales seguros.</p><ol><li>Conecta DS18B20 al ESP32: VCC → 3.3V, GND → GND, DATA → GPIO4 con resistencia pull-up 4.7kΩ</li><li>Programa ESP32 con código WiFi + OneWire:<br><code>#include &lt;WiFi.h&gt;<br>#include &lt;HTTPClient.h&gt;<br>#include &lt;OneWire.h&gt;<br>#include &lt;DallasTemperature.h&gt;<br><br>OneWire oneWire(4);<br>DallasTemperature sensors(&oneWire);<br><br>void sendToInflux(float temp) {<br>  HTTPClient http;<br>  http.begin(\"http://IP:8086/write?db=equipos\");<br>  String data = \"temperatura,location=cuarto_equipos value=\" + String(temp);<br>  http.POST(data);<br>}</code></li><li>Instala InfluxDB 1.8 y crea base de datos 'equipos'</li><li>En Grafana, añade datasource InfluxDB y crea panel con query: <code>SELECT mean(\"value\") FROM \"temperatura\" WHERE time &gt;= now() - 24h GROUP BY time(5m)</code></li><li>Configura alerta cuando temperatura &gt; 28°C enviando notificación Telegram</li><li>Programa ESP32 para envío cada 60 segundos y deep sleep para optimizar batería</li></ol><p>Resultado: Dashboard profesional con históricos, tendencias y alertas preventivas para infraestructura crítica.</p>",
+      "tag": "ESP32+InfluxDB",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-22-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-22",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva reduce 34% costos energéticos en centro datos Medellín",
+      "summary": "Predictive AI Analytics previene fallas UPS y optimiza solar, ahorrando $186M COP/año a datacenter",
+      "body": "<p>DataCore Andina, centro de datos con 500 servidores en Medellín, enfrentaba <strong>$540M COP anuales</strong> en costos energéticos y fallas imprevistas en su infraestructura crítica de <strong>12 UPS Eaton 9PX 6kVA</strong> y sistema solar de <strong>180 paneles LONGi Hi-MO 6 Explorer 575W</strong> con inversores <strong>Fronius Symo GEN24 15kW</strong>.</p><p>El problema: fallas nocturnas de UPS generaban paradas no planificadas (<strong>97 horas downtime/año</strong>) y la producción solar era 23% inferior al potencial teórico, impactando la operación 24/7 de sus clientes financieros.</p><p>Implementamos una solución de IA basada en <strong>TensorFlow Lite</strong> corriendo en <strong>Raspberry Pi 4</strong> con sensores <strong>Victron SmartShunt</strong> y <strong>BMV-712</strong>. El sistema recolecta datos cada 30 segundos: voltaje, corriente, temperatura, vibración de UPS y irradiancia solar. Un modelo de <strong>anomaly detection LSTM</strong> desarrollado en Python predice fallas con 14 días de anticipación.</p><p>La plataforma <strong>Node-RED</strong> integra APIs de <strong>Fronius Solar.web</strong> y <strong>Eaton Intelligent Power Manager</strong>, enviando alertas vía WhatsApp Business API cuando detecta patrones anómalos o suboptimización solar.</p><p>Resultados en 18 meses: <strong>$186M COP anuales ahorrados</strong> (34% reducción costos), <strong>zero downtime</strong> no planificado, <strong>2.847 kWh adicionales/mes</strong> por optimización solar automática. El sistema predijo exitosamente 8 fallas potenciales de UPS y optimizó ángulos de seguimiento solar aumentando eficiencia al 94.2%.</p><p><strong>ROI: 11 meses</strong> con inversión inicial de <strong>$67M COP</strong> en sensores, hardware de IA y desarrollo.</p>",
+      "tag": "Datacenter+IA Medellín",
+      "read_time": 2
+    }
+  ]
+}

@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-21T14:26:43.307Z",
-  "total_days": 9,
-  "total_articles": 45,
+  "last_build": "2026-05-22T13:43:18.099Z",
+  "total_days": 10,
+  "total_articles": 50,
   "days": [
+    {
+      "date": "2026-05-22",
+      "generated_at": "2026-05-22T13:35:44.694Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-22-news",
+          "category_id": "news",
+          "title": "Vertiv lanza UPS compacto PowerUPS 100 para empresas y gaming",
+          "summary": "Nueva serie de UPS de escritorio garantiza continuidad para equipos de cómputo personal y dispositivos de red críticos",
+          "tag": "Vertiv UPS",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-22-solar_news",
+          "category_id": "solar_news",
+          "title": "Victron Energy impulsa infraestructura crítica con sistemas off-grid confiables",
+          "summary": "Instalación off-grid de Victron asegura suministro de agua para 35,000 personas, demostrando potencial en Colombia",
+          "tag": "Victron Energy Sistema",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-22-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+          "summary": "Configuración práctica de Modbus TCP en inversores Fronius Symo con registros reales, función codes y código Python",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-22-tips",
+          "category_id": "tips",
+          "title": "Monitorear temperatura del cuarto de equipos con ESP32 y visualizar en Grafana",
+          "summary": "Implementa sensor DS18B20 con ESP32 para enviar temperatura a InfluxDB y crear dashboard en tiempo real",
+          "tag": "ESP32+InfluxDB",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-22-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva reduce 34% costos energéticos en centro datos Medellín",
+          "summary": "Predictive AI Analytics previene fallas UPS y optimiza solar, ahorrando $186M COP/año a datacenter",
+          "tag": "Datacenter+IA Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-21",
       "generated_at": "2026-05-21T14:17:07.532Z",
