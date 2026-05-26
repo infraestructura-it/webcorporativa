@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-26T14:09:55.578Z",
+  "date": "2026-05-26",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-26-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-26",
+      "brand": "Vertiv",
+      "source_title": "Vertiv and Compass Datacenters collaborate on combination liquid and air cooling system to accelerate deployment of liquid cooling for AI applications",
+      "title": "Vertiv y Compass Datacenters revolucionan enfriamiento para IA con sistema híbrido",
+      "summary": "Nueva solución combina refrigeración líquida y aire para acelerar despliegue de aplicaciones de IA en centros de datos",
+      "body": "<p><strong>Vertiv</strong> y Compass Datacenters han desarrollado un innovador sistema de enfriamiento híbrido que combina refrigeración líquida y aire, específicamente diseñado para acelerar el despliegue de aplicaciones de inteligencia artificial en centros de datos empresariales.</p><p>La solución aborda uno de los principales desafíos que enfrentan los operadores de centros de datos: <strong>soportar ambientes de alta densidad computacional</strong> donde coexisten aplicaciones tradicionales de TI con sistemas de IA que generan cargas térmicas superiores a los 15 kW por rack.</p><p>Para el mercado colombiano y latinoamericano, esta innovación representa una oportunidad estratégica. Las empresas locales que buscan implementar soluciones de IA podrán hacerlo sin necesidad de <strong>rediseñar completamente su infraestructura de enfriamiento</strong>, reduciendo costos de inversión inicial estimados en hasta 40%.</p><p>El sistema híbrido de Vertiv permite manejar densidades de hasta <strong>25 kW por rack con eficiencias energéticas del 95%</strong>, comparado con sistemas tradicionales de aire que alcanzan apenas 85% de eficiencia en configuraciones de alta densidad.</p><p>Esta tecnología será especialmente relevante para sectores como banca, telecomunicaciones y manufactura en Colombia, donde la adopción de IA está acelerándose pero la infraestructura existente requiere modernización gradual y rentable.</p>",
+      "tag": "Vertiv Refrigeración",
+      "read_time": 1
+    },
+    {
+      "id": "2026-05-26-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-26",
+      "brand": "PV Magazine",
+      "source_title": "Seven countermeasures against negative electricity prices",
+      "title": "Alemania implementa siete medidas contra precios negativos de electricidad solar",
+      "summary": "Alemania propone acelerar almacenamiento y carga inteligente para optimizar excedentes solares durante picos de generación",
+      "body": "<p>La asociación industrial alemana bne ha propuesto <strong>siete contramedidas</strong> para abordar los precios negativos de electricidad causados por la alta producción solar fotovoltaica durante las horas de mediodía con baja demanda.</p><p>Las soluciones incluyen <strong>despliegue acelerado de almacenamiento en baterías</strong>, carga inteligente de vehículos eléctricos y rollout más rápido de medidores inteligentes. Estas medidas buscan optimizar el aprovechamiento de los excedentes solares.</p><p>Para Colombia, con su <strong>irradiación solar promedio de 4.5 kWh/m²/día</strong>, esta experiencia alemana es relevante. Bajo la Ley 1715 y el esquema de net-metering, los usuarios pueden inyectar excedentes a la red con tarifas de distribuidores como Codensa y EPM.</p><p>El crecimiento acelerado de instalaciones solares en Colombia podría generar situaciones similares durante picos de radiación. La implementación de <strong>sistemas de almacenamiento inteligente</strong> y gestión de demanda permitirá maximizar el aprovechamiento de la energía solar generada.</p><p>Las lecciones alemanas sugieren que Colombia debe anticiparse con marcos regulatorios que incentiven el almacenamiento y la gestión inteligente de la energía, evitando desperdicios y optimizando la inversión en infraestructura solar fotovoltaica nacional.</p>",
+      "tag": "PV Magazine Mercado",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-26-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-26",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Registros y Configuración",
+      "summary": "Implementación práctica de Modbus TCP para monitoreo de inversores Fronius Symo con registros reales y código Python",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan comunicación Modbus TCP estándar, permitiendo monitoreo y control remoto desde sistemas SCADA o plataformas IoT. La configuración requiere habilitación del protocolo en la interfaz web del inversor (Setup → Communication → Modbus TCP).</p><p><strong>Registros principales para lectura:</strong></p><ul><li>40084: Potencia AC actual (W, Int32, Factor escala: 40083)</li><li>40092: Voltaje AC fase L1 (V, UInt16, Factor escala: 40094)</li><li>40196: Energía total generada (Wh, UInt32, Factor escala: 40195)</li><li>40118: Temperatura inversor (°C, Int16, Factor escala: 40122)</li><li>40107: Estado operacional (UInt16, 0=Apagado, 1=Arranque, 2=MPP)</li></ul><p>Para implementación en Colombia, considerar la dirección Modbus estándar <strong>Unit ID: 1</strong> y puerto TCP <strong>502</strong>. Los registros utilizan <strong>función 03 (Read Holding Registers)</strong> con valores escalados.</p><p><strong>Código Python para lectura básica:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100')<br>connection = client.connect()<br><br># Leer potencia AC actual<br>result = client.read_holding_registers(40084, 2, unit=1)<br>scale = client.read_holding_registers(40083, 1, unit=1).registers[0]<br>power = (result.registers[0] << 16 | result.registers[1]) * (10 ** scale)<br>print(f'Potencia: {power} W')<br><br>client.close()</code><p>La implementación debe manejar valores <strong>NaN (0x8000)</strong> y factores de escala negativos. Para instalaciones comerciales, configurar polling cada 10-30 segundos evita sobrecarga del inversor. El protocolo SunSpec está disponible desde registro 40000 para compatibilidad extendida.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-26-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-26",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Monitorea en tiempo real el estado de tu sistema solar Victron desde Home Assistant usando el broker MQTT nativo de VenusOS",
+      "body": "<p>VenusOS v2.90+ incluye broker MQTT nativo que facilita la integración con Home Assistant sin hardware adicional.</p><ol><li>En VenusOS, ve a <strong>Settings > Services > MQTT</strong> y habilita 'MQTT on LAN (Plaintext)' en puerto 1883</li><li>Anota la dirección IP del dispositivo Venus (ej: 192.168.1.100)</li><li>En Home Assistant, agrega a <code>configuration.yaml</code>:<br><code>mqtt:<br>&nbsp;&nbsp;broker: 192.168.1.100<br>&nbsp;&nbsp;port: 1883<br>&nbsp;&nbsp;discovery: true</code></li><li>Crea sensores para datos del MultiPlus II:<br><code>sensor:<br>&nbsp;&nbsp;- platform: mqtt<br>&nbsp;&nbsp;&nbsp;&nbsp;name: \"Victron SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/c0619ab1234/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"<br>&nbsp;&nbsp;- platform: mqtt<br>&nbsp;&nbsp;&nbsp;&nbsp;name: \"Victron AC Load\"<br>&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/c0619ab1234/vebus/276/Ac/Out/L1/P\"<br>&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"</code></li><li>Reemplaza 'c0619ab1234' con el VRM Portal ID real de tu sistema (visible en VenusOS > Settings > VRM)</li><li>Reinicia Home Assistant y verifica que aparezcan las entidades 'sensor.victron_soc' y 'sensor.victron_ac_load'</li><li>Agrega al dashboard usando tarjetas gauge o history para visualizar tendencias de consumo y estado de batería</li></ol>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-26-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-26",
+      "brand": null,
+      "source_title": null,
+      "title": "IA reduce 32% los costos energéticos en Hospitales Unidos de Medellín",
+      "summary": "Sistema de IA optimiza UPS y paneles solares, ahorrando $847M COP anuales en infraestructura crítica hospitalaria",
+      "body": "<p><strong>Hospitales Unidos de Medellín</strong>, red privada de 4 centros médicos con 280 camas, enfrentaba costos energéticos de <strong>$2.6B COP anuales</strong> y fallas imprevistas en sus sistemas UPS que comprometían equipos críticos como ventiladores y monitores.</p><p>El hospital implementó una solución de IA predictiva integrando sus <strong>UPS Eaton 9PX 6kVA</strong>, paneles <strong>LONGi Hi-MO 6 de 540W</strong>, inversores <strong>Fronius Symo 15kW</strong> y baterías <strong>BYD Battery-Box 10kWh</strong> mediante una plataforma desarrollada en <strong>TensorFlow Lite</strong> con algoritmos de detección de anomalías.</p><p>La IA analiza en tiempo real patrones de consumo, temperatura de baterías, eficiencia de paneles solares y carga de UPS. Utiliza <strong>Node-RED ML</strong> para procesar datos de sensores y predecir fallas hasta <strong>72 horas antes</strong> de que ocurran, optimizando automáticamente la conmutación entre red eléctrica, solar y baterías según demanda y tarifas.</p><p>En <strong>18 meses de operación</strong>, el sistema logró: <strong>$847M COP de ahorro anual</strong> (32% reducción en costos), <strong>2.340 MWh adicionales</strong> de energía solar aprovechada, <strong>87% menos fallas críticas</strong> de UPS y <strong>23% mayor eficiencia</strong> en gestión de baterías. El <strong>ROI se alcanzó en 14 meses</strong> con una inversión inicial de <strong>$1.1B COP</strong> en sensores IoT, software IA y actualización de controladores.</p><p>La solución garantiza continuidad operacional crítica mientras maximiza el aprovechamiento de energía renovable.</p>",
+      "tag": "Salud+IA Predictiva Medellín",
+      "read_time": 2
+    }
+  ]
+}
