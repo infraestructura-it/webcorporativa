@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-05-27T14:32:43.430Z",
+  "date": "2026-05-27",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 4,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-27-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-27",
+      "brand": "Vertiv",
+      "source_title": "Vertiv and Compass Datacenters collaborate on combination liquid and air cooling system to accelerate deployment of liquid cooling for AI applications",
+      "title": "Vertiv y Compass Datacenters lanzan sistema híbrido para refrigeración AI",
+      "summary": "Nueva solución combina refrigeración líquida y por aire para acelerar despliegue de aplicaciones de inteligencia artificial",
+      "body": "<p><strong>Vertiv</strong> anunció una colaboración estratégica con Compass Datacenters para desarrollar un innovador sistema de refrigeración híbrido que combina tecnologías líquidas y por aire, específicamente diseñado para acelerar el despliegue de aplicaciones de inteligencia artificial en centros de datos.</p><p>La solución responde al creciente desafío que enfrentan los operadores de data centers: soportar entornos que evolucionan rápidamente, donde las aplicaciones IT tradicionales coexisten con la computación de alta densidad requerida para <strong>cargas de trabajo de AI</strong>, que pueden alcanzar densidades superiores a 40 kW por rack.</p><p>El sistema híbrido permite a los operadores mantener la refrigeración por aire existente para cargas convencionales, mientras implementa refrigeración líquida directa al chip para servidores AI de alta densidad, optimizando la eficiencia energética hasta un <strong>30% comparado con sistemas tradicionales</strong>.</p><p>Para el mercado colombiano y latinoamericano, esta innovación representa una oportunidad crucial. Con la creciente adopción de AI en sectores como banca, retail y manufactura, los data centers locales necesitan soluciones que permitan escalar gradualmente sin reemplazar completamente su infraestructura existente. La inversión estimada para implementar este sistema híbrido oscila entre <strong>USD 150,000-300,000</strong> por megavatio de capacidad, significativamente menor que una renovación completa de la infraestructura de refrigeración.</p>",
+      "tag": "Vertiv Data Centers",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-27-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-27",
+      "brand": "Victron Energy",
+      "source_title": "Energy security guarantees town's water supply",
+      "title": "Victron Energy impulsa seguridad energética en infraestructura crítica",
+      "summary": "Sistema off-grid de Victron garantiza suministro continuo para planta de agua potable de 35,000 usuarios remotos",
+      "body": "<p>Un proyecto de <strong>Victron Energy</strong> demuestra el potencial de los sistemas solares off-grid para garantizar servicios esenciales en ubicaciones remotas. La instalación energiza completamente una planta de tratamiento de agua que abastece a más de 35,000 usuarios, operando sistemas de control, tratamiento y válvulas de bombeo sin conexión a la red eléctrica.</p><p>Este caso resalta las oportunidades para Colombia, donde la <strong>Ley 1715</strong> promueve fuentes no convencionales de energía renovable. Con una irradiación solar promedio de 4.5 kWh/m²/día en zonas clave del país, los sistemas Victron pueden garantizar autonomía energética en regiones apartadas de los Andes, Llanos Orientales y Costa Caribe.</p><p>Los inversores y controladores de carga Victron, reconocidos por su <strong>eficiencia superior al 95%</strong>, se integran idealmente con baterías de litio para aplicaciones críticas. Considerando tarifas comerciales de Codensa (~$600 COP/kWh) y EPM (~$550 COP/kWh), estos sistemas off-grid pueden generar ahorros significativos mientras aseguran continuidad operacional 24/7.</p><p>Para infraestructura crítica colombiana como plantas de tratamiento, estaciones de bombeo y centros de salud rurales, esta tecnología representa una solución confiable que combina sostenibilidad ambiental con <strong>seguridad energética absoluta</strong>.</p>",
+      "tag": "Victron Energy Sistema",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-27-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-27",
+      "brand": "Pylontech",
+      "source_title": null,
+      "title": "ESP32-S3 y BMS Pylontech US5000: Monitoreo CAN Bus para Baterías LiFePO4",
+      "summary": "Implementación práctica de comunicación CAN bus entre ESP32-S3 y BMS Pylontech para monitoreo de baterías en Colombia",
+      "body": "<p>La integración entre microcontroladores ESP32-S3 y sistemas BMS (Battery Management System) de baterías Pylontech US5000 mediante protocolo CAN bus representa una solución eficiente para monitoreo energético en instalaciones solares colombianas.</p><p><strong>Configuración Hardware:</strong> El ESP32-S3 requiere transceptor CAN como TJA1050 o MCP2551, conectado a pines GPIO21 (CAN_TX) y GPIO22 (CAN_RX). Las baterías Pylontech US5000 utilizan conector RJ45 con terminales CAN_H (pin 7) y CAN_L (pin 8) a 500 kbps.</p><p><strong>Protocolo de Comunicación:</strong> Pylontech implementa CAN 2.0A con identificadores específicos:</p><ul><li>0x351: Voltaje, corriente, SOC</li><li>0x355: Alarmas y advertencias</li><li>0x356: Límites de carga/descarga</li><li>0x359: Información del sistema</li></ul><p>El frame 0x351 contiene 8 bytes: voltaje (bytes 0-1), corriente (bytes 2-3), SOC (bytes 4-5) y estado (bytes 6-7).</p><p><strong>Implementación ESP32:</strong></p><code>```cpp\n#include \"driver/twai.h\"\n\nvoid setup_can() {\n  twai_general_config_t g_config = TWAI_GENERAL_CONFIG_DEFAULT(GPIO_NUM_21, GPIO_NUM_22, TWAI_MODE_NORMAL);\n  twai_timing_config_t t_config = TWAI_TIMING_CONFIG_500KBITS();\n  twai_filter_config_t f_config = TWAI_FILTER_CONFIG_ACCEPT_ALL();\n  \n  twai_driver_install(&g_config, &t_config, &f_config);\n  twai_start();\n}\n\nvoid read_pylontech_data() {\n  twai_message_t message;\n  if (twai_receive(&message, pdMS_TO_TICKS(1000)) == ESP_OK) {\n    if (message.identifier == 0x351) {\n      uint16_t voltage = (message.data[1] << 8) | message.data[0];\n      int16_t current = (message.data[3] << 8) | message.data[2];\n      uint16_t soc = (message.data[5] << 8) | message.data[4];\n      \n      Serial.printf(\"Voltage: %.1fV, Current: %.1fA, SOC: %d%%\\n\", \n                    voltage/100.0, current/100.0, soc/10);\n    }\n  }\n}\n```</code><p><strong>Consideraciones para Colombia:</strong> Esta implementación permite monitoreo local sin dependencia de internet, crucial para instalaciones remotas. Los datos pueden transmitirse vía WiFi, LoRa o 4G según disponibilidad de conectividad regional.</p>",
+      "tag": "ESP32-S3",
+      "read_time": 3
+    },
+    {
+      "id": "2026-05-27-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-27",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Monitorea estado del inversor Victron en tiempo real desde Home Assistant usando el broker MQTT integrado de VenusOS",
+      "body": "<p>El VenusOS (v2.90+) de Victron incluye broker MQTT que permite integración directa con Home Assistant para monitoreo de inversores MultiPlus II.</p><ol><li>En VenusOS, accede a <strong>Settings > Services</strong> y habilita <strong>MQTT on LAN (Plaintext)</strong> en puerto 1883</li><li>Anota la dirección IP del dispositivo Venus GX/Cerbo GX desde <strong>Settings > General</strong></li><li>En Home Assistant, edita <code>configuration.yaml</code> y agrega el broker MQTT:<br><code>mqtt:<br>&nbsp;&nbsp;broker: 192.168.1.100<br>&nbsp;&nbsp;port: 1883<br>&nbsp;&nbsp;discovery: true<br>&nbsp;&nbsp;birth_message:<br>&nbsp;&nbsp;&nbsp;&nbsp;topic: 'homeassistant/status'<br>&nbsp;&nbsp;&nbsp;&nbsp;payload: 'online'</code></li><li>Reinicia Home Assistant y ve a <strong>Configuración > Integraciones > MQTT</strong></li><li>Los sensores Victron aparecerán automáticamente. Busca entidades como:<br>• <code>sensor.multiplus_ii_ac_power_l1</code><br>• <code>sensor.multiplus_ii_battery_voltage</code><br>• <code>sensor.multiplus_ii_state_of_charge</code></li><li>Crea dashboard personalizado agregando estas entidades a tarjetas de medidor o gráfico histórico</li><li>Para automatizaciones, usa triggers basados en SOC o estado del inversor (bulk, absorption, float)</li></ol><p>El topic MQTT sigue formato <code>N/[VRM-ID]/system/0/Ac/PvOnOutput/L1/Power</code> para datos específicos.</p>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-27-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-27",
+      "brand": null,
+      "source_title": null,
+      "title": "Cadena farmacéutica Medellín reduce costos energéticos 23% con IA solar",
+      "summary": "FarmaValle implementó sistema predictivo con IA que optimiza 180kWp solares, ahorrando $385M COP anuales",
+      "body": "<p><strong>FarmaValle S.A.S.</strong>, cadena farmacéutica con 45 puntos de venta en Medellín y Valle de Aburrá, enfrentaba costos energéticos superiores a <strong>$1.680M COP anuales</strong> y baja eficiencia en su sistema solar corporativo de 180kWp instalado en 2022.</p><p>El problema principal: los inversores <strong>Fronius Symo 15kW</strong> y paneles <strong>LONGi Hi-MO 6 Explorer 540W</strong> operaban sin optimización predictiva, generando solo 65% de su capacidad teórica debido a sombreado variable y mantenimiento reactivo.</p><p><strong>Solución implementada:</strong> Desarrollamos un sistema de IA basado en <strong>TensorFlow Lite</strong> integrado con controladores <strong>Victron SmartSolar MPPT 250/100</strong> y el sistema de monitoreo Fronius Solar.web. La plataforma procesa datos meteorológicos en tiempo real, patrones de consumo históricos y telemetría de equipos.</p><p>El algoritmo de <strong>anomaly detection</strong> predice sombreado por nubes con 4 horas de anticipación, optimiza ángulos de seguimiento y programa mantenimiento preventivo. Sistema de respaldo con UPS <strong>Eaton 9PX 6kVA</strong> y baterías <strong>BYD Battery-Box Premium HVS 10.2kWh</strong> gestiona almacenamiento inteligente.</p><p><strong>Resultados tras 8 meses:</strong></p><p>• <strong>23% reducción</strong> en costos energéticos totales<br>• <strong>$385M COP ahorrados</strong> anualmente<br>• Eficiencia solar incrementada a <strong>89%</strong><br>• <strong>2.840 kWh adicionales/mes</strong> generados<br>• ROI alcanzado en <strong>14 meses</strong><br>• 95% reducción en fallas imprevistas de inversores</p><p>La inversión total de <strong>$180M COP</strong> en sensores IoT, software IA y integración se recuperará completamente en marzo 2025, posicionando a FarmaValle como referente en sostenibilidad energética del sector farmacéutico colombiano.</p>",
+      "tag": "Solar+IA Medellín",
+      "read_time": 2
+    }
+  ]
+}

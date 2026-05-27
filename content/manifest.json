@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-26T14:17:31.078Z",
+  "last_build": "2026-05-27T14:42:11.674Z",
   "total_days": 10,
   "total_articles": 50,
   "days": [
+    {
+      "date": "2026-05-27",
+      "generated_at": "2026-05-27T14:32:43.430Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-27-news",
+          "category_id": "news",
+          "title": "Vertiv y Compass Datacenters lanzan sistema híbrido para refrigeración AI",
+          "summary": "Nueva solución combina refrigeración líquida y por aire para acelerar despliegue de aplicaciones de inteligencia artificial",
+          "tag": "Vertiv Data Centers",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-27-solar_news",
+          "category_id": "solar_news",
+          "title": "Victron Energy impulsa seguridad energética en infraestructura crítica",
+          "summary": "Sistema off-grid de Victron garantiza suministro continuo para planta de agua potable de 35,000 usuarios remotos",
+          "tag": "Victron Energy Sistema",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-27-technical",
+          "category_id": "technical",
+          "title": "ESP32-S3 y BMS Pylontech US5000: Monitoreo CAN Bus para Baterías LiFePO4",
+          "summary": "Implementación práctica de comunicación CAN bus entre ESP32-S3 y BMS Pylontech para monitoreo de baterías en Colombia",
+          "tag": "ESP32-S3",
+          "read_time": 3
+        },
+        {
+          "id": "2026-05-27-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Monitorea estado del inversor Victron en tiempo real desde Home Assistant usando el broker MQTT integrado de VenusOS",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-27-usecase",
+          "category_id": "usecase",
+          "title": "Cadena farmacéutica Medellín reduce costos energéticos 23% con IA solar",
+          "summary": "FarmaValle implementó sistema predictivo con IA que optimiza 180kWp solares, ahorrando $385M COP anuales",
+          "tag": "Solar+IA Medellín",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-26",
       "generated_at": "2026-05-26T14:09:55.578Z",
@@ -422,53 +469,6 @@
           "title": "IA Predictiva Reduce 67% Fallas UPS en Datacenter Medellín",
           "summary": "Implementación TensorFlow Lite en UPS Eaton 9PX reduce mantenimiento correctivo $89M COP anuales",
           "tag": "UPS+Predictivo Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-05-17",
-      "generated_at": "2026-05-17T12:04:22.416Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-05-17-news",
-          "category_id": "news",
-          "title": "Vertiv lanza nueva serie de UPS compactos PowerUPS 100 para gaming y redes",
-          "summary": "Nueva generación de sistemas UPS compactos diseñados específicamente para gaming, computación personal y dispositivos de red",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-17-solar_news",
-          "category_id": "solar_news",
-          "title": "Canadian Solar expandirá su planta de Texas a 10 GW de capacidad anual",
-          "summary": "El fabricante incrementará significativamente su producción manufacturera en Estados Unidos para atender la creciente demanda solar",
-          "tag": "Canadian Solar Panel",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-17-technical",
-          "category_id": "technical",
-          "title": "Implementación práctica de Modbus RTU con inversores SMA Sunny Boy en Colombia",
-          "summary": "Configuración técnica detallada de comunicación Modbus RTU con registros reales y código Python para monitoreo",
-          "tag": "modbus",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-17-tips",
-          "category_id": "tips",
-          "title": "Leer SOC y tensión de batería Pylontech desde Node-RED con modbus-serial",
-          "summary": "Monitorea en tiempo real el estado de carga y voltaje de baterías Pylontech US3000C para sistemas solares híbridos",
-          "tag": "Pylontech Modbus",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-17-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce 35% Fallas UPS en Datacenter Bancario Bogotá",
-          "summary": "Banco Andino implementó ML para predecir fallas UPS, ahorrando $340 millones COP anuales en downtime evitado",
-          "tag": "UPS+Predictivo Bogotá",
           "read_time": 2
         }
       ]
