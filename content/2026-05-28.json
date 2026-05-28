@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-28T14:43:51.802Z",
+  "date": "2026-05-28",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-28-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-28",
+      "brand": "Vertiv",
+      "source_title": "Vertiv to expand Ohio manufacturing to boost U.S. production of critical thermal management technologies for AI data centers",
+      "title": "Vertiv acelera producción de refrigeración líquida para centros de datos IA",
+      "summary": "Expansión en Ohio aumentará capacidad de sistemas de enfriamiento críticos para servidores de alto rendimiento",
+      "body": "<p><strong>Vertiv</strong> anunció la expansión de su planta manufacturera en Ohio para incrementar la producción de sistemas de refrigeración líquida y agua helada, respondiendo a la creciente demanda de tecnologías de enfriamiento para centros de datos de inteligencia artificial.</p><p>La ampliación se enfoca en sistemas de gestión térmica críticos capaces de manejar cargas de trabajo de <strong>alta densidad computacional</strong>, típicas en aplicaciones de IA que pueden generar hasta <strong>50-100 kW por rack</strong>, comparado con los 5-10 kW tradicionales.</p><p>Para el mercado colombiano y latinoamericano, esta expansión representa mayor disponibilidad de soluciones avanzadas de refrigeración. Las empresas locales que operan centros de datos enfrentan desafíos únicos por las condiciones climáticas tropicales, donde los sistemas de enfriamiento representan hasta el <strong>40% del consumo energético total</strong>.</p><p>Los nuevos sistemas de Vertiv prometen <strong>eficiencias superiores al 95%</strong> en comparación con sistemas de aire tradicionales, reduciendo costos operativos significativamente. Con precios estimados desde <strong>USD $150,000 para instalaciones medianas</strong>, la inversión se justifica por ahorros energéticos del 30-50%.</p><p>Esta tecnología será crucial para empresas colombianas que planean implementar infraestructura de IA, especialmente en sectores financiero, minero y de telecomunicaciones, donde la disponibilidad 24/7 es crítica.</p>",
+      "tag": "Vertiv Infraestructura",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-28-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-28",
+      "brand": "PV Magazine",
+      "source_title": "Protecting heterojunction solar modules with UV-downshifting, UV-blocking",
+      "title": "Módulos solares heterojunción obtienen protección UV avanzada en Alemania",
+      "summary": "Nueva arquitectura de encapsulación protege paneles HJT contra degradación UV, extendiendo vida útil hasta 30 años",
+      "body": "<p>Un equipo de investigación alemán ha desarrollado una innovadora <strong>arquitectura de encapsulación</strong> que combina materiales UV-downshifting y UV-blocking para proteger los módulos solares de heterojunción (HJT) contra la degradación inducida por radiación ultravioleta.</p><p>Los <strong>paneles HJT</strong> ofrecen eficiencias superiores al 22%, pero son más susceptibles a la degradación UV que los módulos convencionales. La nueva tecnología de encapsulación convierte la radiación UV dañina en luz visible aprovechable, mientras bloquea completamente las longitudes de onda más agresivas.</p><p>Para el mercado solar colombiano, donde la <strong>irradiación promedio alcanza 4.5 kWh/m²/día</strong> en zonas clave como La Guajira y Cesar, esta protección UV es especialmente relevante. La alta radiación solar ecuatorial puede acelerar la degradación de los paneles, reduciendo su vida útil proyectada.</p><p>Bajo la <strong>Ley 1715</strong> y el esquema de net-metering, los usuarios residenciales y comerciales que inviertan en tecnología HJT protegida podrán maximizar el retorno de inversión durante los 25-30 años de operación. Con tarifas de Codensa (~$500/kWh) y EPM (~$450/kWh), la mayor durabilidad de estos módulos optimiza significativamente los ahorros a largo plazo en facturas eléctricas.</p>",
+      "tag": "HJT Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-28-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-28",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
+      "summary": "Configuración completa de registros Modbus, códigos de función y lectura de datos en tiempo real para inversores Fronius Symo",
+      "body": "<p>Los inversores <strong>Fronius Symo</strong> implementan el protocolo Modbus TCP en el puerto 502, facilitando la integración con sistemas SCADA y monitoreo remoto. La configuración requiere habilitar Modbus TCP desde el menú de comunicación del inversor.</p><p><strong>Registros Modbus Principales:</strong></p><ul><li>40067-40068: Potencia AC total (W) - UINT32</li><li>40083-40084: Energía total generada (Wh) - UINT32</li><li>40085-40086: Energía diaria (Wh) - UINT32</li><li>40087-40088: Energía anual (Wh) - UINT32</li><li>40089: Voltaje DC1 (V) - UINT16</li><li>40093: Corriente DC1 (A) - UINT16</li><li>40097: Voltaje AC L1 (V) - UINT16</li><li>40103: Frecuencia (Hz) - UINT16</li></ul><p>Para lectura de datos utilizamos <strong>función code 03 (Read Holding Registers)</strong>. El Slave ID por defecto es 1.</p><p><strong>Código Python de implementación:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registros 40067-40068)<br>result = client.read_holding_registers(40067, 2, unit=1)<br>if not result.isError():<br>    power_ac = (result.registers[0] << 16) | result.registers[1]<br>    print(f\"Potencia AC: {power_ac} W\")<br><br># Leer energía total (registros 40083-40084)<br>result = client.read_holding_registers(40083, 2, unit=1)<br>if not result.isError():<br>    total_energy = (result.registers[0] << 16) | result.registers[1]<br>    print(f\"Energía Total: {total_energy} Wh\")<br><br>client.close()</code><p><strong>Consideraciones para implementación en Colombia:</strong> Configurar timeout de 5-10 segundos debido a latencia de redes rurales. Los valores se actualizan cada 5 segundos. Para instalaciones de alta potencia, considerar polling distribuido para evitar saturación del bus Modbus.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-28-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-28",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra datos de tu inversor solar en tiempo real para monitorear estado de batería, consumos y generación",
+      "body": "<p>El VenusOS (v2.93+) permite publicar datos del MultiPlus II directamente a Home Assistant mediante MQTT broker integrado.</p><ol><li>En VenusOS, navega a <strong>Settings > Services > MQTT on LAN (SSL)</strong> y habilita el servicio. Anota la IP del Venus device.</li><li>Configura Home Assistant agregando estas líneas al <code>configuration.yaml</code>:<br><code>mqtt:<br>&nbsp;&nbsp;sensor:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron SOC\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/[DEVICE_ID]/system/0/Dc/Battery/Soc\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"%\"<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: \"Victron AC Load\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_topic: \"N/[DEVICE_ID]/vebus/276/Ac/Out/L1/P\"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit_of_measurement: \"W\"</code></li><li>Encuentra tu DEVICE_ID conectando cliente MQTT (mosquitto_sub) a la IP Venus: <code>mosquitto_sub -h [VENUS_IP] -t \"N/+/system/0/Serial\"</code></li><li>Reemplaza [DEVICE_ID] en configuration.yaml con el valor obtenido</li><li>Reinicia Home Assistant y verifica en Developer Tools > States que aparezcan las entidades sensor.victron_soc y sensor.victron_ac_load</li><li>Crea dashboard agregando tarjetas tipo gauge para SOC y gráfico histórico para consumo AC</li></ol><p>Los datos se actualizan cada 5 segundos automáticamente vía keepalive MQTT.</p>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-28-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-28",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva Reduce Fallas UPS 78% en Clínica de Medellín",
+      "summary": "Centro Médico Sanitas implementa sistema IA con UPS Eaton 9PX, reduciendo fallas críticas y ahorrando $185 millones COP/año",
+      "body": "<p>El <strong>Centro Médico Sanitas Medellín</strong>, con 280 camas y 15 quirófanos, enfrentaba fallas inesperadas en su infraestructura crítica que generaban pérdidas de <strong>$320 millones COP anuales</strong> por interrupciones en salas de cirugía y UCI.</p><p>El problema radicaba en la gestión reactiva de sus <strong>12 UPS Eaton 9PX 11kVA</strong> distribuidos en áreas críticas. Las fallas de baterías y sobrecargas causaban cortes que comprometían equipos médicos valorados en <strong>$8.500 millones COP</strong>.</p><p>Implementamos una solución de <strong>mantenimiento predictivo con IA</strong> utilizando Node-RED ML conectado a los sistemas Eaton Intelligent Power Manager. El algoritmo de <strong>anomaly detection basado en TensorFlow Lite</strong> analiza en tiempo real: temperatura de baterías, corriente de carga, voltaje de entrada y patrones de consumo de cada UPS.</p><p>La IA procesa <strong>1.440 puntos de datos diarios</strong> por equipo, identificando desviaciones que predicen fallas con 72 horas de anticipación. Las alertas se integran con WhatsApp Business API y el sistema CMMS del hospital.</p><p><strong>Resultados en 8 meses:</strong></p><p>• Reducción de fallas críticas: <strong>78%</strong> (de 23 a 5 eventos)<br>• Ahorro por interrupciones evitadas: <strong>$185 millones COP</strong><br>• Extensión vida útil baterías: <strong>35%</strong><br>• Reducción costos mantenimiento: <strong>$45 millones COP anuales</strong><br>• ROI alcanzado en: <strong>14 meses</strong></p><p>La inversión de <strong>$125 millones COP</strong> se amortizó mediante la eliminación de paradas no programadas y optimización del mantenimiento preventivo, garantizando operación 24/7 en áreas críticas.</p>",
+      "tag": "UPS Predictivo Medellín",
+      "read_time": 2
+    }
+  ]
+}
