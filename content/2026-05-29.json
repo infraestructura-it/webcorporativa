@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-29T14:13:24.644Z",
+  "date": "2026-05-29",
+  "brands_fetched": [
+    "Vertiv",
+    "Victron Energy",
+    "PV Magazine",
+    "Energy Storage News",
+    "Solar Power World"
+  ],
+  "feeds_ok": 5,
+  "feeds_total": 18,
+  "articles": [
+    {
+      "id": "2026-05-29-news",
+      "category_id": "news",
+      "category_label": "Noticias & Marcas",
+      "category_icon": "📡",
+      "category_color": "#00d4ff",
+      "date": "2026-05-29",
+      "brand": "Vertiv",
+      "source_title": "Vertiv to expand Ohio manufacturing to boost U.S. production of critical thermal management technologies for AI data centers",
+      "title": "Vertiv acelera producción de refrigeración líquida para centros de datos con IA",
+      "summary": "Fabricante expande manufactura en Ohio para sistemas de enfriamiento que soportan demanda de cómputo de alto rendimiento",
+      "body": "<p><strong>Vertiv anunció la expansión de su capacidad de manufactura en Ohio para incrementar la producción de sistemas de refrigeración líquida y agua helada</strong>, respondiendo al crecimiento exponencial de la demanda por infraestructura de centros de datos con inteligencia artificial.</p><p>La expansión se centra en tecnologías críticas de gestión térmica para centros de datos de alto rendimiento, incluyendo sistemas de refrigeración líquida directa que pueden manejar densidades de <strong>hasta 200 kW por rack</strong>, comparado con los 10-15 kW tradicionales. Estos sistemas alcanzan <strong>eficiencias del 98% en PUE</strong> (Power Usage Effectiveness).</p><p><strong>Para el mercado colombiano y latinoamericano, esta expansión representa una oportunidad</strong> de acceder a tecnologías avanzadas de enfriamiento que permitan a las empresas locales implementar infraestructura de IA sin las limitaciones térmicas tradicionales. Los costos estimados rondan los <strong>USD $50,000-150,000 por sistema</strong> dependiendo de la capacidad.</p><p>La refrigeración líquida se vuelve esencial para empresas colombianas que buscan implementar GPUs para machine learning, minería de datos o servicios cloud, especialmente considerando las altas temperaturas ambientales del país que incrementan los desafíos de enfriamiento tradicional por aire.</p>",
+      "tag": "Vertiv Refrigeración",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-29-solar_news",
+      "category_id": "solar_news",
+      "category_label": "Solar & Almacenamiento",
+      "category_icon": "☀️",
+      "category_color": "#f59e0b",
+      "date": "2026-05-29",
+      "brand": "Tindo Solar",
+      "source_title": "Inside PV Manufacturing: Tindo's solar manufacturing facility in Australia",
+      "title": "Tindo Australia Expande Producción de Paneles Solares con Tecnología Avanzada",
+      "summary": "Fabricante australiano Tindo incrementa capacidad productiva en Adelaide, beneficiando mercado global de paneles solares",
+      "body": "<p>La manufacturera australiana <strong>Tindo Solar</strong> ha consolidado su posición en el mercado internacional tras expandir significativamente su planta de producción en Adelaide. Desde su establecimiento en 2011, la compañía ha fabricado más de <strong>284,000 paneles solares</strong> para uso doméstico y exportación.</p><p>La ampliación de su facilidad manufacturera representa una oportunidad estratégica para el mercado solar colombiano, especialmente considerando la <strong>irradiación solar promedio de 4.5 kWh/m²/día</strong> en zonas clave del país. Los paneles Tindo, conocidos por su alta eficiencia y durabilidad, se adaptan perfectamente a las condiciones tropicales colombianas.</p><p>Bajo el marco de la <strong>Ley 1715 de energías renovables</strong>, los usuarios colombianos pueden aprovechar el sistema de net-metering para inyectar excedentes energéticos a la red de distribuidores como Codensa y EPM. Con tarifas eléctricas en constante incremento, la inversión en paneles de alta calidad como los de Tindo representa ahorros significativos a largo plazo.</p><p>La experiencia de más de una década de Tindo en manufactura solar, combinada con su enfoque en <strong>tecnología avanzada</strong> y control de calidad, posiciona a la marca como una alternativa confiable para proyectos residenciales y comerciales en Colombia, donde el potencial solar permanece ampliamente subutilizado.</p>",
+      "tag": "Tindo Panel",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-29-technical",
+      "category_id": "technical",
+      "category_label": "Artículos Técnicos",
+      "category_icon": "⚙️",
+      "category_color": "#7c3aed",
+      "date": "2026-05-29",
+      "brand": null,
+      "source_title": null,
+      "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Técnica",
+      "summary": "Aprende a implementar comunicación Modbus TCP con inversores Fronius Symo, incluyendo registros reales y código Python funcional.",
+      "body": "<p>Los inversores Fronius Symo implementan el protocolo Modbus TCP (puerto 502) para monitoreo industrial en instalaciones fotovoltaicas colombianas. La configuración requiere habilitar Modbus en el menú Setup → Communication del inversor.</p><p><strong>Configuración de Registros Principales:</strong></p><ul><li>Dirección Modbus: 1 (default)</li><li>Puerto TCP: 502</li><li>Timeout: 5000ms</li><li>Unit ID: 1</li></ul><p>Los registros críticos para monitoreo incluyen potencia AC (40084-40085, UINT32), voltaje DC (40283, UINT16) y temperatura interna (40109, INT16). El registro 40092 proporciona el estado operacional del inversor.</p><p><strong>Implementación Python para lectura de datos:</strong></p><code>from pymodbus.client.sync import ModbusTcpClient<br><br>client = ModbusTcpClient('192.168.1.100', port=502)<br>client.connect()<br><br># Leer potencia AC (registros 40084-40085)<br>result = client.read_holding_registers(40084, 2, unit=1)<br>if not result.isError():<br>    potencia_ac = (result.registers[0] << 16) + result.registers[1]<br>    print(f'Potencia AC: {potencia_ac} W')<br><br># Leer voltaje DC string 1<br>voltaje = client.read_holding_registers(40283, 1, unit=1)<br>if not voltaje.isError():<br>    print(f'Voltaje DC: {voltaje.registers[0]/10} V')<br><br>client.close()</code><p>Para instalaciones en Colombia, considerar la configuración de timeout extendido debido a posibles latencias de red. La función code 03 (Read Holding Registers) es la más utilizada para obtener datos operacionales.</p><p><strong>Troubleshooting común:</strong> Verificar firewall del inversor y conectividad IP. Los registros 40195-40196 indican códigos de error específicos del sistema Fronius.</p>",
+      "tag": "Modbus TCP",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-29-tips",
+      "category_id": "tips",
+      "category_label": "Tips IoT & Infra",
+      "category_icon": "💡",
+      "category_color": "#00ffcc",
+      "date": "2026-05-29",
+      "brand": null,
+      "source_title": null,
+      "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+      "summary": "Integra tu inversor Victron al ecosistema domótico para monitorear consumo, estado de batería y producción solar",
+      "body": "<p>Configura la integración MQTT entre tu Victron MultiPlus II (con VenusOS v2.92+) y Home Assistant para centralizar el monitoreo energético.</p><ol><li>Conecta el MultiPlus II al router vía Ethernet y accede a la interfaz web VenusOS (IP local del dispositivo)</li><li>Habilita MQTT en <strong>Settings > Services > MQTT on LAN (SSL: No)</strong>, anota el portal ID mostrado</li><li>En Home Assistant, instala la integración oficial <strong>Victron Energy</strong> desde HACS o manually</li><li>Agrega esta configuración al <code>configuration.yaml</code>:</li></ol><code>mqtt:<br>  broker: [IP_VICTRON_DEVICE]<br>  port: 1883<br>  discovery: true<br>  discovery_prefix: homeassistant<br><br>sensor:<br>  - platform: mqtt<br>    name: \"Victron SOC\"<br>    state_topic: \"N/[PORTAL_ID]/system/0/Dc/Battery/Soc\"<br>    unit_of_measurement: \"%\"<br>    value_template: \"{{ value_json.value }}\"</code><p>Sustituye <code>[PORTAL_ID]</code> por el ID obtenido en paso 2. Reinicia HA y verifica en <strong>Developer Tools > States</strong> que aparezcan entidades como <code>sensor.victron_soc</code>, <code>sensor.victron_battery_voltage</code> y <code>sensor.victron_ac_consumption</code>.</p><p>Crea dashboards personalizados combinando estos sensores con tarjetas gauge y gráficos históricos para optimizar tu gestión energética.</p>",
+      "tag": "Victron+HA",
+      "read_time": 2
+    },
+    {
+      "id": "2026-05-29-usecase",
+      "category_id": "usecase",
+      "category_label": "Casos de Uso IA",
+      "category_icon": "🧠",
+      "category_color": "#f97316",
+      "date": "2026-05-29",
+      "brand": null,
+      "source_title": null,
+      "title": "IA Predictiva reduce 35% costos operativos en granja solar Córdoba",
+      "summary": "Exportadora de banano implementa modelo predictivo que ahorra $280M COP/año optimizando sistema solar híbrido",
+      "body": "<p><strong>Tropifruit Exportadora</strong>, empresa de Montería con 450 empleados y exportación de banano orgánico a Europa, enfrentaba altos costos energéticos (>$800M COP anuales) y baja eficiencia en su sistema solar de 500kWp instalado en 2021.</p><p>La instalación incluía <strong>inversores Fronius Symo 15kW</strong>, paneles <strong>LONGi Hi-MO 6 de 540Wp</strong>, baterías <strong>BYD Battery-Box 10kWh</strong> y UPS <strong>Eaton 9PX 11kVA</strong> para áreas críticas de refrigeración y empaque.</p><p>El problema: <strong>eficiencia solar del 68%</strong> (vs 85% esperado) debido a sombreado variable, suciedad y fallas no detectadas en inversores. Los cortes de red generaban sobrecostos de $45M COP mensuales en combustible para generadores de respaldo.</p><p>Implementamos una solución con <strong>TensorFlow Lite</strong> corriendo en edge computing, integrando datos de sensores meteorológicos <strong>Victron VRM</strong>, medidores <strong>Carlo Gavazzi EM340</strong> y APIs de los inversores Fronius. El modelo predictivo identifica anomalías de rendimiento y optimiza gestión energética mediante <strong>Node-RED ML</strong>.</p><p>La IA predice producción solar con 94% precisión, programa automáticamente cargas según disponibilidad renovable y detecta fallas 72 horas antes del fallo crítico.</p><p><strong>Resultados tras 8 meses:</strong> Ahorro de $280M COP anuales, eficiencia solar aumentó a 82%, reducción del 35% en costos operativos energéticos y <strong>ROI de 14 meses</strong>. El sistema evitó 6 paradas no programadas valoradas en $65M COP por pérdida de refrigeración.</p>",
+      "tag": "Solar+IA Córdoba",
+      "read_time": 2
+    }
+  ]
+}

@@ -1,8 +1,55 @@
 {
-  "last_build": "2026-05-28T14:50:47.777Z",
+  "last_build": "2026-05-29T14:20:55.691Z",
   "total_days": 10,
   "total_articles": 50,
   "days": [
+    {
+      "date": "2026-05-29",
+      "generated_at": "2026-05-29T14:13:24.644Z",
+      "article_count": 5,
+      "articles": [
+        {
+          "id": "2026-05-29-news",
+          "category_id": "news",
+          "title": "Vertiv acelera producción de refrigeración líquida para centros de datos con IA",
+          "summary": "Fabricante expande manufactura en Ohio para sistemas de enfriamiento que soportan demanda de cómputo de alto rendimiento",
+          "tag": "Vertiv Refrigeración",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-29-solar_news",
+          "category_id": "solar_news",
+          "title": "Tindo Australia Expande Producción de Paneles Solares con Tecnología Avanzada",
+          "summary": "Fabricante australiano Tindo incrementa capacidad productiva en Adelaide, beneficiando mercado global de paneles solares",
+          "tag": "Tindo Panel",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-29-technical",
+          "category_id": "technical",
+          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Técnica",
+          "summary": "Aprende a implementar comunicación Modbus TCP con inversores Fronius Symo, incluyendo registros reales y código Python funcional.",
+          "tag": "Modbus TCP",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-29-tips",
+          "category_id": "tips",
+          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
+          "summary": "Integra tu inversor Victron al ecosistema domótico para monitorear consumo, estado de batería y producción solar",
+          "tag": "Victron+HA",
+          "read_time": 2
+        },
+        {
+          "id": "2026-05-29-usecase",
+          "category_id": "usecase",
+          "title": "IA Predictiva reduce 35% costos operativos en granja solar Córdoba",
+          "summary": "Exportadora de banano implementa modelo predictivo que ahorra $280M COP/año optimizando sistema solar híbrido",
+          "tag": "Solar+IA Córdoba",
+          "read_time": 2
+        }
+      ]
+    },
     {
       "date": "2026-05-28",
       "generated_at": "2026-05-28T14:43:51.802Z",
@@ -422,53 +469,6 @@
           "title": "IA Predictiva Previene Fallas en Centro de Datos de Fintech en Medellín",
           "summary": "Reducción del 89% en caídas de UPS y ahorro de $127M COP anuales con mantenimiento predictivo inteligente",
           "tag": "Fintech+IA Predictiva Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-05-19",
-      "generated_at": "2026-05-19T13:57:50.873Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-05-19-news",
-          "category_id": "news",
-          "title": "Vertiv lanza nueva serie PowerUPS 100 para equipos críticos de escritorio",
-          "summary": "Nueva generación de UPS compactos busca proteger equipos de cómputo personal, gaming y dispositivos de red",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-19-solar_news",
-          "category_id": "solar_news",
-          "title": "SMA inaugura nueva planta de estaciones de media tensión en Arkansas",
-          "summary": "El fabricante alemán amplía capacidad de producción local en Estados Unidos con soluciones MVPS para proyectos comerciales",
-          "tag": "SMA Inversor",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-19-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
-          "summary": "Configuración completa de registros Modbus TCP reales para monitoreo de inversores Fronius Symo en instalaciones solares",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-19-tips",
-          "category_id": "tips",
-          "title": "Configurar alarmas SMS/Telegram para UPS Eaton con SNMP trap y Node-RED",
-          "summary": "Automatiza notificaciones cuando el UPS pase a batería usando traps SNMP capturados por Node-RED para alertas críticas",
-          "tag": "Eaton SNMP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-19-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva reduce 40% costos operativos en datacenter financiero Medellín",
-          "summary": "Bancolombia Digital redujo $180M COP anuales con IA que optimiza UPS Eaton y solar Fronius",
-          "tag": "Datacenter+IA Medellín",
           "read_time": 2
         }
       ]
