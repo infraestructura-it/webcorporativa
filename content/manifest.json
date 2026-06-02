@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-06-01T16:52:33.959Z",
-  "total_days": 7,
-  "total_articles": 35,
+  "last_build": "2026-06-02T15:08:44.484Z",
+  "total_days": 6,
+  "total_articles": 30,
   "days": [
     {
       "date": "2026-05-29",
@@ -281,53 +281,6 @@
           "title": "IA Predictiva Reduce Costos Energéticos 38% en Clínica Medellín",
           "summary": "Sistema IA híbrido solar-UPS evita fallas críticas y ahorra $47M COP/año en Clínica San Rafael mediante análisis predictivo",
           "tag": "HealthTech+IA Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-05-23",
-      "generated_at": "2026-05-23T12:04:19.296Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-05-23-news",
-          "category_id": "news",
-          "title": "Vertiv lanza serie PowerUPS 100 para equipos de cómputo y gaming compacto",
-          "summary": "Nueva generación de UPS compacto de Vertiv diseñado para mantener continuidad en dispositivos personales y de red",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-23-solar_news",
-          "category_id": "solar_news",
-          "title": "Texas amplía capacidad de almacenamiento con proyecto BESS de 600MWh",
-          "summary": "Spearmint Energy cierra financiación de US$450 millones para sistema de baterías en Texas, referente para proyectos en Colombia",
-          "tag": "Spearmint BESS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-23-technical",
-          "category_id": "technical",
-          "title": "Protocolo SunSpec Alliance: Estandarización de Inversores Solares",
-          "summary": "Aprenderá implementación práctica del protocolo SunSpec para interoperabilidad entre inversores de diferentes marcas",
-          "tag": "SunSpec Alliance",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-23-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra tu inversor Victron con Home Assistant para monitoreo en tiempo real de potencia, batería y estado del sistema",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-23-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce 35% Costos Energéticos en Centro de Datos Medellín",
-          "summary": "TensorFlow Lite + UPS Eaton 9PX + paneles LONGi: ahorro $180M COP/año, ROI 14 meses para Dataplex Solutions",
-          "tag": "DataCenter+IA Medellín",
           "read_time": 2
         }
       ]
