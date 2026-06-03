@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-06-02T15:08:44.484Z",
-  "total_days": 6,
-  "total_articles": 30,
+  "last_build": "2026-06-03T16:00:49.854Z",
+  "total_days": 5,
+  "total_articles": 25,
   "days": [
     {
       "date": "2026-05-29",
@@ -234,53 +234,6 @@
           "title": "Centro de Datos Medellín Reduce 40% Costos con IA Predictiva para UPS",
           "summary": "TechSolutions Colombia ahorra $85M COP anuales implementando IA para predecir fallas en UPS Eaton 9PX",
           "tag": "Datacenter+IA Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-05-24",
-      "generated_at": "2026-05-24T12:07:02.013Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-05-24-news",
-          "category_id": "news",
-          "title": "Vertiv lanza nueva línea de UPS compactas para gaming y redes empresariales",
-          "summary": "La serie PowerUPS 100 Standby ofrece protección continua para equipos personales, gaming y networking con tecnología compacta.",
-          "tag": "Vertiv UPS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-24-solar_news",
-          "category_id": "solar_news",
-          "title": "Brasil subestima potencial solar en techos: mercado colombiano en alza",
-          "summary": "SolarPower Europe revela que UE subestima generación fotovoltaica real por falta de registro completo de instalaciones en techos",
-          "tag": "PV Magazine Análisis",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-24-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Completa",
-          "summary": "Implementar comunicación Modbus TCP con inversores Fronius Symo usando registros reales y códigos de función específicos",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-24-tips",
-          "category_id": "tips",
-          "title": "Configurar alarmas Telegram cuando UPS Eaton pase a batería con Node-RED",
-          "summary": "Recibe notificaciones automáticas por Telegram al detectar fallas eléctricas usando SNMP traps del UPS Eaton en Node-RED",
-          "tag": "Eaton SNMP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-24-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce Costos Energéticos 38% en Clínica Medellín",
-          "summary": "Sistema IA híbrido solar-UPS evita fallas críticas y ahorra $47M COP/año en Clínica San Rafael mediante análisis predictivo",
-          "tag": "HealthTech+IA Medellín",
           "read_time": 2
         }
       ]
