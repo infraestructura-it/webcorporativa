@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-06-03T16:00:49.854Z",
-  "total_days": 5,
-  "total_articles": 25,
+  "last_build": "2026-06-04T14:17:35.118Z",
+  "total_days": 4,
+  "total_articles": 20,
   "days": [
     {
       "date": "2026-05-29",
@@ -187,53 +187,6 @@
           "title": "IA reduce 32% los costos energéticos en Hospitales Unidos de Medellín",
           "summary": "Sistema de IA optimiza UPS y paneles solares, ahorrando $847M COP anuales en infraestructura crítica hospitalaria",
           "tag": "Salud+IA Predictiva Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-05-25",
-      "generated_at": "2026-05-25T14:15:56.329Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-05-25-news",
-          "category_id": "news",
-          "title": "Vertiv lanza sistema híbrido líquido-aire para refrigeración de IA en data centers",
-          "summary": "Nueva solución combina enfriamiento líquido y por aire para soportar cargas de AI de hasta 100 kW por rack",
-          "tag": "Vertiv Refrigeración",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-25-solar_news",
-          "category_id": "solar_news",
-          "title": "Sistema de almacenamiento de 1,000 MWh inicia operaciones en Canadá",
-          "summary": "Proyecto de Ameresco demuestra viabilidad de baterías a gran escala para estabilizar redes con alta penetración solar",
-          "tag": "Ameresco BESS",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-25-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo para Monitoreo Industrial",
-          "summary": "Aprenderá configuración de registros Modbus TCP en inversores Fronius Symo, direcciones de memoria y códigos Python reales.",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-25-tips",
-          "category_id": "tips",
-          "title": "Leer SOC y tensión de batería Pylontech desde Node-RED con nodo modbus-serial",
-          "summary": "Monitorea estado de carga y voltaje de baterías Pylontech US3000C/US5000 vía Modbus RTU para dashboards energéticos",
-          "tag": "Pylontech Modbus",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-25-usecase",
-          "category_id": "usecase",
-          "title": "Centro de Datos Medellín Reduce 40% Costos con IA Predictiva para UPS",
-          "summary": "TechSolutions Colombia ahorra $85M COP anuales implementando IA para predecir fallas en UPS Eaton 9PX",
-          "tag": "Datacenter+IA Medellín",
           "read_time": 2
         }
       ]
