@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-06-05T14:02:54.238Z",
-  "total_days": 3,
-  "total_articles": 15,
+  "last_build": "2026-06-06T12:19:27.721Z",
+  "total_days": 2,
+  "total_articles": 10,
   "days": [
     {
       "date": "2026-05-29",
@@ -93,53 +93,6 @@
           "title": "IA Predictiva Reduce Fallas UPS 78% en Clínica de Medellín",
           "summary": "Centro Médico Sanitas implementa sistema IA con UPS Eaton 9PX, reduciendo fallas críticas y ahorrando $185 millones COP/año",
           "tag": "UPS Predictivo Medellín",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-05-27",
-      "generated_at": "2026-05-27T14:32:43.430Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-05-27-news",
-          "category_id": "news",
-          "title": "Vertiv y Compass Datacenters lanzan sistema híbrido para refrigeración AI",
-          "summary": "Nueva solución combina refrigeración líquida y por aire para acelerar despliegue de aplicaciones de inteligencia artificial",
-          "tag": "Vertiv Data Centers",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-27-solar_news",
-          "category_id": "solar_news",
-          "title": "Victron Energy impulsa seguridad energética en infraestructura crítica",
-          "summary": "Sistema off-grid de Victron garantiza suministro continuo para planta de agua potable de 35,000 usuarios remotos",
-          "tag": "Victron Energy Sistema",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-27-technical",
-          "category_id": "technical",
-          "title": "ESP32-S3 y BMS Pylontech US5000: Monitoreo CAN Bus para Baterías LiFePO4",
-          "summary": "Implementación práctica de comunicación CAN bus entre ESP32-S3 y BMS Pylontech para monitoreo de baterías en Colombia",
-          "tag": "ESP32-S3",
-          "read_time": 3
-        },
-        {
-          "id": "2026-05-27-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Monitorea estado del inversor Victron en tiempo real desde Home Assistant usando el broker MQTT integrado de VenusOS",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-27-usecase",
-          "category_id": "usecase",
-          "title": "Cadena farmacéutica Medellín reduce costos energéticos 23% con IA solar",
-          "summary": "FarmaValle implementó sistema predictivo con IA que optimiza 180kWp solares, ahorrando $385M COP anuales",
-          "tag": "Solar+IA Medellín",
           "read_time": 2
         }
       ]
