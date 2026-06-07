@@ -1,7 +1,7 @@
 {
-  "last_build": "2026-06-06T12:19:27.721Z",
-  "total_days": 2,
-  "total_articles": 10,
+  "last_build": "2026-06-07T12:32:17.683Z",
+  "total_days": 1,
+  "total_articles": 5,
   "days": [
     {
       "date": "2026-05-29",
@@ -46,53 +46,6 @@
           "title": "IA Predictiva reduce 35% costos operativos en granja solar Córdoba",
           "summary": "Exportadora de banano implementa modelo predictivo que ahorra $280M COP/año optimizando sistema solar híbrido",
           "tag": "Solar+IA Córdoba",
-          "read_time": 2
-        }
-      ]
-    },
-    {
-      "date": "2026-05-28",
-      "generated_at": "2026-05-28T14:43:51.802Z",
-      "article_count": 5,
-      "articles": [
-        {
-          "id": "2026-05-28-news",
-          "category_id": "news",
-          "title": "Vertiv acelera producción de refrigeración líquida para centros de datos IA",
-          "summary": "Expansión en Ohio aumentará capacidad de sistemas de enfriamiento críticos para servidores de alto rendimiento",
-          "tag": "Vertiv Infraestructura",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-28-solar_news",
-          "category_id": "solar_news",
-          "title": "Módulos solares heterojunción obtienen protección UV avanzada en Alemania",
-          "summary": "Nueva arquitectura de encapsulación protege paneles HJT contra degradación UV, extendiendo vida útil hasta 30 años",
-          "tag": "HJT Panel",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-28-technical",
-          "category_id": "technical",
-          "title": "Comunicación Modbus TCP con Inversores Fronius Symo: Implementación Práctica",
-          "summary": "Configuración completa de registros Modbus, códigos de función y lectura de datos en tiempo real para inversores Fronius Symo",
-          "tag": "Modbus TCP",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-28-tips",
-          "category_id": "tips",
-          "title": "Conectar inversor Victron MultiPlus II a Home Assistant con VenusOS y MQTT",
-          "summary": "Integra datos de tu inversor solar en tiempo real para monitorear estado de batería, consumos y generación",
-          "tag": "Victron+HA",
-          "read_time": 2
-        },
-        {
-          "id": "2026-05-28-usecase",
-          "category_id": "usecase",
-          "title": "IA Predictiva Reduce Fallas UPS 78% en Clínica de Medellín",
-          "summary": "Centro Médico Sanitas implementa sistema IA con UPS Eaton 9PX, reduciendo fallas críticas y ahorrando $185 millones COP/año",
-          "tag": "UPS Predictivo Medellín",
           "read_time": 2
         }
       ]
